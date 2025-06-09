@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Franco Arquitectos | Portafolio Profesional</title>
+    <!-- Importación de fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS para la paleta de colores */
+        :root {
+            --verde-principal: #1E5128; /* Forest Green */
+            --verde-secundario: #4E9F3D; /* Dark Green */
+            --verde-acento: #D8EE7D;    /* Lime Green */
+            --gris-neutro: #333333;     /* Texto Principal */
+            --blanco-puro: #FFFFFF;     /* Fondos/Elementos */
+            --gris-claro: #F0F4F8;      /* Fondos/Separadores */
+        }
+
+        /* Reset básico y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Fuente para cuerpo de texto */
+            line-height: 1.6;
+            color: var(--gris-neutro); /* Color de texto principal */
+            background-color: var(--blanco-puro); /* Fondo general blanco */
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif; /* Fuente para encabezados */
+            color: var(--verde-principal);
+            font-weight: 700; /* Peso predeterminado para Montserrat */
+        }
+
+        h1 { font-weight: 800; } /* ExtraBold para H1 */
+        h2 { font-weight: 700; }
+
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Blanco con opacidad */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--verde-principal);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .nav-menu a {
+            color: var(--gris-neutro);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--verde-secundario);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--gris-neutro);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Páginas */
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+        
+        .page > *:first-child {
+            padding-top: 80px; /* Espacio para el nav fijo */
+        }
+
+
+        /* Sección Hero (Página de inicio) */
+        .hero {
+            background-image: linear-gradient(rgba(30, 81, 40, 0.7), rgba(30, 81, 40, 0.7)), url('https://picsum.photos/1920/1080?random=1');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco-puro);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--blanco-puro);
+            letter-spacing: 1.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--verde-acento);
+            font-weight: 400;
+        }
+        
+        .hero .support-text {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--verde-secundario);
+            color: var(--blanco-puro);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(78, 159, 61, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #6CBF5D;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(78, 159, 61, 0.4);
+        }
+
+        /* Estilos de sección comunes */
+        section {
+            padding: 5rem 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--gris-neutro);
+        }
+        
+        /* Soluciones y Portafolio en Inicio */
+        .home-solutions {
+            background-color: var(--gris-claro);
+        }
+        
+        .home-solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: var(--blanco-puro);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--verde-principal);
+        }
+        
+        .solution-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .details-btn {
+             font-weight: 700;
+             color: var(--verde-secundario);
+             text-decoration: none;
+             transition: color 0.3s;
+        }
+        .details-btn:hover {
+            color: var(--verde-principal);
+        }
+        
+        .home-portfolio {
+            text-align: center;
+        }
+        
+        .home-portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .home-portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .home-portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .home-portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .home-portfolio-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem 1rem 1rem 1rem;
+            text-align: left;
+        }
+        .home-portfolio-item .overlay h4 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        /* Estilos de Páginas */
+        .page-header {
+            background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-secundario) 100%);
+            color: var(--blanco-puro);
+            text-align: center;
+            padding: 8rem 0 5rem 0; /* Aumentado padding superior */
+        }
+        .page-header h1 {
+            color: var(--blanco-puro);
+            font-size: 3rem;
+        }
+        .page-header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 1rem auto 0 auto;
+        }
+
+        .page-content {
+            background-color: var(--gris-claro);
+            padding: 5rem 0;
+        }
+        
+        /* Quiénes Somos */
+        .about-section-card {
+            background-color: var(--blanco-puro);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--verde-secundario);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+        }
+        
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .kpi-box {
+            background-color: var(--gris-claro);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .kpi-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--verde-principal);
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .experience-item {
+            background-color: var(--gris-claro);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--verde-secundario);
+        }
+        .experience-item h4 { color: var(--verde-principal); margin-bottom: 0.5rem; }
+
+        /* Servicios, Portafolio, Oportunidades */
+        .service-section, .portfolio-category {
+            margin-bottom: 4rem;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item, .property-item {
+            background: var(--blanco-puro);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover, .property-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-image img { width: 100%; height: 220px; object-fit: cover; }
+        .item-content { padding: 1.5rem; }
+        .item-title { font-size: 1.4rem; color: var(--verde-principal); margin-bottom: 0.5rem; }
+        .item-description { font-size: 0.95rem; color: var(--gris-neutro); margin-bottom: 1rem; font-weight: 300; }
+        .property-price { font-size: 1.5rem; color: var(--verde-secundario); font-weight: 700; margin-bottom: 0.5rem; }
+        
+        /* Contacto */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            background: var(--blanco-puro);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        .contact-info-panel h3 {
+            font-size: 1.8rem;
+            color: var(--verde-principal);
+            margin-bottom: 1rem;
+        }
+        .contact-info-panel p {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .contact-info-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info-panel li {
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--gris-neutro);
+        }
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--verde-secundario);
+            box-shadow: 0 0 0 2px rgba(78, 159, 61, 0.2);
+        }
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Blog */
+        .blog-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 900px; margin: 0 auto; }
+        .blog-post, .latest-post-card { background-color: var(--blanco-puro); border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); overflow: hidden; display: flex; flex-direction: column; }
+        .blog-post-media { width: 100%; padding-top: 56.25%; position: relative; }
+        .blog-post-media iframe, .blog-post-media img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; object-fit: cover; }
+        .blog-post-content { padding: 2rem; }
+        .blog-post-title { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gris-neutro); }
+        .blog-post-date { font-size: 0.9rem; color: var(--gris-neutro); margin-bottom: 1.5rem; font-weight: 300; }
+        .blog-post-text { line-height: 1.8; font-weight: 300; }
+        .blog-post-text p { margin-bottom: 1rem; }
+        .latest-post-card .blog-post-title { font-size: 1.8rem; }
+        .read-more-btn { display: inline-block; margin-top: 1rem; color: var(--verde-secundario); text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
+        .read-more-btn:hover { color: var(--verde-principal); }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; animation: fadeIn 0.3s ease-out; }
+        .modal-content { background-color: var(--blanco-puro); padding: 30px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); position: relative; max-width: 700px; width: 90%; animation: slideIn 0.3s ease-out; max-height: 90vh; overflow-y: auto; }
+        .close-button { color: var(--gris-neutro); font-size: 2.5rem; font-weight: bold; position: absolute; top: 10px; right: 20px; cursor: pointer; transition: color 0.3s ease; }
+        .close-button:hover, .close-button:focus { color: var(--verde-secundario); }
+        .modal-images-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 1rem;}
+        .modal-images-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+        .modal-body-content { padding: 1rem; }
+        
+        /* Carousel en Modal */
+        .carousel-container { position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 1rem;}
+        .carousel-slides { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide { min-width: 100%; }
+        .carousel-slide img { width: 100%; height: 400px; object-fit: cover; display: block; }
+        .carousel-prev, .carousel-next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 20px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background-color: rgba(0, 0, 0, 0.5); }
+        .carousel-next { right: 0; border-radius: 3px 0 0 3px; }
+        .carousel-prev:hover, .carousel-next:hover { background-color: rgba(0, 0, 0, 0.8); }
+        .carousel-dots { text-align: center; padding: 10px 0; }
+        .dot { cursor: pointer; height: 12px; width: 12px; margin: 0 4px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
+        .dot.active, .dot:hover { background-color: var(--verde-secundario); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* Footer */
+        footer { background-color: var(--gris-neutro); color: var(--blanco-puro); padding: 3rem 0; }
+        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; }
+        .footer-logo h4 { color: var(--blanco-puro); font-size: 1.5rem;}
+        .footer-links ul, .footer-contact ul { list-style: none; padding: 0;}
+        .footer-links a, .footer-contact li { color: var(--blanco-puro); text-decoration: none; transition: color 0.3s; margin-bottom: 0.5rem;}
+        .footer-links a:hover { color: var(--verde-acento); }
+        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); padding: 1rem 0; border-top: 1px solid rgba(0, 0, 0, 0.05); }
+            .nav-menu.show { display: flex; }
+            .nav-menu li { text-align: center; margin-bottom: 0.5rem; }
+            .mobile-menu { display: flex; }
+            .hero h1, .page-header h1 { font-size: 2.5rem; }
+            .hero .subtitle, .page-header p { font-size: 1.3rem; }
+            .section-title { font-size: 2.2rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo-container">GUSTAVO FRANCO</a>
+            <ul class="nav-menu" id="main-nav-menu">
+                <!-- Se poblará con JS -->
+            </ul>
+            <div class="mobile-menu"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Páginas Dinámicas -->
+    <div id="home" class="page"></div>
+    <div id="about" class="page"></div>
+    <div id="services" class="page"></div>
+    <div id="portfolio" class="page"></div>
+    <div id="investment-opportunities" class="page"></div>
+    <div id="blog" class="page"></div>
+    <div id="contact" class="page"></div>
+    
+    <!-- Footer -->
+    <footer id="main-footer"></footer>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-button">&times;</span><div class="modal-body-content"></div></div></div>
+
+    <script>
+        // --- BASE DE DATOS EN MEMORIA ---
+        const siteContent = {
+            menu: [
+                { name: 'Inicio', href: '#home' },
+                { name: 'Quiénes Somos', href: '#about' },
+                { name: 'Servicios', href: '#services' },
+                { name: 'Portafolio', href: '#portfolio' },
+                { name: 'Oportunidades de Inversión', href: '#investment-opportunities' },
+                { name: 'Blog', href: '#blog' },
+                { name: 'Contacto', href: '#contact' }
+            ],
+            home: {
+                hero: {
+                    title: 'CREAMOS ACTIVOS. BLINDAMOS DECISIONES.',
+                    subtitle: 'Gustavo Franco Arquitectos',
+                    supportText: 'Donde la arquitectura y la estrategia financiera convergen para maximizar el valor de su patrimonio.',
+                    ctaButton: 'Explore Nuestras Soluciones'
+                },
+                solutions: {
+                    title: 'Nuestras Soluciones Estratégicas',
+                    cards: [
+                        { id: 'tasacion', title: 'Tasación Estratégica y Peritaje', description: 'Valoraciones de alta precisión y peritajes expertos que blindan su patrimonio y sus decisiones de inversión.' },
+                        { id: 'desarrollo', title: 'Desarrollo y Gestión Inmobiliaria', description: 'Convertimos oportunidades en activos rentables, gestionando cada etapa del proyecto con rigor técnico y financiero.' },
+                        { id: 'diseno', title: 'Diseño Arquitectónico y Construcción', description: 'Diseño y construcción que fusionan estética y funcionalidad para crear activos de alto valor, duraderos y rentables.' }
+                    ]
+                },
+                featuredPortfolio: {
+                    title: 'Proyectos que Convierten Capital en Patrimonio',
+                    buttonText: 'Conozca Nuestro Portafolio'
+                }
+            },
+            about: {
+                pageTitle: 'Visión Estratégica, Dominio Técnico y Rigor para su Inversión',
+                profileText: 'Somos un socio estratégico que fusiona el rigor técnico de la arquitectura con la visión aguda de las finanzas. No solo diseñamos y construimos; creamos activos. No solo tasamos propiedades; blindamos decisiones de inversión. Con más de una década de experiencia en el ecosistema inmobiliario, nuestra misión es proteger y maximizar el capital de nuestros clientes en cada proyecto.',
+                kpis: [
+                    { number: "+10 Años", label: "validando decisiones críticas en el mercado." },
+                    { number: "+500 Viviendas", label: "diseñadas y gestionadas a gran escala." },
+                    { number: "+1000 Tasaciones", label: "de alta complejidad que han blindado el patrimonio." },
+                    { number: "+1M USD", label: "en activos comercializados estratégicamente." }
+                ],
+                trajectory: {
+                    title: 'Una Trayectoria Forjada en Estrategia y Ejecución',
+                    intro: 'Nuestra experiencia no es una lista de cargos, es un historial de desafíos resueltos y valor creado. Hemos liderado desde la planificación de conjuntos habitacionales a gran escala hasta el diseño de residencias de alto estándar y la revalorización de activos comerciales.',
+                    sections: [
+                        { title: 'Liderazgo en Desarrollo y Gestión Inmobiliaria', content: 'Hemos estado en la primera línea de proyectos que definen el paisaje urbano y residencial. Nuestro enfoque se centra en la viabilidad, la calidad y la rentabilidad a largo plazo, gestionando la planificación maestra y el diseño de más de 500 unidades para el <strong>Conjunto Habitacional Lomas de Imperial</strong> y liderando la adquisición estratégica de 155 terrenos para el Proyecto Meta Presidencial de <strong>Fundación Integra</strong>, sentando las bases para más de 250 futuros jardines infantiles.' },
+                        { title: 'Dominio en Valoración y Mercado Financiero', content: 'Entendemos que el valor del suelo es el pilar de toda inversión inmobiliaria. Esta convicción fue reconocida desde nuestros inicios, cuando nuestra tesis <strong>"Estudio de Valores de Suelo"</strong> fue galardonada con el <strong>primer lugar por la Cámara Chilena de la Construcción</strong>. Esta pericia la hemos aplicado en más de 1.000 tasaciones de alta complejidad para la banca líder con <strong>TINSA Chile</strong> y en la dirección comercial de proyectos por más de 1 millón de dólares con <strong>REISTOCK</strong>, combinando el análisis de datos con un profundo conocimiento del mercado.' },
+                        { title: 'Excelencia en Diseño y Ejecución Comercial', content: 'Transformamos espacios comerciales en imanes de actividad y rentabilidad. Hemos liderado desde el diseño conceptual de centros comerciales como el <strong>Centro Comercial Imperial</strong> y <strong>Javiera Carrera</strong>, hasta la remodelación estratégica de la <strong>Automotora Gomá</strong> y el <strong>Gimnasio Samurai</strong>, modernizando su imagen y optimizando su operación.' }
+                    ]
+                },
+                formation: {
+                    title: 'Formación y Competencias Estratégicas',
+                    academic: [ "MBA - Master in Business Administration, IEDE Business School", "Arquitecto, Universidad Autónoma de Chile", "Data Science con Python, OpenBoxCode Sence", "Diplomado en Tasación Inmobiliaria, Universidad de Chile", "Diplomado en Finanzas y Riesgo Financiero, USACH" ],
+                    skills: [ "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Ciencia de Datos Aplicada (Python, Tableau, Excel)", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
+                }
+            },
+            services: {
+                pageTitle: 'Nuestras Soluciones',
+                subtitle: 'Ofrecemos un portafolio de servicios integrados diseñados para proteger su patrimonio y maximizar la rentabilidad de sus activos inmobiliarios.',
+                list: [
+                    { id: 'tasacion', title: "Tasación Estratégica y Peritaje Inmobiliario", description: "Blindamos sus decisiones de inversión y patrimonio con tasaciones de alta precisión y peritajes especializados...", details: ["Tasaciones de alta precisión para banca, empresas, inversionistas y particulares.", "Peritajes especializados para disputas legales, herencias y valoraciones complejas.", "Análisis de valor de suelo y potencial de desarrollo.", "Asesoría técnica experta en adquisición de terrenos e inversiones."] },
+                    { id: 'desarrollo', title: "Desarrollo y Gestión Inmobiliaria", description: "Lideramos proyectos habitacionales y comerciales desde la factibilidad hasta la materialización...", details: ["Estudios de cabida, mercado y evaluación financiera de proyectos (VAN, TIR).", "Regularización de propiedades y saneamiento de títulos según normativas (OGUC, LGUC).", "Gestión integral de permisos, trámites municipales y coordinación de especialidades.", "Planificación maestra para loteos y conjuntos habitacionales."] },
+                    { id: 'diseno', title: "Diseño Arquitectónico y Construcción", description: "Transformamos su visión en activos duraderos y estéticos...", details: ["Diseño de viviendas personalizadas, funcionales y de alto estándar.", "Gestión integral de proyectos de remodelación y ampliación.", "Inspección Técnica de Obras (ITO) para asegurar la calidad constructiva.", "Diseño de proyectos comerciales y de equipamiento."] }
+                ]
+            },
+            portfolio: {
+                pageTitle: 'Proyectos que Convierten Capital en Patrimonio',
+                subtitle: 'Una selección curada de nuestro trabajo que demuestra nuestra capacidad para ejecutar con precisión y visión estratégica en diversas escalas.',
+                categories: [
+                    { title: "Desarrollo Residencial a Gran Escala", projects: [
+                        { id: 'lomas-imperial', title: "Conjunto Habitacional Lomas de Imperial", shortDesc: "Planificación maestra y diseño de 504 viviendas en la Araucanía.", imageUrl: 'https://picsum.photos/400/300?random=11', modalContent: "<strong>Desafío:</strong> Planificar y diseñar un complejo de 504 viviendas que equilibrara la densidad requerida con una alta calidad de vida para sus residentes. <br><br><strong>Solución:</strong> Lideramos la planificación maestra y el diseño, creando un barrio integrado, funcional y de alto valor social que se convirtió en un referente en la Araucanía." },
+                        { id: 'magisur', title: "Diseño de Viviendas de Alto Estándar (Industrias Magisur)", shortDesc: "Línea de viviendas sobre 160 m² con diseño de vanguardia.", imageUrl: 'https://picsum.photos/400/300?random=12', modalContent: "<strong>Desafío:</strong> Crear una línea de viviendas sobre 160 m² que combinara diseño de vanguardia con eficiencia constructiva. <br><br><strong>Solución:</strong> Participamos en el diseño de múltiples conjuntos y condominios, estableciendo un nuevo estándar de calidad y estética para el mercado residencial de alto poder adquisitivo."}
+                    ]},
+                    { title: "Arquitectura Residencial de Alto Estándar", projects: [
+                        { id: 'casa-suarez', title: "Casa Suarez, Pirque", shortDesc: "Residencia de 260 m² integrada orgánicamente en el paisaje.", imageUrl: 'https://picsum.photos/400/300?random=13', modalContent: "Residencia de 260 m² integrada orgánicamente en el paisaje de Pirque." },
+                        { id: 'casa-valderrama', title: "Casa Valderrama, Temuco", shortDesc: "Refugio urbano de 300 m² con foco en privacidad y amplitud.", imageUrl: 'https://picsum.photos/400/300?random=14', modalContent: "Refugio urbano de 300 m² en Temuco, diseñado con un foco especial en la privacidad y la amplitud de los espacios interiores." },
+                        { id: 'casa-arriagada', title: "Casa Arriagada Venegas, Curacaví", shortDesc: "Vivienda de 250 m² en pendiente, adaptada a la topografía.", imageUrl: 'https://picsum.photos/400/300?random=15', modalContent: "Vivienda de 250 m² diseñada en un terreno con pendiente pronunciada, adaptándose a la topografía natural del lugar." }
+                    ]},
+                    { title: "Proyectos Comerciales y de Equipamiento", projects: [
+                        { id: 'goma', title: "Remodelación Automotora Gomá, Temuco", shortDesc: "Modernización de imagen corporativa y optimización de flujos en 400 m².", imageUrl: 'https://picsum.photos/400/300?random=16', modalContent: "Modernización de la imagen corporativa y optimización de flujos de clientes y vehículos en un espacio de 400 m²." },
+                        { id: 'cc-imperial', title: "Centro Comercial Imperial, Araucanía", shortDesc: "Diseño de espacio comercial de 350 m² para la comunidad local.", imageUrl: 'https://picsum.photos/400/300?random=17', modalContent: "Diseño de un centro comercial de 350 m² orientado a satisfacer las necesidades de la comunidad local en Imperial." }
+                    ]},
+                    { title: "Proyectos de Integración Territorial y Turística", projects: [
+                        { id: 'conguillio', title: "Master Plan en Parque Nacional Conguillío", shortDesc: "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", imageUrl: 'https://picsum.photos/400/300?random=18', modalContent: "Diseño y planificación de 15 infraestructuras turísticas con un enfoque de mínimo impacto ambiental dentro del Parque Nacional Conguillío." },
+                        { id: 'habitat', title: "Proyectos para el Instituto de Estudios del Hábitat", shortDesc: "Infraestructuras para eco-etnoturismo que fusionan arquitectura y cultura.", imageUrl: 'https://picsum.photos/400/300?random=19', modalContent: "Desarrollo de infraestructuras para proyectos de eco-etnoturismo, fusionando la arquitectura moderna con la cultura y tradiciones locales." }
+                    ]}
+                ]
+            },
+            investments: {
+                pageTitle: 'Oportunidades de Inversión',
+                subtitle: 'Activos inmobiliarios curados y analizados por nuestro equipo para maximizar su potencial de rentabilidad y plusvalía. Nota: se cobra comisión de corretaje del 2% + IVA.',
+                properties: [
+                    { 
+                        id: 'huichahue',
+                        title: "Oportunidad de Inversión y Calidad de Vida en Campos de Huichahue",
+                        shortDesc: "Excepcional parcela de 8.682 m² lista para habitar en condominio consolidado y seguro. A solo 20 minutos de Temuco.",
+                        imageUrl: 'https://picsum.photos/400/300?random=20',
+                        modal: {
+                            gallery: ['https://picsum.photos/800/500?random=21', 'https://picsum.photos/800/500?random=22', 'https://picsum.photos/800/500?random=23'],
+                            description: "Descubra un enclave de tranquilidad y seguridad a solo 20 minutos de la ciudad de Temuco. Esta excepcional parcela de 8.682 m² en el consolidado Condominio Campos de Huichahue no es solo un terreno; es un proyecto de vida listo para ser habitado.",
+                            features: [ "<strong>Amplitud y Privacidad:</strong> Casi una hectárea de terreno (8.682 m²).", "<strong>Lista para Habitar:</strong> Incluye casa, quincho independiente y bodegas funcionales.", "<strong>Seguridad Garantizada:</strong> Acceso controlado con portón eléctrico y cámaras de seguridad."],
+                            specs: { "Tipo de Propiedad": "Parcela con Casa y Quincho en Condominio", "Ubicación": "Condominio Campos de Huichahue, Parcela 68. Camino Huichahue Km. 19, Freire.", "Precio de Venta": "UF 3.500" },
+                            buttonText: "Consultar por esta Oportunidad"
+                        }
+                    }
+                ]
+            },
+            blog: {
+                pageTitle: 'Blog de Análisis Inmobiliario',
+                subtitle: 'Noticias, análisis y tendencias del sector para inversionistas y propietarios inteligentes.',
+                latestPostTitle: 'Última Entrada del Blog',
+                posts: [
+                    { id: "post-002", title: "Análisis del Mercado Inmobiliario Post-Pandemia", date: "2025-06-07", media: { type: 'youtube', src: 'dQw4w9WgXcQ' }, content: `<p>La pandemia ha reconfigurado las prioridades residenciales. Analizamos cómo la demanda de espacios más grandes, áreas verdes y oficinas en casa está impactando los precios y el desarrollo de nuevos proyectos.</p>` },
+                    { id: "post-001", title: "La Importancia de la Tasación Profesional", date: "2025-05-20", media: { type: 'image', src: ['https://picsum.photos/1200/675?random=101'] }, content: `<p>Una tasación precisa es el pilar de cualquier decisión inmobiliaria informada. Desglosamos el proceso y los factores clave que influyen en el valor de una propiedad.</p>` }
+                ]
+            },
+            contact: {
+                pageTitle: 'Iniciemos una Conversación Estratégica',
+                subtitle: 'Estamos listos para analizar su proyecto. Complete el formulario o contáctenos directamente para agendar una consulta.',
+                email: 'secretaria@gustavofranco.cl',
+                phone: '+56 9 5810 1807',
+                location: 'Santiago, Chile',
+                coverage: 'Cobertura: Región Metropolitana y Región de Valparaíso'
+            },
+            footer: {
+                logoText: 'Gustavo Franco Arquitectos',
+                copyright: '© 2025 | Gustavo Franco Arquitectos. Todos los derechos reservados.'
+            }
+        };
+
+        // --- LÓGICA DE LA APLICACIÓN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAllSections();
+            setupNavigationAndModals();
+            window.addEventListener('hashchange', showPageFromURL);
+            showPageFromURL(); // Cargar página inicial
+        });
+        
+        function showPageFromURL() {
+            const hash = window.location.hash.substring(1) || 'home';
+            const [pageId, sectionId] = hash.split('/');
+            
+            showPage(pageId);
+
+            if (sectionId) {
+                setTimeout(() => {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 150); // Dar tiempo para renderizado
+            }
+        }
+
+        function populateAllSections() {
+            populateNav();
+            populateHome();
+            populateAbout();
+            populateServices();
+            populatePortfolio();
+            populateInvestments();
+            populateBlog();
+            populateContact();
+            populateFooter();
+        }
+
+        function setupNavigationAndModals() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if(mobileMenu) mobileMenu.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.toggle('show');
+            });
+
+            const modal = document.getElementById('infoModal');
+            if(modal) {
+                const closeButton = modal.querySelector('.close-button');
+                if(closeButton) closeButton.addEventListener('click', () => modal.style.display = 'none');
+                window.addEventListener('click', (event) => {
+                    if (event.target == modal) modal.style.display = 'none';
+                });
+            }
+        }
+
+        function showPage(pageId) {
+            if (!pageId) pageId = 'home';
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            const page = document.getElementById(pageId);
+            if(page) page.style.display = 'block';
+            
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${pageId}`) link.classList.add('active');
+            });
+             if (pageId !== 'home') {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+        }
+        
+        function navigateTo(e, path) {
+             e.preventDefault();
+             window.location.hash = path;
+        }
+
+        // --- FUNCIONES DE RENDERIZADO ---
+        function populateNav() {
+            const navMenu = document.getElementById('main-nav-menu');
+            if(navMenu) navMenu.innerHTML = siteContent.menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('');
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
+            });
+        }
+
+        function populateHome() {
+            const container = document.getElementById('home');
+            if (!container) return;
+            container.innerHTML = `
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>${siteContent.home.hero.title}</h1>
+                        <p class="subtitle">${siteContent.home.hero.subtitle}</p>
+                        <p class="support-text">${siteContent.home.hero.supportText}</p>
+                        <a href="#home-solutions" class="cta-button" onclick="event.preventDefault(); document.getElementById('home-solutions').scrollIntoView({behavior: 'smooth'});">${siteContent.home.hero.ctaButton}</a>
+                    </div>
+                </section>
+                <section id="home-solutions" class="home-solutions"><div class="container" id="home-solutions-container"></div></section>
+                <section class="home-portfolio"><div class="container" id="home-portfolio-container"></div></section>
+                <section id="latest-post-section" class="latest-post-section"><div class="container" id="latest-post-container"></div></section>
+            `;
+            
+            const solutionsContainer = document.getElementById('home-solutions-container');
+            solutionsContainer.innerHTML = `<h2 class="section-title">${siteContent.home.solutions.title}</h2>
+                <div class="home-solutions-grid">${siteContent.home.solutions.cards.map(card => `
+                    <div class="solution-card">
+                        <h3>${card.title}</h3>
+                        <p>${card.description}</p>
+                        <a href="#services/service-${card.id}" class="details-btn">Ver Detalles &rarr;</a>
+                    </div>`).join('')}
+                </div>`;
+            
+            const portfolioContainer = document.getElementById('home-portfolio-container');
+            const featuredProjects = siteContent.portfolio.categories.flatMap(c => c.projects).slice(0, 4);
+            portfolioContainer.innerHTML = `<h2 class="section-title">${siteContent.home.featuredPortfolio.title}</h2>
+                <div class="home-portfolio-grid">${featuredProjects.map(p => `
+                    <a href="#portfolio" class="home-portfolio-item">
+                        <img src="${p.imageUrl}" alt="${p.title}">
+                        <div class="overlay"><h4>${p.title}</h4></div>
+                    </a>`).join('')}
+                </div>
+                <a href="#portfolio" class="cta-button">${siteContent.home.featuredPortfolio.buttonText}</a>`;
+
+            const latestPostContainer = document.getElementById('latest-post-container');
+            const latestPost = [...siteContent.blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+            if (latestPost) latestPostContainer.innerHTML = `<h2 class="section-title">${siteContent.blog.latestPostTitle}</h2>${createPostHTML(latestPost, true)}`;
+        }
+        
+        function populateAbout() {
+            const container = document.getElementById('about');
+            if(container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${siteContent.about.pageTitle}</h1></div></header>
+                <main class="page-content"><div class="container">
+                    <section class="about-section-card">
+                        <h2 class="section-title">Perfil Profesional</h2>
+                        <img src="https://picsum.photos/250/250?random=2" alt="Gustavo Franco" class="about-image">
+                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">${siteContent.about.profileText}</p>
+                        <div class="kpi-grid">${siteContent.about.kpis.map(k => `<div class="kpi-box"><div class="kpi-number">${k.number}</div><p>${k.label}</p></div>`).join('')}</div>
+                    </section>
+                    <section class="about-section-card">
+                        <h2 class="section-title">${siteContent.about.trajectory.title}</h2>
+                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 2rem;">${siteContent.about.trajectory.intro}</p>
+                        <div class="experience-grid">${siteContent.about.trajectory.sections.map(job => `<div class="experience-item"><h4>${job.title}</h4><p>${job.content}</p></div>`).join('')}</div>
+                    </section>
+                    <section class="about-section-card">
+                        <h2 class="section-title">${siteContent.about.formation.title}</h2>
+                        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+                            <div style="flex: 1; min-width: 280px;"><h3>Formación Académica</h3><ul>${siteContent.about.formation.academic.map(e => `<li>${e}</li>`).join('')}</ul></div>
+                            <div style="flex: 1; min-width: 280px;"><h3>Competencias Clave</h3><ul>${siteContent.about.formation.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>
+                        </div>
+                    </section>
+                </div></main>`;
+        }
+        
+        function populateServices() {
+            const container = document.getElementById('services');
+            if(container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${siteContent.services.pageTitle}</h1><p>${siteContent.services.subtitle}</p></div></header>
+                <main class="page-content"><div class="container">${siteContent.services.list.map(service => `
+                    <section class="service-section about-section-card" id="service-${service.id}">
+                        <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">${service.title}</h2>
+                        <p>${service.description}</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">${service.details.map(d => `<li>${d}</li>`).join('')}</ul>
+                    </section>`).join('')}
+                </div></main>`;
+        }
+        
+        function populatePortfolio() {
+            const container = document.getElementById('portfolio');
+            if(container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${siteContent.portfolio.pageTitle}</h1><p>${siteContent.portfolio.subtitle}</p></div></header>
+                <main class="page-content"><div class="container">${siteContent.portfolio.categories.map(category => `
+                    <section class="portfolio-category">
+                        <h2 class="section-title">${category.title}</h2>
+                        <div class="portfolio-grid">${category.projects.map(p => createItemCard(p, 'portfolio')).join('')}</div>
+                    </section>`).join('')}
+                </div></main>`;
+        }
+
+        function populateInvestments() {
+            const container = document.getElementById('investment-opportunities');
+            if(container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${siteContent.investments.pageTitle}</h1><p>${siteContent.investments.subtitle}</p></div></header>
+                <main class="page-content"><div class="container"><div class="portfolio-grid">${siteContent.investments.properties.map(p => createItemCard(p, 'property')).join('')}</div></div></main>`;
+        }
+
+        function populateBlog() {
+            const container = document.getElementById('blog');
+            const sortedPosts = [...siteContent.blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+            if (container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${siteContent.blog.pageTitle}</h1><p>${siteContent.blog.subtitle}</p></div></header>
+                <main class="page-content"><div class="container"><div class="blog-grid">${sortedPosts.map(post => createPostHTML(post)).join('')}</div></div></main>`;
+        }
+        
+        function populateContact() {
+            const container = document.getElementById('contact');
+            const { contact, services } = siteContent;
+            if(container) container.innerHTML = `
+                <header class="page-header"><div class="container"><h1>${contact.pageTitle}</h1><p>${contact.subtitle}</p></div></header>
+                <main class="page-content">
+                    <div class="container">
+                        <div class="contact-layout">
+                            <div class="contact-info-panel">
+                                <h3>Información de Contacto</h3>
+                                <p>Contáctenos directamente a través de los siguientes canales o utilice el formulario. Estaremos encantados de atenderle.</p>
+                                <ul>
+                                    <li><strong>Email:</strong> ${contact.email}</li>
+                                    <li><strong>Teléfono:</strong> ${contact.phone}</li>
+                                    <li><strong>Ubicación:</strong> ${contact.location}</li>
+                                    <li><strong>Área de Cobertura:</strong> ${contact.coverage}</li>
+                                </ul>
+                            </div>
+                            <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
+                                <div class="form-group"><label for="contact-name">Nombre Completo</label><input type="text" id="contact-name" name="name" required></div>
+                                <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" required></div>
+                                <div class="form-group"><label for="contact-phone">Teléfono</label><input type="tel" id="contact-phone" name="phone"></div>
+                                <div class="form-group"><label for="contact-service">Servicio de Interés</label><select id="contact-service" name="service"><option value="">Seleccione un servicio...</option>${services.list.map(s => `<option value="${s.title}">${s.title}</option>`).join('')}</select></div>
+                                <div class="form-group"><label for="contact-message">Mensaje</label><textarea id="contact-message" name="message" required></textarea></div>
+                                <button type="submit" class="cta-button">Enviar Mensaje por WhatsApp</button>
+                            </form>
+                        </div>
+                    </div>
+                </main>`;
+        }
+        
+        function populateFooter() {
+            const footer = document.getElementById('main-footer');
+            const { footer: f, menu, contact } = siteContent;
+            if(footer) footer.innerHTML = `
+                <div class="container footer-content">
+                    <div class="footer-logo"><h4>${f.logoText}</h4></div>
+                    <div class="footer-links"><ul>${menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('')}</ul></div>
+                    <div class="footer-contact"><ul><li>${contact.email}</li><li>${contact.phone}</li><li>${contact.coverage}</li></ul></div>
+                </div>
+                <div class="footer-bottom"><p>${f.copyright}</p></div>`;
+        }
+
+        // --- FUNCIONES AUXILIARES ---
+        function createItemCard(item, type) {
+            const priceHTML = type === 'property' ? `<div class="property-price">${item.modal.specs['Precio de Venta']}</div>` : '';
+            return `<div class="${type}-item" onclick="openModal('${item.id}', '${type}')"><div class="item-image"><img src="${item.imageUrl}" alt="${item.title}"></div><div class="item-content">${priceHTML}<h3 class="item-title">${item.title}</h3><p class="item-description">${item.shortDesc}</p></div></div>`;
+        }
+        
+        function createPostHTML(post, isExcerpt = false) {
+            let mediaHTML = '';
+            if (post.media) {
+                if (post.media.type === 'youtube') mediaHTML = `<div class="blog-post-media"><iframe src="https://www.youtube.com/embed/${post.media.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+                else if (post.media.type === 'image' && post.media.src.length > 0) mediaHTML = `<div class="blog-post-media"><img src="${post.media.src[0]}" alt="${post.title}"></div>`;
+            }
+            const postContent = isExcerpt ? `<p>${post.content.split('</p>')[0].replace('<p>', '')}</p><a href="#blog" class="read-more-btn">Leer Más &rarr;</a>` : post.content;
+            return `<article class="${isExcerpt ? 'latest-post-card' : 'blog-post'}">${mediaHTML}<div class="blog-post-content"><h3 class="blog-post-title">${post.title}</h3><p class="blog-post-date">${new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${postContent}</div></div></article>`;
+        }
+        
+        function openModal(id, type) {
+            const dataMap = { portfolio: siteContent.portfolio.categories.flatMap(c => c.projects), property: siteContent.investments.properties };
+            const data = dataMap[type].find(item => item.id === id);
+            if (!data) return;
+
+            const modal = document.getElementById('infoModal');
+            const modalBody = modal.querySelector('.modal-body-content');
+            
+            let mediaHTML = '', detailsHTML = '', contactButton = '';
+            
+            if (type === 'portfolio') {
+                detailsHTML = `<p>${data.modalContent}</p>`;
+            } else if (type === 'property') {
+                const p = data.modal;
+                if (p.gallery && p.gallery.length > 1) {
+                    mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${p.gallery.map(src => `<div class="carousel-slide"><img src="${src}" alt="${data.title}"></div>`).join('')}</div><a class="carousel-prev">&#10094;</a><a class="carousel-next">&#10095;</a><div class="carousel-dots"></div></div>`;
+                } else if (p.gallery && p.gallery.length === 1) {
+                    mediaHTML = `<div class="modal-images-grid"><img src="${p.gallery[0]}" alt="${data.title}"></div>`;
+                }
+                detailsHTML = `<p>${p.description}</p><h4>Características Principales</h4><ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul><h4>Ficha Técnica</h4><ul>${Object.entries(p.specs).map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`).join('')}</ul>`;
+                contactButton = `<button class="cta-button" style="margin-top:1.5rem;" onclick="prefillContactForm('${data.title}')">${p.buttonText}</button>`;
+            }
+
+            modalBody.innerHTML = `<h2 class="item-title">${data.title}</h2>${mediaHTML}<div class="modal-body-content" style="padding: 0 1rem">${detailsHTML}${contactButton}</div>`;
+            modal.style.display = 'flex';
+            
+            if (mediaHTML.includes('carousel-container')) {
+                setupCarousel(modal.querySelector('.carousel-container'));
+            }
+        }
+        
+        function setupCarousel(carousel) {
+            const slides = carousel.querySelector('.carousel-slides');
+            const dotsContainer = carousel.querySelector('.carousel-dots');
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+
+            if (!slides || !dotsContainer || !prevButton || !nextButton) return;
+            const slideCount = slides.children.length;
+            let currentIndex = 0;
+            
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => showSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            
+            const dots = dotsContainer.querySelectorAll('.dot');
+            const showSlide = (index) => {
+                currentIndex = (index + slideCount) % slideCount;
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                if (dots.length > 0) dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+            };
+            
+            prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
+            nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
+            showSlide(0);
+        }
+
+        function prefillContactForm(subject) {
+            document.getElementById('infoModal').style.display = 'none';
+            window.location.hash = '#contact';
+            setTimeout(() => {
+                const messageTextarea = document.getElementById('contact-message');
+                if(messageTextarea) {
+                    messageTextarea.value = `Asunto: Consulta por Oportunidad "${subject}"\n\n`;
+                    messageTextarea.focus();
+                }
+            }, 100);
+        }
+
+        function sendWhatsAppMessage(event) {
+            event.preventDefault();
+            const form = event.target;
+            const message = `*Consulta desde el sitio web:*\n\n*Nombre:* ${form.name.value}\n*Email:* ${form.email.value}\n*Teléfono:* ${form.phone ? form.phone.value : 'No especificado'}\n*Servicio:* ${form.service ? form.service.value : 'No especificado'}\n\n*Mensaje:*\n${form.message.value}`;
+            const whatsappUrl = `https://wa.me/${siteContent.contact.phone.replace(/\s/g, '')}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+    </script>
+</body>
+</html>
