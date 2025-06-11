@@ -839,12 +839,8 @@
             const { footer: f, menu, contact } = siteContent;
             if(footer) footer.innerHTML = `
                 <div class="container footer-content">
-                    <a href="#home" class="footer-logo">
-                        <img src="https://i.ibb.co/mXpQTS8/logo-final-gustavo-franco.png" alt="Logo de Gustavo Franco" class="logo-image">
-                        <div class="logo-text-container">
-                           <span class="logo-name">${f.logoText}</span>
-                           <span class="logo-subtitle">ARQUITECTOS</span>
-                        </div>
+                    <a href="#home" class="logo-container">
+                        <img src="images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
                     </a>
                     <div class="footer-links"><ul>${menu.map(item => `<li><a href="${item.href}" onclick="navigateTo(event, '${item.href}')">${item.name}</a></li>`).join('')}</ul></div>
                     <div class="footer-contact"><ul><li>${contact.email}</li><li>${contact.phone}</li><li><strong>Cobertura:</strong> ${contact.coverage}</li></ul></div>
