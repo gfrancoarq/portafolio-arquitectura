@@ -9,9 +9,7 @@
 
 Sitio web profesional y portafolio de Gustavo Franco, Arquitecto, Tasador Especialista en Peritajes y Estratega Proptech.
 
-**➡️ Ver el sitio en vivo: [www.gustavofranco.cl](https://www.gustavofranco.cl)** (o la URL donde lo alojes)
-
-![Captura de pantalla del sitio web](https://i.imgur.com/vH9b61Z.png)
+**➡️ Ver el sitio en vivo: [www.gustavofranco.cl](https://www.gustavofranco.cl)** 
 
 ## 📜 Descripción
 
