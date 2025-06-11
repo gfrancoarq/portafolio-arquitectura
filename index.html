@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo Franco | Tasador Especialista en Peritajes y Estratega Proptech</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Gustavo Franco, Tasador Especialista en Peritajes y Estratega Proptech en Santiago y Valparaíso. Servicios de valoración estratégica de activos, consultoría Proptech y desarrollo de modelos con IA.">
     <meta name="keywords" content="tasador especialista, peritaje inmobiliario, tasación de activos, consultor inmobiliario, proptech, valoración con IA, gustavo franco, santiago, valparaíso, chile">
     <meta name="author" content="Gustavo Franco">
 
-    <!-- Importación de fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -23,9 +20,9 @@
             --verde-principal: #1E5128; /* Forest Green */
             --verde-secundario: #4E9F3D; /* Dark Green */
             --verde-acento: #D8EE7D;     /* Lime Green */
-            --gris-neutro: #333333;      /* Texto Principal */
-            --blanco-puro: #FFFFFF;      /* Fondos/Elementos */
-            --gris-claro: #F0F4F8;       /* Fondos/Separadores */
+            --gris-neutro: #333333;     /* Texto Principal */
+            --blanco-puro: #FFFFFF;     /* Fondos/Elementos */
+            --gris-claro: #F0F4F8;      /* Fondos/Separadores */
         }
 
         /* Reset básico y estilos generales */
@@ -326,6 +323,24 @@
 
         /* Servicios, Portafolio, Oportunidades */
         .service-section, .portfolio-category { margin-bottom: 4rem; }
+        
+        /* --- NUEVO --- Estilo para la imagen del servicio */
+        .service-layout {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        .service-image {
+            flex-shrink: 0;
+            width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .service-content {
+            flex-grow: 1;
+        }
+
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .portfolio-item, .property-item { background: var(--blanco-puro); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; cursor: pointer; }
         .portfolio-item:hover, .property-item:hover { transform: translateY(-8px); box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12); }
@@ -400,6 +415,9 @@
         /* Responsive */
         @media (max-width: 900px) {
             .contact-layout { grid-template-columns: 1fr; }
+            /* --- NUEVO --- Hacer que la imagen del servicio se ponga arriba en móvil */
+            .service-layout { flex-direction: column; }
+            .service-image { width: 100%; height: 250px; object-fit: cover; margin-bottom: 2rem; }
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); padding: 1rem 0; border-top: 1px solid rgba(0, 0, 0, 0.05); }
@@ -414,19 +432,17 @@
     </style>
 </head>
 <body>
-    <!-- Navegación -->
     <nav>
         <div class="nav-container">
-    <a href="#home" class="logo-container">
-        <img src="images/logo-gustavo-franco.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
-    </a>
-    <ul class="nav-menu" id="main-nav-menu">
-        </ul>
-    <div class="mobile-menu"><span></span><span></span><span></span></div>
-</div>
+            <a href="#home" class="logo-container">
+                <img src="images/logo-gustavo-franco.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
+            </a>
+            <ul class="nav-menu" id="main-nav-menu">
+                </ul>
+            <div class="mobile-menu"><span></span><span></span><span></span></div>
+        </div>
     </nav>
 
-    <!-- Páginas Dinámicas -->
     <main>
       <div id="home" class="page"></div>
       <div id="about" class="page"></div>
@@ -437,179 +453,34 @@
       <div id="contact" class="page"></div>
     </main>
     
-    <!-- Footer -->
     <footer id="main-footer"></footer>
 
-    <!-- Modal -->
-    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-button">&times;</span><div class="modal-body-content"></div></div></div>
+    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-button">×</span><div class="modal-body-content"></div></div></div>
 
     <script>
-        // --- BASE DE DATOS EN MEMORIA ---
-        const siteContent = {
-            menu: [
-                { name: 'Inicio', href: '#home' },
-                { name: 'Quiénes Somos', href: '#about' },
-                { name: 'Servicios', href: '#services' },
-                { name: 'Portafolio', href: '#portfolio' },
-                { name: 'Oportunidades', href: '#investment-opportunities' },
-                { name: 'Blog', href: '#blog' },
-                { name: 'Contacto', href: '#contact' }
-            ],
-            home: {
-                hero: {
-                    title: 'CREAMOS ACTIVOS. BLINDAMOS DECISIONES.',
-                    subtitle: 'Tasador Especialista en Peritajes | Estratega Proptech',
-                    supportText: 'Combinando el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.',
-                    ctaButton: 'Explore Nuestras Soluciones'
-                },
-                solutions: {
-                    title: 'Soluciones Estratégicas',
-                    cards: [
-                        { id: 'peritaje', icon: 'fa-gavel', title: 'Tasaciones y Peritajes Especializados', description: 'Análisis objetivos y fundamentados en datos para la resolución de disputas de valor y la toma de decisiones patrimoniales complejas.' },
-                        { id: 'avm', icon: 'fa-brain', title: 'Modelos Predictivos y Data Science', description: 'Desarrollo de modelos de valoración y viabilidad que integran variables de diseño y mercado para una precisión superior.' },
-                        { id: 'consultoria', icon: 'fa-lightbulb', title: 'Consultoría Estratégica Inmobiliaria', description: 'Asesoría para optimizar proyectos, maximizando la rentabilidad desde su origen con un enfoque Proptech.' },
-                        { id: 'arquitectura', icon: 'fa-ruler-combined', title: 'Arquitectura y Gestión de Activos', description: 'Diseño, regularización y construcción de proyectos residenciales y comerciales, gestionados con una visión de creación de valor a largo plazo.'}
-                    ]
-                },
-                featuredPortfolio: {
-                    title: 'Experiencia que Fundamenta la Innovación',
-                    buttonText: 'Ver Portafolio Completo'
-                }
-            },
-            about: {
-                pageTitle: 'Visión Estratégica, Dominio Técnico y Rigor',
-                profileText: 'Gustavo Franco es el arquitecto y estratega que lidera la firma. Como socio estratégico, fusiona el rigor técnico de la arquitectura con la visión aguda de las finanzas, potenciando un profundo "conocimiento de dominio" de más de una década con ciencia de datos e inteligencia artificial. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones de inversión. La misión de la firma es liderar la nueva generación de la valoración de activos, combinando el rigor técnico del peritaje con el poder de la tecnología.',
-                linkedinText: "Para conocer la trayectoria profesional de nuestro fundador en detalle, puede visitar su perfil en <a href='https://www.linkedin.com/in/gustavfranco/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.",
-                kpiTitle: 'Indicadores Clave',
-                kpis: [
-                    { number: "+10 Años", label: "de trayectoria en el sector inmobiliario." },
-                    { number: "+900 Activos", label: "valorados masivamente con modelos algorítmicos." },
-                    { number: "+1000 Tasaciones", label: "de alta complejidad para banca e inversionistas." },
-                    { number: "Data-Driven", label: "Visión estratégica potenciada con IA y Data Science." }
-                ],
-                 trajectory: {
-                    title: 'Una Trayectoria Forjada en Estrategia y Ejecución',
-                    intro: 'Nuestra experiencia no es una lista de cargos, es un historial de desafíos resueltos y valor creado. Hemos liderado desde la planificación de conjuntos habitacionales a gran escala hasta el diseño de residencias de alto estándar y la revalorización de activos comerciales.',
-                    sections: [
-                        { title: 'Liderazgo en Desarrollo y Gestión Inmobiliaria', content: 'Hemos estado en la primera línea de proyectos que definen el paisaje urbano y residencial. Nuestro enfoque se centra en la viabilidad, la calidad y la rentabilidad a largo plazo, gestionando la planificación maestra y el diseño de más de 500 unidades para el <strong>Conjunto Habitacional Lomas del Valle</strong> y liderando la adquisición estratégica de 155 terrenos para el Proyecto Meta Presidencial de <strong>Fundación Integra</strong>, sentando las bases para más de 250 futuros jardines infantiles.' },
-                        { title: 'Dominio en Valoración y Mercado Financiero', content: 'Entendemos que el valor del suelo es el pilar de toda inversión inmobiliaria. Esta convicción fue reconocida desde nuestros inicios, cuando nuestra tesis <strong>"Estudio de Valores de Suelo"</strong> fue galardonada con el <strong>primer lugar por la Cámara Chilena de la Construcción</strong>. Esta pericia la hemos aplicado en más de 1.000 tasaciones de alta complejidad para la banca líder con <strong>TINSA Chile</strong> y en la dirección comercial de proyectos por más de 1 millón de dólares con <strong>REISTOCK</strong>, combinando el análisis de datos con un profundo conocimiento del mercado.' },
-                        { title: 'Excelencia en Diseño y Ejecución Comercial', content: 'Transformamos espacios comerciales en imanes de actividad y rentabilidad. Hemos liderado desde el diseño conceptual de centros comerciales como el <strong>Centro Comercial Imperial</strong> y <strong>Javiera Carrera</strong>, hasta la remodelación estratégica de la <strong>Automotora Gomá</strong> y el <strong>Gimnasio Samurai</strong>, modernizando su imagen y optimizando su operación.' }
-                    ]
-                },
-                formation: {
-                    title: 'Formación y Competencias Estratégicas',
-                    academic: [ "MBA - Master in Business Administration, IEDE Business School", "Arquitecto, Universidad Autónoma de Chile", "Data Science con Python, OpenBoxCode Sence", "Diplomado en Tasación Inmobiliaria, Universidad de Chile", "Diplomado en Finanzas y Riesgo Financiero, USACH" ],
-                    skills: [ "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Ciencia de Datos Aplicada (Python, Tableau, Excel)", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
-                }
-            },
-            services: {
-                pageTitle: 'Servicios Especializados',
-                subtitle: 'Soluciones que combinan el rigor técnico del peritaje con la innovación de la inteligencia artificial para entregar resultados superiores.',
-                list: [
-                    { id: 'peritaje', title: "Tasaciones Especializadas y Peritajes", description: "Proporcionamos análisis objetivos, detallados y fundamentados para la resolución de disputas de valor en contextos judiciales y extrajudiciales. Nuestra metodología asegura informes robustos y defendibles.", details: ["Peritajes para litigios (divorcios, herencias, disputas comerciales).", "Tasaciones de alta complejidad para activos únicos.", "Análisis de 'mejor y mayor uso' para maximizar valor.", "Contra-informes y revisión de tasaciones de terceros."] },
-                    { id: 'avm', title: "Data Science y Modelos Predictivos", description: "Creamos modelos de valoración automatizada (AVM) a medida, utilizando IA y Machine Learning para procesar grandes volúmenes de datos y entregar valoraciones precisas y en tiempo real.", details: ["Diseño y construcción de AVMs para carteras de activos.", "Integración de datos geoespaciales y de mercado no tradicionales.", "Análisis de tendencias y proyecciones de valor.", "Optimización de portafolios de inversión inmobiliaria."] },
-                    { id: 'consultoria', title: "Consultoría Estratégica y Proptech", description: "Asesoramos a desarrolladores e inversionistas utilizando herramientas de IA para optimizar las decisiones desde la fase más temprana de un proyecto.", details: ["Análisis automatizado de normativas y estudios de cabida.", "Estimación de potencial de rentabilidad y riesgos de desarrollo.", "Estrategias de adquisición de terrenos basadas en datos.", "Implementación de soluciones Proptech en empresas inmobiliarias."] },
-                    { id: 'arquitectura', title: "Arquitectura y Gestión de Activos Inmobiliarios", description: "Más allá del diseño, gestionamos cada proyecto como la creación de un activo valioso. Aplicamos el mismo rigor estratégico a proyectos residenciales y comerciales, asegurando no solo la calidad y la estética, sino también la optimización de su inversión.", details: ["Diseño de viviendas personalizadas y funcionales.", "Regularización de propiedades y saneamiento de títulos (OGUC).", "Gestión integral de proyectos de remodelación y ampliación.", "Inspección Técnica de Obras (ITO) para asegurar la calidad constructiva."] }
-                ]
-            },
-            portfolio: {
-                pageTitle: 'Portafolio de Proyectos',
-                subtitle: 'Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.',
-                categories: [
-                    { title: "Tecnología y Modelado de Datos", projects: [
-                        { id: 'avm-integra', title: "Modelo de Valoración Masiva (AVM)", shortDesc: "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop', modalContent: {
-                            challenge: "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.",
-                            solution: "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la consultora externa Colliers.",
-                            images: ['https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop']
-                        }},
-                        { id: 'tesis-3d', title: "Visualización 3D de Valores de Suelo", shortDesc: "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", imageUrl: 'https://images.unsplash.com/photo-1604398191248-7394a49c4c45?q=80&w=2069&auto=format&fit=crop', modalContent: {
-                            challenge: "Comunicar de forma efectiva y novedosa un complejo análisis de datos sobre valores de suelo, que era difícil de interpretar en formatos 2D.",
-                            solution: "Se fue pionero en el uso de visualizaciones 3D para analizar datos de valores de suelo, transformando datos complejos en una 'topografía de valor' intuitiva. Esto permitió analizar patrones, cortes y evoluciones temporales que el análisis 2D tradicional no puede mostrar.",
-                            images: ['https://images.unsplash.com/photo-1588665792437-5671b1b68b73?q=80&w=2070&auto=format&fit=crop', 'https://images.unsplash.com/photo-1604398191248-7394a49c4c45?q=80&w=2069&auto=format&fit=crop']
-                        }},
-                        { id: 'pipeline-integra', title: "Pipeline de Gestión y Reportería", shortDesc: "Implementación de un sistema de seguimiento y reportería para 250 proyectos simultáneos.", imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop', modalContent: {
-                            challenge: "Gestionar el seguimiento de la construcción de 250 jardines infantiles a nivel nacional de forma simultánea, sin una herramienta centralizada.",
-                            solution: "Se implementó un pipeline de datos para centralizar la información de avance de obras, generando reportería automatizada y Cartas Gantt actualizadas para la alta dirección, mejorando la toma de decisiones y el control del proyecto.",
-                            images: ['https://images.unsplash.com/photo-1542382156995-18a6ac86a23a?q=80&w=1964&auto=format&fit=crop', 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop']
-                        }}
-                    ]},
-                    { title: "Desarrollo Residencial a Gran Escala", projects: [
-                        { id: 'lomas-del-valle', title: "Conjunto Habitacional Lomas del Valle", shortDesc: "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop', modalContent: {
-                            challenge: "Planificar la expansión urbana de Nueva Imperial a través de un proyecto habitacional de 504 viviendas, equilibrando la densidad con una alta calidad de vida para sus residentes.",
-                            solution: "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado, funcional y de alto valor social que se convirtió en un referente para el desarrollo de la zona.",
-                            images: ['https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop', 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop']
-                        }},
-                        { id: 'magisur', title: "Diseño de Viviendas de Alto Estándar", shortDesc: "Línea de viviendas sobre 160 m² con diseño de vanguardia.", imageUrl: 'https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop', modalContent: {
-                            challenge: "Crear una línea de viviendas sobre 160 m² que combinara diseño de vanguardia con eficiencia constructiva.",
-                            solution: "Se participó en el diseño de múltiples conjuntos y condominios, estableciendo un nuevo estándar de calidad y estética para el mercado residencial de alto poder adquisitivo.",
-                            images: ['https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop', 'https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop']
-                        }}
-                    ]},
-                    { title: "Proyectos Comerciales y de Equipamiento", projects: [
-                        { id: 'goma', title: "Remodelación Automotora Gomá, Temuco", shortDesc: "Modernización de imagen corporativa y optimización de flujos en 400 m².", imageUrl: 'https://images.unsplash.com/photo-1517524206127-48bbd363f357?q=80&w=1964&auto=format&fit=crop', modalContent: {
-                            challenge: "Modernizar la imagen corporativa de una automotora consolidada y optimizar el flujo de clientes y servicios en sus 400 m².",
-                            solution: "Una remodelación integral que renovó la fachada, mejoró la experiencia del cliente en la sala de ventas y optimizó la eficiencia del área de servicio, resultando en un aumento tangible de la percepción de marca.",
-                            images: ['https://images.unsplash.com/photo-1616422285623-13ff01621935?q=80&w=1931&auto=format&fit=crop', 'https://images.unsplash.com/photo-1517524206127-48bbd363f357?q=80&w=1964&auto=format&fit=crop']
-                        }},
-                        { id: 'conguillio', title: "Master Plan en Parque Nacional Conguillío", shortDesc: "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop', modalContent: {
-                            challenge: "Diseñar 15 infraestructuras turísticas, incluyendo una cafetería, cabañas y miradores, dentro de uno de los ecosistemas más delicados y protegidos de Chile.",
-                            solution: "Un ejercicio de arquitectura de mínimo impacto, donde cada estructura se diseñó para dialogar respetuosamente con el paisaje, utilizando materiales locales y soluciones sostenibles para potenciar la experiencia del visitante sin alterar la majestuosidad del parque.",
-                            images: ['https://images.unsplash.com/photo-1603576020339-e9759c43d780?q=80&w=1974&auto=format&fit=crop', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop']
-                        }}
-                    ]}
-                ]
-            },
-            investments: {
-                pageTitle: 'Oportunidades de Inversión',
-                subtitle: 'Activos inmobiliarios curados y analizados por nuestro equipo para maximizar su potencial de rentabilidad y plusvalía. Nota: se cobra comisión de corretaje del 2% + IVA.',
-                properties: [
-                    { 
-                        id: 'huichahue',
-                        title: "Oportunidad de Inversión y Calidad de Vida en Campos de Huichahue",
-                        shortDesc: "Excepcional parcela de 8.682 m² lista para habitar en condominio consolidado y seguro. A solo 20 minutos de Temuco.",
-                        imageUrl: 'https://images.unsplash.com/photo-1560440021-33f9b867899d?q=80&w=1974&auto=format&fit=crop',
-                        modal: {
-                            gallery: ['https://images.unsplash.com/photo-1560440021-33f9b867899d?q=80&w=1974&auto=format&fit=crop', 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop', 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop'],
-                            description: "Descubra un enclave de tranquilidad y seguridad a solo 20 minutos de la ciudad de Temuco. Esta excepcional parcela de 8.682 m² en el consolidado Condominio Campos de Huichahue no es solo un terreno; es un proyecto de vida listo para ser habitado.",
-                            features: [ "<strong>Amplitud y Privacidad:</strong> Casi una hectárea de terreno (8.682 m²).", "<strong>Lista para Habitar:</strong> Incluye casa, quincho independiente y bodegas funcionales.", "<strong>Seguridad Garantizada:</strong> Acceso controlado con portón eléctrico y cámaras de seguridad."],
-                            specs: { "Tipo de Propiedad": "Parcela con Casa y Quincho en Condominio", "Ubicación": "Condominio Campos de Huichahue, Parcela 68. Camino Huichahue Km. 19, Freire.", "Precio de Venta": "$150.000.000 (UF 3.825 aprox.)" },
-                            buttonText: "Consultar por esta Oportunidad"
-                        }
-                    }
-                ]
-            },
-            blog: {
-                pageTitle: 'Blog de Análisis Inmobiliario',
-                subtitle: 'Noticias, análisis y tendencias del sector para inversionistas y propietarios inteligentes.',
-                latestPostTitle: 'Análisis y Perspectivas del Sector',
-                posts: [
-                    { id: "post-002", title: "El Rol de la IA en la Valoración de Activos Inmobiliarios", date: "2025-06-07", excerpt: 'La Inteligencia Artificial ya no es ciencia ficción. Analizamos cómo los algoritmos de Machine Learning están revolucionando la precisión y velocidad de las tasaciones...', fullContent: `<p>La Inteligencia Artificial ya no es ciencia ficción. Analizamos cómo los algoritmos de Machine Learning están revolucionando la precisión y velocidad de las tasaciones, y qué significa esto para el futuro de las inversiones.</p><p>Los modelos tradicionales de valoración a menudo se basan en un puñado de comparables y en la intuición del tasador. Sin embargo, los modelos de IA pueden procesar miles de puntos de datos simultáneamente: desde transacciones históricas, características del inmueble, hasta variables macroeconómicas, datos de movilidad y sentimiento del mercado extraído de noticias y redes sociales. El resultado es una valoración más objetiva, rápida y capaz de detectar patrones que el ojo humano no puede ver.</p>`, images: ['https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?q=80&w=2071&auto=format&fit=crop', 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2070&auto=format&fit=crop'], videoUrl: null },
-                    { id: "post-001", title: "Peritajes: La Importancia de un Informe Robusto", date: "2025-05-20", excerpt: 'En una disputa de valor, un informe de peritaje bien fundamentado puede ser la diferencia entre ganar o perder. Desglosamos los componentes clave...', fullContent: `<p>En una disputa de valor, un informe de peritaje bien fundamentado puede ser la diferencia entre ganar o perder. Desglosamos los componentes clave que hacen a un informe irrefutable ante un tribunal.</p><p>Un informe robusto no solo presenta una cifra, sino que cuenta una historia coherente y respaldada por evidencia. Debe incluir un análisis exhaustivo del mercado, una selección de comparables justificada, un detalle de la metodología utilizada y una conclusión clara y sin ambigüedades. Cada afirmación debe estar respaldada por datos verificables, lo que blinda el informe contra impugnaciones y otorga certeza a las partes involucradas.</p>`, images: ['https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop'], videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
-                ]
-            },
-            contact: {
-                pageTitle: 'Contacto Estratégico',
-                subtitle: 'Para tasaciones, peritajes, proyectos de arquitectura o consultorías Proptech, contáctenos para agendar una consulta inicial sin costo.',
-                email: 'arquitecto@gustavofranco.cl',
-                phone: '+56 9 5810 1807',
-                location: 'Santiago, Chile',
-                coverage: 'Región Metropolitana y Región de Valparaíso'
-            },
-            footer: {
-                logoText: 'Gustavo Franco',
-                copyright: '© 2025 | Gustavo Franco. Todos los derechos reservados.'
-            }
-        };
-
         // --- LÓGICA DE LA APLICACIÓN ---
+        
+        // --- CAMBIO PRINCIPAL: Cargar el contenido desde data.json ---
         document.addEventListener('DOMContentLoaded', () => {
-            populateAllSections();
-            setupNavigationAndModals();
-            window.addEventListener('hashchange', showPageFromURL);
-            showPageFromURL(); // Cargar página inicial
+            fetch('data.json')
+                .then(response => response.json())
+                .then(siteContent => {
+                    // Una vez que los datos se cargan, construimos la página
+                    window.siteContent = siteContent; // Hacemos los datos accesibles globalmente
+                    populateAllSections(siteContent);
+                    setupNavigationAndModals(siteContent);
+                    showPageFromURL(siteContent);
+                    
+                    window.addEventListener('hashchange', () => showPageFromURL(siteContent));
+                })
+                .catch(error => {
+                    console.error("Error al cargar el archivo data.json:", error);
+                    // Opcional: mostrar un mensaje de error en la página
+                    document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio.</h2>';
+                });
         });
         
-        function showPageFromURL() {
+        function showPageFromURL(siteContent) {
             const hash = window.location.hash.substring(1) || 'home';
             const [pageId, sectionId] = hash.split('/');
             
@@ -621,23 +492,23 @@
                     if (element) {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                }, 150); // Dar tiempo para renderizado
+                }, 150);
             }
         }
 
-        function populateAllSections() {
-            populateNav();
-            populateHome();
-            populateAbout();
-            populateServices();
-            populatePortfolio();
-            populateInvestments();
-            populateBlog();
-            populateContact();
-            populateFooter();
+        function populateAllSections(siteContent) {
+            populateNav(siteContent);
+            populateHome(siteContent);
+            populateAbout(siteContent);
+            populateServices(siteContent);
+            populatePortfolio(siteContent);
+            populateInvestments(siteContent);
+            populateBlog(siteContent);
+            populateContact(siteContent);
+            populateFooter(siteContent);
         }
 
-        function setupNavigationAndModals() {
+        function setupNavigationAndModals(siteContent) {
             const mobileMenu = document.querySelector('.mobile-menu');
             if(mobileMenu) mobileMenu.addEventListener('click', () => {
                 document.querySelector('.nav-menu').classList.toggle('show');
@@ -669,34 +540,34 @@
         }
         
         function navigateTo(e, path) {
-              e.preventDefault();
-              window.location.hash = path;
-              // Cierra el menu en movil
-              const navMenu = document.getElementById('main-nav-menu');
-              if (navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-              }
+             e.preventDefault();
+             window.location.hash = path;
+             // Cierra el menu en movil
+             const navMenu = document.getElementById('main-nav-menu');
+             if (navMenu.classList.contains('show')) {
+               navMenu.classList.remove('show');
+             }
         }
 
-        // --- FUNCIONES DE RENDERIZADO ---
-        function populateNav() {
+        // --- FUNCIONES DE RENDERIZADO (Ahora reciben siteContent como parámetro) ---
+        function populateNav({ menu }) {
             const navMenu = document.getElementById('main-nav-menu');
-            if(navMenu) navMenu.innerHTML = siteContent.menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('');
+            if(navMenu) navMenu.innerHTML = menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('');
             document.querySelectorAll('a[href^="#"]').forEach(link => {
                 link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
             });
         }
 
-        function populateHome() {
+        function populateHome({ home, portfolio, blog }) {
             const container = document.getElementById('home');
             if (!container) return;
             container.innerHTML = `
                 <section class="hero">
                     <div class="hero-content">
-                        <h1>${siteContent.home.hero.title}</h1>
-                        <p class="subtitle">${siteContent.home.hero.subtitle}</p>
-                        <p class="support-text">${siteContent.home.hero.supportText}</p>
-                        <a href="#services" class="cta-button" onclick="navigateTo(event, '#services')">${siteContent.home.hero.ctaButton}</a>
+                        <h1>${home.hero.title}</h1>
+                        <p class="subtitle">${home.hero.subtitle}</p>
+                        <p class="support-text">${home.hero.supportText}</p>
+                        <a href="#services" class="cta-button" onclick="navigateTo(event, '#services')">${home.hero.ctaButton}</a>
                     </div>
                 </section>
                 <section id="home-solutions" class="home-solutions"><div class="container" id="home-solutions-container"></div></section>
@@ -705,82 +576,89 @@
             `;
             
             const solutionsContainer = document.getElementById('home-solutions-container');
-            solutionsContainer.innerHTML = `<h2 class="section-title">${siteContent.home.solutions.title}</h2>
-                <div class="home-solutions-grid">${siteContent.home.solutions.cards.map(card => `
+            solutionsContainer.innerHTML = `<h2 class="section-title">${home.solutions.title}</h2>
+                <div class="home-solutions-grid">${home.solutions.cards.map(card => `
                     <div class="solution-card">
                         <i class="fas ${card.icon} solution-icon"></i>
                         <h3>${card.title}</h3>
                         <p>${card.description}</p>
-                        <a href="#services/service-${card.id}" class="details-btn" onclick="navigateTo(event, '#services/service-${card.id}')">Ver Detalles &rarr;</a>
+                        <a href="#services/service-${card.id}" class="details-btn" onclick="navigateTo(event, '#services/service-${card.id}')">Ver Detalles →</a>
                     </div>`).join('')}
                 </div>`;
             
             const portfolioContainer = document.getElementById('home-portfolio-container');
-            const featuredProjects = siteContent.portfolio.categories.flatMap(c => c.projects).slice(0, 4);
-            portfolioContainer.innerHTML = `<h2 class="section-title">${siteContent.home.featuredPortfolio.title}</h2>
+            const featuredProjects = portfolio.categories.flatMap(c => c.projects).slice(0, 4);
+            portfolioContainer.innerHTML = `<h2 class="section-title">${home.featuredPortfolio.title}</h2>
                 <div class="home-portfolio-grid">${featuredProjects.map(p => `
                     <a href="#portfolio" onclick="navigateTo(event, '#portfolio')" class="home-portfolio-item">
                         <img src="${p.imageUrl}" alt="Proyecto destacado: ${p.title}" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1E5128/FFFFFF?text=Project';">
                         <div class="overlay"><h4>${p.title}</h4></div>
                     </a>`).join('')}
                 </div>
-                <a href="#portfolio" class="cta-button" onclick="navigateTo(event, '#portfolio')">${siteContent.home.featuredPortfolio.buttonText}</a>`;
+                <a href="#portfolio" class="cta-button" onclick="navigateTo(event, '#portfolio')">${home.featuredPortfolio.buttonText}</a>`;
 
             const latestPostContainer = document.getElementById('latest-post-container');
-            const latestPost = [...siteContent.blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+            const latestPost = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
             if (latestPost) {
                 const latestPostHTML = createPostHTML(latestPost, true);
-                latestPostContainer.innerHTML = `<h2 class="section-title">${siteContent.blog.latestPostTitle}</h2><div onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
+                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
             }
         }
         
-        function populateAbout() {
+        // --- MODIFICADO --- Ahora usa `profileImageUrl` del JSON
+        function populateAbout({ about }) {
             const container = document.getElementById('about');
             if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${siteContent.about.pageTitle}</h1></div></header>
+                <header class="page-header"><div class="page-header-content"><h1>${about.pageTitle}</h1></div></header>
                 <main class="page-content"><div class="container">
                     <section class="about-section-card">
                         <h2 class="section-title">Nuestro Fundador</h2>
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" alt="Foto profesional de Gustavo Franco" class="about-image" onerror="this.onerror=null;this.src='https://placehold.co/250x250/1E5128/FFFFFF?text=GF';">
-                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">${siteContent.about.profileText}</p>
-                        <p style="text-align: center; max-width: 800px; margin: 1.5rem auto 0; font-size: 1.1rem; font-weight: 400;">${siteContent.about.linkedinText}</p>
-                        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 3rem; margin-bottom: 2rem;">${siteContent.about.kpiTitle}</h3>
-                        <div class="kpi-grid">${siteContent.about.kpis.map(k => `<div class="kpi-box"><div class="kpi-number">${k.number}</div><p>${k.label}</p></div>`).join('')}</div>
+                        <img src="${about.profileImageUrl}" alt="Foto profesional de Gustavo Franco" class="about-image" onerror="this.onerror=null;this.src='https://placehold.co/250x250/1E5128/FFFFFF?text=GF';">
+                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">${about.profileText}</p>
+                        <p style="text-align: center; max-width: 800px; margin: 1.5rem auto 0; font-size: 1.1rem; font-weight: 400;">${about.linkedinText}</p>
+                        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 3rem; margin-bottom: 2rem;">${about.kpiTitle}</h3>
+                        <div class="kpi-grid">${about.kpis.map(k => `<div class="kpi-box"><div class="kpi-number">${k.number}</div><p>${k.label}</p></div>`).join('')}</div>
                     </section>
                     <section class="about-section-card">
-                        <h2 class="section-title">${siteContent.about.trajectory.title}</h2>
-                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 2rem;">${siteContent.about.trajectory.intro}</p>
-                        <div class="experience-grid">${siteContent.about.trajectory.sections.map(job => `<div class="experience-item"><h4>${job.title}</h4><p>${job.content}</p></div>`).join('')}</div>
+                        <h2 class="section-title">${about.trajectory.title}</h2>
+                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 2rem;">${about.trajectory.intro}</p>
+                        <div class="experience-grid">${about.trajectory.sections.map(job => `<div class="experience-item"><h4>${job.title}</h4><p>${job.content}</p></div>`).join('')}</div>
                     </section>
                     <section class="about-section-card">
-                        <h2 class="section-title">${siteContent.about.formation.title}</h2>
+                        <h2 class="section-title">${about.formation.title}</h2>
                         <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-                            <div style="flex: 1; min-width: 280px;"><h3>Formación Académica</h3><ul>${siteContent.about.formation.academic.map(e => `<li>${e}</li>`).join('')}</ul></div>
-                            <div style="flex: 1; min-width: 280px;"><h3>Competencias Estratégicas</h3><ul>${siteContent.about.formation.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>
+                            <div style="flex: 1; min-width: 280px;"><h3>Formación Académica</h3><ul>${about.formation.academic.map(e => `<li>${e}</li>`).join('')}</ul></div>
+                            <div style="flex: 1; min-width: 280px;"><h3>Competencias Estratégicas</h3><ul>${about.formation.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>
                         </div>
                     </section>
                 </div></main>`;
         }
         
-        function populateServices() {
+        // --- MODIFICADO --- Añade la imagen y el nuevo layout
+        function populateServices({ services }) {
             const container = document.getElementById('services');
             if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${siteContent.services.pageTitle}</h1><p>${siteContent.services.subtitle}</p></div></header>
-                <main class="page-content"><div class="container">${siteContent.services.list.map(service => `
+                <header class="page-header"><div class="page-header-content"><h1>${services.pageTitle}</h1><p>${services.subtitle}</p></div></header>
+                <main class="page-content"><div class="container">${services.list.map(service => `
                     <section class="service-section about-section-card" id="service-${service.id}">
-                        <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">${service.title}</h2>
-                        <p>${service.description}</p>
-                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">${service.details.map(d => `<li>${d}</li>`).join('')}</ul>
-                        <a href="#contact" class="cta-button" style="margin-top: 2rem; display: inline-block;" onclick="navigateTo(event, '#contact')">Solicitar Consultoría</a>
+                        <div class="service-layout">
+                            <img src="${service.imageUrl}" alt="Imagen del servicio ${service.title}" class="service-image" onerror="this.onerror=null;this.src='https://placehold.co/300x210/1E5128/FFFFFF?text=Servicio';">
+                            <div class="service-content">
+                                <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">${service.title}</h2>
+                                <p>${service.description}</p>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">${service.details.map(d => `<li>${d}</li>`).join('')}</ul>
+                                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: inline-block;" onclick="navigateTo(event, '#contact')">Solicitar Consultoría</a>
+                            </div>
+                        </div>
                     </section>`).join('')}
                 </div></main>`;
         }
         
-        function populatePortfolio() {
+        function populatePortfolio({ portfolio }) {
             const container = document.getElementById('portfolio');
             if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${siteContent.portfolio.pageTitle}</h1><p>${siteContent.portfolio.subtitle}</p></div></header>
-                <main class="page-content"><div class="container">${siteContent.portfolio.categories.map(category => `
+                <header class="page-header"><div class="page-header-content"><h1>${portfolio.pageTitle}</h1><p>${portfolio.subtitle}</p></div></header>
+                <main class="page-content"><div class="container">${portfolio.categories.map(category => `
                     <section class="portfolio-category">
                         <h2 class="section-title">${category.title}</h2>
                         <div class="portfolio-grid">${category.projects.map(p => createItemCard(p, 'portfolio')).join('')}</div>
@@ -788,24 +666,24 @@
                 </div></main>`;
         }
 
-        function populateInvestments() {
+        function populateInvestments({ investments }) {
             const container = document.getElementById('investment-opportunities');
             if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${siteContent.investments.pageTitle}</h1><p>${siteContent.investments.subtitle}</p></div></header>
-                <main class="page-content"><div class="container"><div class="portfolio-grid">${siteContent.investments.properties.map(p => createItemCard(p, 'property')).join('')}</div></div></main>`;
+                <header class="page-header"><div class="page-header-content"><h1>${investments.pageTitle}</h1><p>${investments.subtitle}</p></div></header>
+                <main class="page-content"><div class="container"><div class="portfolio-grid">${investments.properties.map(p => createItemCard(p, 'property')).join('')}</div></div></main>`;
         }
 
-        function populateBlog() {
+        function populateBlog({ blog }) {
             const container = document.getElementById('blog');
-            const sortedPosts = [...siteContent.blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+            const sortedPosts = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date));
             if (container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${siteContent.blog.pageTitle}</h1><p>${siteContent.blog.subtitle}</p></div></header>
+                <header class="page-header"><div class="page-header-content"><h1>${blog.pageTitle}</h1><p>${blog.subtitle}</p></div></header>
                 <main class="page-content"><div class="container"><div class="blog-grid">${sortedPosts.map(post => createPostHTML(post, false)).join('')}</div></div></main>`;
         }
         
-        function populateContact() {
+        function populateContact({ contact, services }) {
+            if(!contact || !services) return;
             const container = document.getElementById('contact');
-            const { contact, services } = siteContent;
             if(container) container.innerHTML = `
                 <header class="page-header"><div class="page-header-content"><h1>${contact.pageTitle}</h1><p>${contact.subtitle}</p></div></header>
                 <main class="page-content">
@@ -834,10 +712,9 @@
                 </main>`;
         }
         
-        function populateFooter() {
-            const footer = document.getElementById('main-footer');
-            const { footer: f, menu, contact } = siteContent;
-            if(footer) footer.innerHTML = `
+        function populateFooter({ footer, menu, contact }) {
+            const footerEl = document.getElementById('main-footer');
+            if(footerEl) footerEl.innerHTML = `
                 <div class="container footer-content">
                     <a href="#home" class="logo-container">
                         <img src="images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
@@ -845,7 +722,7 @@
                     <div class="footer-links"><ul>${menu.map(item => `<li><a href="${item.href}" onclick="navigateTo(event, '${item.href}')">${item.name}</a></li>`).join('')}</ul></div>
                     <div class="footer-contact"><ul><li>${contact.email}</li><li>${contact.phone}</li><li><strong>Cobertura:</strong> ${contact.coverage}</li></ul></div>
                 </div>
-                <div class="footer-bottom"><p>${f.copyright}</p></div>`;
+                <div class="footer-bottom"><p>${footer.copyright}</p></div>`;
         }
 
         // --- FUNCIONES AUXILIARES ---
@@ -859,17 +736,18 @@
              if (post.images && post.images.length > 0) {
                  mediaHTML = `<div class="blog-post-media"><img src="${post.images[0]}" alt="Imagen de artículo: ${post.title}" onerror="this.onerror=null;this.src='https://placehold.co/1200x675/1E5128/FFFFFF?text=Blog';"></div>`;
              }
-            const clickAction = isHomepage ? `navigateTo(event, '#blog')` : `openModal('${post.id}', 'blog')`;
-            const content = `<p>${post.excerpt}</p><span class="read-more-btn">Leer Más &rarr;</span>`;
+            const clickAction = isHomepage ? `MapsTo(event, '#blog')` : `openModal('${post.id}', 'blog')`;
+            const content = `<p>${post.excerpt}</p><span class="read-more-btn">Leer Más →</span>`;
             
             return `<article class="${isHomepage ? 'latest-post-card' : 'blog-post'}" onclick="${clickAction}">${mediaHTML}<div class="blog-post-content"><h3 class="blog-post-title">${post.title}</h3><p class="blog-post-date">${new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${content}</div></div></article>`;
         }
         
         function openModal(id, type) {
+            const { portfolio, investments, blog } = window.siteContent;
             const dataMap = { 
-                portfolio: siteContent.portfolio.categories.flatMap(c => c.projects), 
-                property: siteContent.investments.properties,
-                blog: siteContent.blog.posts
+                portfolio: portfolio.categories.flatMap(c => c.projects), 
+                property: investments.properties,
+                blog: blog.posts
             };
             const data = dataMap[type].find(item => item.id === id);
             if (!data) return;
@@ -890,7 +768,7 @@
             } else if (type === 'property') {
                 const p = data.modal;
                 if (p.gallery && p.gallery.length > 1) {
-                    mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${p.gallery.map(src => `<div class="carousel-slide"><img src="${src}" alt="Galería de propiedad: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">&#10094;</a><a class="carousel-next">&#10095;</a><div class="carousel-dots"></div></div>`;
+                    mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${p.gallery.map(src => `<div class="carousel-slide"><img src="${src}" alt="Galería de propiedad: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
                 } else if (p.gallery && p.gallery.length === 1) {
                     mediaHTML = `<div class="modal-images-grid"><img src="${p.gallery[0]}" alt="Imagen de propiedad: ${data.title}"></div>`;
                 }
@@ -898,12 +776,12 @@
                 contactButton = `<button class="cta-button" style="margin-top:1.5rem;" onclick="prefillContactForm('${data.title}')">${p.buttonText}</button>`;
             } else if (type === 'blog') {
                  if (data.videoUrl) {
-                    mediaHTML = `<div class="blog-post-media"><iframe src="${data.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-                } else if (data.images && data.images.length > 1) {
-                    mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${data.images.map(src => `<div class="carousel-slide"><img src="${src}" alt="Imagen del artículo: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">&#10094;</a><a class="carousel-next">&#10095;</a><div class="carousel-dots"></div></div>`;
-                } else if (data.images && data.images.length === 1) {
-                    mediaHTML = `<div class="modal-images-grid" style="grid-template-columns: 1fr;"><img src="${data.images[0]}" alt="Imagen del artículo: ${data.title}" style="height: auto; max-height: 400px;"></div>`;
-                }
+                     mediaHTML = `<div class="blog-post-media"><iframe src="${data.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+                 } else if (data.images && data.images.length > 1) {
+                     mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${data.images.map(src => `<div class="carousel-slide"><img src="${src}" alt="Imagen del artículo: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
+                 } else if (data.images && data.images.length === 1) {
+                     mediaHTML = `<div class="modal-images-grid" style="grid-template-columns: 1fr;"><img src="${data.images[0]}" alt="Imagen del artículo: ${data.title}" style="height: auto; max-height: 400px;"></div>`;
+                 }
                 detailsHTML = `<p class="blog-post-date" style="text-align:center;">${new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${data.fullContent}</div>`;
             }
 
@@ -959,12 +837,12 @@
 
         function sendWhatsAppMessage(event) {
             event.preventDefault();
+            const { contact } = window.siteContent;
             const form = event.target;
             const message = `*Consulta desde el sitio web:*\n\n*Nombre:* ${form.name.value}\n*Email:* ${form.email.value}\n*Teléfono:* ${form.phone ? form.phone.value : 'No especificado'}\n*Servicio:* ${form.service ? form.service.value : 'No especificado'}\n\n*Mensaje:*\n${form.message.value}`;
-            const whatsappUrl = `https://wa.me/${siteContent.contact.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/${contact.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
 </html>
-
