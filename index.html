@@ -324,7 +324,17 @@
         /* Servicios, Portafolio, Oportunidades */
         .service-section, .portfolio-category { margin-bottom: 4rem; }
         
-        /* --- NUEVO --- Estilo para la imagen del servicio */
+        /* --- AJUSTE --- Estilo para alinear el título del servicio a la izquierda */
+        .service-section > .section-title {
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+        .service-section > .section-title::after {
+            left: 0;
+            transform: translateX(0);
+        }
+
         .service-layout {
             display: flex;
             gap: 2.5rem;
@@ -415,7 +425,7 @@
         /* Responsive */
         @media (max-width: 900px) {
             .contact-layout { grid-template-columns: 1fr; }
-            /* --- NUEVO --- Hacer que la imagen del servicio se ponga arriba en móvil */
+            /* --- AJUSTE --- Hacer que la imagen del servicio se ponga arriba en móvil */
             .service-layout { flex-direction: column; }
             .service-image { width: 100%; height: 250px; object-fit: cover; margin-bottom: 2rem; }
         }
@@ -460,13 +470,11 @@
     <script>
         // --- LÓGICA DE LA APLICACIÓN ---
         
-        // --- CAMBIO PRINCIPAL: Cargar el contenido desde data.json ---
         document.addEventListener('DOMContentLoaded', () => {
             fetch('data.json')
                 .then(response => response.json())
                 .then(siteContent => {
-                    // Una vez que los datos se cargan, construimos la página
-                    window.siteContent = siteContent; // Hacemos los datos accesibles globalmente
+                    window.siteContent = siteContent;
                     populateAllSections(siteContent);
                     setupNavigationAndModals(siteContent);
                     showPageFromURL(siteContent);
@@ -475,7 +483,6 @@
                 })
                 .catch(error => {
                     console.error("Error al cargar el archivo data.json:", error);
-                    // Opcional: mostrar un mensaje de error en la página
                     document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio.</h2>';
                 });
         });
@@ -542,14 +549,13 @@
         function navigateTo(e, path) {
              e.preventDefault();
              window.location.hash = path;
-             // Cierra el menu en movil
              const navMenu = document.getElementById('main-nav-menu');
              if (navMenu.classList.contains('show')) {
                navMenu.classList.remove('show');
              }
         }
 
-        // --- FUNCIONES DE RENDERIZADO (Ahora reciben siteContent como parámetro) ---
+        // --- FUNCIONES DE RENDERIZADO ---
         function populateNav({ menu }) {
             const navMenu = document.getElementById('main-nav-menu');
             if(navMenu) navMenu.innerHTML = menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('');
@@ -605,7 +611,6 @@
             }
         }
         
-        // --- MODIFICADO --- Ahora usa `profileImageUrl` del JSON
         function populateAbout({ about }) {
             const container = document.getElementById('about');
             if(container) container.innerHTML = `
@@ -634,17 +639,19 @@
                 </div></main>`;
         }
         
-        // --- MODIFICADO --- Añade la imagen y el nuevo layout
+        // --- FUNCIÓN ACTUALIZADA ---
         function populateServices({ services }) {
             const container = document.getElementById('services');
             if(container) container.innerHTML = `
                 <header class="page-header"><div class="page-header-content"><h1>${services.pageTitle}</h1><p>${services.subtitle}</p></div></header>
                 <main class="page-content"><div class="container">${services.list.map(service => `
                     <section class="service-section about-section-card" id="service-${service.id}">
+                        
+                        <h2 class="section-title">${service.title}</h2>
+                        
                         <div class="service-layout">
                             <img src="${service.imageUrl}" alt="Imagen del servicio ${service.title}" class="service-image" onerror="this.onerror=null;this.src='https://placehold.co/300x210/1E5128/FFFFFF?text=Servicio';">
                             <div class="service-content">
-                                <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">${service.title}</h2>
                                 <p>${service.description}</p>
                                 <ul style="margin-top: 1rem; padding-left: 1.5rem;">${service.details.map(d => `<li>${d}</li>`).join('')}</ul>
                                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: inline-block;" onclick="navigateTo(event, '#contact')">Solicitar Consultoría</a>
