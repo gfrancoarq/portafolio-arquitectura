@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Franco | Tasador Especialista en Peritajes y Estratega Proptech</title>
+    <title>Gustavo Franco | Especialista en Geointeligencia Inmobiliaria y Arquitecto</title>
     
-    <meta name="description" content="Gustavo Franco, Tasador Especialista en Peritajes y Estratega Proptech en Santiago y Valparaíso. Servicios de valoración estratégica de activos, consultoría Proptech y desarrollo de modelos con IA.">
-    <meta name="keywords" content="tasador especialista, peritaje inmobiliario, tasación de activos, consultor inmobiliario, proptech, valoración con IA, gustavo franco, santiago, valparaíso, chile">
+    <meta name="description" content="Gustavo Franco, Especialista en Geointeligencia Inmobiliaria, Arquitecto y Perito Tasador. Servicios de valoración estratégica, análisis de viabilidad con IA y consultoría Proptech.">
+    <meta name="keywords" content="geointeligencia inmobiliaria, especialista proptech, arquitecto, tasador especialista, peritaje, valoración con IA, gustavo franco, santiago, chile">
     <meta name="author" content="Gustavo Franco">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
             --verde-acento: #D8EE7D;     /* Lime Green */
             --gris-neutro: #333333;     /* Texto Principal */
             --blanco-puro: #FFFFFF;     /* Fondos/Elementos */
-            --gris-claro: #F0F4F8;      /* Fondos/Separadores */
+            --gris-claro: #F0F4F8;     /* Fondos/Separadores */
         }
 
         /* Reset básico y estilos generales */
@@ -155,6 +155,19 @@
         .nav-menu a.active {
             color: var(--verde-principal);
         }
+
+        /* --- NUEVO ESTILO PARA ENLACE EXTERNO --- */
+        .nav-menu a.external-link {
+            font-weight: 700;
+            color: var(--verde-principal);
+        }
+        .nav-menu a.external-link:hover {
+             color: var(--verde-secundario);
+        }
+         .nav-menu a.external-link::after {
+            background-color: var(--verde-acento);
+        }
+
 
         .mobile-menu {
             display: none;
@@ -295,6 +308,29 @@
         .home-portfolio-item .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 2rem 1rem 1rem 1rem; text-align: left; transition: opacity 0.3s ease; }
         .home-portfolio-item .overlay h4 { color: white; font-weight: 700; }
         
+        /* --- NUEVA SECCIÓN PROPTECH --- */
+        .proptech-section {
+            background-color: var(--blanco-puro);
+            text-align: center;
+        }
+        .proptech-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 20px;
+            background: linear-gradient(145deg, var(--blanco-puro), var(--gris-claro));
+        }
+        .proptech-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        .proptech-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+
         /* Estilos de Páginas */
         .page-header {
             background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-secundario) 100%);
@@ -324,7 +360,6 @@
         /* Servicios, Portafolio, Oportunidades */
         .service-section, .portfolio-category { margin-bottom: 4rem; }
         
-        /* --- AJUSTE --- Estilo para alinear el título del servicio a la izquierda */
         .service-section > .section-title {
             text-align: left;
             margin-bottom: 2rem;
@@ -425,7 +460,6 @@
         /* Responsive */
         @media (max-width: 900px) {
             .contact-layout { grid-template-columns: 1fr; }
-            /* --- AJUSTE --- Hacer que la imagen del servicio se ponga arriba en móvil */
             .service-layout { flex-direction: column; }
             .service-image { width: 100%; height: 250px; object-fit: cover; margin-bottom: 2rem; }
         }
@@ -445,7 +479,7 @@
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo-container">
-                <img src="images/logo-gustavo-franco.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
+                <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco.svg" alt="Gustavo Franco Logo" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/FFFFFF/1E5128?text=Gustavo+Franco';">
             </a>
             <ul class="nav-menu" id="main-nav-menu">
                 </ul>
@@ -472,7 +506,12 @@
         
         document.addEventListener('DOMContentLoaded', () => {
             fetch('data.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(siteContent => {
                     window.siteContent = siteContent;
                     populateAllSections(siteContent);
@@ -482,8 +521,8 @@
                     window.addEventListener('hashchange', () => showPageFromURL(siteContent));
                 })
                 .catch(error => {
-                    console.error("Error al cargar el archivo data.json:", error);
-                    document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio.</h2>';
+                    console.error("Error al cargar o procesar el archivo data.json:", error);
+                    document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio. Por favor, revise la consola.</h2>';
                 });
         });
         
@@ -551,20 +590,31 @@
              window.location.hash = path;
              const navMenu = document.getElementById('main-nav-menu');
              if (navMenu.classList.contains('show')) {
-               navMenu.classList.remove('show');
+                navMenu.classList.remove('show');
              }
         }
 
         // --- FUNCIONES DE RENDERIZADO ---
         function populateNav({ menu }) {
             const navMenu = document.getElementById('main-nav-menu');
-            if(navMenu) navMenu.innerHTML = menu.map(item => `<li><a href="${item.href}">${item.name}</a></li>`).join('');
+            if(navMenu) {
+                navMenu.innerHTML = menu.map(item => {
+                    const isExternal = item.isExternal || false;
+                    const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+                    const cssClass = isExternal ? 'class="external-link"' : '';
+                    const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
+                    return `<li><a href="${item.href}" ${cssClass} ${target} ${clickHandler}>${item.name}</a></li>`;
+                }).join('');
+            }
+             // Re-attach internal navigation listeners
             document.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
+                if (!link.classList.contains('external-link')) {
+                    link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
+                }
             });
         }
 
-        function populateHome({ home, portfolio, blog }) {
+        function populateHome({ home, portfolio, blog, proptech_section }) {
             const container = document.getElementById('home');
             if (!container) return;
             container.innerHTML = `
@@ -573,10 +623,14 @@
                         <h1>${home.hero.title}</h1>
                         <p class="subtitle">${home.hero.subtitle}</p>
                         <p class="support-text">${home.hero.supportText}</p>
-                        <a href="#services" class="cta-button" onclick="navigateTo(event, '#services')">${home.hero.ctaButton}</a>
+                        <a href="#services" class="cta-button">${home.hero.ctaButton}</a>
                     </div>
                 </section>
                 <section id="home-solutions" class="home-solutions"><div class="container" id="home-solutions-container"></div></section>
+                
+                <!-- NUEVO CONTENEDOR PARA PROPTECH -->
+                <section id="proptech-section-container"></section>
+
                 <section class="home-portfolio"><div class="container" id="home-portfolio-container"></div></section>
                 <section id="latest-post-section" style="background-color: var(--gris-claro);"><div class="container" id="latest-post-container"></div></section>
             `;
@@ -592,6 +646,22 @@
                     </div>`).join('')}
                 </div>`;
             
+            // --- CÓDIGO PARA POBLAR LA NUEVA SECCIÓN ---
+            const proptechContainer = document.getElementById('proptech-section-container');
+            if (proptechContainer && proptech_section) {
+                 proptechContainer.innerHTML = `
+                    <div class="proptech-section">
+                        <div class="container">
+                            <div class="proptech-content">
+                                <h2 class="section-title" style="font-size: 2rem;">${proptech_section.title}</h2>
+                                <p>${proptech_section.text}</p>
+                                <a href="${proptech_section.buttonUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">${proptech_section.buttonText}</a>
+                            </div>
+                        </div>
+                    </div>
+                 `;
+            }
+
             const portfolioContainer = document.getElementById('home-portfolio-container');
             const featuredProjects = portfolio.categories.flatMap(c => c.projects).slice(0, 4);
             portfolioContainer.innerHTML = `<h2 class="section-title">${home.featuredPortfolio.title}</h2>
@@ -607,7 +677,7 @@
             const latestPost = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
             if (latestPost) {
                 const latestPostHTML = createPostHTML(latestPost, true);
-                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
+                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div class="blog-grid" onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
             }
         }
         
@@ -639,7 +709,6 @@
                 </div></main>`;
         }
         
-        // --- FUNCIÓN ACTUALIZADA ---
         function populateServices({ services }) {
             const container = document.getElementById('services');
             if(container) container.innerHTML = `
@@ -724,9 +793,14 @@
             if(footerEl) footerEl.innerHTML = `
                 <div class="container footer-content">
                     <a href="#home" class="logo-container">
-                        <img src="images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image">
+                        <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/333333/FFFFFF?text=Gustavo+Franco';">
                     </a>
-                    <div class="footer-links"><ul>${menu.map(item => `<li><a href="${item.href}" onclick="navigateTo(event, '${item.href}')">${item.name}</a></li>`).join('')}</ul></div>
+                    <div class="footer-links"><ul>${menu.map(item => {
+                         const isExternal = item.isExternal || false;
+                         const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+                         const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
+                         return `<li><a href="${item.href}" ${target} ${clickHandler}>${item.name}</a></li>`
+                    }).join('')}</ul></div>
                     <div class="footer-contact"><ul><li>${contact.email}</li><li>${contact.phone}</li><li><strong>Cobertura:</strong> ${contact.coverage}</li></ul></div>
                 </div>
                 <div class="footer-bottom"><p>${footer.copyright}</p></div>`;
@@ -743,10 +817,19 @@
              if (post.images && post.images.length > 0) {
                  mediaHTML = `<div class="blog-post-media"><img src="${post.images[0]}" alt="Imagen de artículo: ${post.title}" onerror="this.onerror=null;this.src='https://placehold.co/1200x675/1E5128/FFFFFF?text=Blog';"></div>`;
              }
-            const clickAction = isHomepage ? `MapsTo(event, '#blog')` : `openModal('${post.id}', 'blog')`;
+            const clickAction = isHomepage ? `navigateTo(event, '#blog')` : `openModal('${post.id}', 'blog')`;
             const content = `<p>${post.excerpt}</p><span class="read-more-btn">Leer Más →</span>`;
             
-            return `<article class="${isHomepage ? 'latest-post-card' : 'blog-post'}" onclick="${clickAction}">${mediaHTML}<div class="blog-post-content"><h3 class="blog-post-title">${post.title}</h3><p class="blog-post-date">${new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${content}</div></div></article>`;
+            const containerClass = isHomepage ? 'latest-post-card' : 'blog-post';
+
+            return `<article class="${containerClass}" onclick="${isHomepage ? "navigateTo(event, '#blog')" : `openModal('${post.id}', 'blog')`}">
+                        ${mediaHTML}
+                        <div class="blog-post-content">
+                            <h3 class="blog-post-title">${post.title}</h3>
+                            <p class="blog-post-date">${new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                            <div class="blog-post-text">${content}</div>
+                        </div>
+                    </article>`;
         }
         
         function openModal(id, type) {
@@ -783,11 +866,11 @@
                 contactButton = `<button class="cta-button" style="margin-top:1.5rem;" onclick="prefillContactForm('${data.title}')">${p.buttonText}</button>`;
             } else if (type === 'blog') {
                  if (data.videoUrl) {
-                     mediaHTML = `<div class="blog-post-media"><iframe src="${data.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+                      mediaHTML = `<div class="blog-post-media"><iframe src="${data.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
                  } else if (data.images && data.images.length > 1) {
-                     mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${data.images.map(src => `<div class="carousel-slide"><img src="${src}" alt="Imagen del artículo: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
+                      mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${data.images.map(src => `<div class="carousel-slide"><img src="${src}" alt="Imagen del artículo: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
                  } else if (data.images && data.images.length === 1) {
-                     mediaHTML = `<div class="modal-images-grid" style="grid-template-columns: 1fr;"><img src="${data.images[0]}" alt="Imagen del artículo: ${data.title}" style="height: auto; max-height: 400px;"></div>`;
+                      mediaHTML = `<div class="modal-images-grid" style="grid-template-columns: 1fr;"><img src="${data.images[0]}" alt="Imagen del artículo: ${data.title}" style="height: auto; max-height: 400px;"></div>`;
                  }
                 detailsHTML = `<p class="blog-post-date" style="text-align:center;">${new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${data.fullContent}</div>`;
             }
@@ -853,3 +936,4 @@
     </script>
 </body>
 </html>
+
