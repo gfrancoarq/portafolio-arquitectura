@@ -6,7 +6,8 @@
     { "name": "Portafolio", "href": "#portfolio" },
     { "name": "Oportunidades", "href": "#investment-opportunities" },
     { "name": "Blog", "href": "#blog" },
-    { "name": "Contacto", "href": "#contact" }
+    { "name": "Contacto", "href": "#contact" },
+    { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
   ],
   "home": {
     "hero": {
@@ -29,10 +30,16 @@
       "buttonText": "Ver Portafolio Completo"
     }
   },
+  "proptech_section": {
+    "title": "Innovación y Futuro: Presentando AceleradorTech",
+    "text": "Como la evolución natural de mi carrera, he fundado AceleradorTech, un spin-off tecnológico enfocado en aplicar geointeligencia e IA para identificar oportunidades de inversión, analizar el potencial de los terrenos y maximizar la rentabilidad de los activos inmobiliarios.",
+    "buttonText": "Descubrir AceleradorTech",
+    "buttonUrl": "http://aceleradortech.com"
+  },
   "about": {
     "pageTitle": "Visión Estratégica, Dominio Técnico y Rigor",
     "profileImageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil-gfe-2025.png",
-    "profileText": "Gustavo Franco es el arquitecto y estratega que lidera la firma. Como socio estratégico, fusiona el rigor técnico de la arquitectura con la visión aguda de las finanzas, potenciando un profundo \"conocimiento de dominio\" de más de una década con ciencia de datos e inteligencia artificial. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones de inversión. La misión de la firma es liderar la nueva generación de la valoración de activos, combinando el rigor técnico del peritaje con el poder de la tecnología.",
+    "profileText": "Gustavo Franco es Especialista en Geointeligencia Inmobiliaria, Arquitecto y MBA. Su misión es fusionar más de una década de \"conocimiento de dominio\" con ciencia de datos e IA para transformar datos complejos en decisiones de inversión seguras y rentables. Esta visión culmina con la fundación de AceleradorTech, su spin-off tecnológico donde desarrolla herramientas de análisis predictivo para el sector. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones.",
     "linkedinText": "Para conocer la trayectoria profesional de nuestro fundador en detalle, puede visitar su perfil en <a href='https://www.linkedin.com/in/gustavfranco/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.",
     "kpiTitle": "Indicadores Clave",
     "kpis": [
@@ -53,17 +60,17 @@
     "formation": {
       "title": "Formación y Competencias Estratégicas",
       "academic": [ "MBA - Master in Business Administration, IEDE Business School", "Arquitecto, Universidad Autónoma de Chile", "Data Science con Python, OpenBoxCode Sence", "Diplomado en Tasación Inmobiliaria, Universidad de Chile", "Diplomado en Finanzas y Riesgo Financiero, USACH" ],
-      "skills": [ "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Ciencia de Datos Aplicada (Python, Tableau, Excel)", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
+      "skills": [ "Geointeligencia Inmobiliaria (Location Intelligence)", "Desarrollo de Modelos Predictivos (IA/ML)", "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
     }
   },
   "services": {
     "pageTitle": "Servicios Especializados",
     "subtitle": "Soluciones que combinan el rigor técnico del peritaje con la innovación de la inteligencia artificial para entregar resultados superiores.",
     "list": [
-      { "id": "peritaje", "title": "Tasaciones Especializadas y Peritajes", "description": "Proporcionamos análisis objetivos, detallados y fundamentados para la resolución de disputas de valor en contextos judiciales y extrajudiciales. Nuestra metodología asegura informes robustos y defendibles.", "details": ["Peritajes para litigios (divorcios, herencias, disputas comerciales).", "Tasaciones de alta complejidad para activos únicos.", "Análisis de 'mejor y mayor uso' para maximizar valor.", "Contra-informes y revisión de tasaciones de terceros."], "imageUrl": "http://googleusercontent.com/image_generation_content/11" },
-      { "id": "avm", "title": "Data Science y Modelos Predictivos", "description": "Creamos modelos de valoración automatizada (AVM) a medida, utilizando IA y Machine Learning para procesar grandes volúmenes de datos y entregar valoraciones precisas y en tiempo real.", "details": ["Diseño y construcción de AVMs para carteras de activos.", "Integración de datos geoespaciales y de mercado no tradicionales.", "Análisis de tendencias y proyecciones de valor.", "Optimización de portafolios de inversión inmobiliaria."], "imageUrl": "http://googleusercontent.com/image_generation_content/12" },
-      { "id": "consultoria", "title": "Consultoría Estratégica y Proptech", "description": "Asesoramos a desarrolladores e inversionistas utilizando herramientas de IA para optimizar las decisiones desde la fase más temprana de un proyecto.", "details": ["Análisis automatizado de normativas y estudios de cabida.", "Estimación de potencial de rentabilidad y riesgos de desarrollo.", "Estrategias de adquisición de terrenos basadas en datos.", "Implementación de soluciones Proptech en empresas inmobiliarias."], "imageUrl": "http://googleusercontent.com/image_generation_content/13" },
-      { "id": "arquitectura", "title": "Arquitectura y Gestión de Activos Inmobiliarios", "description": "Más allá del diseño, gestionamos cada proyecto como la creación de un activo valioso. Aplicamos el mismo rigor estratégico a proyectos residenciales y comerciales, asegurando no solo la calidad y la estética, sino también la optimización de su inversión.", "details": ["Diseño de viviendas personalizadas y funcionales.", "Regularización de propiedades y saneamiento de títulos (OGUC).", "Gestión integral de proyectos de remodelación y ampliación.", "Inspección Técnica de Obras (ITO) para asegurar la calidad constructiva."], "imageUrl": "http://googleusercontent.com/image_generation_content/14" }
+      { "id": "peritaje", "title": "Tasaciones Especializadas y Peritajes", "description": "Proporcionamos análisis objetivos, detallados y fundamentados para la resolución de disputas de valor en contextos judiciales y extrajudiciales. Nuestra metodología asegura informes robustos y defendibles.", "details": ["Peritajes para litigios (divorcios, herencias, disputas comerciales).", "Tasaciones de alta complejidad para activos únicos.", "Análisis de 'mejor y mayor uso' para maximizar valor.", "Contra-informes y revisión de tasaciones de terceros."], "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop" },
+      { "id": "avm", "title": "Data Science y Modelos Predictivos", "description": "Creamos modelos de valoración automatizada (AVM) a medida, utilizando IA y Machine Learning para procesar grandes volúmenes de datos y entregar valoraciones precisas y en tiempo real.", "details": ["Diseño y construcción de AVMs para carteras de activos.", "Integración de datos geoespaciales y de mercado no tradicionales.", "Análisis de tendencias y proyecciones de valor.", "Optimización de portafolios de inversión inmobiliaria."], "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
+      { "id": "consultoria", "title": "Consultoría Estratégica y Proptech", "description": "Asesoramos a desarrolladores e inversionistas utilizando herramientas de IA para optimizar las decisiones desde la fase más temprana de un proyecto.", "details": ["Análisis automatizado de normativas y estudios de cabida.", "Estimación de potencial de rentabilidad y riesgos de desarrollo.", "Estrategias de adquisición de terrenos basadas en datos.", "Implementación de soluciones Proptech en empresas inmobiliarias."], "imageUrl": "https://images.unsplash.com/photo-1631160215949-b347d48d23a7?q=80&w=2070&auto=format&fit=crop" },
+      { "id": "arquitectura", "title": "Arquitectura y Gestión de Activos Inmobiliarios", "description": "Más allá del diseño, gestionamos cada proyecto como la creación de un activo valioso. Aplicamos el mismo rigor estratégico a proyectos residenciales y comerciales, asegurando no solo la calidad y la estética, sino también la optimización de su inversión.", "details": ["Diseño de viviendas personalizadas y funcionales.", "Regularización de propiedades y saneamiento de títulos (OGUC).", "Gestión integral de proyectos de remodelación y ampliación.", "Inspección Técnica de Obras (ITO) para asegurar la calidad constructiva."], "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop" }
     ]
   },
   "portfolio": {
@@ -71,9 +78,9 @@
     "subtitle": "Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.",
     "categories": [
       { "title": "Tecnología y Modelado de Datos", "projects": [
-        { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", "modalContent": {
+        { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop", "modalContent": {
           "challenge": "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.",
-          "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la consultora externa Colliers.",
+          "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la auditora financiera Deloitte.",
           "images": ["https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"]
         }},
         { "id": "tesis-3d", "title": "Visualización 3D de Valores de Suelo", "shortDesc": "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", "imageUrl": "https://images.unsplash.com/photo-1604398191248-7394a49c4c45?q=80&w=2069&auto=format&fit=crop", "modalContent": {
@@ -154,3 +161,4 @@
     "copyright": "© 2025 | Gustavo Franco. Todos los derechos reservados."
   }
 }
+
