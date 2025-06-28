@@ -9,13 +9,14 @@
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
   ],
-  "home": {
-    "hero": {
-      "title": "CREAMOS ACTIVOS. BLINDAMOS DECISIONES.",
-      "subtitle": "El Futuro de la Valoración: Peritaje Técnico y Estrategia Digital",
-      "supportText": "Combinamos el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.",
-      "ctaButton": "Explore Nuestras Soluciones"
-    },
+ "home": {
+  "hero": {
+    "title": "Geointeligencia Inmobiliaria: Transformando datos en inversiones estratégicas.",
+    "subtitle": "El Futuro de la Valoración: Peritaje Técnico y Modelos Predictivos con IA.",
+    "supportText": "Combinamos el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.",
+    "ctaButton": "Explore Nuestras Soluciones"
+  }
+}
     "solutions": {
       "title": "Soluciones Estratégicas",
       "cards": [
