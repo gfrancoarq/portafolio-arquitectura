@@ -9,14 +9,13 @@
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
   ],
- "home": {
-  "hero": {
-    "title": "Geointeligencia Inmobiliaria: Transformando datos en inversiones estratégicas.",
-    "subtitle": "El Futuro de la Valoración: Peritaje Técnico y Modelos Predictivos con IA.",
-    "supportText": "Combinamos el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.",
-    "ctaButton": "Explore Nuestras Soluciones"
-  }
-}
+  "home": {
+    "hero": {
+      "title": "Geointeligencia Inmobiliaria: Transformando datos en inversiones estratégicas.",
+      "subtitle": "El Futuro de la Valoración: Peritaje Técnico y Modelos Predictivos con IA.",
+      "supportText": "Combinamos el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.",
+      "ctaButton": "Explore Nuestras Soluciones"
+    },
     "solutions": {
       "title": "Soluciones Estratégicas",
       "cards": [
@@ -64,48 +63,48 @@
       "skills": [ "Geointeligencia Inmobiliaria (Location Intelligence)", "Desarrollo de Modelos Predictivos (IA/ML)", "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
     }
   },
-"services": {
-  "pageTitle": "Nuestros Servicios",
-  "subtitle": "Potenciamos la arquitectura, valoración y gestión de activos con Geointeligencia y Data Science. Cada servicio tradicional se eleva a un nuevo estándar de precisión y rentabilidad.",
-  "list": [
-    {
-      "id": "estrategia-ia",
-      "title": "Consultoría Estratégica y Modelos Predictivos",
-      "description": "Utilizamos Inteligencia Artificial y Data Science para transformar datos complejos en oportunidades de inversión claras y decisiones estratégicas. Ideal para desarrolladores e inversionistas que buscan una ventaja competitiva.",
-      "details": [
-        "Análisis de viabilidad y potencial constructivo con IA.",
-        "Desarrollo de Modelos de Valoración a medida (AVM).",
-        "Identificación de 'hotspots' de crecimiento y zonas de riesgo.",
-        "Estrategias de adquisición de terrenos basadas en datos."
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-    },
-    {
-      "id": "peritaje-avanzado",
-      "title": "Tasaciones, Peritajes y Valoración Fundamentada",
-      "description": "Combinamos el rigor técnico del peritaje tradicional con análisis de datos avanzados para entregar informes de valoración robustos, defendibles y de máxima precisión, incluso en los casos más complejos.",
-      "details": [
-        "Peritajes Judiciales (herencias, divorcios, litigios).",
-        "Tasaciones de alta complejidad para banca e inversionistas.",
-        "Contra-informes y auditoría de tasaciones de terceros.",
-        "Análisis de 'mejor y mayor uso' para maximizar el valor."
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop"
-    },
-    {
-      "id": "arquitectura-gestion",
-      "title": "Arquitectura y Gestión Integral de Activos",
-      "description": "Abordamos cada proyecto, desde el diseño hasta la regularización, como la creación de un activo de alto rendimiento. Nuestra gestión se enfoca en la calidad, la eficiencia y la maximización del valor patrimonial a largo plazo.",
-      "details": [
-        "Diseño arquitectónico residencial y comercial.",
-        "Regularización de propiedades y saneamiento de títulos (OGUC).",
-        "Gestión e Inspección Técnica de Obras (ITO).",
-        "Proyectos de remodelación y ampliación estratégica."
-      ],
-      "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop"
-    }
-  ]
-},
+  "services": {
+    "pageTitle": "Nuestros Servicios",
+    "subtitle": "Potenciamos la arquitectura, valoración y gestión de activos con Geointeligencia y Data Science. Cada servicio tradicional se eleva a un nuevo estándar de precisión y rentabilidad.",
+    "list": [
+      {
+        "id": "estrategia-ia",
+        "title": "Consultoría Estratégica y Modelos Predictivos",
+        "description": "Utilizamos Inteligencia Artificial y Data Science para transformar datos complejos en oportunidades de inversión claras y decisiones estratégicas. Ideal para desarrolladores e inversionistas que buscan una ventaja competitiva.",
+        "details": [
+          "Análisis de viabilidad y potencial constructivo con IA.",
+          "Desarrollo de Modelos de Valoración a medida (AVM).",
+          "Identificación de 'hotspots' de crecimiento y zonas de riesgo.",
+          "Estrategias de adquisición de terrenos basadas en datos."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "id": "peritaje-avanzado",
+        "title": "Tasaciones, Peritajes y Valoración Fundamentada",
+        "description": "Combinamos el rigor técnico del peritaje tradicional con análisis de datos avanzados para entregar informes de valoración robustos, defendibles y de máxima precisión, incluso en los casos más complejos.",
+        "details": [
+          "Peritajes Judiciales (herencias, divorcios, litigios).",
+          "Tasaciones de alta complejidad para banca e inversionistas.",
+          "Contra-informes y auditoría de tasaciones de terceros.",
+          "Análisis de 'mejor y mayor uso' para maximizar el valor."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "id": "arquitectura-gestion",
+        "title": "Arquitectura y Gestión Integral de Activos",
+        "description": "Abordamos cada proyecto, desde el diseño hasta la regularización, como la creación de un activo de alto rendimiento. Nuestra gestión se enfoca en la calidad, la eficiencia y la maximización del valor patrimonial a largo plazo.",
+        "details": [
+          "Diseño arquitectónico residencial y comercial.",
+          "Regularización de propiedades y saneamiento de títulos (OGUC).",
+          "Gestión e Inspección Técnica de Obras (ITO).",
+          "Proyectos de remodelación y ampliación estratégica."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop"
+      }
+    ]
+  },
   "portfolio": {
     "pageTitle": "Portafolio de Proyectos",
     "subtitle": "Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.",
@@ -194,4 +193,3 @@
     "copyright": "© 2025 | Gustavo Franco. Todos los derechos reservados."
   }
 }
-
