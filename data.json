@@ -64,16 +64,48 @@
       "skills": [ "Geointeligencia Inmobiliaria (Location Intelligence)", "Desarrollo de Modelos Predictivos (IA/ML)", "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
     }
   },
-  "services": {
-    "pageTitle": "Servicios Especializados",
-    "subtitle": "Soluciones que combinan el rigor técnico del peritaje con la innovación de la inteligencia artificial para entregar resultados superiores.",
-    "list": [
-      { "id": "peritaje", "title": "Tasaciones Especializadas y Peritajes", "description": "Proporcionamos análisis objetivos, detallados y fundamentados para la resolución de disputas de valor en contextos judiciales y extrajudiciales. Nuestra metodología asegura informes robustos y defendibles.", "details": ["Peritajes para litigios (divorcios, herencias, disputas comerciales).", "Tasaciones de alta complejidad para activos únicos.", "Análisis de 'mejor y mayor uso' para maximizar valor.", "Contra-informes y revisión de tasaciones de terceros."], "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop" },
-      { "id": "avm", "title": "Data Science y Modelos Predictivos", "description": "Creamos modelos de valoración automatizada (AVM) a medida, utilizando IA y Machine Learning para procesar grandes volúmenes de datos y entregar valoraciones precisas y en tiempo real.", "details": ["Diseño y construcción de AVMs para carteras de activos.", "Integración de datos geoespaciales y de mercado no tradicionales.", "Análisis de tendencias y proyecciones de valor.", "Optimización de portafolios de inversión inmobiliaria."], "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
-      { "id": "consultoria", "title": "Consultoría Estratégica y Proptech", "description": "Asesoramos a desarrolladores e inversionistas utilizando herramientas de IA para optimizar las decisiones desde la fase más temprana de un proyecto.", "details": ["Análisis automatizado de normativas y estudios de cabida.", "Estimación de potencial de rentabilidad y riesgos de desarrollo.", "Estrategias de adquisición de terrenos basadas en datos.", "Implementación de soluciones Proptech en empresas inmobiliarias."], "imageUrl": "https://images.unsplash.com/photo-1631160215949-b347d48d23a7?q=80&w=2070&auto=format&fit=crop" },
-      { "id": "arquitectura", "title": "Arquitectura y Gestión de Activos Inmobiliarios", "description": "Más allá del diseño, gestionamos cada proyecto como la creación de un activo valioso. Aplicamos el mismo rigor estratégico a proyectos residenciales y comerciales, asegurando no solo la calidad y la estética, sino también la optimización de su inversión.", "details": ["Diseño de viviendas personalizadas y funcionales.", "Regularización de propiedades y saneamiento de títulos (OGUC).", "Gestión integral de proyectos de remodelación y ampliación.", "Inspección Técnica de Obras (ITO) para asegurar la calidad constructiva."], "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop" }
-    ]
-  },
+"services": {
+  "pageTitle": "Nuestros Servicios",
+  "subtitle": "Potenciamos la arquitectura, valoración y gestión de activos con Geointeligencia y Data Science. Cada servicio tradicional se eleva a un nuevo estándar de precisión y rentabilidad.",
+  "list": [
+    {
+      "id": "estrategia-ia",
+      "title": "Consultoría Estratégica y Modelos Predictivos",
+      "description": "Utilizamos Inteligencia Artificial y Data Science para transformar datos complejos en oportunidades de inversión claras y decisiones estratégicas. Ideal para desarrolladores e inversionistas que buscan una ventaja competitiva.",
+      "details": [
+        "Análisis de viabilidad y potencial constructivo con IA.",
+        "Desarrollo de Modelos de Valoración a medida (AVM).",
+        "Identificación de 'hotspots' de crecimiento y zonas de riesgo.",
+        "Estrategias de adquisición de terrenos basadas en datos."
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "peritaje-avanzado",
+      "title": "Tasaciones, Peritajes y Valoración Fundamentada",
+      "description": "Combinamos el rigor técnico del peritaje tradicional con análisis de datos avanzados para entregar informes de valoración robustos, defendibles y de máxima precisión, incluso en los casos más complejos.",
+      "details": [
+        "Peritajes Judiciales (herencias, divorcios, litigios).",
+        "Tasaciones de alta complejidad para banca e inversionistas.",
+        "Contra-informes y auditoría de tasaciones de terceros.",
+        "Análisis de 'mejor y mayor uso' para maximizar el valor."
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "arquitectura-gestion",
+      "title": "Arquitectura y Gestión Integral de Activos",
+      "description": "Abordamos cada proyecto, desde el diseño hasta la regularización, como la creación de un activo de alto rendimiento. Nuestra gestión se enfoca en la calidad, la eficiencia y la maximización del valor patrimonial a largo plazo.",
+      "details": [
+        "Diseño arquitectónico residencial y comercial.",
+        "Regularización de propiedades y saneamiento de títulos (OGUC).",
+        "Gestión e Inspección Técnica de Obras (ITO).",
+        "Proyectos de remodelación y ampliación estratégica."
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop"
+    }
+  ]
+},
   "portfolio": {
     "pageTitle": "Portafolio de Proyectos",
     "subtitle": "Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.",
