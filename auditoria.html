@@ -125,6 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         capturedName = document.getElementById('name').value;
         capturedEmail = document.getElementById('email').value;
+        
+        // SIMULACIÓN DE ENVÍO A BREVO
+        console.log('SIMULACIÓN: Enviando contacto a Brevo:', { name: capturedName, email: capturedEmail });
+        
         formView.classList.add('hidden');
         checklistView.classList.remove('hidden');
         renderChecklistItems();
@@ -247,12 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('email-report-btn').addEventListener('click', () => {
             const emailBody = generateEmailBody();
-            console.log("--- SIMULACIÓN DE EMAIL ---");
-            console.log(`Para: ${capturedEmail}`);
-            console.log("Asunto: Su Diagnóstico de Inversión Inmobiliaria");
-            console.log("--- CUERPO DEL EMAIL ---");
-            console.log(emailBody);
-            console.log("-------------------------");
+            const mailtoLink = `mailto:${capturedEmail}?subject=${encodeURIComponent('Su Diagnóstico de Inversión Inmobiliaria')}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
             document.getElementById('email-confirmation').classList.remove('hidden');
         });
     });
