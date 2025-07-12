@@ -57,237 +57,175 @@
         </div>
     </div>
 <script>
-// --- INICIO DE LA CONFIGURACIÓN ---
-const BREVO_API_KEY = 'AQUI_VA_SU_CLAVE_API_DE_BREVO'; // Reemplace con su clave API
-const BREVO_CONTACT_LIST_ID = 0; // Reemplace con el ID numérico de su lista "Leads Auditoría Inmobiliaria"
-// --- FIN DE LA CONFIGURACIÓN ---
+    const checklistData = [
+        { id: 1, title: "La Realidad vs. los Papeles", riskText: "Las escrituras dicen 120 m², pero la casa tiene 150 m². Esos 30 m² extra no son un regalo, son una construcción no declarada, una potencial multa y un problema gigante para una futura venta o crédito hipotecario.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Solicite los planos originales aprobados por la municipalidad y una copia de la recepción final. Compare las superficies con una medición láser en terreno. No confíe ciegamente en las escrituras." },
+        { id: 2, title: "El Fantasma de las Ampliaciones", riskText: "Esa terraza cerrada o ese segundo piso maravilloso podría estar violando las normas de adosamiento o rasantes. Su vecino podría demandarle y obligarle a demoler.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Obtenga el Certificado de Informaciones Previas (CIP) en la Dirección de Obras. Verifique las distancias a deslindes, alturas máximas y porcentajes de adosamiento permitidos. Cualquier estructura fuera de norma es un riesgo legal y financiero." },
+        { id: 3, title: "El Potencial que No Es", riskText: "Compra un terreno pensando en construir un edificio de 5 pisos, pero el Plan Regulador solo permite 3. Acaba de perder millones en potencial.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v-3m6 3v-3m0 0V7" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> El CIP es su documento clave. Analice en detalle la constructibilidad, ocupación de suelo, usos permitidos y cualquier declaratoria de utilidad pública. No asuma, verifique el potencial real." },
+        { id: 4, title: "Instalaciones y Vicios Ocultos", riskText: "La casa está recién pintada, pero las cañerías son antiguas, el sistema eléctrico no soporta la carga moderna o hay humedad oculta en los cimientos.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Contrate una inspección técnica con un especialista que utilice cámaras termográficas para detectar humedades y revise el tablero eléctrico. Pida las boletas de servicios de los últimos 12 meses para detectar consumos anómalos." },
+        { id: 5, title: "Afectación por Obras Públicas", riskText: "La propiedad es perfecta, pero no sabe que hay un plan para ensanchar la calle en 5 años y le van a expropiar parte del antejardín.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Consulte directamente en la Dirección de Obras Municipales (DOM) y en el SERVIU sobre los planes de inversión y vialidad para el sector. Verifique si el predio está afecto a expropiación." }
+    ];
+    const userSelections = {};
+    let capturedEmail = '', capturedName = '';
 
-const checklistData = [
-    { id: 1, title: "La Realidad vs. los Papeles", riskText: "Las escrituras dicen 120 m², pero la casa tiene 150 m². Esos 30 m² extra no son un regalo, son una construcción no declarada, una potencial multa y un problema gigante para una futura venta o crédito hipotecario.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Solicite los planos originales aprobados por la municipalidad y una copia de la recepción final. Compare las superficies con una medición láser en terreno. No confíe ciegamente en las escrituras." },
-    { id: 2, title: "El Fantasma de las Ampliaciones", riskText: "Esa terraza cerrada o ese segundo piso maravilloso podría estar violando las normas de adosamiento o rasantes. Su vecino podría demandarle y obligarle a demoler.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Obtenga el Certificado de Informaciones Previas (CIP) en la Dirección de Obras. Verifique las distancias a deslindes, alturas máximas y porcentajes de adosamiento permitidos. Cualquier estructura fuera de norma es un riesgo legal y financiero." },
-    { id: 3, title: "El Potencial que No Es", riskText: "Compra un terreno pensando en construir un edificio de 5 pisos, pero el Plan Regulador solo permite 3. Acaba de perder millones en potencial.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v-3m6 3v-3m0 0V7" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> El CIP es su documento clave. Analice en detalle la constructibilidad, ocupación de suelo, usos permitidos y cualquier declaratoria de utilidad pública. No asuma, verifique el potencial real." },
-    { id: 4, title: "Instalaciones y Vicios Ocultos", riskText: "La casa está recién pintada, pero las cañerías son antiguas, el sistema eléctrico no soporta la carga moderna o hay humedad oculta en los cimientos.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Contrate una inspección técnica con un especialista que utilice cámaras termográficas para detectar humedades y revise el tablero eléctrico. Pida las boletas de servicios de los últimos 12 meses para detectar consumos anómalos." },
-    { id: 5, title: "Afectación por Obras Públicas", riskText: "La propiedad es perfecta, pero no sabe que hay un plan para ensanchar la calle en 5 años y le van a expropiar parte del antejardín.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Consulte directamente en la Dirección de Obras Municipales (DOM) y en el SERVIU sobre los planes de inversión y vialidad para el sector. Verifique si el predio está afecto a expropiación." }
-];
+    document.addEventListener('DOMContentLoaded', () => {
+        const leadForm = document.getElementById('lead-form');
+        const formView = document.getElementById('form-view');
+        const checklistView = document.getElementById('checklist-view');
+        const checklistItemsContainer = document.getElementById('checklist-items');
+        const progressBar = document.getElementById('progress-bar');
+        const generateReportBtn = document.getElementById('generate-report-btn');
+        const reportSection = document.getElementById('report-section');
+        const consentCheckbox = document.getElementById('consent');
+        const submitBtn = document.getElementById('submit-btn');
 
-const userSelections = {};
-let capturedEmail = '', capturedName = '';
+        consentCheckbox.addEventListener('change', () => { submitBtn.disabled = !consentCheckbox.checked; });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const leadForm = document.getElementById('lead-form');
-    const formView = document.getElementById('form-view');
-    const checklistView = document.getElementById('checklist-view');
-    const checklistItemsContainer = document.getElementById('checklist-items');
-    const progressBar = document.getElementById('progress-bar');
-    const generateReportBtn = document.getElementById('generate-report-btn');
-    const reportSection = document.getElementById('report-section');
-    const consentCheckbox = document.getElementById('consent');
-    const submitBtn = document.getElementById('submit-btn');
-
-    consentCheckbox.addEventListener('change', () => { submitBtn.disabled = !consentCheckbox.checked; });
-
-    leadForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'PROCESANDO...';
-        capturedName = document.getElementById('name').value;
-        capturedEmail = document.getElementById('email').value;
-        
-        try {
-            await addContactToBrevo(capturedEmail, capturedName);
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            capturedName = document.getElementById('name').value;
+            capturedEmail = document.getElementById('email').value;
             formView.classList.add('hidden');
             checklistView.classList.remove('hidden');
             renderChecklistItems();
-        } catch (error) {
-            alert('Hubo un error al registrar el contacto. Por favor, intente de nuevo.');
-            submitBtn.disabled = false;
-            submitBtn.innerText = 'ACCEDER A LA AUDITORÍA AHORA';
-        }
-    });
+        });
 
-    async function addContactToBrevo(email, name) {
-        const url = 'https://api.brevo.com/v3/contacts';
-        const options = {
-            method: 'POST',
-            headers: {
-                'accept': 'application/json',
-                'content-type': 'application/json',
-                'api-key': BREVO_API_KEY
-            },
-            body: JSON.stringify({
-                email: email,
-                attributes: { 'NOMBRE': name },
-                listIds: [BREVO_CONTACT_LIST_ID]
-            })
-        };
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error('Error al agregar contacto a Brevo');
-        }
-        return await response.json();
-    }
-    
-    function renderChecklistItems() { /* ... (código sin cambios) ... */ }
-    function addOptionButtonListeners() { /* ... (código sin cambios) ... */ }
-    function updateProgress() { /* ... (código sin cambios) ... */ }
-
-    function generateHtmlReport() {
-        let reportHTML = `<div class="glass-card rounded-xl p-8"><h2 class="text-3xl font-black text-white text-center mb-6">Diagnóstico Preliminar de Riesgos</h2>`;
-        let recommendationsHTML = '';
-        let riskCount = 0, unknownCount = 0;
-
-        for (const itemId in userSelections) {
-            const { value, data } = userSelections[itemId];
-            if (value !== 'cumple') {
-                if (value === 'riesgo') riskCount++; else unknownCount++;
-                recommendationsHTML += `
-                    <div class="mt-6 pt-4 border-t border-gray-700/50">
-                        <h4 class="font-bold text-lg ${value === 'riesgo' ? 'text-red-400' : 'text-yellow-400'} flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                            Punto de Atención: ${data.title}
-                        </h4>
-                        <p class="text-gray-400 pl-8">${data.recommendation}</p>
+        function renderChecklistItems() {
+            checklistItemsContainer.innerHTML = '';
+            checklistData.forEach((item, index) => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'glass-card rounded-xl p-5 fade-in';
+                itemEl.id = `item-${item.id}`;
+                itemEl.style.animationDelay = `${index * 100}ms`;
+                itemEl.innerHTML = `
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 text-blue-400">${item.icon}</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">${item.title}</h3>
+                            <p class="text-gray-400 mt-1">${item.riskText}</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-end space-x-3" data-item-id="${item.id}">
+                        <button class="option-btn bg-red-600/80 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="riesgo">Riesgo Detectado</button>
+                        <button class="option-btn bg-gray-600/80 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="no-se">No Estoy Seguro</button>
+                        <button class="option-btn bg-green-600/80 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="cumple">Verificado</button>
                     </div>`;
-            }
+                checklistItemsContainer.appendChild(itemEl);
+            });
+            addOptionButtonListeners();
+        }
+
+        function addOptionButtonListeners() {
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const parentDiv = btn.parentElement;
+                    const card = parentDiv.closest('.glass-card');
+                    const itemId = parentDiv.getAttribute('data-item-id');
+                    const value = btn.getAttribute('data-value');
+                    userSelections[itemId] = { value: value, data: checklistData.find(d => d.id == itemId) };
+                    parentDiv.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected', 'ring-2', 'ring-white'));
+                    btn.classList.add('selected', 'ring-2', 'ring-white');
+                    card.classList.add('answered');
+                    card.style.borderColor = value === 'riesgo' ? '#F87171' : value === 'no-se' ? '#FBBF24' : '#34D399';
+                    updateProgress();
+                });
+            });
+        }
+
+        function updateProgress() {
+            const totalItems = checklistData.length;
+            const completedItems = Object.keys(userSelections).length;
+            const progress = (completedItems / totalItems) * 100;
+            progressBar.style.width = `${progress}%`;
+            if (completedItems === totalItems) { generateReportBtn.disabled = false; }
         }
         
-        const totalIssues = riskCount + unknownCount;
-        if (totalIssues > 0) {
-            reportHTML += `<p class="text-lg text-gray-300 text-center">Basado en su auditoría, ha identificado <strong>${totalIssues} punto(s) de atención</strong> que requieren un análisis profesional.</p>${recommendationsHTML}`;
-        } else {
-            reportHTML += `<p class="text-lg text-gray-300 text-center">¡Felicitaciones! Basado en su auditoría, la propiedad parece no tener riesgos evidentes. Una revisión profesional es el paso final para una inversión 100% segura.</p>`;
+        function generateHtmlReport() {
+            let reportHTML = `<div class="glass-card rounded-xl p-8"><h2 class="text-3xl font-black text-white text-center mb-6">Diagnóstico Preliminar de Riesgos</h2>`;
+            let recommendationsHTML = '';
+            let riskCount = 0, unknownCount = 0;
+
+            for (const itemId in userSelections) {
+                const { value, data } = userSelections[itemId];
+                if (value !== 'cumple') {
+                    if (value === 'riesgo') riskCount++; else unknownCount++;
+                    recommendationsHTML += `
+                        <div class="mt-6 pt-4 border-t border-gray-700/50">
+                            <h4 class="font-bold text-lg ${value === 'riesgo' ? 'text-red-400' : 'text-yellow-400'} flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                Punto de Atención: ${data.title}
+                            </h4>
+                            <p class="text-gray-400 pl-8">${data.recommendation}</p>
+                        </div>`;
+                }
+            }
+            
+            const totalIssues = riskCount + unknownCount;
+            if (totalIssues > 0) {
+                reportHTML += `<p class="text-lg text-gray-300 text-center">Basado en su auditoría, ha identificado <strong>${totalIssues} punto(s) de atención</strong> que requieren un análisis profesional.</p>${recommendationsHTML}`;
+            } else {
+                reportHTML += `<p class="text-lg text-gray-300 text-center">¡Felicitaciones! Basado en su auditoría, la propiedad parece no tener riesgos evidentes. Una revisión profesional es el paso final para una inversión 100% segura.</p>`;
+            }
+
+            reportHTML += `
+                <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                    <h3 class="text-xl font-bold text-white">¿Quiere cuantificar estos riesgos?</h3>
+                    <p class="text-gray-400 mt-2">Este diagnóstico es el primer paso. Una Auditoría de Inversión Profesional le entrega la certeza que necesita para negociar, descartar o proceder con su inversión.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="mailto:hola@gustavofranco.cl?subject=Solicitud de Auditoría Profesional" class="w-full sm:w-auto inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300">Agendar Consulta Estratégica</a>
+                        <button id="email-report-btn" class="w-full sm:w-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Enviar Diagnóstico a mi Correo</button>
+                    </div>
+                    <p id="email-confirmation" class="text-green-400 mt-4 text-sm hidden">¡Diagnóstico enviado a ${capturedEmail}!</p>
+                </div></div>`;
+            return reportHTML;
         }
 
-        reportHTML += `
-            <div class="mt-8 pt-6 border-t border-gray-700 text-center">
-                <h3 class="text-xl font-bold text-white">¿Quiere cuantificar estos riesgos?</h3>
-                <p class="text-gray-400 mt-2">Este diagnóstico es el primer paso. Una Auditoría de Inversión Profesional le entrega la certeza que necesita para negociar, descartar o proceder con su inversión.</p>
-                <div class="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="mailto:hola@gustavofranco.cl?subject=Solicitud de Auditoría Profesional" class="w-full sm:w-auto inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300">Agendar Consulta Estratégica</a>
-                    <button id="email-report-btn" class="w-full sm:w-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Enviar Diagnóstico a mi Correo</button>
-                </div>
-                <p id="email-confirmation" class="text-green-400 mt-4 text-sm hidden">¡Diagnóstico enviado a ${capturedEmail}!</p>
-            </div></div>`;
-        return reportHTML;
-    }
+        async function handleEmailReport() {
+            const emailBtn = document.getElementById('email-report-btn');
+            emailBtn.disabled = true;
+            emailBtn.innerText = 'Enviando...';
 
-    async function sendTransactionalEmail(htmlContent) {
-        const emailBtn = document.getElementById('email-report-btn');
-        emailBtn.disabled = true;
-        emailBtn.innerText = 'Enviando...';
-
-        const url = 'https://api.brevo.com/v3/smtp/email';
-        const options = {
-            method: 'POST',
-            headers: {
-                'accept': 'application/json',
-                'content-type': 'application/json',
-                'api-key': BREVO_API_KEY
-            },
-            body: JSON.stringify({
-                sender: { name: 'Gustavo Franco', email: 'hola@gustavofranco.cl' },
-                to: [{ email: capturedEmail, name: capturedName }],
-                subject: 'Su Diagnóstico de Inversión Inmobiliaria',
-                htmlContent: htmlContent
-            })
-        };
-
-        try {
-            const response = await fetch(url, options);
-            if (!response.ok) throw new Error('Error al enviar el email');
-            document.getElementById('email-confirmation').classList.remove('hidden');
-        } catch (error) {
-            alert('Hubo un error al enviar el email. Por favor, intente de nuevo.');
-        } finally {
-            emailBtn.disabled = false;
-            emailBtn.innerText = 'Enviar Diagnóstico a mi Correo';
-        }
-    }
-
-    generateReportBtn.addEventListener('click', () => {
-        const reportHTML = generateHtmlReport();
-        reportSection.innerHTML = reportHTML;
-        reportSection.classList.remove('hidden');
-        reportSection.scrollIntoView({ behavior: 'smooth' });
-
-        document.getElementById('email-report-btn').addEventListener('click', () => {
-             // Para el email, creamos una versión más simple del reporte en HTML
-            let emailHtmlBody = `<h1>Diagnóstico Preliminar de Inversión</h1><p>Hola ${capturedName},</p><p>Gracias por utilizar nuestra herramienta. A continuación, el resumen de su auditoría:</p>`;
+            let emailHtmlBody = `<div style="font-family: sans-serif; line-height: 1.6;"><h2>Diagnóstico Preliminar de Inversión</h2><p>Hola ${capturedName},</p><p>Gracias por utilizar nuestra herramienta. A continuación, el resumen de su auditoría:</p>`;
             const totalIssues = Object.values(userSelections).filter(s => s.value !== 'cumple').length;
             if (totalIssues > 0) {
-                emailHtmlBody += `<p>Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul>`;
+                emailHtmlBody += `<p>Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul style="list-style-type: none; padding-left: 0;">`;
                 for (const itemId in userSelections) {
                     const { value, data } = userSelections[itemId];
                     if (value !== 'cumple') {
-                        emailHtmlBody += `<li><strong>${data.title} (Estado: ${value}):</strong> ${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</li>`;
+                        emailHtmlBody += `<li style="margin-bottom: 1em;"><strong>${data.title} (Estado: ${value}):</strong> ${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</li>`;
                     }
                 }
                 emailHtmlBody += `</ul>`;
             } else {
                 emailHtmlBody += `<p><strong>¡Felicitaciones!</strong> No se detectaron riesgos evidentes en su análisis preliminar.</p>`;
             }
-            emailHtmlBody += `<p>Para cuantificar estos riesgos y tomar una decisión 100% informada, le invito a agendar una <strong>Consulta Estratégica</strong> respondiendo a este correo.</p><p>Saludos,<br>Gustavo Franco</p>`;
-            
-            sendTransactionalEmail(emailHtmlBody);
+            emailHtmlBody += `<p>Para cuantificar estos riesgos y tomar una decisión 100% informada, le invito a agendar una <strong>Consulta Estratégica</strong> respondiendo a este correo.</p><p>Saludos,<br>Gustavo Franco</p></div>`;
+
+            try {
+                const response = await fetch('/.netlify/functions/enviar-diagnostico', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: capturedName, email: capturedEmail, htmlReport: emailHtmlBody })
+                });
+                if (!response.ok) throw new Error('Error en el servidor al enviar el email');
+                document.getElementById('email-confirmation').classList.remove('hidden');
+            } catch (error) {
+                console.error("Error al enviar email:", error);
+                alert('Hubo un error al enviar el email. Por favor, intente de nuevo.');
+            } finally {
+                emailBtn.disabled = false;
+                emailBtn.innerText = 'Enviar Diagnóstico a mi Correo';
+            }
+        }
+
+        generateReportBtn.addEventListener('click', () => {
+            const reportHTML = generateHtmlReport();
+            reportSection.innerHTML = reportHTML;
+            reportSection.classList.remove('hidden');
+            reportSection.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('email-report-btn').addEventListener('click', handleEmailReport);
         });
     });
-    
-    // El resto de las funciones (renderChecklistItems, etc.) se pegan aquí sin cambios.
-    // Por brevedad, se omiten pero deben estar presentes en el archivo final.
-    // ... (pegar aquí el código de las funciones faltantes desde la versión anterior)
-    
-    // --- Pegar aquí el código completo de las funciones faltantes ---
-    function renderChecklistItems() {
-        checklistData.forEach((item, index) => {
-            const itemEl = document.createElement('div');
-            itemEl.className = 'glass-card rounded-xl p-5 fade-in';
-            itemEl.id = `item-${item.id}`;
-            itemEl.style.animationDelay = `${index * 100}ms`;
-            itemEl.innerHTML = `
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 text-blue-400">${item.icon}</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white">${item.title}</h3>
-                        <p class="text-gray-400 mt-1">${item.riskText}</p>
-                    </div>
-                </div>
-                <div class="mt-4 flex justify-end space-x-3" data-item-id="${item.id}">
-                    <button class="option-btn bg-red-600/80 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="riesgo">Riesgo Detectado</button>
-                    <button class="option-btn bg-gray-600/80 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="no-se">No Estoy Seguro</button>
-                    <button class="option-btn bg-green-600/80 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="cumple">Verificado</button>
-                </div>`;
-            checklistItemsContainer.appendChild(itemEl);
-        });
-        addOptionButtonListeners();
-    }
-
-    function addOptionButtonListeners() {
-        document.querySelectorAll('.option-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const parentDiv = btn.parentElement;
-                const card = parentDiv.closest('.glass-card');
-                const itemId = parentDiv.getAttribute('data-item-id');
-                const value = btn.getAttribute('data-value');
-                userSelections[itemId] = { value: value, data: checklistData.find(d => d.id == itemId) };
-                parentDiv.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected', 'ring-2', 'ring-white'));
-                btn.classList.add('selected', 'ring-2', 'ring-white');
-                card.classList.add('answered');
-                card.style.borderColor = value === 'riesgo' ? '#F87171' : value === 'no-se' ? '#FBBF24' : '#34D399';
-                updateProgress();
-            });
-        });
-    }
-
-    function updateProgress() {
-        const totalItems = checklistData.length;
-        const completedItems = Object.keys(userSelections).length;
-        const progress = (completedItems / totalItems) * 100;
-        progressBar.style.width = `${progress}%`;
-        if (completedItems === totalItems) { generateReportBtn.disabled = false; }
-    }
-    // --- Fin de las funciones pegadas ---
-
-});
 </script>
 </body>
 </html>
+
