@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría de Inversión Inmobiliaria | Gustavo Franco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .form-view {
+            background: linear-gradient(rgba(10, 20, 30, 0.8), rgba(10, 20, 30, 0.8)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+        .checklist-view {
+            background-color: #111827; /* Gris oscuro */
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease-in-out;
+        }
+        .glass-card.answered {
+            opacity: 0.6;
+            transform: scale(0.98);
+        }
+        .progress-bar-bg {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+        }
+        .option-btn {
+            transition: all 0.2s ease-in-out;
+        }
+        .option-btn.selected {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .custom-checkbox input { display: none; }
+        .custom-checkbox .checkmark { width: 20px; height: 20px; border: 2px solid #9CA3AF; border-radius: 4px; display: inline-block; position: relative; margin-right: 10px; cursor: pointer; }
+        .custom-checkbox input:checked + .checkmark { background-color: #34D399; border-color: #34D399; }
+        .custom-checkbox .checkmark:after { content: ""; position: absolute; display: none; left: 6px; top: 2px; width: 5px; height: 10px; border: solid white; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+        .custom-checkbox input:checked + .checkmark:after { display: block; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="app-container">
+        <!-- VISTA 1: FORMULARIO DE CAPTURA -->
+        <div id="form-view" class="form-view min-h-screen flex items-center justify-center p-4">
+            <div class="w-full max-w-lg text-center text-white p-8 rounded-xl glass-card fade-in">
+                <div class="flex justify-center mb-6">
+                    <svg width="60" height="60" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M75.9375 91.125C84.2344 91.125 91.125 84.2344 91.125 75.9375C91.125 67.6406 84.2344 60.75 75.9375 60.75C67.6406 60.75 60.75 67.6406 60.75 75.9375C60.75 84.2344 67.6406 91.125 75.9375 91.125Z" stroke="#9CA3AF" stroke-width="4" stroke-miterlimit="10"/><path d="M75.9375 60.75C75.9375 42.5859 61.1016 27.75 42.9375 27.75C24.7734 27.75 9.9375 42.5859 9.9375 60.75" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round"/><path d="M42.9375 27.75C42.9375 36.8438 46.5469 44.9766 52.4531 50.8828" stroke="#A7F3D0" stroke-width="4" stroke-miterlimit="10"/></svg>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-black mb-2">No compre a ciegas.</h1>
+                <p class="text-lg text-gray-300 mb-6">Acceda a nuestro Checklist Interactivo y descubra los 5 riesgos ocultos que pueden destruir su inversión inmobiliaria. Es gratis. Es estratégico.</p>
+                <form id="lead-form" class="space-y-4">
+                    <input type="text" id="name" placeholder="Su Nombre" class="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                    <input type="email" id="email" placeholder="Su Email Profesional" class="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                    <div class="py-2">
+                        <label class="custom-checkbox flex items-center justify-center text-sm text-gray-400"><input type="checkbox" id="consent" required><span class="checkmark"></span>Acepto recibir comunicaciones y análisis del sector.</label>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-4 rounded-md transition duration-300 disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>ACCEDER A LA AUDITORÍA AHORA</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- VISTA 2: CHECKLIST INTERACTIVO -->
+        <div id="checklist-view" class="checklist-view min-h-screen p-4 md:p-8 hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8 fade-in">
+                     <div class="flex justify-center mb-4"><svg width="50" height="50" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M75.9375 91.125C84.2344 91.125 91.125 84.2344 91.125 75.9375C91.125 67.6406 84.2344 60.75 75.9375 60.75C67.6406 60.75 60.75 67.6406 60.75 75.9375C60.75 84.2344 67.6406 91.125 75.9375 91.125Z" stroke="#9CA3AF" stroke-width="4" stroke-miterlimit="10"/><path d="M75.9375 60.75C75.9375 42.5859 61.1016 27.75 42.9375 27.75C24.7734 27.75 9.9375 42.5859 9.9375 60.75" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round"/><path d="M42.9375 27.75C42.9375 36.8438 46.5469 44.9766 52.4531 50.8828" stroke="#A7F3D0" stroke-width="4" stroke-miterlimit="10"/></svg></div>
+                    <h1 class="text-3xl md:text-4xl font-black text-white">Auditoría de Inversión Preliminar</h1>
+                    <p class="text-lg text-gray-400 mt-2 max-w-2xl mx-auto">Esta es su herramienta de pre-diagnóstico. Utilícela para evaluar una propiedad que esté considerando comprar o en la que planea invertir. Responda cada punto para generar un reporte instantáneo de riesgos y oportunidades.</p>
+                </div>
+                
+                <div class="w-full progress-bar-bg rounded-full h-2.5 mb-8 fade-in"><div id="progress-bar" class="bg-green-500 h-2.5 rounded-full progress-bar-fill" style="width: 0%"></div></div>
+                <div id="checklist-items" class="space-y-5"></div>
+                <div class="mt-10 text-center fade-in"><button id="generate-report-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300 text-xl disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>Generar mi Diagnóstico</button></div>
+                <div id="report-section" class="mt-12 hidden fade-in"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+const checklistData = [
+    { id: 1, title: "La Realidad vs. los Papeles", riskText: "Las escrituras dicen 120 m², pero la casa tiene 150 m². Esos 30 m² extra no son un regalo, son una construcción no declarada, una potencial multa y un problema gigante para una futura venta o crédito hipotecario.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Solicite los planos originales aprobados por la municipalidad y una copia de la recepción final. Compare las superficies con una medición láser en terreno. No confíe ciegamente en las escrituras." },
+    { id: 2, title: "El Fantasma de las Ampliaciones", riskText: "Esa terraza cerrada o ese segundo piso maravilloso podría estar violando las normas de adosamiento o rasantes. Su vecino podría demandarle y obligarle a demoler.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Obtenga el Certificado de Informaciones Previas (CIP) en la Dirección de Obras. Verifique las distancias a deslindes, alturas máximas y porcentajes de adosamiento permitidos. Cualquier estructura fuera de norma es un riesgo legal y financiero." },
+    { id: 3, title: "El Potencial que No Es", riskText: "Compra un terreno pensando en construir un edificio de 5 pisos, pero el Plan Regulador solo permite 3. Acaba de perder millones en potencial.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v-3m6 3v-3m0 0V7" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> El CIP es su documento clave. Analice en detalle la constructibilidad, ocupación de suelo, usos permitidos y cualquier declaratoria de utilidad pública. No asuma, verifique el potencial real." },
+    { id: 4, title: "Instalaciones y Vicios Ocultos", riskText: "La casa está recién pintada, pero las cañerías son antiguas, el sistema eléctrico no soporta la carga moderna o hay humedad oculta en los cimientos.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Contrate una inspección técnica con un especialista que utilice cámaras termográficas para detectar humedades y revise el tablero eléctrico. Pida las boletas de servicios de los últimos 12 meses para detectar consumos anómalos." },
+    { id: 5, title: "Afectación por Obras Públicas", riskText: "La propiedad es perfecta, pero no sabe que hay un plan para ensanchar la calle en 5 años y le van a expropiar parte del antejardín.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Consulte directamente en la Dirección de Obras Municipales (DOM) y en el SERVIU sobre los planes de inversión y vialidad para el sector. Verifique si el predio está afecto a expropiación." }
+];
+
+const userSelections = {};
+let capturedEmail = '';
+let capturedName = '';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const leadForm = document.getElementById('lead-form');
+    const formView = document.getElementById('form-view');
+    const checklistView = document.getElementById('checklist-view');
+    const checklistItemsContainer = document.getElementById('checklist-items');
+    const progressBar = document.getElementById('progress-bar');
+    const generateReportBtn = document.getElementById('generate-report-btn');
+    const reportSection = document.getElementById('report-section');
+    const consentCheckbox = document.getElementById('consent');
+    const submitBtn = document.getElementById('submit-btn');
+
+    consentCheckbox.addEventListener('change', () => { submitBtn.disabled = !consentCheckbox.checked; });
+
+    leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        capturedName = document.getElementById('name').value;
+        capturedEmail = document.getElementById('email').value;
+        formView.classList.add('hidden');
+        checklistView.classList.remove('hidden');
+        renderChecklistItems();
+    });
+
+    function renderChecklistItems() {
+        checklistData.forEach((item, index) => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'glass-card rounded-xl p-5 fade-in';
+            itemEl.id = `item-${item.id}`;
+            itemEl.style.animationDelay = `${index * 100}ms`;
+            itemEl.innerHTML = `
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 text-blue-400">${item.icon}</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">${item.title}</h3>
+                        <p class="text-gray-400 mt-1">${item.riskText}</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-end space-x-3" data-item-id="${item.id}">
+                    <button class="option-btn bg-red-600/80 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="riesgo">Riesgo Detectado</button>
+                    <button class="option-btn bg-gray-600/80 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="no-se">No Estoy Seguro</button>
+                    <button class="option-btn bg-green-600/80 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg" data-value="cumple">Verificado</button>
+                </div>`;
+            checklistItemsContainer.appendChild(itemEl);
+        });
+        addOptionButtonListeners();
+    }
+
+    function addOptionButtonListeners() {
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parentDiv = btn.parentElement;
+                const card = parentDiv.closest('.glass-card');
+                const itemId = parentDiv.getAttribute('data-item-id');
+                const value = btn.getAttribute('data-value');
+                userSelections[itemId] = { value: value, data: checklistData.find(d => d.id == itemId) };
+                parentDiv.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected', 'ring-2', 'ring-white'));
+                btn.classList.add('selected', 'ring-2', 'ring-white');
+                card.classList.add('answered');
+                card.style.borderColor = value === 'riesgo' ? '#F87171' : value === 'no-se' ? '#FBBF24' : '#34D399';
+                updateProgress();
+            });
+        });
+    }
+
+    function updateProgress() {
+        const totalItems = checklistData.length;
+        const completedItems = Object.keys(userSelections).length;
+        const progress = (completedItems / totalItems) * 100;
+        progressBar.style.width = `${progress}%`;
+        if (completedItems === totalItems) { generateReportBtn.disabled = false; }
+    }
+    
+    function generateEmailBody() {
+        let body = `Hola ${capturedName},\n\nGracias por utilizar nuestra herramienta de Auditoría de Inversión Preliminar. Aquí tienes un resumen de tu diagnóstico:\n\n`;
+        const totalIssues = Object.values(userSelections).filter(s => s.value !== 'cumple').length;
+
+        if (totalIssues > 0) {
+            body += `Se han identificado ${totalIssues} punto(s) de atención que requieren un análisis profesional:\n\n`;
+            for (const itemId in userSelections) {
+                const selection = userSelections[itemId];
+                if (selection.value !== 'cumple') {
+                    body += `* PUNTO CRÍTICO: ${selection.data.title} (Estado: ${selection.value})\n`;
+                    body += `  RECOMENDACIÓN: ${selection.data.recommendation.replace(/<strong>|<\/strong>/g, '')}\n\n`;
+                }
+            }
+        } else {
+            body += "¡Felicitaciones! Tu análisis preliminar no arrojó riesgos evidentes. Para una certeza total, el siguiente paso es una revisión profesional.\n\n";
+        }
+        
+        body += "Este diagnóstico es el primer paso. Si deseas cuantificar estos riesgos y tomar una decisión 100% informada, te invito a agendar una Consulta Estratégica conmigo.\n\n";
+        body += "Puedes hacerlo respondiendo a este correo o visitando mi sitio web.\n\n";
+        body += "Saludos cordiales,\n\nGustavo Franco\nArquitecto y Asesor Estratégico Inmobiliario\nwww.gustavofranco.cl";
+        return body;
+    }
+
+    generateReportBtn.addEventListener('click', () => {
+        let riskCount = 0, unknownCount = 0;
+        let reportHTML = `<div class="glass-card rounded-xl p-8"><h2 class="text-3xl font-black text-white text-center mb-6">Diagnóstico Preliminar de Riesgos</h2>`;
+        let recommendationsHTML = '';
+
+        for (const itemId in userSelections) {
+            const { value, data } = userSelections[itemId];
+            if (value !== 'cumple') {
+                if (value === 'riesgo') riskCount++; else unknownCount++;
+                recommendationsHTML += `
+                    <div class="mt-6 pt-4 border-t border-gray-700/50">
+                        <h4 class="font-bold text-lg ${value === 'riesgo' ? 'text-red-400' : 'text-yellow-400'} flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                            Punto de Atención: ${data.title}
+                        </h4>
+                        <p class="text-gray-400 pl-8">${data.recommendation}</p>
+                    </div>`;
+            }
+        }
+        
+        const totalIssues = riskCount + unknownCount;
+        if (totalIssues > 0) {
+            reportHTML += `<p class="text-lg text-gray-300 text-center">Basado en su auditoría, ha identificado <strong>${totalIssues} punto(s) de atención</strong> que requieren un análisis profesional.</p>${recommendationsHTML}`;
+        } else {
+            reportHTML += `<p class="text-lg text-gray-300 text-center">¡Felicitaciones! Basado en su auditoría, la propiedad parece no tener riesgos evidentes. Una revisión profesional es el paso final para una inversión 100% segura.</p>`;
+        }
+
+        reportHTML += `
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                <h3 class="text-xl font-bold text-white">¿Quiere cuantificar estos riesgos?</h3>
+                <p class="text-gray-400 mt-2">Este diagnóstico es el primer paso. Una Auditoría de Inversión Profesional le entrega la certeza que necesita para negociar, descartar o proceder con su inversión. Proteja su patrimonio.</p>
+                <div class="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="mailto:arquitecto@gustavofranco.cl?subject=Solicitud de Auditoría Profesional" class="w-full sm:w-auto inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition duration-300">Agendar Consulta Estratégica</a>
+                    <button id="email-report-btn" class="w-full sm:w-auto inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Enviar Diagnóstico a mi Correo</button>
+                </div>
+                <p id="email-confirmation" class="text-green-400 mt-4 text-sm hidden">¡Diagnóstico enviado a ${capturedEmail}!</p>
+                <p class="text-xs text-gray-500 mt-6">Gustavo Franco | arquitecto@gustavofranco.cl | +56 9 5810 1807</p>
+            </div></div>`;
+        
+        reportSection.innerHTML = reportHTML;
+        reportSection.classList.remove('hidden');
+        reportSection.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById('email-report-btn').addEventListener('click', () => {
+            const emailBody = generateEmailBody();
+            console.log("--- SIMULACIÓN DE EMAIL ---");
+            console.log(`Para: ${capturedEmail}`);
+            console.log("Asunto: Su Diagnóstico de Inversión Inmobiliaria");
+            console.log("--- CUERPO DEL EMAIL ---");
+            console.log(emailBody);
+            console.log("-------------------------");
+            document.getElementById('email-confirmation').classList.remove('hidden');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
