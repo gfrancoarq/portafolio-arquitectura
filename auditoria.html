@@ -71,8 +71,7 @@
         const leadForm = document.getElementById('lead-form');
         const consentCheckbox = document.getElementById('consent');
         const submitBtn = document.getElementById('submit-btn');
-        const generateReportBtn = document.getElementById('generate-report-btn');
-
+        
         if (consentCheckbox) {
             consentCheckbox.addEventListener('change', () => {
                 if(submitBtn) submitBtn.disabled = !consentCheckbox.checked;
@@ -80,27 +79,35 @@
         }
 
         if (leadForm) {
-            leadForm.addEventListener('submit', (e) => {
+            leadForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
+                if(submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = 'PROCESANDO...';
+                }
+                
                 capturedName = document.getElementById('name').value;
                 capturedEmail = document.getElementById('email').value;
-                document.getElementById('form-view').classList.add('hidden');
-                document.getElementById('checklist-view').classList.remove('hidden');
-                renderChecklistItems();
-            });
-        }
-        
-        if (generateReportBtn) {
-             generateReportBtn.addEventListener('click', () => {
-                const reportSection = document.getElementById('report-section');
-                const reportHTML = generateHtmlReport();
-                reportSection.innerHTML = reportHTML;
-                reportSection.classList.remove('hidden');
-                reportSection.scrollIntoView({ behavior: 'smooth' });
-                
-                const emailBtn = document.getElementById('email-report-btn');
-                if(emailBtn) {
-                    emailBtn.addEventListener('click', handleEmailReport);
+
+                try {
+                    // *** PASO 1: CAPTURA INMEDIATA DEL LEAD ***
+                    await fetch('/.netlify/functions/add-contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name: capturedName, email: capturedEmail })
+                    });
+                    
+                    document.getElementById('form-view').classList.add('hidden');
+                    document.getElementById('checklist-view').classList.remove('hidden');
+                    renderChecklistItems();
+
+                } catch (error) {
+                    console.error("Error al capturar lead:", error);
+                    alert('Hubo un error al registrar sus datos. Por favor, intente de nuevo.');
+                    if(submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'ACCEDER A LA AUDITORÍA AHORA';
+                    }
                 }
             });
         }
@@ -108,7 +115,9 @@
 
     function renderChecklistItems() {
         const checklistItemsContainer = document.getElementById('checklist-items');
+        const generateReportBtn = document.getElementById('generate-report-btn');
         if (!checklistItemsContainer) return;
+        
         checklistItemsContainer.innerHTML = '';
         checklistData.forEach((item, index) => {
             const itemEl = document.createElement('div');
@@ -131,6 +140,21 @@
             checklistItemsContainer.appendChild(itemEl);
         });
         addOptionButtonListeners();
+
+        if (generateReportBtn) {
+             generateReportBtn.addEventListener('click', () => {
+                const reportSection = document.getElementById('report-section');
+                const reportHTML = generateHtmlReport();
+                reportSection.innerHTML = reportHTML;
+                reportSection.classList.remove('hidden');
+                reportSection.scrollIntoView({ behavior: 'smooth' });
+                
+                const emailBtn = document.getElementById('email-report-btn');
+                if(emailBtn) {
+                    emailBtn.addEventListener('click', handleEmailReport);
+                }
+            });
+        }
     }
 
     function addOptionButtonListeners() {
@@ -223,7 +247,8 @@
         emailHtmlBody += `<p>Para cuantificar estos riesgos y tomar una decisión 100% informada, le invito a agendar una <strong>Consulta Estratégica</strong> respondiendo a este correo.</p><p>Saludos,<br>Gustavo Franco</p></div>`;
 
         try {
-            const response = await fetch('/.netlify/functions/enviar-email-brevo', {
+            // *** PASO 2: ENVÍO DEL REPORTE PERSONALIZADO ***
+            const response = await fetch('/.netlify/functions/send-report', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: capturedName, email: capturedEmail, htmlReport: emailHtmlBody })
