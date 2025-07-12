@@ -4,25 +4,22 @@
     { "name": "Quiénes Somos", "href": "#about" },
     { "name": "Servicios", "href": "#services" },
     { "name": "Portafolio", "href": "#portfolio" },
-    { "name": "Oportunidades", "href": "#investment-opportunities" },
-    { "name": "Blog", "href": "#blog" },
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
   ],
   "home": {
     "hero": {
-      "title": "Geointeligencia Inmobiliaria: Transformando datos en inversiones estratégicas.",
-      "subtitle": "El Futuro de la Valoración: Peritaje Técnico y Modelos Predictivos con IA.",
-      "supportText": "Combinamos el rigor técnico del peritaje con el poder de la tecnología y el análisis de datos para entregar certeza y maximizar el valor de su patrimonio.",
-      "ctaButton": "Explore Nuestras Soluciones"
+      "title": "Decisiones Inmobiliarias Basadas en Datos.",
+      "subtitle": "Transformamos la complejidad del mercado en certeza para su patrimonio.",
+      "supportText": "Combinamos una década de experiencia en arquitectura y valoración con análisis de datos avanzados para blindar sus inversiones y maximizar su rentabilidad.",
+      "ctaButton": "Conozca Nuestros Servicios"
     },
     "solutions": {
-      "title": "Soluciones Estratégicas",
+      "title": "Nuestras Soluciones Estratégicas",
       "cards": [
-        { "id": "peritaje", "icon": "fa-gavel", "title": "Tasaciones y Peritajes Especializados", "description": "Análisis objetivos y fundamentados en datos para la resolución de disputas de valor y la toma de decisiones patrimoniales complejas." },
-        { "id": "avm", "icon": "fa-brain", "title": "Modelos Predictivos y Data Science", "description": "Desarrollo de modelos de valoración y viabilidad que integran variables de diseño y mercado para una precisión superior." },
-        { "id": "consultoria", "icon": "fa-lightbulb", "title": "Consultoría Estratégica Inmobiliaria", "description": "Asesoría para optimizar proyectos, maximizando la rentabilidad desde su origen con un enfoque Proptech." },
-        { "id": "arquitectura", "icon": "fa-ruler-combined", "title": "Arquitectura y Gestión de Activos", "description": "Diseño, regularización y construcción de proyectos residenciales y comerciales, gestionados con una visión de creación de valor a largo plazo."}
+        { "id": "auditoria", "icon": "fa-search-dollar", "title": "Auditoría de Inversión Inmobiliaria", "description": "Un due-diligence técnico y normativo que revela el potencial oculto y los riesgos de un activo antes de su adquisición." },
+        { "id": "peritaje", "icon": "fa-balance-scale", "title": "Valoración Estratégica y Peritaje Judicial", "description": "Informes de tasación de alta complejidad, defendibles y fundamentados en metodologías avanzadas para litigios y decisiones críticas." },
+        { "id": "diseno", "icon": "fa-drafting-compass", "title": "Diseño Arquitectónico Basado en Datos", "description": "Proyectos de arquitectura que nacen de un análisis de viabilidad para maximizar el potencial constructivo y financiero de su propiedad." }
       ]
     },
     "featuredPortfolio": {
@@ -31,22 +28,22 @@
     }
   },
   "proptech_section": {
-    "title": "Innovación y Futuro: Presentando AceleradorTech",
-    "text": "Como la evolución natural de mi carrera, he fundado AceleradorTech, un spin-off tecnológico enfocado en aplicar geointeligencia e IA para identificar oportunidades de inversión, analizar el potencial de los terrenos y maximizar la rentabilidad de los activos inmobiliarios.",
-    "buttonText": "Descubrir AceleradorTech",
+    "title": "El Futuro es Ahora: AceleradorTech",
+    "text": "Como la evolución natural de nuestra consultoría, hemos fundado AceleradorTech, nuestra unidad de innovación enfocada en desarrollar soluciones tecnológicas (Proptech) para aplicar geointeligencia e IA en la identificación y análisis de oportunidades de inversión.",
+    "buttonText": "Conozca la Unidad Tecnológica",
     "buttonUrl": "http://aceleradortech.com"
   },
   "about": {
     "pageTitle": "Visión Estratégica, Dominio Técnico y Rigor",
     "profileImageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil-gfe-2025.png",
-    "profileText": "Gustavo Franco es Especialista en Geointeligencia Inmobiliaria, Arquitecto y MBA. Su misión es fusionar más de una década de \"conocimiento de dominio\" con ciencia de datos e IA para transformar datos complejos en decisiones de inversión seguras y rentables. Esta visión culmina con la fundación de AceleradorTech, su spin-off tecnológico donde desarrolla herramientas de análisis predictivo para el sector. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones.",
+    "profileText": "Gustavo Franco es un Arquitecto MBA, Especialista en Geointeligencia Inmobiliaria. Su misión es fusionar más de una década de \"conocimiento de dominio\" con ciencia de datos para transformar datos complejos en decisiones de inversión seguras y rentables. Esta visión culmina con la fundación de AceleradorTech, su spin-off tecnológico donde desarrolla herramientas de análisis predictivo. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones.",
     "linkedinText": "Para conocer la trayectoria profesional de nuestro fundador en detalle, puede visitar su perfil en <a href='https://www.linkedin.com/in/gustavfranco/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.",
-    "kpiTitle": "Indicadores Clave",
+    "kpiTitle": "Resultados, no solo métricas",
     "kpis": [
       { "number": "+10 Años", "label": "de trayectoria en el sector inmobiliario." },
-      { "number": "+900 Activos", "label": "valorados masivamente con modelos algorítmicos." },
+      { "number": "+900 Activos", "label": "valorados con modelos algorítmicos propios." },
       { "number": "+1000 Tasaciones", "label": "de alta complejidad para banca e inversionistas." },
-      { "number": "Data-Driven", "label": "Visión estratégica potenciada con IA y Data Science." }
+      { "number": "Data-Driven", "label": "Visión estratégica potenciada con IA." }
     ],
     "trajectory": {
       "title": "Una Trayectoria Forjada en Estrategia y Ejecución",
@@ -64,44 +61,44 @@
     }
   },
   "services": {
-    "pageTitle": "Nuestros Servicios",
-    "subtitle": "Potenciamos la arquitectura, valoración y gestión de activos con Geointeligencia y Data Science. Cada servicio tradicional se eleva a un nuevo estándar de precisión y rentabilidad.",
+    "pageTitle": "Servicios Estratégicos",
+    "subtitle": "Fusionamos arquitectura, finanzas y data science para ofrecer tres servicios de alto valor, diseñados para proteger y maximizar su patrimonio.",
     "list": [
       {
-        "id": "estrategia-ia",
-        "title": "Consultoría Estratégica y Modelos Predictivos",
-        "description": "Utilizamos Inteligencia Artificial y Data Science para transformar datos complejos en oportunidades de inversión claras y decisiones estratégicas. Ideal para desarrolladores e inversionistas que buscan una ventaja competitiva.",
+        "id": "auditoria-inversion",
+        "title": "Auditoría de Inversión Inmobiliaria",
+        "description": "Otorgamos certeza absoluta en transacciones inmobiliarias, revelando riesgos y potenciales ocultos que una revisión convencional no detecta. Ideal para inversionistas y compradores que buscan blindar su decisión.",
         "details": [
-          "Análisis de viabilidad y potencial constructivo con IA.",
-          "Desarrollo de Modelos de Valoración a medida (AVM).",
-          "Identificación de 'hotspots' de crecimiento y zonas de riesgo.",
-          "Estrategias de adquisición de terrenos basadas en datos."
+          "Análisis de potencial normativo (constructibilidad, usos de suelo).",
+          "Detección de vicios y obras no regularizadas.",
+          "Verificación de superficies y cabida real vs. documentada.",
+          "Informe de Due Diligence Técnico-Legal para toma de decisiones."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop"
       },
       {
-        "id": "peritaje-avanzado",
-        "title": "Tasaciones, Peritajes y Valoración Fundamentada",
-        "description": "Combinamos el rigor técnico del peritaje tradicional con análisis de datos avanzados para entregar informes de valoración robustos, defendibles y de máxima precisión, incluso en los casos más complejos.",
+        "id": "peritaje-estrategico",
+        "title": "Valoración Estratégica y Peritaje Judicial",
+        "description": "Entregamos informes de tasación de alta complejidad, fundamentados en una metodología avanzada para ser defendibles en contextos críticos como litigios, herencias o decisiones corporativas.",
         "details": [
-          "Peritajes Judiciales (herencias, divorcios, litigios).",
-          "Tasaciones de alta complejidad para banca e inversionistas.",
-          "Contra-informes y auditoría de tasaciones de terceros.",
+          "Peritajes Judiciales para disputas de valor.",
+          "Tasaciones de alta complejidad para la banca e inversionistas.",
+          "Metodología respaldada por +1.000 informes y modelos propios.",
           "Análisis de 'mejor y mayor uso' para maximizar el valor."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop"
       },
       {
-        "id": "arquitectura-gestion",
-        "title": "Arquitectura y Gestión Integral de Activos",
-        "description": "Abordamos cada proyecto, desde el diseño hasta la regularización, como la creación de un activo de alto rendimiento. Nuestra gestión se enfoca en la calidad, la eficiencia y la maximización del valor patrimonial a largo plazo.",
+        "id": "diseno-data-driven",
+        "title": "Diseño Arquitectónico Basado en Datos",
+        "description": "Concebimos proyectos de arquitectura que no solo responden a necesidades funcionales y estéticas, sino que nacen de una estrategia para optimizar el potencial constructivo y financiero de su propiedad.",
         "details": [
-          "Diseño arquitectónico residencial y comercial.",
-          "Regularización de propiedades y saneamiento de títulos (OGUC).",
-          "Gestión e Inspección Técnica de Obras (ITO).",
-          "Proyectos de remodelación y ampliación estratégica."
+          "Diseño de obra nueva y remodelaciones estratégicas.",
+          "Análisis de viabilidad integral previo al diseño.",
+          "Optimización de la constructibilidad y el rendimiento del activo.",
+          "Gestión de permisos y regularizaciones con visión de inversión."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1542321992-46c3e795bc3a?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.unsplash.com/photo-1511068797325-6083f0f872b1?q=80&w=2070&auto=format&fit=crop"
       }
     ]
   },
@@ -109,7 +106,7 @@
     "pageTitle": "Portafolio de Proyectos",
     "subtitle": "Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.",
     "categories": [
-      { "title": "Tecnología y Modelado de Datos", "projects": [
+       { "title": "Tecnología y Modelado de Datos", "projects": [
         { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop", "modalContent": {
           "challenge": "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.",
           "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la auditora financiera Deloitte.",
@@ -145,51 +142,34 @@
           "images": ["https://images.unsplash.com/photo-1616422285623-13ff01621935?q=80&w=1931&auto=format&fit=crop", "https://images.unsplash.com/photo-1517524206127-48bbd363f357?q=80&w=1964&auto=format&fit=crop"]
         }},
         { "id": "conguillio", "title": "Master Plan en Parque Nacional Conguillío", "shortDesc": "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop", "modalContent": {
-          "challenge": "Diseñar 15 infraestructuras turísticas, incluyendo una cafetería, cabañas y miradores, dentro de uno de los ecosistemas más delicados y protegidos de Chile.",
+          "challenge": "Diseñar 15 infraestructuras turísticas, incluyendo una cafetería, cabañas y miradores, dentro de uno de los ecosistemas más protegidos de Chile.",
           "solution": "Un ejercicio de arquitectura de mínimo impacto, donde cada estructura se diseñó para dialogar respetuosamente con el paisaje, utilizando materiales locales y soluciones sostenibles para potenciar la experiencia del visitante sin alterar la majestuosidad del parque.",
           "images": ["https://images.unsplash.com/photo-1603576020339-e9759c43d780?q=80&w=1974&auto=format&fit=crop", "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"]
         }}
       ]}
     ]
   },
-  "investments": {
+   "investments": {
     "pageTitle": "Oportunidades de Inversión",
     "subtitle": "Activos inmobiliarios curados y analizados por nuestro equipo para maximizar su potencial de rentabilidad y plusvalía. Nota: se cobra comisión de corretaje del 2% + IVA.",
-    "properties": [
-      { 
-        "id": "huichahue",
-        "title": "Oportunidad de Inversión y Calidad de Vida en Campos de Huichahue",
-        "shortDesc": "Excepcional parcela de 8.682 m² lista para habitar en condominio consolidado y seguro. A solo 20 minutos de Temuco.",
-        "imageUrl": "https://images.unsplash.com/photo-1560440021-33f9b867899d?q=80&w=1974&auto=format&fit=crop",
-        "modal": {
-          "gallery": ["https://images.unsplash.com/photo-1560440021-33f9b867899d?q=80&w=1974&auto=format&fit=crop", "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop"],
-          "description": "Descubra un enclave de tranquilidad y seguridad a solo 20 minutos de la ciudad de Temuco. Esta excepcional parcela de 8.682 m² en el consolidado Condominio Campos de Huichahue no es solo un terreno; es un proyecto de vida listo para ser habitado.",
-          "features": [ "<strong>Amplitud y Privacidad:</strong> Casi una hectárea de terreno (8.682 m²).", "<strong>Lista para Habitar:</strong> Incluye casa, quincho independiente y bodegas funcionales.", "<strong>Seguridad Garantizada:</strong> Acceso controlado con portón eléctrico y cámaras de seguridad."],
-          "specs": { "Tipo de Propiedad": "Parcela con Casa y Quincho en Condominio", "Ubicación": "Condominio Campos de Huichahue, Parcela 68. Camino Huichahue Km. 19, Freire.", "Precio de Venta": "$150.000.000 (UF 3.825 aprox.)" },
-          "buttonText": "Consultar por esta Oportunidad"
-        }
-      }
-    ]
+    "properties": []
   },
   "blog": {
     "pageTitle": "Blog de Análisis Inmobiliario",
     "subtitle": "Noticias, análisis y tendencias del sector para inversionistas y propietarios inteligentes.",
     "latestPostTitle": "Análisis y Perspectivas del Sector",
-    "posts": [
-      { "id": "post-002", "title": "El Rol de la IA en la Valoración de Activos Inmobiliarios", "date": "2025-06-07", "excerpt": "La Inteligencia Artificial ya no es ciencia ficción. Analizamos cómo los algoritmos de Machine Learning están revolucionando la precisión y velocidad de las tasaciones...", "fullContent": "<p>La Inteligencia Artificial ya no es ciencia ficción. Analizamos cómo los algoritmos de Machine Learning están revolucionando la precisión y velocidad de las tasaciones, y qué significa esto para el futuro de las inversiones.</p><p>Los modelos tradicionales de valoración a menudo se basan en un puñado de comparables y en la intuición del tasador. Sin embargo, los modelos de IA pueden procesar miles de puntos de datos simultáneamente: desde transacciones históricas, características del inmueble, hasta variables macroeconómicas, datos de movilidad y sentimiento del mercado extraído de noticias y redes sociales. El resultado es una valoración más objetiva, rápida y capaz de detectar patrones que el ojo humano no puede ver.</p>", "images": ["https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?q=80&w=2071&auto=format&fit=crop", "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2070&auto=format&fit=crop"], "videoUrl": null },
-      { "id": "post-001", "title": "Peritajes: La Importancia de un Informe Robusto", "date": "2025-05-20", "excerpt": "En una disputa de valor, un informe de peritaje bien fundamentado puede ser la diferencia entre ganar o perder. Desglosamos los componentes clave...", "fullContent": "<p>En una disputa de valor, un informe de peritaje bien fundamentado puede ser la diferencia entre ganar o perder. Desglosamos los componentes clave que hacen a un informe irrefutable ante un tribunal.</p><p>Un informe robusto no solo presenta una cifra, sino que cuenta una historia coherente y respaldada por evidencia. Debe incluir un análisis exhaustivo del mercado, una selección de comparables justificada, un detalle de la metodología utilizada y una conclusión clara y sin ambigüedades. Cada afirmación debe estar respaldada por datos verificables, lo que blinda el informe contra impugnaciones y otorga certeza a las partes involucradas.</p>", "images": ["https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop"], "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ" }
-    ]
+    "posts": []
   },
   "contact": {
-    "pageTitle": "Contacto Estratégico",
-    "subtitle": "Para tasaciones, peritajes, proyectos de arquitectura o consultorías Proptech, contáctenos para agendar una consulta inicial sin costo.",
+    "pageTitle": "Contacte a un Estratega",
+    "subtitle": "Para una Auditoría de Inversión, una Valoración Estratégica o un Proyecto de Arquitectura, agende una consulta inicial para evaluar sus objetivos.",
     "email": "arquitecto@gustavofranco.cl",
     "phone": "+56 9 5810 1807",
     "location": "Santiago, Chile",
-    "coverage": "Región Metropolitana y Región de Valparaíso"
+    "coverage": "Servicios de consultoría a nivel nacional."
   },
   "footer": {
-    "logoText": "Gustavo Franco",
-    "copyright": "© 2025 | Gustavo Franco. Todos los derechos reservados."
+    "logoText": "GUSTAVO FRANCO",
+    "copyright": "© 2025 | Gustavo Franco | Consultoría Estratégica Inmobiliaria."
   }
 }
