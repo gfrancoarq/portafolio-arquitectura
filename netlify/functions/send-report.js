@@ -5,6 +5,8 @@ exports.handler = async function(event) {
         return { statusCode: 405, body: JSON.stringify({ error: "Método no permitido" }) };
     }
 
+    const TEMPLATE_ID = 2;
+    
     try {
         // 2. Parsear los datos del cuerpo de la petición
         const { name, email, htmlReport } = JSON.parse(event.body);
@@ -26,6 +28,7 @@ exports.handler = async function(event) {
         const emailPayload = {
             sender: { name: 'Arq. Gustavo Franco', email: 'hola@gustavofranco.cl' },
             to: [{ email: email, name: name }],
+            templateId: TEMPLATE_ID,
             subject: 'Su Diagnóstico de Inversión Inmobiliaria',
             htmlContent: htmlReport
         };
