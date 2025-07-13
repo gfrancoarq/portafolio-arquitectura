@@ -230,28 +230,52 @@
             emailBtn.disabled = true;
             emailBtn.innerText = 'Enviando...';
 
-            let emailHtmlBody = `<div style="font-family: sans-serif; line-height: 1.6;"><h2>Diagnóstico Preliminar de Inversión</h2><p>Hola ${capturedName},</p><p>Gracias por utilizar nuestra herramienta. A continuación, el resumen de su auditoría:</p>`;
+            let reportBody = `<h2>Diagnóstico Preliminar de Inversión</h2><p>Hola ${capturedName},</p><p>Gracias por utilizar nuestra herramienta. A continuación, el resumen de su auditoría:</p>`;
             const totalIssues = Object.values(userSelections).filter(s => s.value !== 'cumple').length;
             if (totalIssues > 0) {
-                emailHtmlBody += `<p>Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul style="list-style-type: none; padding-left: 0;">`;
+                reportBody += `<p>Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul style="list-style-type: none; padding-left: 0;">`;
                 for (const itemId in userSelections) {
                     const { value, data } = userSelections[itemId];
                     if (value !== 'cumple') {
-                        emailHtmlBody += `<li style="margin-bottom: 1em;"><strong>${data.title} (Estado: ${value}):</strong> ${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</li>`;
+                        reportBody += `<li style="margin-bottom: 1em;"><strong>${data.title} (Estado: ${value}):</strong> ${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</li>`;
                     }
                 }
-                emailHtmlBody += `</ul>`;
+                reportBody += `</ul>`;
             } else {
-                emailHtmlBody += `<p><strong>¡Felicitaciones!</strong> No se detectaron riesgos evidentes en su análisis preliminar.</p>`;
+                reportBody += `<p><strong>¡Felicitaciones!</strong> No se detectaron riesgos evidentes en su análisis preliminar.</p>`;
             }
-            emailHtmlBody += `<p>Para cuantificar estos riesgos y tomar una decisión 100% informada, le invito a agendar una <strong>Consulta Estratégica</strong> respondiendo a este correo.</p><p>Saludos,<br>Gustavo Franco</p></div>`;
 
+            const signature = `
+                <br><br><hr style="border: none; border-top: 1px solid #ddd;">
+                <p>
+                    <strong>Arq. Gustavo Franco</strong><br>
+                    <em>Su Arquitecto de Cabecera y Asesor Estratégico Inmobiliario</em>
+                </p>
+                <p style="font-size: 0.9em; color: #555;">
+                    Para una asesoría completa en sus proyectos, ofrezco servicios de:
+                    <br>• Valoración Estratégica y Peritajes Judiciales
+                    <br>• Diseño Arquitectónico Basado en Datos
+                    <br>• Auditorías de Inversión Inmobiliaria
+                </p>
+                <p><a href="https://www.gustavofranco.cl">www.gustavofranco.cl</a></p>
+            `;
+
+            const fullEmailHtml = `
+                <!DOCTYPE html>
+                <html>
+                <head><style>body {font-family: Arial, sans-serif; line-height: 1.6; color: #333;}</style></head>
+                <body><div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+                ${reportBody}
+                ${signature}
+                </div></body></html>
+            `;
+            
             try {
                 const functionUrl = `${window.location.origin}/.netlify/functions/send-report`;
                 const response = await fetch(functionUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: capturedName, email: capturedEmail, htmlReport: emailHtmlBody })
+                    body: JSON.stringify({ name: capturedName, email: capturedEmail, htmlReport: fullEmailHtml })
                 });
                 if (!response.ok) {
                     const errorData = await response.json().catch(() => ({error: 'Error desconocido en el servidor'}));
@@ -269,7 +293,7 @@
                 }
             }
         }
-
+        
         if (consentCheckbox && submitBtn) {
             consentCheckbox.addEventListener('change', () => {
                 submitBtn.disabled = !consentCheckbox.checked;
