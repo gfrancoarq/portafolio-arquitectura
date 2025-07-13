@@ -1,17 +1,23 @@
-// Función 2: Su única misión es enviar el email transaccional con el reporte.
+// Función 2: Ahora usa una Plantilla Transaccional de Brevo.
 exports.handler = async function(event) {
     if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
     const { name, email, htmlReport } = JSON.parse(event.body);
     const BREVO_API_KEY = process.env.BREVO_API_KEY;
+
+    // **IMPORTANTE**: Reemplace el '0' con el ID de su nueva plantilla.
+    const TEMPLATE_ID = 0; 
+
     try {
         await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
             body: JSON.stringify({
-                sender: { name: 'Gustavo Franco', email: 'hola@gustavofranco.cl' },
                 to: [{ email: email, name: name }],
-                subject: 'Su Diagnóstico de Inversión Inmobiliaria',
-                htmlContent: htmlReport
+                templateId: TEMPLATE_ID,
+                params: {
+                    "NOMBRE": name,
+                    "CUERPO_DEL_REPORTE": htmlReport
+                }
             })
         });
         return { statusCode: 200, body: JSON.stringify({ message: "Email enviado" }) };
