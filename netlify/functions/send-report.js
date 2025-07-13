@@ -30,7 +30,10 @@ exports.handler = async function(event) {
             to: [{ email: email, name: name }],
             templateId: TEMPLATE_ID,
             subject: 'Su Diagnóstico de Inversión Inmobiliaria',
-            htmlContent: htmlReport
+            params: {
+                    "NOMBRE": name,
+                    "CUERPO_DEL_REPORTE": htmlReport
+            }
         };
 
         // 6. Realizar la llamada a la API de Brevo
