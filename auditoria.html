@@ -93,11 +93,11 @@
     document.addEventListener('DOMContentLoaded', () => {
 
         const checklistData = [
-            { id: 1, title: "La Realidad vs. los Papeles", riskText: "Las escrituras dicen 120 m², pero la casa tiene 150 m². Esos 30 m² extra no son un regalo, son una construcción no declarada, una potencial multa y un problema gigante para una futura venta o crédito hipotecario.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Solicite los planos originales aprobados por la municipalidad y una copia de la recepción final. Compare las superficies con una medición láser en terreno. No confíe ciegamente en las escrituras." },
-            { id: 2, title: "El Fantasma de las Ampliaciones", riskText: "Esa terraza cerrada o ese segundo piso maravilloso podría estar violando las normas de adosamiento o rasantes. Su vecino podría demandarle y obligarle a demoler.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Obtenga el Certificado de Informaciones Previas (CIP) en la Dirección de Obras. Verifique las distancias a deslindes, alturas máximas y porcentajes de adosamiento permitidos. Cualquier estructura fuera de norma es un riesgo legal y financiero." },
-            { id: 3, title: "El Potencial que No Es", riskText: "Compra un terreno pensando en construir un edificio de 5 pisos, pero el Plan Regulador solo permite 3. Acaba de perder millones en potencial.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v-3m6 3v-3m0 0V7" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> El CIP es su documento clave. Analice en detalle la constructibilidad, ocupación de suelo, usos permitidos y cualquier declaratoria de utilidad pública. No asuma, verifique el potencial real." },
-            { id: 4, title: "Instalaciones y Vicios Ocultos", riskText: "La casa está recién pintada, pero las cañerías son antiguas, el sistema eléctrico no soporta la carga moderna o hay humedad oculta en los cimientos.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Contrate una inspección técnica con un especialista que utilice cámaras termográficas para detectar humedades y revise el tablero eléctrico. Pida las boletas de servicios de los últimos 12 meses para detectar consumos anómalos." },
-            { id: 5, title: "Afectación por Obras Públicas", riskText: "La propiedad es perfecta, pero no sabe que hay un plan para ensanchar la calle en 5 años y le van a expropiar parte del antejardín.", icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`, recommendation: "<strong>Acción Inmediata:</strong> Consulte directamente en la Dirección de Obras Municipales (DOM) y en el SERVIU sobre los planes de inversión y vialidad para el sector. Verifique si el predio está afecto a expropiación." }
+            { id: 1, title: "La Realidad vs. los Papeles", riskText: "Las escrituras dicen 120 m², pero la casa tiene 150 m². Esos 30 m² extra no son un regalo, son una construcción no declarada, una potencial multa y un problema gigante para una futura venta o crédito hipotecario.", icon: `...`, recommendation: "<strong>Acción Inmediata:</strong> Solicite los planos originales aprobados por la municipalidad y una copia de la recepción final. Compare las superficies con una medición láser en terreno. No confíe ciegamente en las escrituras." },
+            { id: 2, title: "El Fantasma de las Ampliaciones", riskText: "Esa terraza cerrada o ese segundo piso maravilloso podría estar violando las normas de adosamiento o rasantes. Su vecino podría demandarle y obligarle a demoler.", icon: `...`, recommendation: "<strong>Acción Inmediata:</strong> Obtenga el Certificado de Informaciones Previas (CIP) en la Dirección de Obras. Verifique las distancias a deslindes, alturas máximas y porcentajes de adosamiento permitidos. Cualquier estructura fuera de norma es un riesgo legal y financiero." },
+            { id: 3, title: "El Potencial que No Es", riskText: "Compra un terreno pensando en construir un edificio de 5 pisos, pero el Plan Regulador solo permite 3. Acaba de perder millones en potencial.", icon: `...`, recommendation: "<strong>Acción Inmediata:</strong> El CIP es su documento clave. Analice en detalle la constructibilidad, ocupación de suelo, usos permitidos y cualquier declaratoria de utilidad pública. No asuma, verifique el potencial real." },
+            { id: 4, title: "Instalaciones y Vicios Ocultos", riskText: "La casa está recién pintada, pero las cañerías son antiguas, el sistema eléctrico no soporta la carga moderna o hay humedad oculta en los cimientos.", icon: `...`, recommendation: "<strong>Acción Inmediata:</strong> Contrate una inspección técnica con un especialista que utilice cámaras termográficas para detectar humedades y revise el tablero eléctrico. Pida las boletas de servicios de los últimos 12 meses para detectar consumos anómalos." },
+            { id: 5, title: "Afectación por Obras Públicas", riskText: "La propiedad es perfecta, pero no sabe que hay un plan para ensanchar la calle en 5 años y le van a expropiar parte del antejardín.", icon: `...`, recommendation: "<strong>Acción Inmediata:</strong> Consulte directamente en la Dirección de Obras Municipales (DOM) y en el SERVIU sobre los planes de inversión y vialidad para el sector. Verifique si el predio está afecto a expropiación." }
         ];
         const userSelections = {};
         let capturedEmail = '', capturedName = '';
@@ -229,42 +229,58 @@
             if (!emailBtn) return;
             emailBtn.disabled = true;
             emailBtn.innerText = 'Enviando...';
-
-            let reportBody = `<h2>Diagnóstico Preliminar de Inversión</h2><p>Hola ${capturedName},</p><p>Gracias por utilizar nuestra herramienta. A continuación, el resumen de su auditoría:</p>`;
+            
+            // *** CORRECCIÓN PRINCIPAL: CONSTRUIR EL HTML COMPLETO DEL EMAIL ***
+            let reportBody = `<h2 style="color: #1e3a8a; font-size: 24px; font-weight: bold; text-align: center;">Diagnóstico Preliminar de Inversión</h2><p style="font-size: 16px;">Hola ${capturedName},</p><p style="font-size: 16px;">Gracias por utilizar nuestra herramienta de auditoría. A continuación, el resumen de su análisis:</p>`;
             const totalIssues = Object.values(userSelections).filter(s => s.value !== 'cumple').length;
             if (totalIssues > 0) {
-                reportBody += `<p>Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul style="list-style-type: none; padding-left: 0;">`;
+                reportBody += `<p style="font-size: 16px;">Se han identificado <strong>${totalIssues} punto(s) de atención:</strong></p><ul style="list-style-type: none; padding: 0;">`;
                 for (const itemId in userSelections) {
                     const { value, data } = userSelections[itemId];
                     if (value !== 'cumple') {
-                        reportBody += `<li style="margin-bottom: 1em;"><strong>${data.title} (Estado: ${value}):</strong> ${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</li>`;
+                        let icon = value === 'riesgo' ? '❗️' : '❓';
+                        let color = value === 'riesgo' ? '#ef4444' : '#f59e0b';
+                        reportBody += `<li style="margin-bottom: 1.2em; padding: 15px; border-left: 4px solid ${color}; background-color: #f8fafc; border-radius: 4px;">
+                            <strong style="font-size: 16px; color: #1e293b;">${icon} ${data.title} (Estado: ${value})</strong><br>
+                            <span style="color: #475569;">${data.recommendation.replace(/<strong>|<\/strong>/g, '')}</span>
+                        </li>`;
                     }
                 }
                 reportBody += `</ul>`;
             } else {
-                reportBody += `<p><strong>¡Felicitaciones!</strong> No se detectaron riesgos evidentes en su análisis preliminar.</p>`;
+                reportBody += `<p style="padding: 15px; background-color: #f0fdf4; border-left: 4px solid #22c55e; color: #15803d; font-size: 16px;"><strong>✅ ¡Felicitaciones!</strong> No se detectaron riesgos evidentes en su análisis preliminar.</p>`;
             }
 
             const signature = `
-                <br><br><hr style="border: none; border-top: 1px solid #ddd;">
-                <p>
-                    <strong>Arq. Gustavo Franco</strong><br>
-                    <em>Su Arquitecto de Cabecera y Asesor Estratégico Inmobiliario</em>
-                </p>
-                <p style="font-size: 0.9em; color: #555;">
-                    Para una asesoría completa en sus proyectos, ofrezco servicios de:
-                    <br>• Valoración Estratégica y Peritajes Judiciales
-                    <br>• Diseño Arquitectónico Basado en Datos
-                    <br>• Auditorías de Inversión Inmobiliaria
-                </p>
-                <p><a href="https://www.gustavofranco.cl">www.gustavofranco.cl</a></p>
+                <br><br><hr style="border: none; border-top: 1px solid #e5e7eb;">
+                <table cellpadding="0" cellspacing="0" style="width: 100%; margin-top: 20px; font-size: 14px;">
+                    <tr>
+                        <td style="width: 80px; vertical-align: top;">
+                            <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil-gfe-2025.png" alt="Gustavo Franco" style="width: 70px; height: 70px; border-radius: 50%;">
+                        </td>
+                        <td style="vertical-align: top; padding-left: 15px;">
+                            <p style="margin: 0; font-weight: bold; color: #111827; font-size: 17px;">Arq. Gustavo Franco</p>
+                            <p style="margin: 0; font-style: italic; color: #374151;">Su Arquitecto de Cabecera y Asesor Estratégico Inmobiliario</p>
+                            <p style="margin-top: 10px; font-size: 1em; color: #4b5563;">
+                                Para una asesoría completa, contácteme para servicios de:<br>
+                                • Valoración Estratégica y Peritajes Judiciales<br>
+                                • Diseño Arquitectónico Basado en Datos<br>
+                                • Auditorías de Inversión Inmobiliaria
+                            </p>
+                            <p style="margin-top: 15px;"><a href="https://www.gustavofranco.cl" style="color: #2563eb; text-decoration: none; font-weight: bold;">www.gustavofranco.cl</a></p>
+                        </td>
+                    </tr>
+                </table>
             `;
 
             const fullEmailHtml = `
                 <!DOCTYPE html>
                 <html>
-                <head><style>body {font-family: Arial, sans-serif; line-height: 1.6; color: #333;}</style></head>
-                <body><div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+                <head>
+                    <meta charset="UTF-8">
+                    <style>body {font-family: Arial, sans-serif; line-height: 1.6; color: #333;}</style>
+                </head>
+                <body><div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                 ${reportBody}
                 ${signature}
                 </div></body></html>
