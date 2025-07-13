@@ -1,61 +1,36 @@
-// Función corregida para enviar el reporte por email
-exports.handler = async (event) => {
-    // Validar método HTTP
+// netlify/functions/send-report.js
+exports.handler = async function(event) {
+    // 1. Validar el método de la petición
     if (event.httpMethod !== "POST") {
-        return { 
-            statusCode: 405, 
-            body: JSON.stringify({ error: "Method Not Allowed" }) 
-        };
+        return { statusCode: 405, body: JSON.stringify({ error: "Método no permitido" }) };
     }
 
     try {
-        // Parsear el cuerpo de la petición
+        // 2. Parsear los datos del cuerpo de la petición
         const { name, email, htmlReport } = JSON.parse(event.body);
-        
-        // Validar datos requeridos
+
+        // 3. Validar que los datos necesarios están presentes
         if (!name || !email || !htmlReport) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: "Faltan datos requeridos: name, email, htmlReport" })
-            };
+            console.error("Faltan datos en la petición:", { name, email, htmlReport: !!htmlReport });
+            return { statusCode: 400, body: JSON.stringify({ error: "Faltan datos en la petición" }) };
         }
 
-        // Validar email básico
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: "Email inválido" })
-            };
-        }
-
-        // Obtener API key de variables de entorno
+        // 4. Obtener la clave API de forma segura
         const BREVO_API_KEY = process.env.BREVO_API_KEY;
         if (!BREVO_API_KEY) {
-            console.error("BREVO_API_KEY no está configurada");
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ error: "Error de configuración del servidor" })
-            };
+            console.error("CRITICAL: BREVO_API_KEY no está configurada en las variables de entorno de Netlify.");
+            return { statusCode: 500, body: JSON.stringify({ error: "Error de configuración del servidor." }) };
         }
 
-        // Configurar el payload para Brevo
-        const emailData = {
-            sender: {
-                name: "Gustavo Franco Arquitectos",
-                email: "hola@gustavofranco.cl"
-            },
-            to: [
-                {
-                    email: email,
-                    name: name
-                }
-            ],
-            subject: "Su Diagnóstico de Inversión Inmobiliaria",
+        // 5. Construir el payload para la API de Brevo
+        const emailPayload = {
+            sender: { name: 'Arq. Gustavo Franco', email: 'hola@gustavofranco.cl' },
+            to: [{ email: email, name: name }],
+            subject: 'Su Diagnóstico de Inversión Inmobiliaria',
             htmlContent: htmlReport
         };
 
-        // Enviar email a través de la API de Brevo
+        // 6. Realizar la llamada a la API de Brevo
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
@@ -63,48 +38,28 @@ exports.handler = async (event) => {
                 'content-type': 'application/json',
                 'api-key': BREVO_API_KEY
             },
-            body: JSON.stringify(emailData)
+            body: JSON.stringify(emailPayload)
         });
 
-        // Verificar si la respuesta fue exitosa
+        // 7. Manejar la respuesta de la API de Brevo
         if (!response.ok) {
-            const errorData = await response.text();
-            console.error('Error de Brevo:', response.status, errorData);
-            
-            return {
-                statusCode: response.status,
-                body: JSON.stringify({ 
-                    error: `Error al enviar email: ${response.status}`,
-                    details: errorData
-                })
-            };
+            const errorBody = await response.json().catch(() => response.text());
+            console.error("Error desde la API de Brevo:", errorBody);
+            return { statusCode: response.status, body: JSON.stringify({ error: "Error al comunicarse con el servicio de email.", details: errorBody }) };
         }
 
-        const result = await response.json();
-        console.log('Email enviado exitosamente:', result);
-
+        // 8. Si todo es exitoso, devolver una respuesta positiva
         return {
             statusCode: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS'
-            },
-            body: JSON.stringify({ 
-                message: "Email enviado exitosamente",
-                messageId: result.messageId 
-            })
+            body: JSON.stringify({ message: "Email enviado con éxito." })
         };
 
     } catch (error) {
-        console.error("Error en send-report:", error);
-        
+        // 9. Manejar cualquier otro error inesperado
+        console.error("Error inesperado en la función send-report:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ 
-                error: "Error interno del servidor",
-                details: error.message 
-            })
+            body: JSON.stringify({ error: "Error interno del servidor." })
         };
     }
 };
