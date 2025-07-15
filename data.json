@@ -1,9 +1,10 @@
 {
   "menu": [
     { "name": "Inicio", "href": "#home" },
-    { "name": "Quiénes Somos", "href": "#about" },
     { "name": "Servicios", "href": "#services" },
     { "name": "Portafolio", "href": "#portfolio" },
+    { "name": "Blog", "href": "blog/index.html" },
+    { "name": "Quiénes Somos", "href": "#about" },
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
   ],
