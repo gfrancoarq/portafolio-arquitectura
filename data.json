@@ -3,7 +3,7 @@
     { "name": "Inicio", "href": "#home" },
     { "name": "Servicios", "href": "#services" },
     { "name": "Portafolio", "href": "#portfolio" },
-    { "name": "Blog", "href": "blog/index.html" },
+    { "name": "Blog", "href": "/blog/index.html" },
     { "name": "Quiénes Somos", "href": "#about" },
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
@@ -164,9 +164,9 @@
   "contact": {
     "pageTitle": "Contacte a un Estratega",
     "subtitle": "Para una Auditoría de Inversión, una Valoración Estratégica o un Proyecto de Arquitectura, agende una consulta inicial para evaluar sus objetivos.",
-    "email": "arquitecto@gustavofranco.cl",
+    "email": "hola@gustavofranco.cl",
     "phone": "+56 9 5810 1807",
-    "location": "Santiago, Chile",
+    "location": "Mons. Escriva De Balaguer 14360, Lo Barnechea ",
     "coverage": "Servicios de consultoría a nivel nacional."
   },
   "footer": {
