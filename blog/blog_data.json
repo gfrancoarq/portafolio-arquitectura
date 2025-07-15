@@ -1,10 +1,10 @@
 {
   "brand": {
-    "logoUrl": "https://i.imgur.com/hSj2pjw.png",
+    "logoUrl": "/images/logo-gustavo-franco-dark.svg",
     "mainSiteUrl": "https://www.gustavofranco.cl",
     "authorProfile": {
-      "name": "Gustavo Franco",
-      "photoUrl": "https://i.imgur.com/TDbqL3N.png",
+      "name": "Arq. Gustavo Franco",
+      "photoUrl": "/images/perfil-gfe-2025.png",
       "email": "arquitecto@gustavofranco.cl",
       "bio": "Fundador y Director de Gustavo Franco Arquitectos. Consultor estratégico que fusiona arquitectura, finanzas y Data Science para maximizar la rentabilidad y minimizar el riesgo de los activos inmobiliarios."
     }
