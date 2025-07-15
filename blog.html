@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Gustavo Franco Arquitectos</title>
+    
+    <!-- Dependencias de Estilo (Tailwind y Fuentes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Configuración de la Paleta de Colores de la Marca -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-green': '#1E392A',
+              'brand-gray': '#333333',
+              'brand-light-gray': '#F4F4F4',
+              'brand-accent': '#C2A377',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Estilos Personalizados -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F4F4; color: #333333; }
+        .fade-in { animation: fadeIn 0.6s ease-in-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .post-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .prose h2 { font-size: 1.5em; font-weight: 700; margin-top: 2em; margin-bottom: 1em; color: #1E392A; }
+        .prose p { line-height: 1.8; margin-bottom: 1.25em; }
+        .prose strong { color: #1E392A; }
+        .prose a { color: #C2A377; text-decoration: underline; }
+        .prose em { font-style: italic; color: #555; }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="bg-brand-green shadow-md sticky top-0 z-10">
+        <!-- El Header se cargará dinámicamente -->
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div id="posts-list-view">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-black text-brand-green mb-3">Análisis y Perspectivas</h1>
+                <p class="text-lg text-brand-gray max-w-2xl mx-auto">Reflexiones estratégicas sobre arquitectura, ciudad y valor inmobiliario.</p>
+            </div>
+            <div id="posts-container" class="flex flex-col items-center gap-12">
+                <!-- Los artículos se inyectarán aquí -->
+            </div>
+        </div>
+        <div id="post-single-view" class="hidden">
+            <!-- El artículo individual se inyectará aquí -->
+        </div>
+    </main>
+
+    <footer class="bg-white mt-16 border-t border-gray-200">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 Gustavo Franco Arquitectos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const header = document.getElementById('header');
+            const postsListView = document.getElementById('posts-list-view');
+            const postsContainer = document.getElementById('posts-container');
+            const postSingleView = document.getElementById('post-single-view');
+
+            // --- 1. Cargar datos del JSON ---
+            let siteData = {};
+            try {
+                // CORRECCIÓN: Se cambió el nombre del archivo a "blog_data.json"
+                const response = await fetch(`blog_data.json?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                siteData = await response.json();
+            } catch (error) {
+                console.error('Error al cargar los datos:', error);
+                postsContainer.innerHTML = '<p class="text-center p-8 text-red-600 font-semibold">Error Crítico: No se pudo cargar el archivo <code>blog_data.json</code>. Verifique que el archivo exista y no tenga errores de sintaxis.</p>';
+                return;
+            }
+
+            const { brand, posts } = siteData;
+
+            // --- 2. Renderizar componentes ---
+            renderHeader(brand, header);
+            renderPostsList(posts, postsContainer);
+
+            // --- 3. Lógica de Navegación ---
+            function showSinglePost(postId) {
+                const post = posts.find(p => p.id === postId);
+                if (post) {
+                    renderSinglePost(post, brand.authorProfile, postSingleView);
+                    postsListView.classList.add('hidden');
+                    postSingleView.classList.remove('hidden');
+                    window.scrollTo(0, 0);
+                }
+            }
+            
+            document.body.addEventListener('click', (event) => {
+                const card = event.target.closest('.post-card');
+                if (card) {
+                    event.preventDefault();
+                    const postId = card.dataset.postId;
+                    showSinglePost(postId);
+                }
+            });
+
+        });
+
+        // --- Funciones de Renderizado ---
+        function renderHeader(brandData, container) {
+            container.innerHTML = `
+                <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                    <a href="blog.html">
+                        <img src="${brandData.logoUrl}" alt="Logo Gustavo Franco Arquitectos" class="h-10">
+                    </a>
+                    <a href="${brandData.mainSiteUrl}" class="text-sm font-semibold text-white hover:text-brand-accent transition-colors">Volver al Sitio Principal →</a>
+                </div>
+            `;
+        }
+
+        function renderPostsList(postsData, container) {
+            if (!postsData || postsData.length === 0) {
+                container.innerHTML = '<p class="text-center text-brand-gray">No hay artículos disponibles.</p>';
+                return;
+            }
+            container.innerHTML = postsData.map((post, index) => `
+                <a href="#" data-post-id="${post.id}" class="post-card w-full max-w-4xl bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden fade-in flex flex-col md:flex-row" style="animation-delay: ${index * 100}ms;">
+                    <div class="md:w-1/3 w-full h-48 md:h-auto overflow-hidden">
+                        <img src="${post.image}" alt="Imagen para ${post.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3 flex flex-col justify-center">
+                        <p class="text-xs font-semibold text-brand-accent uppercase tracking-wider mb-2">${post.date}</p>
+                        <h2 class="text-2xl font-bold mb-3 text-brand-green leading-tight">${post.title}</h2>
+                        <p class="text-brand-gray text-sm mb-4">${post.summary}</p>
+                        <span class="font-semibold text-brand-accent hover:text-brand-green transition-colors mt-2 self-start">Leer artículo completo →</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        function renderSinglePost(postData, authorData, container) {
+            document.title = `${postData.title} | Gustavo Franco Arquitectos`;
+            container.innerHTML = `
+                <article class="max-w-3xl mx-auto fade-in">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-black text-brand-green mb-4">${postData.title}</h1>
+                        <p class="text-md text-gray-500">${postData.date}</p>
+                    </div>
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-xl mb-12">
+                         <img src="${postData.image}" alt="Imagen para ${postData.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="prose max-w-none text-lg text-gray-800">
+                        ${postData.content}
+                    </div>
+                    <div class="mt-16 pt-8 border-t border-gray-200 flex items-center gap-6 bg-white p-6 rounded-lg shadow-sm">
+                        <img src="${authorData.photoUrl}" alt="Foto de ${authorData.name}" class="w-24 h-24 rounded-full object-cover border-4 border-brand-light-gray">
+                        <div>
+                            <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider">Artículo por</p>
+                            <h3 class="text-xl font-bold text-brand-green mt-1">${authorData.name}</h3>
+                            <p class="text-brand-gray mt-2 text-sm">${authorData.bio}</p>
+                            <div class="mt-3 text-sm">
+                                <a href="mailto:${authorData.email}" class="text-brand-accent hover:underline">${authorData.email}</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+    </script>
+
+</body>
+</html>
