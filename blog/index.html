@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Gustavo Franco Arquitectos</title>
     
-    <!-- Dependencias de Estilo (Tailwind y Fuentes) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <!-- Configuración de la Paleta de Colores de la Marca -->
     <script>
       tailwind.config = {
         theme: {
@@ -27,7 +25,6 @@
       }
     </script>
 
-    <!-- Estilos Personalizados -->
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #F4F4F4; color: #333333; }
         .fade-in { animation: fadeIn 0.6s ease-in-out forwards; opacity: 0; }
@@ -44,8 +41,7 @@
 <body>
 
     <header id="header" class="bg-brand-green shadow-md sticky top-0 z-10">
-        <!-- El Header se cargará dinámicamente -->
-    </header>
+        </header>
 
     <main class="container mx-auto px-6 py-16">
         <div id="posts-list-view">
@@ -54,12 +50,10 @@
                 <p class="text-lg text-brand-gray max-w-2xl mx-auto">Reflexiones estratégicas sobre arquitectura, ciudad y valor inmobiliario.</p>
             </div>
             <div id="posts-container" class="flex flex-col items-center gap-12">
-                <!-- Los artículos se inyectarán aquí -->
-            </div>
+                </div>
         </div>
         <div id="post-single-view" class="hidden">
-            <!-- El artículo individual se inyectará aquí -->
-        </div>
+            </div>
     </main>
 
     <footer class="bg-white mt-16 border-t border-gray-200">
@@ -75,26 +69,29 @@
             const postsContainer = document.getElementById('posts-container');
             const postSingleView = document.getElementById('post-single-view');
 
-            // --- 1. Cargar datos del JSON ---
             let siteData = {};
             try {
-                // CORRECCIÓN: Se cambió el nombre del archivo a "blog_data.json"
                 const response = await fetch(`blog_data.json?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error('Network response was not ok');
                 siteData = await response.json();
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
-                postsContainer.innerHTML = '<p class="text-center p-8 text-red-600 font-semibold">Error Crítico: No se pudo cargar el archivo <code>blog_data.json</code>. Verifique que el archivo exista y no tenga errores de sintaxis.</p>';
+                postsContainer.innerHTML = '<p class="text-center p-8 text-red-600 font-semibold">Error Crítico: No se pudo cargar el archivo <code>blog_data.json</code>. Verifique que el archivo exista en la misma carpeta que este HTML y no tenga errores de sintaxis.</p>';
                 return;
             }
 
             const { brand, posts } = siteData;
 
-            // --- 2. Renderizar componentes ---
             renderHeader(brand, header);
             renderPostsList(posts, postsContainer);
 
-            // --- 3. Lógica de Navegación ---
+            function showPostsList() {
+                postSingleView.classList.add('hidden');
+                postsListView.classList.remove('hidden');
+                document.title = 'Blog | Gustavo Franco Arquitectos';
+                window.scrollTo(0, 0);
+            }
+
             function showSinglePost(postId) {
                 const post = posts.find(p => p.id === postId);
                 if (post) {
@@ -111,16 +108,22 @@
                     event.preventDefault();
                     const postId = card.dataset.postId;
                     showSinglePost(postId);
+                    return;
+                }
+
+                const backButton = event.target.closest('.back-to-list-button');
+                if (backButton) {
+                    event.preventDefault();
+                    showPostsList();
+                    return;
                 }
             });
-
         });
 
-        // --- Funciones de Renderizado ---
         function renderHeader(brandData, container) {
             container.innerHTML = `
                 <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-                    <a href="blog.html">
+                    <a href="/blog/">
                         <img src="${brandData.logoUrl}" alt="Logo Gustavo Franco Arquitectos" class="h-10">
                     </a>
                     <a href="${brandData.mainSiteUrl}" class="text-sm font-semibold text-white hover:text-brand-accent transition-colors">Volver al Sitio Principal →</a>
@@ -173,10 +176,15 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Botón para Volver al Listado -->
+                    <div class="text-center mt-12">
+                        <a href="#" class="back-to-list-button inline-block bg-brand-accent text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green transition-colors shadow-md hover:shadow-lg">
+                            ← Volver a todos los artículos
+                        </a>
+                    </div>
                 </article>
             `;
         }
     </script>
-
 </body>
 </html>
