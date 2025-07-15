@@ -163,7 +163,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: var(--verde-principal);
         }
 
-        /* --- NUEVO ESTILO PARA ENLACE EXTERNO --- */
         .nav-menu a.external-link {
             font-weight: 700;
             color: var(--verde-principal);
@@ -315,7 +314,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .home-portfolio-item .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 2rem 1rem 1rem 1rem; text-align: left; transition: opacity 0.3s ease; }
         .home-portfolio-item .overlay h4 { color: white; font-weight: 700; }
         
-        /* --- NUEVA SECCIÓN PROPTECH --- */
         .proptech-section {
             background-color: var(--blanco-puro);
             text-align: center;
@@ -493,7 +491,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco.svg" alt="Gustavo Franco Logo" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/FFFFFF/1E5128?text=Gustavo+Franco';">
             </a>
             <ul class="nav-menu" id="main-nav-menu">
-                </ul>
+                <!-- El menú se poblará dinámicamente -->
+            </ul>
             <div class="mobile-menu"><span></span><span></span><span></span></div>
         </div>
     </nav>
@@ -516,10 +515,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // --- LÓGICA DE LA APLICACIÓN ---
         
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('data.json')
+            // --- INICIO DE LA CONFIGURACIÓN ---
+            // IMPORTANTE: Reemplace esta URL de ejemplo por la URL real donde alojará su archivo data.json.
+            // Puede usar un servicio como GitHub Gist (y usar la URL del botón "Raw").
+            const dataUrl = 'https://gist.githubusercontent.com/gfrancoarq/b093751a4f6209931818a36d89240cb3/raw/c20942ac11c815339c04996414902b4899c7d10e/data.json';
+            // --- FIN DE LA CONFIGURACIÓN ---
+
+            fetch(dataUrl)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        throw new Error(`Error de red o HTTP: ${response.status}`);
                     }
                     return response.json();
                 })
@@ -531,9 +536,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     window.addEventListener('hashchange', () => showPageFromURL(siteContent));
                 })
-                .catch(error => {
-                    console.error("Error al cargar o procesar el archivo data.json:", error);
-                    document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio. Por favor, revise la consola.</h2>';
+                .catch(e => {
+                    console.error('Error al cargar o procesar el archivo data.json:', e);
+                    document.body.innerHTML = `<div style="text-align: center; padding: 40px; font-family: sans-serif; color: #333;">
+                        <h1 style="color: #D32F2F;">Error Crítico al Cargar el Sitio</h1>
+                        <p>No se pudo obtener la información necesaria para mostrar la página.</p>
+                        <p>Por favor, verifique que la URL en la variable <strong>dataUrl</strong> dentro de <code>index.html</code> sea correcta y apunte a un archivo <code>data.json</code> válido y accesible.</p>
+                        <hr style="margin: 20px auto; width: 50%;">
+                        <p><em>Detalle técnico: ${e.message}</em></p>
+                    </div>`;
                 });
         });
         
@@ -601,7 +612,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              window.location.hash = path;
              const navMenu = document.getElementById('main-nav-menu');
              if (navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
+                 navMenu.classList.remove('show');
              }
         }
 
@@ -609,20 +620,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function populateNav({ menu }) {
             const navMenu = document.getElementById('main-nav-menu');
             if(navMenu) {
-                navMenu.innerHTML = menu.map(item => {
-                    const isExternal = item.isExternal || false;
+                let menuItemsHTML = menu.map(item => {
+                    const isExternal = item.href.startsWith('http');
                     const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-                    const cssClass = isExternal ? 'class="external-link"' : '';
                     const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
-                    return `<li><a href="${item.href}" ${cssClass} ${target} ${clickHandler}>${item.name}</a></li>`;
+                    return `<li><a href="${item.href}" ${target} ${clickHandler}>${item.name}</a></li>`;
                 }).join('');
+                navMenu.innerHTML = menuItemsHTML;
             }
-             // Re-attach internal navigation listeners
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                if (!link.classList.contains('external-link')) {
-                    link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
-                }
-            });
         }
 
         function populateHome({ home, portfolio, blog, proptech_section }) {
@@ -634,14 +639,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <h1>${home.hero.title}</h1>
                         <p class="subtitle">${home.hero.subtitle}</p>
                         <p class="support-text">${home.hero.supportText}</p>
-                        <a href="#services" class="cta-button">${home.hero.ctaButton}</a>
+                        <a href="#services" class="cta-button" onclick="navigateTo(event, '#services')">${home.hero.ctaButton}</a>
                     </div>
                 </section>
                 <section id="home-solutions" class="home-solutions"><div class="container" id="home-solutions-container"></div></section>
-                
-                <!-- NUEVO CONTENEDOR PARA PROPTECH -->
                 <section id="proptech-section-container"></section>
-
                 <section class="home-portfolio"><div class="container" id="home-portfolio-container"></div></section>
                 <section id="latest-post-section" style="background-color: var(--gris-claro);"><div class="container" id="latest-post-container"></div></section>
             `;
@@ -657,19 +659,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>`).join('')}
                 </div>`;
             
-            // --- CÓDIGO PARA POBLAR LA NUEVA SECCIÓN ---
             const proptechContainer = document.getElementById('proptech-section-container');
             if (proptechContainer && proptech_section) {
                  proptechContainer.innerHTML = `
-                    <div class="proptech-section">
-                        <div class="container">
-                            <div class="proptech-content">
-                                <h2 class="section-title" style="font-size: 2rem;">${proptech_section.title}</h2>
-                                <p>${proptech_section.text}</p>
-                                <a href="${proptech_section.buttonUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">${proptech_section.buttonText}</a>
-                            </div>
-                        </div>
-                    </div>
+                     <div class="proptech-section">
+                         <div class="container">
+                             <div class="proptech-content">
+                                 <h2 class="section-title" style="font-size: 2rem;">${proptech_section.title}</h2>
+                                 <p>${proptech_section.text}</p>
+                                 <a href="${proptech_section.buttonUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">${proptech_section.buttonText}</a>
+                             </div>
+                         </div>
+                     </div>
                  `;
             }
 
@@ -688,7 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const latestPost = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
             if (latestPost) {
                 const latestPostHTML = createPostHTML(latestPost, true);
-                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div class="blog-grid" onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
+                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div class="blog-grid">${latestPostHTML}</div>`;
             }
         }
         
@@ -807,7 +808,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/333333/FFFFFF?text=Gustavo+Franco';">
                     </a>
                     <div class="footer-links"><ul>${menu.map(item => {
-                         const isExternal = item.isExternal || false;
+                         const isExternal = item.href.startsWith('http');
                          const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
                          const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
                          return `<li><a href="${item.href}" ${target} ${clickHandler}>${item.name}</a></li>`
@@ -833,7 +834,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             const containerClass = isHomepage ? 'latest-post-card' : 'blog-post';
 
-            return `<article class="${containerClass}" onclick="${isHomepage ? "navigateTo(event, '#blog')" : `openModal('${post.id}', 'blog')`}">
+            return `<article class="${containerClass}" onclick="${clickAction}">
                         ${mediaHTML}
                         <div class="blog-post-content">
                             <h3 class="blog-post-title">${post.title}</h3>
@@ -947,4 +948,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
-
