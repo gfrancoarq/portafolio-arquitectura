@@ -3,7 +3,7 @@
     { "name": "Inicio", "href": "#home" },
     { "name": "Servicios", "href": "#services" },
     { "name": "Portafolio", "href": "#portfolio" },
-    { "name": "Blog", "href": "#blog" },
+    { "name": "Blog", "href": "/blog/", "isExternal": true },
     { "name": "Quiénes Somos", "href": "#about" },
     { "name": "Contacto", "href": "#contact" },
     { "name": "AceleradorTech ✨", "href": "http://aceleradortech.com", "isExternal": true }
