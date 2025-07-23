@@ -128,7 +128,7 @@
         { "id": "lomas-del-valle", "title": "Conjunto Habitacional Lomas del Valle", "shortDesc": "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop", "modalContent": {
           "challenge": "Planificar la expansión urbana de Nueva Imperial a través de un proyecto habitacional de 504 viviendas, equilibrando la densidad con una alta calidad de vida para sus residentes.",
           "solution": "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado, funcional y de alto valor social que se convirtió en un referente para el desarrollo de la zona.",
-          "images": ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop"]
+          "images": ["https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/multi.png"]
         }},
         { "id": "magisur", "title": "Diseño de Viviendas de Alto Estándar", "shortDesc": "Línea de viviendas sobre 160 m² con diseño de vanguardia.", "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop", "modalContent": {
           "challenge": "Crear una línea de viviendas sobre 160 m² que combinara diseño de vanguardia con eficiencia constructiva.",
