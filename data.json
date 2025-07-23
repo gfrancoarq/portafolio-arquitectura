@@ -125,7 +125,7 @@
         }}
       ]},
       { "title": "Desarrollo Residencial a Gran Escala", "projects": [
-        { "id": "lomas-del-valle", "title": "Conjunto Habitacional Lomas del Valle", "shortDesc": "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop", "modalContent": {
+        { "id": "lomas-del-valle", "title": "Conjunto Habitacional Lomas del Valle", "shortDesc": "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", "imageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "modalContent": {
           "challenge": "Planificar la expansión urbana de Nueva Imperial a través de un proyecto habitacional de 504 viviendas, equilibrando la densidad con una alta calidad de vida para sus residentes.",
           "solution": "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado, funcional y de alto valor social que se convirtió en un referente para el desarrollo de la zona.",
           "images": ["https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/multi.png"]
