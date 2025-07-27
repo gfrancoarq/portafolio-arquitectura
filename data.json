@@ -12,15 +12,15 @@
     "hero": {
       "title": "Decisiones Inmobiliarias Basadas en Datos.",
       "subtitle": "Transformamos la complejidad del mercado en certeza para su patrimonio.",
-      "supportText": "Combinamos una década de experiencia en arquitectura y valoración con análisis de datos avanzados para blindar sus inversiones y maximizar su rentabilidad.",
+      "supportText": "Integramos Data Science y desarrollo de software en nuestra metodología de arquitectura y valoración para blindar sus inversiones y maximizar su rentabilidad.",
       "ctaButton": "Conozca Nuestros Servicios"
     },
     "solutions": {
       "title": "Nuestras Soluciones Estratégicas",
       "cards": [
-        { "id": "auditoria", "icon": "fa-search-dollar", "title": "Auditoría de Inversión Inmobiliaria", "description": "Un due-diligence técnico y normativo que revela el potencial oculto y los riesgos de un activo antes de su adquisición." },
-        { "id": "peritaje", "icon": "fa-balance-scale", "title": "Valoración Estratégica y Peritaje Judicial", "description": "Informes de tasación de alta complejidad, defendibles y fundamentados en metodologías avanzadas para litigios y decisiones críticas." },
-        { "id": "diseno", "icon": "fa-drafting-compass", "title": "Diseño Arquitectónico Basado en Datos", "description": "Proyectos de arquitectura que nacen de un análisis de viabilidad para maximizar el potencial constructivo y financiero de su propiedad." }
+        { "id": "auditoria", "icon": "fa-search-dollar", "title": "Auditoría de Inversión con IA", "description": "Un due-diligence técnico y normativo, potenciado con IA, que revela el potencial oculto y los riesgos de un activo antes de su adquisición." },
+        { "id": "peritaje", "icon": "fa-balance-scale", "title": "Valoración Predictiva y Peritaje", "description": "Informes de tasación de alta complejidad, fundamentados en modelos de valoración predictiva (AVM) para litigios y decisiones críticas." },
+        { "id": "diseno", "icon": "fa-drafting-compass", "title": "Diseño Arquitectónico Data-Driven", "description": "Proyectos que nacen de un análisis de viabilidad algorítmico para maximizar el potencial constructivo y financiero de su propiedad." }
       ]
     },
     "featuredPortfolio": {
@@ -37,7 +37,7 @@
   "about": {
     "pageTitle": "Visión Estratégica, Dominio Técnico y Rigor",
     "profileImageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil ia 8 copy.jpg",
-    "profileText": "Gustavo Franco es un Arquitecto MBA, Especialista en Geointeligencia Inmobiliaria. Su misión es fusionar más de una década de \"conocimiento de dominio\" con ciencia de datos para transformar datos complejos en decisiones de inversión seguras y rentables. Esta visión culmina con la fundación de AceleradorTech, su spin-off tecnológico donde desarrolla herramientas de análisis predictivo. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones.",
+    "profileText": "Gustavo Franco es un Arquitecto y Developer con foco en PropTech. Su misión es fusionar una década de 'conocimiento de dominio' en el sector inmobiliario con Data Science para transformar datos complejos en decisiones de inversión. Esta visión le ha llevado a formarse proactivamente en desarrollo de software y a liderar AceleradorTech, su iniciativa de innovación donde construye herramientas de análisis predictivo. No solo diseña y construye; crea activos. No solo tasa propiedades; blinda decisiones con código.",
     "linkedinText": "Para conocer la trayectoria profesional de nuestro fundador en detalle, puede visitar su perfil en <a href='https://www.linkedin.com/in/gustavfranco/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.",
     "kpiTitle": "Resultados, no solo métricas",
     "kpis": [
@@ -57,8 +57,8 @@
     },
     "formation": {
       "title": "Formación y Competencias Estratégicas",
-      "academic": [ "MBA - Master in Business Administration, IEDE Business School", "Arquitecto, Universidad Autónoma de Chile", "Data Science con Python, OpenBoxCode Sence", "Diplomado en Tasación Inmobiliaria, Universidad de Chile", "Diplomado en Finanzas y Riesgo Financiero, USACH" ],
-      "skills": [ "Geointeligencia Inmobiliaria (Location Intelligence)", "Desarrollo de Modelos Predictivos (IA/ML)", "Liderazgo Estratégico y Gestión de Proyectos", "Dominio Normativo y Legal (MINVU, OGUC, LGUC)", "Análisis Financiero y de Mercado Inmobiliario", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
+      "academic": [ "Data Science con Python, OpenBoxCode Sence", "Arquitecto, Universidad Autónoma de Chile", "Diplomado en Tasación Inmobiliaria, Universidad de Chile", "Diplomado en Finanzas y Riesgo Financiero, USACH" ],
+      "skills": [ "Desarrollo PropTech (Python, JS, React)", "Geointeligencia Inmobiliaria (Location Intelligence)", "Desarrollo de Modelos Predictivos (IA/ML)", "Análisis Financiero y de Mercado Inmobiliario", "Liderazgo Estratégico y Gestión de Proyectos", "Diseño y Modelado Avanzado (AutoCAD, Revit)" ]
     }
   },
   "services": {
@@ -68,38 +68,38 @@
       {
         "id": "auditoria-inversion",
         "title": "Auditoría de Inversión Inmobiliaria",
-        "description": "Otorgamos certeza absoluta en transacciones inmobiliarias, revelando riesgos y potenciales ocultos que una revisión convencional no detecta. Ideal para inversionistas y compradores que buscan blindar su decisión.",
+        "description": "Otorgamos certeza absoluta en transacciones inmobiliarias. Usamos software propio para automatizar el análisis normativo, revelando riesgos y potenciales ocultos que una revisión convencional no detecta. Ideal para inversionistas que buscan blindar su decisión.",
         "details": [
           "Análisis de potencial normativo (constructibilidad, usos de suelo).",
           "Detección de vicios y obras no regularizadas.",
           "Verificación de superficies y cabida real vs. documentada.",
           "Informe de Due Diligence Técnico-Legal para toma de decisiones."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
         "id": "peritaje-estrategico",
         "title": "Valoración Estratégica y Peritaje Judicial",
-        "description": "Entregamos informes de tasación de alta complejidad, fundamentados en una metodología avanzada para ser defendibles en contextos críticos como litigios, herencias o decisiones corporativas.",
+        "description": "Entregamos informes de tasación de alta complejidad. Nuestra metodología se potencia con el desarrollo de modelos de valoración predictiva (AVM) para ser defendibles en contextos críticos como litigios, herencias o decisiones corporativas.",
         "details": [
           "Peritajes Judiciales para disputas de valor.",
           "Tasaciones de alta complejidad para la banca e inversionistas.",
           "Metodología respaldada por +1.000 informes y modelos propios.",
           "Análisis de 'mejor y mayor uso' para maximizar el valor."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.pexels.com/photos/7567547/pexels-photo-7567547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
         "id": "diseno-data-driven",
         "title": "Diseño Arquitectónico Basado en Datos",
-        "description": "Concebimos proyectos de arquitectura que no solo responden a necesidades funcionales y estéticas, sino que nacen de una estrategia para optimizar el potencial constructivo y financiero de su propiedad.",
+        "description": "Concebimos proyectos de arquitectura que nacen de una estrategia para optimizar el potencial constructivo y financiero de su propiedad. Nuestro análisis de viabilidad se potencia con algoritmos que exploran múltiples escenarios de rentabilidad en tiempo récord.",
         "details": [
           "Diseño de obra nueva y remodelaciones estratégicas.",
           "Análisis de viabilidad integral previo al diseño.",
           "Optimización de la constructibilidad y el rendimiento del activo.",
           "Gestión de permisos y regularizaciones con visión de inversión."
         ],
-        "imageUrl": "https://images.unsplash.com/photo-1511068797325-6083f0f872b1?q=80&w=2070&auto=format&fit=crop"
+        "imageUrl": "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       }
     ]
   },
@@ -107,21 +107,21 @@
     "pageTitle": "Portafolio de Proyectos",
     "subtitle": "Una selección curada de nuestro trabajo que demuestra la experiencia que fundamenta nuestro enfoque innovador.",
     "categories": [
-       { "title": "Tecnología y Modelado de Datos", "projects": [
-        { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop", "modalContent": {
+        { "title": "Tecnología y Modelado de Datos", "projects": [
+        { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.",
           "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la auditora financiera Deloitte.",
-          "images": ["https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }},
-        { "id": "tesis-3d", "title": "Visualización 3D de Valores de Suelo", "shortDesc": "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", "imageUrl": "https://images.unsplash.com/photo-1604398191248-7394a49c4c45?q=80&w=2069&auto=format&fit=crop", "modalContent": {
+        { "id": "tesis-3d", "title": "Visualización 3D de Valores de Suelo", "shortDesc": "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", "imageUrl": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Comunicar de forma efectiva y novedosa un complejo análisis de datos sobre valores de suelo, que era difícil de interpretar en formatos 2D.",
           "solution": "Se fue pionero en el uso de visualizaciones 3D para analizar datos de valores de suelo, transformando datos complejos en una 'topografía de valor' intuitiva. Esto permitió analizar patrones, cortes y evoluciones temporales que el análisis 2D tradicional no puede mostrar.",
-          "images": ["https://images.unsplash.com/photo-1588665792437-5671b1b68b73?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1604398191248-7394a49c4c45?q=80&w=2069&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }},
-        { "id": "pipeline-integra", "title": "Pipeline de Gestión y Reportería", "shortDesc": "Implementación de un sistema de seguimiento y reportería para 250 proyectos simultáneos.", "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop", "modalContent": {
+        { "id": "pipeline-integra", "title": "Pipeline de Gestión y Reportería", "shortDesc": "Implementación de un sistema de seguimiento y reportería para 250 proyectos simultáneos.", "imageUrl": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Gestionar el seguimiento de la construcción de 250 jardines infantiles a nivel nacional de forma simultánea, sin una herramienta centralizada.",
           "solution": "Se implementó un pipeline de datos para centralizar la información de avance de obras, generando reportería automatizada y Cartas Gantt actualizadas para la alta dirección, mejorando la toma de decisiones y el control del proyecto.",
-          "images": ["https://images.unsplash.com/photo-1542382156995-18a6ac86a23a?q=80&w=1964&auto=format&fit=crop", "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }}
       ]},
       { "title": "Desarrollo Residencial a Gran Escala", "projects": [
@@ -130,27 +130,27 @@
           "solution": "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado, funcional y de alto valor social que se convirtió en un referente para el desarrollo de la zona.",
           "images": ["https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/multi.png"]
         }},
-        { "id": "magisur", "title": "Diseño de Viviendas de Alto Estándar", "shortDesc": "Línea de viviendas sobre 160 m² con diseño de vanguardia.", "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop", "modalContent": {
+        { "id": "magisur", "title": "Diseño de Viviendas de Alto Estándar", "shortDesc": "Línea de viviendas sobre 160 m² con diseño de vanguardia.", "imageUrl": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Crear una línea de viviendas sobre 160 m² que combinara diseño de vanguardia con eficiencia constructiva.",
           "solution": "Se participó en el diseño de múltiples conjuntos y condominios, estableciendo un nuevo estándar de calidad y estética para el mercado residencial de alto poder adquisitivo.",
-          "images": ["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop", "https://images.unsplash.com/photo-1570129477492-45c003edd2e0?q=80&w=2070&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }}
       ]},
       { "title": "Proyectos Comerciales y de Equipamiento", "projects": [
-        { "id": "goma", "title": "Remodelación Automotora Gomá, Temuco", "shortDesc": "Modernización de imagen corporativa y optimización de flujos en 400 m².", "imageUrl": "https://images.unsplash.com/photo-1517524206127-48bbd363f357?q=80&w=1964&auto=format&fit=crop", "modalContent": {
+        { "id": "goma", "title": "Remodelación Automotora Gomá, Temuco", "shortDesc": "Modernización de imagen corporativa y optimización de flujos en 400 m².", "imageUrl": "https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Modernizar la imagen corporativa de una automotora consolidada y optimizar el flujo de clientes y servicios en sus 400 m².",
           "solution": "Una remodelación integral que renovó la fachada, mejoró la experiencia del cliente en la sala de ventas y optimizó la eficiencia del área de servicio, resultando en un aumento tangible de la percepción de marca.",
-          "images": ["https://images.unsplash.com/photo-1616422285623-13ff01621935?q=80&w=1931&auto=format&fit=crop", "https://images.unsplash.com/photo-1517524206127-48bbd363f357?q=80&w=1964&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }},
-        { "id": "conguillio", "title": "Master Plan en Parque Nacional Conguillío", "shortDesc": "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop", "modalContent": {
+        { "id": "conguillio", "title": "Master Plan en Parque Nacional Conguillío", "shortDesc": "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", "imageUrl": "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": {
           "challenge": "Diseñar 15 infraestructuras turísticas, incluyendo una cafetería, cabañas y miradores, dentro de uno de los ecosistemas más protegidos de Chile.",
           "solution": "Un ejercicio de arquitectura de mínimo impacto, donde cada estructura se diseñó para dialogar respetuosamente con el paisaje, utilizando materiales locales y soluciones sostenibles para potenciar la experiencia del visitante sin alterar la majestuosidad del parque.",
-          "images": ["https://images.unsplash.com/photo-1603576020339-e9759c43d780?q=80&w=1974&auto=format&fit=crop", "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"]
+          "images": ["https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
         }}
       ]}
     ]
   },
-   "investments": {
+    "investments": {
     "pageTitle": "Oportunidades de Inversión",
     "subtitle": "Activos inmobiliarios curados y analizados por nuestro equipo para maximizar su potencial de rentabilidad y plusvalía. Nota: se cobra comisión de corretaje del 2% + IVA.",
     "properties": []
