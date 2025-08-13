@@ -1,949 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WZ5QC6S9');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Franco | Especialista en Geointeligencia Inmobiliaria y Arquitecto</title>
-    
-    <meta name="description" content="Gustavo Franco, Especialista en Geointeligencia Inmobiliaria, Arquitecto y Perito Tasador. Servicios de valoración estratégica, análisis de viabilidad con IA y consultoría Proptech.">
-    <meta name="keywords" content="geointeligencia inmobiliaria, especialista proptech, arquitecto, tasador especialista, peritaje, valoración con IA, gustavo franco, santiago, chile">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gustavo Franco — Arquitectura & Data</title>
+    <meta name="description" content="Gustavo Franco, Arquitecto y Developer. Fusionamos Data Science y 'conocimiento de dominio' para transformar datos complejos en decisiones de inversión inmobiliaria.">
+    <meta name="keywords" content="geointeligencia inmobiliaria, proptech, arquitecto, tasador, peritaje, valoración IA, gustavo franco, chile">
     <meta name="author" content="Gustavo Franco">
-
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
-        /* Variables CSS para la paleta de colores */
         :root {
-            --verde-principal: #1E5128; /* Forest Green */
-            --verde-secundario: #4E9F3D; /* Dark Green */
-            --verde-acento: #D8EE7D;     /* Lime Green */
-            --gris-neutro: #333333;     /* Texto Principal */
-            --blanco-puro: #FFFFFF;     /* Fondos/Elementos */
-            --gris-claro: #F0F4F8;     /* Fondos/Separadores */
+            --verde-principal: #00ff88;
+            --negro-bg: #050505;
+            --gris-card: #111111;
+            --gris-texto: #999999;
+            --blanco-puro: #FFFFFF;
         }
-
-        /* Reset básico y estilos generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-padding-top: 80px; /* Ajuste para el nav fijo */
-        }
-
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
-            color: var(--gris-neutro);
-            background-color: var(--blanco-puro);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--negro-bg);
+            color: var(--gris-texto);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--blanco-puro); font-weight: 800; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
+        h3 { font-size: 1.25rem; font-weight: 700; }
+        .highlight { color: var(--verde-principal); }
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--verde-principal);
-            font-weight: 700;
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        h1 { font-weight: 800; font-size: 3.2rem; } 
-        h2 { font-weight: 700; font-size: 2.8rem; }
-        h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.2rem; }
-
-        .modal-body-content h4 {
-            color: var(--verde-principal);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Navegación y Logo */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 1000;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 12px;
-        }
-        
-        .logo-image {
-            height: 48px; /* Logo un poco más grande */
-            width: auto;
-            object-fit: contain;
-        }
-
-        .logo-text-container {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--gris-neutro);
-        }
-        
-        .logo-subtitle {
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: var(--gris-neutro);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-        }
-
-        .nav-menu a {
-            color: var(--gris-neutro);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            cursor: pointer;
-            font-weight: 400;
+        .nav-link {
             position: relative;
-            padding-bottom: 5px;
+            transition: color 0.3s ease;
         }
-
-        .nav-menu a::after {
-            content: '';
+        .nav-link:hover {
+            color: var(--blanco-puro);
+        }
+        .nav-link::after {
+            content: "";
             position: absolute;
+            left: 0;
+            bottom: -4px;
             width: 0;
             height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--verde-secundario);
-            transition: width 0.3s ease-out;
+            background-color: var(--verde-principal);
+            transition: width 0.3s ease;
         }
-
-        .nav-menu a:hover::after, .nav-menu a.active::after {
+        .nav-link:hover::after {
             width: 100%;
         }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--verde-principal);
-        }
-
-        /* --- NUEVO ESTILO PARA ENLACE EXTERNO --- */
-        .nav-menu a.external-link {
-            font-weight: 700;
-            color: var(--verde-principal);
-        }
-        .nav-menu a.external-link:hover {
-             color: var(--verde-secundario);
-        }
-         .nav-menu a.external-link::after {
-            background-color: var(--verde-acento);
-        }
-
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--gris-neutro);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Páginas */
-        .page { display: none; min-height: 100vh; }
-        .page.active { display: block; }
-        .page > *:first-child { padding-top: 80px; }
-
-        /* Sección Hero */
-        .hero {
-            background-image: linear-gradient(rgba(30, 81, 40, 0.75), rgba(30, 81, 40, 0.75)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--blanco-puro);
-            padding: 1rem;
-        }
-
-        .hero-content {
-            z-index: 2;
-            position: relative;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            color: var(--blanco-puro);
-            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
-            letter-spacing: 1.5px;
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--verde-acento);
-            font-weight: 400;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.4);
-        }
-        
-        .hero .support-text {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 650px;
-            margin: 0 auto 2.5rem auto;
-            line-height: 1.8;
-        }
-
         .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--verde-secundario) 0%, #6CBF5D 100%);
-            color: var(--blanco-puro);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 8px 20px rgba(78, 159, 61, 0.35);
-            border: none;
-            cursor: pointer;
+            background-color: var(--verde-principal);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(78, 159, 61, 0.45);
+            background-color: #00e67a;
+            transform: scale(1.05);
         }
-        
-        /* Estilos de sección comunes */
-        section { padding: 6rem 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 3.5rem;
-            color: var(--gris-neutro);
-            position: relative;
-            padding-bottom: 1.5rem;
+        .secondary-cta {
+            border-color: var(--verde-principal);
+            color: var(--verde-principal);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--verde-secundario);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+        .secondary-cta:hover {
+            background-color: var(--verde-principal);
+            color: var(--negro-bg);
         }
-        
-        /* Soluciones y Portafolio en Inicio */
-        .home-solutions { background-color: var(--gris-claro); }
-        .home-solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        
-        .solution-card {
-            background: var(--blanco-puro);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .solution-card:hover {
-             transform: translateY(-10px);
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .solution-icon { font-size: 3rem; color: var(--verde-secundario); margin-bottom: 1.5rem; }
-        .solution-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--verde-principal); }
-        .solution-card p { margin-bottom: 1.5rem; }
-
-        .details-btn { font-weight: 700; color: var(--verde-secundario); text-decoration: none; transition: color 0.3s; }
-        .details-btn:hover { color: var(--verde-principal); }
-        .home-portfolio { text-align: center; }
-        .home-portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
-        .home-portfolio-item { position: relative; overflow: hidden; border-radius: 12px; }
-        .home-portfolio-item img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.4s ease; }
-        .home-portfolio-item:hover img { transform: scale(1.1); }
-        .home-portfolio-item .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 2rem 1rem 1rem 1rem; text-align: left; transition: opacity 0.3s ease; }
-        .home-portfolio-item .overlay h4 { color: white; font-weight: 700; }
-        
-        /* --- NUEVA SECCIÓN PROPTECH --- */
-        .proptech-section {
-            background-color: var(--blanco-puro);
-            text-align: center;
-        }
-        .proptech-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 20px;
-            background: linear-gradient(145deg, var(--blanco-puro), var(--gris-claro));
-        }
-        .proptech-content h2 {
-            margin-bottom: 1.5rem;
-        }
-        .proptech-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-
-        /* Estilos de Páginas */
-        .page-header {
-            background: linear-gradient(135deg, var(--verde-principal) 0%, var(--verde-secundario) 100%);
-            color: var(--blanco-puro);
-            text-align: center;
-            padding: 2rem;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .page-header-content { max-width: 800px; }
-        .page-header h1 { color: var(--blanco-puro); font-size: 3rem; }
-        .page-header p { font-size: 1.2rem; font-weight: 300; margin-top: 1rem; opacity: 0.9; }
-        .page-content { background-color: var(--gris-claro); padding: 6rem 0; }
-        
-        /* Quiénes Somos */
-        .about-section-card { background-color: var(--blanco-puro); border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); padding: 3rem; margin-bottom: 3rem; }
-        .about-image { width: 250px; height: 250px; border-radius: 50%; overflow: hidden; border: 6px solid var(--verde-secundario); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); object-fit: cover; margin: 0 auto 1.5rem auto; display: block; }
-        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; text-align: center; }
-        .kpi-box { background-color: var(--gris-claro); border-radius: 10px; padding: 1.5rem; }
-        .kpi-number { font-size: 2.8rem; font-weight: 800; color: var(--verde-principal); }
-        .experience-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-        .experience-item { background-color: var(--gris-claro); padding: 1.5rem; border-radius: 10px; border-left: 5px solid var(--verde-secundario); }
-        .experience-item h4 { color: var(--verde-principal); margin-bottom: 0.5rem; }
-
-        /* Servicios, Portafolio, Oportunidades */
-        .service-section, .portfolio-category { margin-bottom: 4rem; }
-        
-        .service-section > .section-title {
-            text-align: left;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-        .service-section > .section-title::after {
-            left: 0;
-            transform: translateX(0);
-        }
-
-        .service-layout {
-            display: flex;
-            gap: 2.5rem;
-            align-items: flex-start;
-        }
-        .service-image {
-            flex-shrink: 0;
-            width: 300px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .service-content {
-            flex-grow: 1;
-        }
-
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .portfolio-item, .property-item { background: var(--blanco-puro); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; cursor: pointer; }
-        .portfolio-item:hover, .property-item:hover { transform: translateY(-8px); box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12); }
-        .item-image img { width: 100%; height: 220px; object-fit: cover; }
-        .item-content { padding: 1.5rem; }
-        .item-title { font-size: 1.4rem; color: var(--verde-principal); margin-bottom: 0.5rem; }
-        .item-description { font-size: 0.95rem; color: var(--gris-neutro); margin-bottom: 1rem; font-weight: 300; }
-        .property-price { font-size: 1.5rem; color: var(--verde-secundario); font-weight: 700; margin-bottom: 0.5rem; }
-        
-        /* Contacto */
-        .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; background: var(--blanco-puro); padding: 3rem; border-radius: 15px; }
-        .contact-info-panel h3 { font-size: 1.8rem; color: var(--verde-principal); margin-bottom: 1rem; }
-        .contact-info-panel p { margin-bottom: 2rem; line-height: 1.7; }
-        .contact-info-panel ul { list-style: none; padding: 0; }
-        .contact-info-panel li { margin-bottom: 1rem; font-weight: 300; }
-        .contact-form .form-group { margin-bottom: 1rem; }
-        .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--gris-neutro); }
-        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; font-family: 'Roboto', sans-serif; transition: all 0.2s ease; }
-        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--verde-secundario); box-shadow: 0 0 0 3px rgba(78, 159, 61, 0.2); }
-        .contact-form textarea { height: 150px; resize: vertical; }
-        
-        /* Blog */
-        .blog-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 900px; margin: 0 auto; }
-        .blog-post, .latest-post-card { background-color: var(--blanco-puro); border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); overflow: hidden; display: flex; flex-direction: column; cursor: pointer; }
-        .blog-post-media { width: 100%; padding-top: 56.25%; position: relative; }
-        .blog-post-media iframe, .blog-post-media img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; object-fit: cover; }
-        .blog-post-content { padding: 2rem; }
-        .blog-post-title { font-size: 2rem; margin-bottom: 0.5rem; color: var(--gris-neutro); }
-        .blog-post-date { font-size: 0.9rem; color: var(--gris-neutro); margin-bottom: 1.5rem; font-weight: 300; }
-        .blog-post-text { line-height: 1.8; font-weight: 300; }
-        .blog-post-text p { margin-bottom: 1rem; }
-        .latest-post-card .blog-post-title { font-size: 1.8rem; }
-        .read-more-btn { display: inline-block; margin-top: 1rem; color: var(--verde-secundario); text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
-        .read-more-btn:hover { color: var(--verde-principal); }
-        
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center; animation: fadeIn 0.3s ease-out; }
-        .modal-content { background-color: var(--blanco-puro); padding: 30px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); position: relative; max-width: 800px; width: 90%; animation: slideIn 0.3s ease-out; max-height: 90vh; overflow-y: auto; }
-        .close-button { color: var(--gris-neutro); font-size: 2.5rem; font-weight: bold; position: absolute; top: 10px; right: 20px; cursor: pointer; transition: color 0.3s ease; }
-        .close-button:hover, .close-button:focus { color: var(--verde-secundario); }
-        .modal-images-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 1rem;}
-        .modal-images-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
-        .modal-body-content { padding-top: 1rem; }
-        
-        /* Carousel en Modal */
-        .carousel-container { position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 1rem;}
-        .carousel-slides { display: flex; transition: transform 0.5s ease-in-out; }
-        .carousel-slide { min-width: 100%; }
-        .carousel-slide img { width: 100%; height: 400px; object-fit: cover; display: block; }
-        .carousel-prev, .carousel-next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 20px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background-color: rgba(0, 0, 0, 0.5); }
-        .carousel-next { right: 0; border-radius: 3px 0 0 3px; }
-        .carousel-prev:hover, .carousel-next:hover { background-color: rgba(0, 0, 0, 0.8); }
-        .carousel-dots { text-align: center; padding: 10px 0; }
-        .dot { cursor: pointer; height: 12px; width: 12px; margin: 0 4px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
-        .dot.active, .dot:hover { background-color: var(--verde-secundario); }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        /* Footer */
-        footer { background-color: var(--gris-neutro); color: var(--blanco-puro); padding: 3rem 0; }
-        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; }
-        .footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none;}
-        .footer-logo .logo-name { color: var(--blanco-puro); }
-        .footer-logo .logo-subtitle { color: rgba(255,255,255,0.7); }
-        
-        .footer-links ul, .footer-contact ul { list-style: none; padding: 0;}
-        .footer-links a, .footer-contact li { color: var(--blanco-puro); text-decoration: none; transition: color 0.3s; margin-bottom: 0.5rem;}
-        .footer-links a:hover { color: var(--verde-acento); }
-        .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; }
-        
-        /* Responsive */
-        @media (max-width: 900px) {
-            .contact-layout { grid-template-columns: 1fr; }
-            .service-layout { flex-direction: column; }
-            .service-image { width: 100%; height: 250px; object-fit: cover; margin-bottom: 2rem; }
-        }
-        @media (max-width: 768px) {
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); padding: 1rem 0; border-top: 1px solid rgba(0, 0, 0, 0.05); }
-            .nav-menu.show { display: flex; }
-            .nav-menu li { text-align: center; margin-bottom: 0.5rem; }
-            .mobile-menu { display: flex; }
-            h1, .hero h1, .page-header h1 { font-size: 2.2rem; }
-            h2, .section-title { font-size: 2rem; }
-            .hero .subtitle, .page-header p { font-size: 1.2rem; }
-            .footer-content { flex-direction: column; text-align: center; }
-        }
+        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); justify-content: center; align-items: center; animation: fadeInModal 0.3s ease-out; }
+        .modal-content { background-color: #181818; padding: 2rem; border-radius: 1rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); position: relative; max-width: 700px; width: 90%; animation: slideInModal 0.3s ease-out; max-height: 90vh; overflow-y: auto; border: 1px solid rgba(255,255,255,0.1); }
+        .close-button { color: var(--gris-texto); font-size: 2rem; font-weight: bold; position: absolute; top: 1rem; right: 1.5rem; cursor: pointer; transition: color 0.3s ease; }
+        .close-button:hover { color: var(--blanco-puro); }
+        @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideInModal { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ5QC6S9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <nav>
-        <div class="nav-container">
-            <a href="#home" class="logo-container">
-                <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco.svg" alt="Gustavo Franco Logo" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/FFFFFF/1E5128?text=Gustavo+Franco';">
-            </a>
-            <ul class="nav-menu" id="main-nav-menu">
-                </ul>
-            <div class="mobile-menu"><span></span><span></span><span></span></div>
+<body class="bg-negro-bg text-white">
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed w-full glass-nav z-50 px-6 py-4 flex justify-between items-center">
+        <a href="#" class="flex items-center">
+            <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Logo Gustavo Franco" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/050505/FFFFFF?text=GF';">
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#valoracion" class="nav-link">Valoración Estratégica</a>
+            <a href="#portafolio" class="nav-link">Portafolio</a>
+            <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
         </div>
+        <button id="mobile-menu-button" class="md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
     </nav>
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8">
+        <a href="#valoracion" class="text-2xl nav-link">Valoración Estratégica</a>
+        <a href="#portafolio" class="text-2xl nav-link">Portafolio</a>
+        <a href="#sobre-mi" class="text-2xl nav-link">Sobre Mí</a>
+        <a href="#contacto" class="text-2xl nav-link">Contacto</a>
+    </div>
 
-    <main>
-      <div id="home" class="page"></div>
-      <div id="about" class="page"></div>
-      <div id="services" class="page"></div>
-      <div id="portfolio" class="page"></div>
-      <div id="investment-opportunities" class="page"></div>
-      <div id="blog" class="page"></div>
-      <div id="contact" class="page"></div>
-    </main>
-    
-    <footer id="main-footer"></footer>
+    <!-- Hero -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 bg-center bg-cover" style="background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7)), url('https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg');">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Transformo Datos en Decisiones Inmobiliarias <span class="highlight">Irrefutables</span></h1>
+        <p class="text-lg md:text-xl mb-8 max-w-3xl">Arquitectura + Data Science para proyectos de alto impacto.</p>
+        <div class="space-x-4">
+            <a href="#valoracion" class="cta-button text-black px-6 py-3 rounded-lg font-semibold">Conocer mi Servicio Estrella</a>
+            <a href="#portafolio" class="secondary-cta border px-6 py-3 rounded-lg font-semibold">Ver Casos Reales</a>
+        </div>
+    </section>
 
-    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-button">×</span><div class="modal-body-content"></div></div></div>
+    <!-- Valoración Estratégica -->
+    <section id="valoracion" class="py-20 px-6 bg-gray-900/50">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold">Más que un Reporte Automático, una <span class="highlight">Valoración Estratégica</span>.</h2>
+                <p class="text-lg text-gris-texto mt-6 mb-12">En un mercado donde abundan los informes automáticos de bajo costo, ofrecemos algo fundamental: **certeza**. Combinamos el poder de los algoritmos con el criterio irremplazable de un perito tasador para entregar un informe que no solo informa, sino que blinda su decisión.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gris-card p-8 rounded-xl border border-gray-800">
+                    <h3 class="text-xl font-semibold mb-4 text-red-400">Informes Automáticos (La Competencia)</h3>
+                    <ul class="space-y-3 text-gris-texto">
+                        <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>Estimación basada en promedios, sin análisis de particularidades.</span></li>
+                        <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>Nula consideración de la normativa específica que puede afectar el valor.</span></li>
+                        <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>Sin validación humana, propenso a errores por datos de mala calidad.</span></li>
+                        <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>No defendible en un litigio o negociación compleja.</span></li>
+                        <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>Un commodity de bajo precio para decisiones de alto riesgo.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-gris-card p-8 rounded-xl border-2 border-green-500 transform scale-105">
+                    <h3 class="text-xl font-semibold mb-4 text-green-400">Nuestra Valoración Estratégica</h3>
+                     <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Análisis de datos de SII, CBR y transacciones reales, **validado por un perito experto.**</span></li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Considera la **normativa urbanística** y el potencial de desarrollo del activo.</span></li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Informe **sólido, auditable y defendible**, ideal para corredores, abogados e inmobiliarias.</span></li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Entrega **certeza y un argumento de negociación**, no solo un número.</span></li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Una inversión inteligente para decisiones de alto valor.</span></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="text-center mt-12">
+                <a href="#contacto" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Solicitar Valoración Estratégica</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section id="portafolio" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Casos de Éxito</h2>
+            <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio items will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="py-20 px-6 bg-gray-900/50">
+        <div class="container mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+            <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg" alt="Gustavo Franco" class="rounded-lg shadow-2xl w-full" loading="lazy" />
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mi Misión: <br>Certeza en un Mercado Complejo.</h2>
+                <p class="mb-4 text-lg text-gray-300">Soy Arquitecto y Data Scientist. Durante más de 10 años, he ayudado a inversionistas y desarrolladores a maximizar el valor de sus activos, fusionando el rigor del diseño con el poder del análisis de datos.</p>
+                <p class="text-gris-texto">He valorado más de 900 activos a nivel nacional con modelos predictivos propios, ofreciendo una precisión validada que va más allá de la tasación tradicional. Mi objetivo no es solo construir, es crear activos rentables y seguros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para tomar decisiones basadas en datos?</h2>
+            <p class="mb-8 max-w-2xl mx-auto">Agende hoy su consulta estratégica y descubra el potencial oculto en sus proyectos.</p>
+            <a href="https://wa.me/56958101807?text=Hola%20Gustavo,%20quisiera%20solicitar%20una%20Valoraci%C3%B3n%20Estrat%C3%A9gica." target="_blank" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Contactar por WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="py-6 px-6 text-center bg-negro-bg border-t border-gray-800">
+        <div class="text-gris-texto">
+            <p>&copy; 2025 Gustavo Franco. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">hola@gustavofranco.cl | +56 9 5810 1807</p>
+            <p class="text-xs mt-1">Lo Barnechea, Santiago | Cobertura Nacional</p>
+        </div>
+    </footer>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal-button" class="close-button">&times;</span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
 
     <script>
-        // --- LÓGICA DE LA APLICACIÓN ---
-        
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('data.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(siteContent => {
-                    window.siteContent = siteContent;
-                    populateAllSections(siteContent);
-                    setupNavigationAndModals(siteContent);
-                    showPageFromURL(siteContent);
-                    
-                    window.addEventListener('hashchange', () => showPageFromURL(siteContent));
-                })
-                .catch(error => {
-                    console.error("Error al cargar o procesar el archivo data.json:", error);
-                    document.body.innerHTML = '<h2 style="text-align:center; padding-top: 5rem;">Error al cargar el contenido del sitio. Por favor, revise la consola.</h2>';
+            const siteContent = {
+              "portfolio": {
+                "categories": [
+                  { "title": "Tecnología y Modelado de Datos", "projects": [
+                    { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.", "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la auditora financiera Deloitte."}},
+                    { "id": "tesis-3d", "title": "Visualización 3D de Valores de Suelo", "shortDesc": "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", "imageUrl": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Comunicar de forma efectiva y novedosa un complejo análisis de datos sobre valores de suelo, que era difícil de interpretar en formatos 2D.", "solution": "Se fue pionero en el uso de visualizaciones 3D para analizar datos de valores de suelo, transformando datos complejos en una 'topografía de valor' intuitiva."}}
+                  ]},
+                  { "title": "Desarrollo Residencial a Gran Escala", "projects": [
+                    { "id": "lomas-del-valle", "title": "Conjunto Habitacional Lomas del Valle", "shortDesc": "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", "imageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "modalContent": { "challenge": "Planificar la expansión urbana de Nueva Imperial a través de un proyecto habitacional de 504 viviendas, equilibrando la densidad con una alta calidad de vida.", "solution": "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado y funcional que se convirtió en un referente para el desarrollo de la zona."}}
+                  ]},
+                  { "title": "Proyectos Comerciales y de Equipamiento", "projects": [
+                    { "id": "goma", "title": "Remodelación Automotora Gomá", "shortDesc": "Modernización de imagen corporativa y optimización de flujos en 400 m².", "imageUrl": "https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Modernizar la imagen corporativa de una automotora consolidada y optimizar el flujo de clientes y servicios.", "solution": "Una remodelación integral que renovó la fachada, mejoró la experiencia del cliente en la sala de ventas y optimizó la eficiencia del área de servicio."}},
+                    { "id": "conguillio", "title": "Master Plan en Parque Nacional Conguillío", "shortDesc": "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", "imageUrl": "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Diseñar 15 infraestructuras turísticas, incluyendo cafetería y cabañas, dentro de uno de los ecosistemas más protegidos de Chile.", "solution": "Un ejercicio de arquitectura de mínimo impacto, donde cada estructura se diseñó para dialogar respetuosamente con el paisaje, utilizando materiales locales y soluciones sostenibles."}}
+                  ]}
+                ]
+              }
+            };
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
                 });
-        });
-        
-        function showPageFromURL(siteContent) {
-            const hash = window.location.hash.substring(1) || 'home';
-            const [pageId, sectionId] = hash.split('/');
-            
-            showPage(pageId);
+            });
 
-            if (sectionId) {
-                setTimeout(() => {
-                    const element = document.getElementById(sectionId);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
-                }, 150);
-            }
-        }
-
-        function populateAllSections(siteContent) {
-            populateNav(siteContent);
-            populateHome(siteContent);
-            populateAbout(siteContent);
-            populateServices(siteContent);
-            populatePortfolio(siteContent);
-            populateInvestments(siteContent);
-            populateBlog(siteContent);
-            populateContact(siteContent);
-            populateFooter(siteContent);
-        }
-
-        function setupNavigationAndModals(siteContent) {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            if(mobileMenu) mobileMenu.addEventListener('click', () => {
-                document.querySelector('.nav-menu').classList.toggle('show');
-            });
-
-            const modal = document.getElementById('infoModal');
-            if(modal) {
-                const closeButton = modal.querySelector('.close-button');
-                if(closeButton) closeButton.addEventListener('click', () => modal.style.display = 'none');
-                window.addEventListener('click', (event) => {
-                    if (event.target == modal) modal.style.display = 'none';
                 });
-            }
-        }
+            }, { threshold: 0.1 });
 
-        function showPage(pageId) {
-            if (!pageId) pageId = 'home';
-            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
-            const page = document.getElementById(pageId);
-            if(page) page.style.display = 'block';
-            
-            document.querySelectorAll('.nav-menu a').forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === `#${pageId}`) link.classList.add('active');
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('fade-in');
+                observer.observe(section);
             });
-             if (pageId !== 'home') {
-                  window.scrollTo({ top: 0, behavior: 'instant' });
-             }
-        }
-        
-        function navigateTo(e, path) {
-             e.preventDefault();
-             window.location.hash = path;
-             const navMenu = document.getElementById('main-nav-menu');
-             if (navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-             }
-        }
 
-        // --- FUNCIONES DE RENDERIZADO ---
-        function populateNav({ menu }) {
-            const navMenu = document.getElementById('main-nav-menu');
-            if(navMenu) {
-                navMenu.innerHTML = menu.map(item => {
-                    const isExternal = item.isExternal || false;
-                    const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-                    const cssClass = isExternal ? 'class="external-link"' : '';
-                    const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
-                    return `<li><a href="${item.href}" ${cssClass} ${target} ${clickHandler}>${item.name}</a></li>`;
-                }).join('');
-            }
-             // Re-attach internal navigation listeners
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                if (!link.classList.contains('external-link')) {
-                    link.addEventListener('click', (e) => navigateTo(e, link.getAttribute('href')));
-                }
-            });
-        }
-
-        function populateHome({ home, portfolio, blog, proptech_section }) {
-            const container = document.getElementById('home');
-            if (!container) return;
-            container.innerHTML = `
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1>${home.hero.title}</h1>
-                        <p class="subtitle">${home.hero.subtitle}</p>
-                        <p class="support-text">${home.hero.supportText}</p>
-                        <a href="#services" class="cta-button">${home.hero.ctaButton}</a>
+            // Populate Portfolio
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const allProjects = siteContent.portfolio.categories.flatMap(c => c.projects);
+            portfolioGrid.innerHTML = allProjects.map(project => `
+                <div class="rounded-lg overflow-hidden shadow-lg group cursor-pointer" onclick="openModal('${project.id}')">
+                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                    <div class="p-6 bg-gris-card">
+                        <h3 class="text-xl font-semibold text-white">${project.title}</h3>
+                        <p class="text-gris-texto mt-2">${project.shortDesc}</p>
                     </div>
-                </section>
-                <section id="home-solutions" class="home-solutions"><div class="container" id="home-solutions-container"></div></section>
+                </div>
+            `).join('');
+
+            // Modal Logic
+            const modal = document.getElementById('infoModal');
+            const closeModalButton = document.getElementById('close-modal-button');
+            const modalBody = document.getElementById('modal-body-content');
+
+            window.openModal = (projectId) => {
+                const project = allProjects.find(p => p.id === projectId);
+                if (!project) return;
                 
-                <!-- NUEVO CONTENEDOR PARA PROPTECH -->
-                <section id="proptech-section-container"></section>
-
-                <section class="home-portfolio"><div class="container" id="home-portfolio-container"></div></section>
-                <section id="latest-post-section" style="background-color: var(--gris-claro);"><div class="container" id="latest-post-container"></div></section>
-            `;
-            
-            const solutionsContainer = document.getElementById('home-solutions-container');
-            solutionsContainer.innerHTML = `<h2 class="section-title">${home.solutions.title}</h2>
-                <div class="home-solutions-grid">${home.solutions.cards.map(card => `
-                    <div class="solution-card">
-                        <i class="fas ${card.icon} solution-icon"></i>
-                        <h3>${card.title}</h3>
-                        <p>${card.description}</p>
-                        <a href="#services/service-${card.id}" class="details-btn" onclick="navigateTo(event, '#services/service-${card.id}')">Ver Detalles →</a>
-                    </div>`).join('')}
-                </div>`;
-            
-            // --- CÓDIGO PARA POBLAR LA NUEVA SECCIÓN ---
-            const proptechContainer = document.getElementById('proptech-section-container');
-            if (proptechContainer && proptech_section) {
-                 proptechContainer.innerHTML = `
-                    <div class="proptech-section">
-                        <div class="container">
-                            <div class="proptech-content">
-                                <h2 class="section-title" style="font-size: 2rem;">${proptech_section.title}</h2>
-                                <p>${proptech_section.text}</p>
-                                <a href="${proptech_section.buttonUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">${proptech_section.buttonText}</a>
-                            </div>
-                        </div>
-                    </div>
-                 `;
-            }
-
-            const portfolioContainer = document.getElementById('home-portfolio-container');
-            const featuredProjects = portfolio.categories.flatMap(c => c.projects).slice(0, 4);
-            portfolioContainer.innerHTML = `<h2 class="section-title">${home.featuredPortfolio.title}</h2>
-                <div class="home-portfolio-grid">${featuredProjects.map(p => `
-                    <a href="#portfolio" onclick="navigateTo(event, '#portfolio')" class="home-portfolio-item">
-                        <img src="${p.imageUrl}" alt="Proyecto destacado: ${p.title}" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1E5128/FFFFFF?text=Project';">
-                        <div class="overlay"><h4>${p.title}</h4></div>
-                    </a>`).join('')}
-                </div>
-                <a href="#portfolio" class="cta-button" onclick="navigateTo(event, '#portfolio')">${home.featuredPortfolio.buttonText}</a>`;
-
-            const latestPostContainer = document.getElementById('latest-post-container');
-            const latestPost = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-            if (latestPost) {
-                const latestPostHTML = createPostHTML(latestPost, true);
-                latestPostContainer.innerHTML = `<h2 class="section-title">${blog.latestPostTitle}</h2><div class="blog-grid" onclick="navigateTo(event, '#blog')">${latestPostHTML}</div>`;
-            }
-        }
-        
-        function populateAbout({ about }) {
-            const container = document.getElementById('about');
-            if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${about.pageTitle}</h1></div></header>
-                <main class="page-content"><div class="container">
-                    <section class="about-section-card">
-                        <h2 class="section-title">Nuestro Fundador</h2>
-                        <img src="${about.profileImageUrl}" alt="Foto profesional de Gustavo Franco" class="about-image" onerror="this.onerror=null;this.src='https://placehold.co/250x250/1E5128/FFFFFF?text=GF';">
-                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300;">${about.profileText}</p>
-                        <p style="text-align: center; max-width: 800px; margin: 1.5rem auto 0; font-size: 1.1rem; font-weight: 400;">${about.linkedinText}</p>
-                        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 3rem; margin-bottom: 2rem;">${about.kpiTitle}</h3>
-                        <div class="kpi-grid">${about.kpis.map(k => `<div class="kpi-box"><div class="kpi-number">${k.number}</div><p>${k.label}</p></div>`).join('')}</div>
-                    </section>
-                    <section class="about-section-card">
-                        <h2 class="section-title">${about.trajectory.title}</h2>
-                        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 2rem;">${about.trajectory.intro}</p>
-                        <div class="experience-grid">${about.trajectory.sections.map(job => `<div class="experience-item"><h4>${job.title}</h4><p>${job.content}</p></div>`).join('')}</div>
-                    </section>
-                    <section class="about-section-card">
-                        <h2 class="section-title">${about.formation.title}</h2>
-                        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-                            <div style="flex: 1; min-width: 280px;"><h3>Formación Académica</h3><ul>${about.formation.academic.map(e => `<li>${e}</li>`).join('')}</ul></div>
-                            <div style="flex: 1; min-width: 280px;"><h3>Competencias Estratégicas</h3><ul>${about.formation.skills.map(s => `<li>${s}</li>`).join('')}</ul></div>
-                        </div>
-                    </section>
-                </div></main>`;
-        }
-        
-        function populateServices({ services }) {
-            const container = document.getElementById('services');
-            if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${services.pageTitle}</h1><p>${services.subtitle}</p></div></header>
-                <main class="page-content"><div class="container">${services.list.map(service => `
-                    <section class="service-section about-section-card" id="service-${service.id}">
-                        
-                        <h2 class="section-title">${service.title}</h2>
-                        
-                        <div class="service-layout">
-                            <img src="${service.imageUrl}" alt="Imagen del servicio ${service.title}" class="service-image" onerror="this.onerror=null;this.src='https://placehold.co/300x210/1E5128/FFFFFF?text=Servicio';">
-                            <div class="service-content">
-                                <p>${service.description}</p>
-                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">${service.details.map(d => `<li>${d}</li>`).join('')}</ul>
-                                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: inline-block;" onclick="navigateTo(event, '#contact')">Solicitar Consultoría</a>
-                            </div>
-                        </div>
-                    </section>`).join('')}
-                </div></main>`;
-        }
-        
-        function populatePortfolio({ portfolio }) {
-            const container = document.getElementById('portfolio');
-            if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${portfolio.pageTitle}</h1><p>${portfolio.subtitle}</p></div></header>
-                <main class="page-content"><div class="container">${portfolio.categories.map(category => `
-                    <section class="portfolio-category">
-                        <h2 class="section-title">${category.title}</h2>
-                        <div class="portfolio-grid">${category.projects.map(p => createItemCard(p, 'portfolio')).join('')}</div>
-                    </section>`).join('')}
-                </div></main>`;
-        }
-
-        function populateInvestments({ investments }) {
-            const container = document.getElementById('investment-opportunities');
-            if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${investments.pageTitle}</h1><p>${investments.subtitle}</p></div></header>
-                <main class="page-content"><div class="container"><div class="portfolio-grid">${investments.properties.map(p => createItemCard(p, 'property')).join('')}</div></div></main>`;
-        }
-
-        function populateBlog({ blog }) {
-            const container = document.getElementById('blog');
-            const sortedPosts = [...blog.posts].sort((a, b) => new Date(b.date) - new Date(a.date));
-            if (container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${blog.pageTitle}</h1><p>${blog.subtitle}</p></div></header>
-                <main class="page-content"><div class="container"><div class="blog-grid">${sortedPosts.map(post => createPostHTML(post, false)).join('')}</div></div></main>`;
-        }
-        
-        function populateContact({ contact, services }) {
-            if(!contact || !services) return;
-            const container = document.getElementById('contact');
-            if(container) container.innerHTML = `
-                <header class="page-header"><div class="page-header-content"><h1>${contact.pageTitle}</h1><p>${contact.subtitle}</p></div></header>
-                <main class="page-content">
-                    <div class="container">
-                        <div class="contact-layout">
-                            <div class="contact-info-panel">
-                                <h3>Información Directa</h3>
-                                <p>Contáctenos para tasaciones, peritajes, proyectos de arquitectura o consultorías Proptech. Estaremos encantados de agendar una consulta inicial.</p>
-                                <ul>
-                                    <li><strong>Email:</strong> ${contact.email}</li>
-                                    <li><strong>Teléfono:</strong> ${contact.phone}</li>
-                                    <li><strong>Ubicación:</strong> ${contact.location}</li>
-                                    <li><strong>Área de Cobertura:</strong> ${contact.coverage}</li>
-                                </ul>
-                            </div>
-                            <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
-                                <div class="form-group"><label for="contact-name">Nombre Completo</label><input type="text" id="contact-name" name="name" required></div>
-                                <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" required></div>
-                                <div class="form-group"><label for="contact-phone">Teléfono</label><input type="tel" id="contact-phone" name="phone"></div>
-                                <div class="form-group"><label for="contact-service">Servicio de Interés</label><select id="contact-service" name="service"><option value="">Seleccione un servicio...</option>${services.list.map(s => `<option value="${s.title}">${s.title}</option>`).join('')}</select></div>
-                                <div class="form-group"><label for="contact-message">Mensaje</label><textarea id="contact-message" name="message" required></textarea></div>
-                                <button type="submit" class="cta-button">Enviar Mensaje por WhatsApp</button>
-                            </form>
-                        </div>
-                    </div>
-                </main>`;
-        }
-        
-        function populateFooter({ footer, menu, contact }) {
-            const footerEl = document.getElementById('main-footer');
-            if(footerEl) footerEl.innerHTML = `
-                <div class="container footer-content">
-                    <a href="#home" class="logo-container">
-                        <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Gustavo Franco Arquitectos" class="logo-image" onerror="this.onerror=null;this.src='https://placehold.co/150x50/333333/FFFFFF?text=Gustavo+Franco';">
-                    </a>
-                    <div class="footer-links"><ul>${menu.map(item => {
-                         const isExternal = item.isExternal || false;
-                         const target = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-                         const clickHandler = isExternal ? '' : `onclick="navigateTo(event, '${item.href}')"`;
-                         return `<li><a href="${item.href}" ${target} ${clickHandler}>${item.name}</a></li>`
-                    }).join('')}</ul></div>
-                    <div class="footer-contact"><ul><li>${contact.email}</li><li>${contact.phone}</li><li><strong>Cobertura:</strong> ${contact.coverage}</li></ul></div>
-                </div>
-                <div class="footer-bottom"><p>${footer.copyright}</p></div>`;
-        }
-
-        // --- FUNCIONES AUXILIARES ---
-        function createItemCard(item, type) {
-            const priceHTML = type === 'property' ? `<div class="property-price">${item.modal.specs['Precio de Venta']}</div>` : '';
-            return `<div class="${type}-item" onclick="openModal('${item.id}', '${type}')"><div class="item-image"><img src="${item.imageUrl}" alt="Proyecto en portafolio: ${item.title}" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1E5128/FFFFFF?text=Project';"></div><div class="item-content">${priceHTML}<h3 class="item-title">${item.title}</h3><p class="item-description">${item.shortDesc}</p></div></div>`;
-        }
-        
-        function createPostHTML(post, isHomepage = false) {
-            let mediaHTML = '';
-             if (post.images && post.images.length > 0) {
-                 mediaHTML = `<div class="blog-post-media"><img src="${post.images[0]}" alt="Imagen de artículo: ${post.title}" onerror="this.onerror=null;this.src='https://placehold.co/1200x675/1E5128/FFFFFF?text=Blog';"></div>`;
-             }
-            const clickAction = isHomepage ? `navigateTo(event, '#blog')` : `openModal('${post.id}', 'blog')`;
-            const content = `<p>${post.excerpt}</p><span class="read-more-btn">Leer Más →</span>`;
-            
-            const containerClass = isHomepage ? 'latest-post-card' : 'blog-post';
-
-            return `<article class="${containerClass}" onclick="${isHomepage ? "navigateTo(event, '#blog')" : `openModal('${post.id}', 'blog')`}">
-                        ${mediaHTML}
-                        <div class="blog-post-content">
-                            <h3 class="blog-post-title">${post.title}</h3>
-                            <p class="blog-post-date">${new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                            <div class="blog-post-text">${content}</div>
-                        </div>
-                    </article>`;
-        }
-        
-        function openModal(id, type) {
-            const { portfolio, investments, blog } = window.siteContent;
-            const dataMap = { 
-                portfolio: portfolio.categories.flatMap(c => c.projects), 
-                property: investments.properties,
-                blog: blog.posts
+                modalBody.innerHTML = `
+                    <h2 class="text-2xl font-bold text-white mb-4">${project.title}</h2>
+                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h4 class="font-bold text-lg text-white mt-6 mb-2">El Desafío</h4>
+                    <p class="text-gris-texto">${project.modalContent.challenge}</p>
+                    <h4 class="font-bold text-lg text-white mt-6 mb-2">Nuestra Solución</h4>
+                    <p class="text-gris-texto">${project.modalContent.solution}</p>
+                `;
+                modal.style.display = 'flex';
             };
-            const data = dataMap[type].find(item => item.id === id);
-            if (!data) return;
 
-            const modal = document.getElementById('infoModal');
-            const modalBody = modal.querySelector('.modal-body-content');
-            
-            let mediaHTML = '', detailsHTML = '', contactButton = '';
-            
-            if (type === 'portfolio') {
-                const mc = data.modalContent;
-                let imagesHTML = '';
-                if (mc.images && mc.images.length > 0) {
-                    imagesHTML = `<div class="modal-images-grid">${mc.images.map(src => `<img src="${src}" alt="Imagen del proyecto ${data.title}" onerror="this.onerror=null;this.src='https://placehold.co/300x200/1E5128/FFFFFF?text=Imagen';">`).join('')}</div>`;
+            closeModalButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
                 }
-                detailsHTML = `${imagesHTML}<h4>Desafío</h4><p>${mc.challenge}</p><h4>Solución</h4><p>${mc.solution}</p>`;
-
-            } else if (type === 'property') {
-                const p = data.modal;
-                if (p.gallery && p.gallery.length > 1) {
-                    mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${p.gallery.map(src => `<div class="carousel-slide"><img src="${src}" alt="Galería de propiedad: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
-                } else if (p.gallery && p.gallery.length === 1) {
-                    mediaHTML = `<div class="modal-images-grid"><img src="${p.gallery[0]}" alt="Imagen de propiedad: ${data.title}"></div>`;
-                }
-                detailsHTML = `<p>${p.description}</p><h4>Características Principales</h4><ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul><h4>Ficha Técnica</h4><ul>${Object.entries(p.specs).map(([key, value]) => `<li><strong>${key}:</strong> ${value}</li>`).join('')}</ul>`;
-                contactButton = `<button class="cta-button" style="margin-top:1.5rem;" onclick="prefillContactForm('${data.title}')">${p.buttonText}</button>`;
-            } else if (type === 'blog') {
-                 if (data.videoUrl) {
-                      mediaHTML = `<div class="blog-post-media"><iframe src="${data.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-                 } else if (data.images && data.images.length > 1) {
-                      mediaHTML = `<div class="carousel-container"><div class="carousel-slides">${data.images.map(src => `<div class="carousel-slide"><img src="${src}" alt="Imagen del artículo: ${data.title}"></div>`).join('')}</div><a class="carousel-prev">❮</a><a class="carousel-next">❯</a><div class="carousel-dots"></div></div>`;
-                 } else if (data.images && data.images.length === 1) {
-                      mediaHTML = `<div class="modal-images-grid" style="grid-template-columns: 1fr;"><img src="${data.images[0]}" alt="Imagen del artículo: ${data.title}" style="height: auto; max-height: 400px;"></div>`;
-                 }
-                detailsHTML = `<p class="blog-post-date" style="text-align:center;">${new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p><div class="blog-post-text">${data.fullContent}</div>`;
-            }
-
-            modalBody.innerHTML = `<h2 class="item-title" style="text-align:center; font-size: 2.2rem;">${data.title}</h2>${mediaHTML}<div class="modal-body-content" style="padding-top:0;">${detailsHTML}${contactButton}</div>`;
-            modal.style.display = 'flex';
-            
-            if (mediaHTML.includes('carousel-container')) {
-                setupCarousel(modal.querySelector('.carousel-container'));
-            }
-        }
-        
-        function setupCarousel(carousel) {
-            const slides = carousel.querySelector('.carousel-slides');
-            const dotsContainer = carousel.querySelector('.carousel-dots');
-            const prevButton = carousel.querySelector('.carousel-prev');
-            const nextButton = carousel.querySelector('.carousel-next');
-
-            if (!slides || !dotsContainer || !prevButton || !nextButton) return;
-            const slideCount = slides.children.length;
-            let currentIndex = 0;
-            
-            dotsContainer.innerHTML = '';
-            for (let i = 0; i < slideCount; i++) {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                dot.addEventListener('click', () => showSlide(i));
-                dotsContainer.appendChild(dot);
-            }
-            
-            const dots = dotsContainer.querySelectorAll('.dot');
-            const showSlide = (index) => {
-                currentIndex = (index + slideCount) % slideCount;
-                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-                if (dots.length > 0) dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
-            };
-            
-            prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
-            nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
-            showSlide(0);
-        }
-
-        function prefillContactForm(subject) {
-            document.getElementById('infoModal').style.display = 'none';
-            window.location.hash = '#contact';
-            setTimeout(() => {
-                const messageTextarea = document.getElementById('contact-message');
-                if(messageTextarea) {
-                    messageTextarea.value = `Asunto: Consulta por Oportunidad "${subject}"\n\n`;
-                    messageTextarea.focus();
-                }
-            }, 100);
-        }
-
-        function sendWhatsAppMessage(event) {
-            event.preventDefault();
-            const { contact } = window.siteContent;
-            const form = event.target;
-            const message = `*Consulta desde el sitio web:*\n\n*Nombre:* ${form.name.value}\n*Email:* ${form.email.value}\n*Teléfono:* ${form.phone ? form.phone.value : 'No especificado'}\n*Servicio:* ${form.service ? form.service.value : 'No especificado'}\n\n*Mensaje:*\n${form.message.value}`;
-            const whatsappUrl = `https://wa.me/${contact.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+            });
+        });
     </script>
 </body>
 </html>
+
