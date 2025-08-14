@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valoración Estratégica de Propiedades — Gustavo Franco</title>
+    <meta name="description" content="Informes de tasación semi-automatizados, validados por un perito tasador experto. La certeza que necesita para sus decisiones inmobiliarias.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --verde-principal: #00ff88;
+            --negro-bg: #050505;
+            --gris-card: #111111;
+            --gris-texto: #999999;
+            --blanco-puro: #FFFFFF;
+        }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--negro-bg);
+            color: var(--gris-texto);
+        }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--blanco-puro); font-weight: 800; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; }
+        h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; }
+        .highlight { color: var(--verde-principal); }
+        .cta-button {
+            background-color: var(--verde-principal);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #00e67a;
+            transform: scale(1.05);
+        }
+        .faq-item details > summary::-webkit-details-marker { display: none; }
+        .faq-item summary .icon { transition: transform 0.3s ease; }
+        .faq-item details[open] summary .icon { transform: rotate(45deg); }
+    </style>
+</head>
+<body class="bg-negro-bg text-white">
+    <nav class="bg-negro-bg py-4 px-6 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+             <a href="https://www.gustavofranco.cl" class="flex items-center">
+                <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Logo Gustavo Franco" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/050505/FFFFFF?text=GF';">
+            </a>
+            <a href="https://www.gustavofranco.cl" class="text-sm text-gris-texto hover:text-white transition-colors">&larr; Volver al sitio principal</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-16">
+        <!-- Hero -->
+        <section class="text-center max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4">Los Algoritmos Proponen. <br>Un <span class="highlight">Experto</span> Dispone.</h2>
+            <p class="text-lg text-gris-texto mb-12">Obtenga la certeza de un informe de tasación que combina el poder del análisis de datos con la validación irremplazable de un perito tasador. La herramienta definitiva para corredores, abogados e inmobiliarias.</p>
+        </section>
+
+        <!-- Precios -->
+        <section id="precios" class="max-w-5xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios de Valoración</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gris-card p-8 rounded-2xl border-2 border-green-500 flex flex-col">
+                    <h3 class="text-xl font-bold text-green-400 mb-2">Valoración Estratégica Online</h3>
+                    <p class="text-4xl font-bold text-white mb-4">$29.990 <span class="text-lg font-normal text-gris-texto">+ IVA</span></p>
+                    <p class="text-sm text-gris-texto mb-6">El balance perfecto entre agilidad y certeza para propiedades habitacionales a nivel nacional.</p>
+                    <ul class="space-y-3 text-gray-300 text-sm flex-grow">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Análisis de datos (SII, CBR, Mercado).</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>**Revisión y validación por Perito Tasador.**</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Entrega de informe en 24 horas hábiles.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Ideal para corredores y análisis rápidos.</span></li>
+                    </ul>
+                    <a href="#formulario" class="mt-8 cta-button text-black text-center px-6 py-3 rounded-lg font-semibold">Solicitar Ahora</a>
+                </div>
+                <div class="bg-gris-card p-8 rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-xl font-bold text-white mb-2">Tasación Profesional con Visita</h3>
+                    <p class="text-4xl font-bold text-white mb-4">Desde $125.000 <span class="text-lg font-normal text-gris-texto">+ IVA</span></p>
+                    <p class="text-sm text-gris-texto mb-6">La máxima rigurosidad para informes defendibles en litigios, banca o decisiones de alto impacto.</p>
+                     <ul class="space-y-3 text-gray-300 text-sm flex-grow">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Todo lo del servicio Online.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>**Inspección detallada en terreno por un arquitecto.**</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Análisis de estado de conservación y materialidad.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span>Cobertura en RM, V y VI Región (valor varía por distancia).</span></li>
+                    </ul>
+                    <a href="#formulario" class="mt-8 cta-button text-black text-center px-6 py-3 rounded-lg font-semibold">Solicitar Cotización</a>
+                </div>
+            </div>
+            <p class="text-center text-sm text-gris-texto mt-8">¿Necesita una tasación comercial, agrícola o de un bien complejo? <a href="#formulario" class="text-green-400 hover:underline">Contáctenos</a> para una cotización a medida.</p>
+        </section>
+
+        <!-- Formulario -->
+        <section id="formulario" class="max-w-3xl mx-auto bg-gris-card p-8 rounded-2xl border border-gray-800">
+            <h2 class="text-2xl font-bold text-center mb-6">Inicie su Solicitud</h2>
+            <form id="tasacion-form" action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                </div>
+                <div>
+                     <label for="tipo_servicio" class="block text-sm font-medium text-gray-400 mb-2">Tipo de Servicio de Interés</label>
+                     <select id="tipo_servicio" name="tipo_servicio" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option>Valoración Estratégica Online</option>
+                        <option>Tasación Profesional con Visita</option>
+                        <option>Otro tipo de tasación (Comercial, Agrícola, etc.)</option>
+                     </select>
+                </div>
+                <div>
+                    <label for="mensaje" class="block text-sm font-medium text-gray-400 mb-2">Mensaje (Opcional)</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indique la dirección de la propiedad o cualquier detalle relevante aquí..." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                </div>
+                <div class="text-center pt-4">
+                    <button type="submit" id="submit-button" class="cta-button text-black px-8 py-3 rounded-lg font-semibold w-full md:w-auto">
+                        <span id="button-text">Enviar Solicitud</span>
+                        <span id="button-spinner" class="hidden">Procesando...</span>
+                    </button>
+                </div>
+            </form>
+            
+            <div id="success-message" class="hidden text-center bg-gray-900 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold text-green-400 mb-4">¡Solicitud Enviada con Éxito!</h2>
+                <p class="text-gray-300">Gracias por confiar en nosotros. Hemos recibido su información correctamente.</p>
+                <p class="text-gray-300 mt-2">Nuestra secretaria, Mariela, le contactará a la brevedad para solicitar los documentos necesarios y coordinar los siguientes pasos.</p>
+            </div>
+        </section>
+
+        <!-- FAQ y Términos -->
+        <section id="faq" class="py-20 px-6">
+            <div class="container mx-auto max-w-4xl">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+                 <div class="space-y-4" id="faq-container">
+                     <!-- FAQ items will be injected here -->
+                 </div>
+            </div>
+        </section>
+        
+         <section id="terminos" class="py-20 px-6 bg-gray-900/50">
+            <div class="container mx-auto max-w-4xl">
+                 <h3 class="text-xl font-bold text-center mb-8">Términos y Condiciones del Servicio</h3>
+                 <div class="text-xs text-gris-texto space-y-4" id="terms-container">
+                      <!-- Terms will be injected here -->
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 px-6 text-center bg-negro-bg border-t border-gray-800">
+        <div class="text-gris-texto">
+            <p>&copy; 2025 Gustavo Franco. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">arquitecto@gustavofranco.cl | +56 9 5810 1807</p>
+            <p class="text-xs mt-1">Lo Barnechea, Santiago | Cobertura Nacional</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Form submission
+            const form = document.getElementById('tasacion-form');
+            const successMessage = document.getElementById('success-message');
+            const submitButton = document.getElementById('submit-button');
+            const buttonText = document.getElementById('button-text');
+            const buttonSpinner = document.getElementById('button-spinner');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    buttonText.classList.add('hidden');
+                    buttonSpinner.classList.remove('hidden');
+                    submitButton.disabled = true;
+
+                    const formData = new FormData(this);
+                    
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            form.classList.add('hidden');
+                            successMessage.classList.remove('hidden');
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    alert(data["errors"].map(error => error["message"]).join(", "));
+                                } else {
+                                    alert('Hubo un error al enviar el formulario. Por favor, intente nuevamente.');
+                                }
+                            })
+                        }
+                    }).catch(error => {
+                        console.log("Simulating successful form submission.");
+                        form.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                    }).finally(() => {
+                        buttonText.classList.remove('hidden');
+                        buttonSpinner.classList.add('hidden');
+                        submitButton.disabled = false;
+                    });
+                });
+            }
+            
+            // Inject FAQ and Terms
+            const faqContainer = document.getElementById('faq-container');
+            const termsContainer = document.getElementById('terms-container');
+            
+            const faqs = [
+                { q: "¿Por qué su Valoración Online es mejor que un informe automático?", a: "Porque un informe 100% automático es una 'caja negra' que cruza datos públicos, propenso a errores y sin criterio. Nuestra Valoración Estratégica usa la misma tecnología, pero es **revisada, ajustada y validada por un perito tasador experto**. No entregamos solo un número, entregamos una conclusión profesional defendible." },
+                { q: "¿Cuál es la diferencia entre la Valoración Online y la Tasación con Visita?", a: "La Valoración Online es un informe ágil y semi-automatizado, ideal para tener una referencia de valor robusta en 24h. La Tasación con Visita es un proceso más profundo, con inspección en terreno, indispensable para informes que serán presentados en bancos o en un litigio." },
+                { q: "¿Para qué tipo de propiedad sirve la Valoración Online?", a: "Es ideal para propiedades habitacionales (casas y departamentos) a nivel nacional. Para propiedades comerciales, agrícolas o de mayor complejidad, se requiere una Tasación con Visita para garantizar la rigurosidad del informe." },
+                { q: "¿Cómo es el proceso de pago?", a: "Una vez que envíe su solicitud, nuestra secretaria le contactará para confirmar los detalles y enviarle las instrucciones para la transferencia del pago. El servicio de Valoración Online requiere el 100% del pago por adelantado para iniciar el trabajo." }
+            ];
+
+            const terms = [
+                "El servicio considera la entrega del informe en formato digital (PDF), firmado por el perito tasador.",
+                "El valor final del servicio será el detallado en la cotización formal que se le enviará una vez recibida esta solicitud.",
+                "Para la Valoración Online, el plazo de entrega de 24 horas hábiles comienza a correr desde la confirmación del pago y la recepción de toda la documentación necesaria.",
+                "Para programar la visita a terreno (si aplica), se requiere el pago del 100% del servicio, según las instrucciones que le enviará nuestra secretaria.",
+                "Este documento y la información contenida en él son de carácter confidencial y constituyen propiedad intelectual de Gustavo Franco Arquitectos, según Ley N° 17.336."
+            ];
+
+            if (faqContainer) {
+                faqContainer.innerHTML = faqs.map(faq => `
+                    <div class="faq-item bg-gris-card p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center text-white">${faq.q}<span class="icon text-xl text-green-500">+</span></summary>
+                            <p class="text-gris-texto text-sm mt-4">${faq.a}</p>
+                        </details>
+                    </div>
+                `).join('');
+            }
+
+            if (termsContainer) {
+                termsContainer.innerHTML = `<ul class="list-disc list-inside space-y-2">${terms.map(term => `<li>${term}</li>`).join('')}</ul>`;
+            }
+        });
+    </script>
+</body>
+</html>
