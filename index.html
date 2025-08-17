@@ -31,7 +31,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--blanco-puro); font-weight: 800; }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        /* UPDATED: Increased font size for Hero section */
+        .hero-h1 { font-size: clamp(3rem, 7vw, 5rem); line-height: 1.1; }
+        .hero-p { font-size: clamp(1.1rem, 3vw, 1.25rem); }
         h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
         h3 { font-size: 1.25rem; font-weight: 700; }
         .highlight { color: var(--verde-principal); }
@@ -120,8 +122,8 @@
 
     <section class="h-screen flex flex-col justify-center items-center text-center px-4 bg-center bg-cover" style="background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7)), url('https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg');">
         <div class="flex flex-col items-center">
-            <h1>Transformo Datos en Decisiones Inmobiliarias <span class="highlight">Irrefutables</span></h1>
-            <p class="text-lg md:text-xl my-8 max-w-3xl">Arquitectura + Data Science para proyectos de alto impacto.</p>
+            <h1 class="hero-h1">Transformo Datos en Decisiones Inmobiliarias <span class="highlight">Irrefutables</span></h1>
+            <p class="hero-p my-8 max-w-3xl">Arquitectura + Data Science para proyectos de alto impacto.</p>
             <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
                 <a href="#valoracion" class="cta-button text-black px-6 py-3 rounded-lg font-semibold">Conocer mis Servicios</a>
                 <a href="#portafolio" class="secondary-cta border px-6 py-3 rounded-lg font-semibold">Ver Casos Reales</a>
@@ -137,12 +139,12 @@
                 <div class="bg-gris-card p-8 rounded-xl border border-gray-800 flex flex-col items-center text-center transition-all duration-300 hover:transform hover:-translate-y-2 hover:border-verde-principal">
                     <i class="fas fa-shield-alt text-verde-principal text-4xl mb-6"></i>
                     <h3 class="text-xl font-semibold mb-2">Metodología Auditada por Deloitte</h3>
-                    <p class="text-gris-texto">Mi modelo pionero de geointeligencia, desarrollado para la valoración de más de 900 activos en Fundación Integra, fue auditado y validado por Deloitte, garantizando el más alto estándar de rigurosidad y precisión.</p>
+                    <p class="text-gris-texto">Mi modelo pionero de geointeligencia, desarrollado para la valoración de más de 900 activos en <strong class="text-white font-semibold">Fundación Integra</strong>, fue auditado y validado por <strong class="text-white font-semibold">Deloitte</strong>, garantizando el más alto estándar de rigurosidad y precisión.</p>
                 </div>
                 <div class="bg-gris-card p-8 rounded-xl border border-gray-800 flex flex-col items-center text-center transition-all duration-300 hover:transform hover:-translate-y-2 hover:border-verde-principal">
                     <i class="fas fa-university text-verde-principal text-4xl mb-6"></i>
                     <h3 class="text-xl font-semibold mb-2">Confianza de la Banca Líder</h3>
-                    <p class="text-gris-texto">A través de mi trabajo en TINSA, ejecuté miles de tasaciones de alta complejidad para los principales bancos del país, incluyendo <strong class="text-white font-semibold">Scotiabank, Santander, Corpbanca, Itaú y BCI</strong>, cumpliendo con sus exigentes estándares de riesgo.</p>
+                    <p class="text-gris-texto">A través de mi trabajo en <strong class="text-white font-semibold">TINSA</strong>, ejecuté miles de tasaciones de alta complejidad para los principales bancos del país, incluyendo <strong class="text-white font-semibold">Scotiabank, Santander, Corpbanca, Itaú y BCI</strong>, cumpliendo con sus exigentes estándares de riesgo.</p>
                 </div>
             </div>
         </div>
