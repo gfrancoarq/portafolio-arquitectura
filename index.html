@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -97,7 +98,6 @@
     </style>
 </head>
 <body class="bg-negro-bg text-white">
-    <!-- Navbar -->
     <nav id="main-nav" class="fixed w-full glass-nav z-50 px-6 py-4 flex justify-between items-center">
         <a href="#" class="flex items-center">
             <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Logo Gustavo Franco" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/050505/FFFFFF?text=GF';">
@@ -108,7 +108,7 @@
             <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
             <a href="#contacto" class="nav-link">Contacto</a>
         </div>
-        <button id="mobile-menu-button" class="md:hidden">
+        <button id="mobile-menu-button" class="md:hidden text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
     </nav>
@@ -119,17 +119,15 @@
         <a href="#contacto" class="text-2xl nav-link">Contacto</a>
     </div>
 
-    <!-- Hero -->
     <section class="h-screen flex flex-col justify-center items-center text-center px-4 bg-center bg-cover" style="background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7)), url('https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg');">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Transformo Datos en Decisiones Inmobiliarias <span class="highlight">Irrefutables</span></h1>
         <p class="text-lg md:text-xl mb-8 max-w-3xl">Arquitectura + Data Science para proyectos de alto impacto.</p>
-        <div class="space-x-4">
+        <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
             <a href="#valoracion" class="cta-button text-black px-6 py-3 rounded-lg font-semibold">Conocer mi Servicio Estrella</a>
             <a href="#portafolio" class="secondary-cta border px-6 py-3 rounded-lg font-semibold">Ver Casos Reales</a>
         </div>
     </section>
 
-    <!-- Valoración Estratégica -->
     <section id="valoracion" class="py-20 px-6 bg-gray-900/50">
         <div class="container mx-auto">
             <div class="text-center max-w-3xl mx-auto">
@@ -147,7 +145,7 @@
                         <li class="flex items-start"><span class="text-red-400 mr-3">✖</span> <span>Un commodity de bajo precio para decisiones de alto riesgo.</span></li>
                     </ul>
                 </div>
-                <div class="bg-gris-card p-8 rounded-xl border-2 border-green-500 transform scale-105">
+                <div class="bg-gris-card p-8 rounded-xl border-2 border-green-500 md:transform md:scale-105">
                     <h3 class="text-xl font-semibold mb-4 text-green-400">Nuestra Valoración Estratégica</h3>
                      <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <span>Análisis de datos de SII, CBR y transacciones reales, **validado por un perito experto.**</span></li>
@@ -159,34 +157,31 @@
                 </div>
             </div>
              <div class="text-center mt-12">
-                <a href="./tasaciones.html" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Solicitar Valoración Estratégica</a>
+                <a href="https://wa.me/56958101807?text=Hola%20Gustavo,%20quisiera%20solicitar%20una%20Valoraci%C3%B3n%20Estrat%C3%A9gica." target="_blank" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Solicitar Valoración Estratégica</a>
             </div>
         </div>
     </section>
 
-    <!-- Portafolio -->
     <section id="portafolio" class="py-20 px-6">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Casos de Éxito</h2>
             <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio items will be injected here by JavaScript -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Sobre mí -->
     <section id="sobre-mi" class="py-20 px-6 bg-gray-900/50">
         <div class="container mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
             <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg" alt="Gustavo Franco" class="rounded-lg shadow-2xl w-full" loading="lazy" />
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mi Misión: <br>Certeza en un Mercado Complejo.</h2>
-                <p class="mb-4 text-lg text-gray-300">Soy Arquitecto y Data Scientist. Durante más de 10 años, he ayudado a inversionistas y desarrolladores a maximizar el valor de sus activos, fusionando el rigor del diseño con el poder del análisis de datos.</p>
-                <p class="text-gris-texto">He valorado más de 900 activos a nivel nacional con modelos predictivos propios, ofreciendo una precisión validada que va más allá de la tasación tradicional. Mi objetivo no es solo construir, es crear activos rentables y seguros.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">De la Arquitectura a la <span class="highlight">Arquitectura de Datos.</span></h2>
+                <p class="mb-4 text-lg text-gray-300">Mi carrera es la fusión de dos mundos: el rigor de la arquitectura y el poder del data science. Durante más de una década, he blindado decisiones de inversión ejecutando más de 1.000 tasaciones para la banca y liderando +60 proyectos arquitectónicos orientados a la máxima rentabilidad.</p>
+                <p class="text-gris-texto mb-4">Esta experiencia me demostró que el futuro del sector inmobiliario está en los datos. Por eso fundé <strong>AceleradorTech</strong>, mi unidad de innovación, para desarrollar las soluciones Proptech que el mercado necesita.</p>
+                <p class="text-gris-texto">Mi metodología se basa en los modelos de "topografía de valor" que comencé a desarrollar en mi tesis de 2010, premiada por la Cámara Chilena de la Construcción.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
     <section id="contacto" class="py-20 px-6 text-center">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para tomar decisiones basadas en datos?</h2>
@@ -198,7 +193,7 @@
     <footer class="py-6 px-6 text-center bg-negro-bg border-t border-gray-800">
         <div class="text-gris-texto">
             <p>&copy; 2025 Gustavo Franco. Todos los derechos reservados.</p>
-            <p class="text-sm mt-2">hola@gustavofranco.cl | +56 9 5810 1807</p>
+            <p class="text-sm mt-2">arquitecto@gustavofranco.cl | +56 9 5810 1807</p>
             <p class="text-xs mt-1">Lo Barnechea, Santiago | Cobertura Nacional</p>
         </div>
     </footer>
@@ -213,93 +208,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const siteContent = {
-              "portfolio": {
-                "categories": [
-                  { "title": "Tecnología y Modelado de Datos", "projects": [
-                    { "id": "avm-integra", "title": "Modelo de Valoración Masiva (AVM)", "shortDesc": "Diseño de un modelo algorítmico para tasar +900 activos a nivel nacional en tiempo récord.", "imageUrl": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Valorar el portafolio completo de +900 jardines infantiles de Fundación Integra a nivel nacional para el cálculo de su patrimonio.", "solution": "Se desarrolló un modelo algorítmico que, a partir de parámetros de superficie y geolocalización, generó una tasación automática con alta precisión. El proyecto se completó en tiempo récord y fue validado por la auditora financiera Deloitte."}},
-                    { "id": "tesis-3d", "title": "Visualización 3D de Valores de Suelo", "shortDesc": "Tesis premiada por la CChC que modeló la ciudad como una 'topografía de valor'.", "imageUrl": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Comunicar de forma efectiva y novedosa un complejo análisis de datos sobre valores de suelo, que era difícil de interpretar en formatos 2D.", "solution": "Se fue pionero en el uso de visualizaciones 3D para analizar datos de valores de suelo, transformando datos complejos en una 'topografía de valor' intuitiva."}}
-                  ]},
-                  { "title": "Desarrollo Residencial a Gran Escala", "projects": [
-                    { "id": "lomas-del-valle", "title": "Conjunto Habitacional Lomas del Valle", "shortDesc": "Planificación maestra para la expansión urbana de Nueva Imperial en la Región de la Araucanía.", "imageUrl": "https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/ciclo.png", "modalContent": { "challenge": "Planificar la expansión urbana de Nueva Imperial a través de un proyecto habitacional de 504 viviendas, equilibrando la densidad con una alta calidad de vida.", "solution": "Se lideró la planificación maestra y el diseño del nuevo conjunto, creando un barrio integrado y funcional que se convirtió en un referente para el desarrollo de la zona."}}
-                  ]},
-                  { "title": "Proyectos Comerciales y de Equipamiento", "projects": [
-                    { "id": "goma", "title": "Remodelación Automotora Gomá", "shortDesc": "Modernización de imagen corporativa y optimización de flujos en 400 m².", "imageUrl": "https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Modernizar la imagen corporativa de una automotora consolidada y optimizar el flujo de clientes y servicios.", "solution": "Una remodelación integral que renovó la fachada, mejoró la experiencia del cliente en la sala de ventas y optimizó la eficiencia del área de servicio."}},
-                    { "id": "conguillio", "title": "Master Plan en Parque Nacional Conguillío", "shortDesc": "Diseño de 15 infraestructuras con mínimo impacto en un ecosistema delicado.", "imageUrl": "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "modalContent": { "challenge": "Diseñar 15 infraestructuras turísticas, incluyendo cafetería y cabañas, dentro de uno de los ecosistemas más protegidos de Chile.", "solution": "Un ejercicio de arquitectura de mínimo impacto, donde cada estructura se diseñó para dialogar respetuosamente con el paisaje, utilizando materiales locales y soluciones sostenibles."}}
-                  ]}
-                ]
-              }
-            };
-
-            // Mobile Menu Toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-
-            // Intersection Observer for fade-in animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.add('fade-in');
-                observer.observe(section);
-            });
-
-            // Populate Portfolio
-            const portfolioGrid = document.getElementById('portfolio-grid');
-            const allProjects = siteContent.portfolio.categories.flatMap(c => c.projects);
-            portfolioGrid.innerHTML = allProjects.map(project => `
-                <div class="rounded-lg overflow-hidden shadow-lg group cursor-pointer" onclick="openModal('${project.id}')">
-                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                    <div class="p-6 bg-gris-card">
-                        <h3 class="text-xl font-semibold text-white">${project.title}</h3>
-                        <p class="text-gris-texto mt-2">${project.shortDesc}</p>
-                    </div>
-                </div>
-            `).join('');
-
-            // Modal Logic
-            const modal = document.getElementById('infoModal');
-            const closeModalButton = document.getElementById('close-modal-button');
-            const modalBody = document.getElementById('modal-body-content');
-
-            window.openModal = (projectId) => {
-                const project = allProjects.find(p => p.id === projectId);
-                if (!project) return;
-                
-                modalBody.innerHTML = `
-                    <h2 class="text-2xl font-bold text-white mb-4">${project.title}</h2>
-                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg mb-4">
-                    <h4 class="font-bold text-lg text-white mt-6 mb-2">El Desafío</h4>
-                    <p class="text-gris-texto">${project.modalContent.challenge}</p>
-                    <h4 class="font-bold text-lg text-white mt-6 mb-2">Nuestra Solución</h4>
-                    <p class="text-gris-texto">${project.modalContent.solution}</p>
-                `;
-                modal.style.display = 'flex';
-            };
-
-            closeModalButton.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
-
+                "portfolio": {
+                    // **UPDATED CONTENT:** Categories reordered and content refined for strategic narrative
+                    "categories": [
+                        { 
+                            "title": "Valoración Estratégica y Data", 
+                            "projects": [
+                                { "id": "avm-integra", "title": "Modelo de Valoración Masiva (+900 Activos)", "shortDesc": "Diseño de un modelo de Geointeligencia para tasar el
