@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- 
+  ============================================
+  🧠 INSTRUCCIONES PARA EDITAR TU SITIO WEB
+  ============================================
+  📸 IMÁGENES PRINCIPALES:
+  - Imagen de fondo (Hero): busca el bloque con el comentario
+      <!-- HERO PRINCIPAL (IMAGEN DE FONDO) -->
+      y reemplaza la URL dentro de url('...').
+  - Imagen de retrato (Sobre Mí): busca el bloque con el comentario
+      <!-- SECCIÓN SOBRE MÍ -->
+      y reemplaza la URL dentro de src="...".
+  
+  🎨 COLORES:
+  - El color verde principal está definido como #00ff88 en :root.
+    Puedes modificarlo si deseas otro tono.
+  
+  ⚙️ ESTRUCTURA:
+  - El resto del sitio no requiere cambios para mantener funcionalidad y estilo.
+  ============================================
+  -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustavo Franco — Arquitecto MBA | Análisis y Valoración Inmobiliaria</title>
+  <meta name="description" content="Arquitecto MBA especializado en análisis, valoración y expansión inmobiliaria. Combina experiencia técnica, gestión de activos y herramientas de data science para decisiones seguras y rentables.">
+  <meta name="keywords" content="arquitecto mba, tasador inmobiliario, analista técnico inmobiliario, valoración de activos, expansión inmobiliaria, due diligence técnico, proptech, data science, chile">
+  <meta name="author" content="Gustavo Franco">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --verde-principal: #00ff88;
+      --negro-bg: #050505;
+      --gris-card: #111111;
+      --gris-texto: #999999;
+      --blanco-puro: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--negro-bg);
+      color: var(--gris-texto);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--blanco-puro); font-weight: 800; }
+    .hero-h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; }
+    .hero-p { font-size: clamp(1rem, 2.5vw, 1.2rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    .highlight { color: var(--verde-principal); }
+
+    .glass-nav {
+      background: rgba(5, 5, 5, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-link { position: relative; transition: color 0.3s ease; }
+    .nav-link:hover { color: var(--blanco-puro); }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 2px; background-color: var(--verde-principal);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-button {
+      background-color: var(--verde-principal);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .cta-button:hover { background-color: #00e67a; transform: scale(1.05); }
+    .secondary-cta {
+      border-color: var(--verde-principal);
+      color: var(--verde-principal);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .secondary-cta:hover { background-color: var(--verde-principal); color: var(--negro-bg); }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body class="bg-negro-bg text-white">
+
+  <nav id="main-nav" class="fixed w-full glass-nav z-50 px-6 py-4 flex justify-between items-center">
+    <a href="#" class="flex items-center">
+      <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/logo-gustavo-franco-dark.svg" alt="Logo Gustavo Franco" class="h-10" onerror="this.onerror=null;this.src='https://placehold.co/150x40/050505/FFFFFF?text=GF';">
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#credibilidad" class="nav-link">Experiencia</a>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#portafolio" class="nav-link">Casos</a>
+      <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+    </div>
+  </nav>
+
+  <!-- =========================== -->
+  <!-- HERO PRINCIPAL (IMAGEN DE FONDO) -->
+  <!-- 📸 Para cambiar la imagen de fondo, reemplaza la URL en url('...') -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-4 bg-center bg-cover"
+    style="background-image: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.7)), 
+    url('https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfil%20ia%208%20copy.jpg');">
+    <div class="flex flex-col items-center">
+      <h1 class="hero-h1">Analizo y Valoro Activos Inmobiliarios para <span class="highlight">Decisiones Seguras y Rentables</span></h1>
+      <p class="hero-p my-8 max-w-3xl">Arquitectura, análisis técnico y data science aplicados al desarrollo inmobiliario.</p>
+      <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+        <a href="#servicios" class="cta-button text-black px-6 py-3 rounded-lg font-semibold">Ver Servicios Técnicos</a>
+        <a href="#portafolio" class="secondary-cta border px-6 py-3 rounded-lg font-semibold">Ver Casos Reales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- EXPERIENCIA VALIDADA -->
+  <section id="credibilidad" class="py-20 px-6 bg-negro-bg fade-in">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold">Experiencia Validada por <span class="highlight">Instituciones Líderes</span></h2>
+      <p class="text-lg mt-6 mb-12 max-w-3xl mx-auto">Mi trabajo ha sido auditado y respaldado por organizaciones que exigen precisión, trazabilidad y rigor técnico en cada proyecto.</p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+        <!-- TARJETA 1 -->
+        <div class="bg-gris-card p-8 rounded-xl border border-gray-800 hover:border-verde-principal transition-all duration-300">
+          <i class="fas fa-check-shield text-verde-principal text-4xl mb-6"></i>
+          <h3 class="text-xl font-semibold mb-2">Metodología Auditada por Deloitte</h3>
+          <p>Desarrollé un modelo de geointeligencia para la valoración de más de 900 activos institucionales, auditado por Deloitte, garantizando precisión y trazabilidad.</p>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div class="bg-gris-card p-8 rounded-xl border border-gray-800 hover:border-verde-principal transition-all duration-300">
+          <i class="fas fa-building-columns text-verde-principal text-4xl mb-6"></i>
+          <h3 class="text-xl font-semibold mb-2">Confianza de la Banca Nacional</h3>
+          <p>He ejecutado más de 1.000 tasaciones de alta complejidad para instituciones financieras como Scotiabank, Santander, Itaú y BCI, cumpliendo con sus estándares normativos y de riesgo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- SECCIÓN SOBRE MÍ -->
+  <!-- 📸 Para cambiar la imagen de tu retrato, reemplaza la URL en src="..." -->
+  <section id="sobre-mi" class="py-20 px-6 bg-gray-900/50 fade-in">
+    <div class="container mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+      <img src="https://raw.githubusercontent.com/gfrancoarq/portafolio-arquitectura/main/images/perfilcopy.png"
+           alt="Gustavo Franco" class="rounded-lg shadow-2xl w-full" loading="lazy" />
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Arquitectura, Análisis y <span class="highlight">Gestión Inmobiliaria</span></h2>
+        <p class="mb-4 text-lg text-gray-300">Soy Arquitecto MBA especializado en análisis técnico y valoración inmobiliaria. Durante más de una década he trabajado en la intersección entre la arquitectura, la gestión de activos y la tecnología, ejecutando más de 1.000 tasaciones y liderando la revisión técnica y normativa de más de 900 inmuebles a nivel nacional.</p>
+        <p class="text-gris-texto mb-4">Mi enfoque combina el rigor técnico del peritaje con una visión estratégica de rentabilidad y expansión, apoyado en herramientas de data science y PropTech para optimizar la toma de decisiones.</p>
+        <p class="text-gris-texto">Busco aportar valor donde la precisión, la normativa y la estrategia inmobiliaria se cruzan, fortaleciendo la toma de decisiones en instituciones financieras, inmobiliarias y corporativas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- SERVICIOS TÉCNICOS -->
+  <section id="servicios" class="py-20 px-6 bg-gray-900/50 fade-in">
+    <div class="container mx-auto text-center max-w-5xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Servicios Técnicos <span class="highlight">Inmobiliarios</span></h2>
+
+      <div class="grid md:grid-cols-3 gap-10 text-left">
+        <div class="bg-gris-card p-8 rounded-xl border border-gray-800">
+          <h3 class="text-xl font-semibold mb-4 text-verde-principal">Valoración y Due Diligence Técnico</h3>
+          <ul class="space-y-3">
+            <li>Revisión de títulos, normativa y factibilidad urbana.</li>
+            <li>Evaluación de riesgos técnicos y potencial de desarrollo.</li>
+            <li>Informes auditables y defendibles ante terceros.</li>
+          </ul>
+        </div>
+        <div class="bg-gris-card p-8 rounded-xl border border-gray-800">
+          <h3 class="text-xl font-semibold mb-4 text-verde-principal">Expansión y Evaluación de Terrenos</h3>
+          <ul class="space-y-3">
+            <li>Identificación y análisis de sitios para expansión o inversión.</li>
+            <li>Estudios de rentabilidad, accesibilidad y normativa aplicable.</li>
+            <li>Coordinación de contratos y documentación técnica.</li>
+          </ul>
+        </div>
+        <div class="bg-gris-card p-8 rounded-xl border border-gray-800">
+          <h3 class="text-xl font-semibold mb-4 text-verde-principal">Análisis de Portafolios y Modelos de Valor</h3>
+          <ul class="space-y-3">
+            <li>Modelos de valoración masiva basados en datos.</li>
+            <li>Visualización geoespacial y análisis predictivo.</li>
+            <li>Herramientas PropTech aplicadas al análisis de activos.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="./tasaciones.html" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Solicitar Valoración Estratégica</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 px-6 text-center fade-in">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Buscas apoyo técnico para evaluar terrenos o activos?</h2>
+      <p class="mb-8 max-w-2xl mx-auto">Conversemos cómo puedo aportar valor a tus procesos de análisis, expansión o valoración inmobiliaria.</p>
+      <a href="https://wa.me/56958101807?text=Hola%20Gustavo,%20quisiera%20coordinar%20una%20consulta%20técnica." target="_blank" class="cta-button text-black px-8 py-4 rounded-lg font-semibold">Contactar por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="py-6 px-6 text-center bg-negro-bg border-t border-gray-800">
+    <div class="text-gris-texto">
+      <p>&copy; 2025 Gustavo Franco. Todos los derechos reservados.</p>
+      <p class="text-sm mt-2">arquitecto@gustavofranco.cl | +56 9 5810 1807</p>
+      <p class="text-xs mt-1">Lo Barnechea, Santiago | Cobertura Nacional</p>
+      <p class="text-xs mt-1"><a href="https://www.linkedin.com/in/gustavfranco/" target="_blank" class="underline hover:text-verde-principal">LinkedIn: linkedin.com/in/gustavfranco</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Franco | Perfil Ejecutivo Real Estate</title>
+    <meta name="robots" content="noindex, nofollow"> <!-- Oculto para Google -->
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            900: '#0f172a', // Slate dark
+                            800: '#1e293b',
+                            700: '#1e40af', // Blue corporate
+                            600: '#2563eb',
+                            gold: '#d97706', // Amber for prestige
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-gray-50">
+
+    <!-- Navegación Minimalista -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 bg-brand-900 rounded flex items-center justify-center text-white font-serif font-bold text-xl">GF</div>
+                    <div class="leading-tight">
+                        <span class="block font-bold text-slate-900 text-lg tracking-tight">Gustavo Franco</span>
+                        <span class="block text-xs text-brand-600 font-semibold tracking-wide uppercase">Perfil Ejecutivo</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#perfil" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition">Perfil</a>
+                    <a href="#competencias" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition">Competencias</a>
+                    <a href="#trayectoria" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition">Trayectoria</a>
+                    
+                    <!-- Botón de Home (Regreso al sitio principal) -->
+                    <a href="index.html" class="text-slate-400 hover:text-brand-700 transition px-2" title="Volver al Sitio Principal">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+
+                    <a href="mailto:arquitecto@gustavofranco.cl" class="px-5 py-2.5 bg-brand-900 text-white text-sm font-bold rounded hover:bg-brand-700 transition shadow-lg">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 overflow-hidden hero-pattern text-white">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-2/3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-700/30 border border-brand-600/50 text-brand-gold text-xs font-bold uppercase tracking-wider mb-6">
+                    Gestión de Activos • Expansión • Valoración
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6 font-sans">
+                    Arquitecto MBA & <br>
+                    <span class="text-brand-600 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Data Real Estate Specialist</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                    Transformo datos complejos y normativa urbana en decisiones de inversión rentables. Especialista en Expansión, Valoración de Activos y Mitigación de Riesgos Legales.
+                </p>
+                <div class="flex gap-4">
+                    <a href="mailto:arquitecto@gustavofranco.cl" class="px-6 py-3 bg-white text-brand-900 font-bold rounded hover:bg-gray-100 transition shadow-xl">
+                        Solicitar Entrevista
+                    </a>
+                    <a href="#" class="px-6 py-3 border border-slate-600 text-white font-semibold rounded hover:bg-slate-800/50 transition flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i> Descargar CV
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Foto de Perfil -->
+            <div class="md:w-1/3 flex justify-center relative">
+                <!-- 'shrink-0' asegura que el círculo se mantenga perfecto en tablets -->
+                <div class="w-64 h-64 md:w-72 md:h-72 shrink-0 bg-brand-800 rounded-full border-4 border-brand-600/30 shadow-2xl overflow-hidden relative z-10 group">
+                    <!-- REEMPLAZAR SRC CON TU FOTO -->
+                    <img src="images/perfilcopy.png" alt="Gustavo Franco" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <!-- Decoración -->
+                <div class="absolute top-0 right-0 -mr-4 -mt-4 w-64 h-64 bg-brand-600 rounded-full opacity-20 blur-3xl"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Resumen de Impacto (Metrics) -->
+    <section id="perfil" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">El "Traductor de Riesgos"</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    A diferencia del perfil tradicional, mi carrera no se centra en el diseño estético, sino en el <strong>valor financiero del activo</strong>. Combino la visión técnica del Arquitecto, la estrategia de negocio del MBA y el rigor del Perito Judicial, potenciado por Data Science.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-12">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-brand-700 mb-2">+1.000</div>
+                    <div class="text-xs text-slate-500 uppercase font-bold tracking-wider">Inmuebles Evaluados</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-brand-700 mb-2">+60</div>
+                    <div class="text-xs text-slate-500 uppercase font-bold tracking-wider">Activos Gestionados</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-brand-700 mb-2">5</div>
+                    <div class="text-xs text-slate-500 uppercase font-bold tracking-wider">Cortes de Apelaciones</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-brand-700 mb-2">MBA</div>
+                    <div class="text-xs text-slate-500 uppercase font-bold tracking-wider">Univ. Europea Madrid</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competencias Clave -->
+    <section id="competencias" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-sm font-bold text-brand-600 tracking-wide uppercase mb-2">Core Competencies</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Pilares Estratégicos</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-brand-700 mb-6">
+                        <i class="fa-solid fa-map-location-dot text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Expansión & Localización</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">Evaluación masiva de pipeline de inmuebles. Capacidad de filtrar oportunidades rápidamente cruzando normativa (CIP) con viabilidad económica.</p>
+                    <ul class="text-sm text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-600 mr-2"></i>Experiencia masiva en Fundación Integra</li>
+                        <li><i class="fa-solid fa-check text-brand-600 mr-2"></i>Análisis de Cabida & Normativa</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-6">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Data Real Estate</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">Uso de Python, SQL y Geointeligencia para auditar carteras y predecir valores. Dejo atrás la intuición para basar la inversión en datos duros.</p>
+                    <ul class="text-sm text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-indigo-500 mr-2"></i>Modelos AVM validados por Deloitte</li>
+                        <li><i class="fa-solid fa-check text-indigo-500 mr-2"></i>Python, Pandas, Tableau</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-700 mb-6">
+                        <i class="fa-solid fa-building-circle-check text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Asset Management</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">Gestión del ciclo de vida del activo. Foco en regularización normativa para incrementar el "Exit Value" y mitigación de riesgos legales.</p>
+                    <ul class="text-sm text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Incremento de valor vía regularización</li>
+                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Dominio avanzado LGUC / OGUC</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-700 mb-6">
+                        <i class="fa-solid fa-gavel text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Valoración & Peritaje</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">Rigor técnico a prueba de auditorías. Experiencia bancaria (TINSA) y judicial en litigios complejos y expropiaciones.</p>
+                    <ul class="text-sm text-slate-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Vigencia 5 Cortes de Apelaciones</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i>Normas IVS / Expropiaciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria Profesional -->
+    <section id="trayectoria" class="py-16 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center font-serif">Trayectoria Clave</h2>
+            
+            <div class="relative border-l-2 border-brand-200 ml-4 md:ml-0 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-brand-600 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-900">Consultor Senior en Gestión de Activos</h4>
+                        <span class="text-sm text-brand-600 font-bold bg-brand-50 px-2 py-1 rounded">2017 - Presente</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 font-semibold">Gustavo Franco Arquitectos (Independent Advisor)</p>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                        Consultoría estratégica para clientes privados e inversionistas. Gestión de cartera de +60 activos enfocada en incremento de Exit Value mediante regularización normativa. Ejecución de peritajes judiciales complejos para litigios en 5 jurisdicciones.
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-indigo-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-900">Lead Análisis de Expansión</h4>
+                        <span class="text-sm text-slate-500 font-bold">2015 - 2017</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 font-semibold">Fundación Integra</p>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                        Lideré la evaluación de factibilidad técnica y económica de +1.000 terrenos a nivel nacional. Creación e implementación de algoritmo de valoración masiva (AVM) auditado exitosamente por <strong>Deloitte</strong> para la valorización patrimonial institucional.
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-amber-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-900">Arquitecto Tasador Bancario</h4>
+                        <span class="text-sm text-slate-500 font-bold">2013 - 2014</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 font-semibold">TINSA Chile S.A.</p>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                        Ejecución de +500 tasaciones complejas para la banca de primera línea (Santander, BCI, Scotiabank). Especialización en activos singulares y análisis de mercados de baja liquidez.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contacto -->
+    <footer class="bg-brand-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 font-serif">Disponibilidad Profesional</h2>
+            <!-- FOOTER ACTUALIZADO: Alineado a cargos objetivo -->
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto text-lg">
+                Disponible para roles de liderazgo como: <strong>Gerencia de Expansión</strong>, <strong>Asset Management</strong>, <strong>Jefaturas Técnicas</strong> o <strong>Análisis de Inversión</strong>. Abierto a desafíos en Chile o posiciones regionales (LATAM).
+            </p>
+            <div class="flex justify-center gap-6">
+                <a href="mailto:arquitecto@gustavofranco.cl" class="bg-white text-brand-900 hover:bg-gray-100 font-bold py-3 px-8 rounded transition shadow-lg">
+                    <i class="fa-solid fa-envelope mr-2"></i> Enviar Correo
+                </a>
+                <a href="https://linkedin.com/in/gustavfranco" target="_blank" class="border border-slate-600 hover:border-white text-slate-300 hover:text-white font-bold py-3 px-8 rounded transition">
+                    <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                </a>
+            </div>
+            <div class="mt-12 text-xs text-slate-600 border-t border-slate-800 pt-8">
+                &copy; 2026 Gustavo Franco Espinoza. Perfil Confidencial.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
