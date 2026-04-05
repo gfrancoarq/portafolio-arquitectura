@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Técnica Huellahue | Gustavo Franco & Asociados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: { brand: { 950: '#020617', 900: '#0f172a', gold: '#b45309' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .proposal-border { border-left: 4px solid #b45309; }
+        body { background-color: #f8fafc; }
+        .price-anchor { text-decoration: line-through; color: #94a3b8; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased">
+
+    <nav class="bg-brand-950 py-6 sticky top-0 z-50 shadow-xl">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+                <div class="w-10 h-10 bg-brand-gold rounded flex items-center justify-center text-white font-serif font-bold italic text-xl">GF</div>
+                <div class="leading-tight text-white">
+                    <span class="block font-bold tracking-tight">Gustavo Franco <span class="text-brand-gold">&</span> Asociados</span>
+                    <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center">Consultoría Técnica</span>
+                </div>
+            </a>
+            <div class="text-right border-l border-white/10 pl-4 text-white">
+                <span class="block text-brand-gold text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Cotización Digital</span>
+                <span class="font-mono text-sm">N° 84-2026</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
+        <section class="mb-12">
+            <div class="proposal-border bg-white p-8 shadow-sm rounded-r-lg border border-slate-100">
+                <h1 class="text-2xl font-serif font-bold text-brand-900 mb-4 italic">Estimados vecinos de Huellahue:</h1>
+                <div class="leading-relaxed mb-6 text-slate-600 space-y-4">
+                    <p>
+                        Les saluda cordialmente <strong>Gustavo Franco</strong>, Arquitecto y Director de nuestra oficina técnica con sede en Santiago y cobertura nacional. 
+                    </p>
+                    <p>
+                        Ante la urgencia de regularizar sus propiedades, ponemos a su disposición nuestra trayectoria de más de 14 años liderando procesos de <strong>regularización masiva</strong>. Nuestro servicio es una solución "llave en mano": nos encargamos de toda la gestión técnica y burocrática ante la DOM, SEC y Salud.
+                    </p>
+                    <p class="font-semibold text-brand-900 italic">
+                        Para asegurar el éxito del proceso, el Arquitecto suscrito realizará personalmente el levantamiento en terreno según el calendario adjunto.
+                    </p>
+                </div>
+                
+                <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                    <div class="w-14 h-14 bg-slate-100 rounded-full overflow-hidden border-2 border-brand-gold shadow-sm">
+                        <img src="images/perfilcopy.png" alt="Gustavo Franco" class="w-full h-full object-cover grayscale">
+                    </div>
+                    <div class="leading-tight">
+                        <span class="block font-bold text-brand-900 uppercase text-sm">Gustavo Franco E.</span>
+                        <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-bold italic">Arquitecto & Perito Judicial | Patente Profesional 3-952</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-8 mb-16 items-stretch text-center md:text-left">
+            <div class="bg-brand-900 p-8 rounded-lg text-white shadow-2xl flex flex-col justify-center relative border border-white/10">
+                <div class="absolute top-4 left-4 bg-brand-gold text-white text-[10px] font-black px-4 py-1.5 rounded shadow-lg uppercase tracking-widest text-center">
+                    Beneficio Colectivo (50% DESC.)
+                </div>
+                <h3 class="text-brand-gold text-[10px] font-bold uppercase tracking-widest mb-2 italic mt-6">Tarifa Preferencial (Mínimo 10 Viviendas)</h3>
+                <div class="mb-6">
+                    <span class="block text-sm price-anchor mb-1 italic">Honorarios Normales: $1.380.000</span>
+                    <span class="text-6xl font-black text-white tracking-tighter leading-none">$690.000</span>
+                    <span class="text-brand-gold block text-[10px] mt-2 font-bold uppercase tracking-[0.2em]">Honorarios Profesionales Globales</span>
+                </div>
+                <div class="space-y-3 border-t border-white/10 pt-6 text-xs uppercase tracking-widest font-bold">
+                    <div class="flex justify-between text-brand-gold"><span>Reserva Gestión</span><span>$90.000</span></div>
+                    <div class="flex justify-between"><span>Cuota 1 (5 de Mayo)</span><span>$300.000</span></div>
+                    <div class="flex justify-between"><span>Cuota 2 (5 de Junio)</span><span>$300.000</span></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200 flex flex-col justify-center">
+                <h2 class="text-lg font-bold text-brand-900 uppercase tracking-wider mb-6 flex items-center gap-2 justify-center md:justify-start">
+                    <i class="fa-solid fa-check-double text-brand-gold"></i> Alcance del Servicio Integral
+                </h2>
+                <ul class="space-y-4 text-sm text-slate-600">
+                    <li class="flex items-start gap-3 text-left">
+                        <i class="fa-solid fa-bolt text-brand-gold mt-1"></i>
+                        <span><strong>Proyecto Eléctrico:</strong> Certificado TE1 ante SEC (Gestionado por instalador SEC de nuestro equipo).</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-left">
+                        <i class="fa-solid fa-droplet text-brand-gold mt-1"></i>
+                        <span><strong>Proyecto Sanitario:</strong> Agua Potable y Alcantarillado tramitado ante Salud (Diseño y cálculo incluido).</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-left">
+                        <i class="fa-solid fa-file-contract text-brand-gold mt-1"></i>
+                        <span><strong>Arquitectura DOM:</strong> Levantamiento en terreno y expediente municipal para Permiso y Recepción Final.</span>
+                    </li>
+                </ul>
+                <p class="mt-6 text-[10px] italic text-slate-400 text-center md:text-left border-t pt-4">
+                    * Nota: Esta tarifa preferencial opera exclusivamente con el equipo de especialistas partners de nuestra oficina. El cambio de especialistas externos invalidará el descuento por volumen.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-center font-bold text-brand-900 uppercase tracking-widest text-sm mb-10 italic">Calendario Operativo</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl border-2 border-blue-100 shadow-sm pt-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-600 text-[9px] font-bold px-2 py-1 uppercase">Presencial</div>
+                    <i class="fa-solid fa-map-location-dot text-brand-gold text-2xl mb-4"></i>
+                    <p class="text-xs font-bold text-brand-gold uppercase mb-2 italic">Hito 1: 07 y 08 Abril</p>
+                    <p class="text-xs text-brand-900 font-bold px-2">LEVANTAMIENTO EN TERRENO.</p>
+                    <p class="text-[10px] text-slate-500 mt-1 italic">Visita técnica presencial del Arquitecto a cada propiedad.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm pt-8">
+                    <i class="fa-solid fa-cloud-arrow-up text-brand-gold text-2xl mb-4"></i>
+                    <p class="text-xs font-bold text-brand-gold uppercase mb-2">Hito 2: 30 Abril</p>
+                    <p class="text-[11px] text-slate-900 font-extrabold px-1 leading-relaxed uppercase">Ingresos SEC y Salud.</p>
+                    <p class="text-[10px] text-slate-500 mt-1">Obtención de comprobantes para frenar multas municipales.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm pt-8">
+                    <i class="fa-solid fa-box-archive text-brand-gold text-2xl mb-4"></i>
+                    <p class="text-xs font-bold text-brand-gold uppercase mb-2">Hito 3: 30 Mayo</p>
+                    <p class="text-xs text-slate-600 font-bold px-2 uppercase tracking-tighter">Expedientes DOM terminados.</p>
+                    <p class="text-[10px] text-slate-500 mt-1 italic">Firma de carpetas finales para ingreso municipal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+            <h3 class="text-brand-900 font-bold mb-6 flex items-center gap-2 uppercase text-xs tracking-widest justify-center">
+                <i class="fa-solid fa-circle-info text-brand-gold"></i> Transparencia de Pagos a Organismos Públicos
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 text-[11px] text-slate-600 leading-relaxed text-center md:text-left">
+                <div class="p-4 bg-slate-50 rounded border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <span class="block font-extrabold text-brand-900 uppercase mb-2 italic">1. Tasas de Especialidad (Mes 2)</span>
+                        <p class="mb-2">Pagos requeridos posterior al ingreso de carpetas técnicas:</p>
+                        <ul class="space-y-1 ml-2">
+                            <li>• SEC (TE1 Eléctrico): <strong>$20.000 aprox.</strong></li>
+                            <li>• Salud (Aprobación y Funcionamiento): <strong>$80.000 - $120.000 aprox.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-4 bg-slate-50 rounded border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <span class="block font-extrabold text-brand-900 uppercase mb-2 italic text-brand-gold">2. Derechos Municipales (Mes 3-4)</span>
+                        <p class="mb-2">Se cancelan en Tesorería una vez aprobado el Permiso de Edificación (2,25% presupuesto).</p>
+                        <span class="font-bold bg-amber-100 px-2 py-1 rounded inline-block text-slate-700">Estimado: $250.000 - $500.000 aprox.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reserva" class="max-w-2xl mx-auto bg-white p-10 rounded-sm shadow-2xl border-t-8 border-brand-gold">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter text-brand-900 italic">Reserva de Cupo - Huellahue</h3>
+                <p class="text-slate-600 text-xs font-semibold px-4 leading-relaxed mb-6 italic">
+                    Plazo de cierre propuesto: <strong>Domingo 05 de Abril (23:59 hrs)</strong>. Si el grupo requiere mayor tiempo de organización, la fecha de cierre y los hitos posteriores se desplazarán proporcionalmente.
+                </p>
+            </div>
+            
+            <form id="miFormulario" action="https://formspree.io/f/mzdkjbqd" method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="NUEVA RESERVA HUELLAHUE - COT 84">
+
+                <div class="grid md:grid-cols-2 gap-4 text-center">
+                    <input type="text" name="nombre" required class="w-full px-4 py-4 bg-slate-50 border border-slate-200 text-sm rounded outline-none focus:border-brand-gold transition" placeholder="Nombre Propietario">
+                    <input type="text" name="lote" required class="w-full px-4 py-4 bg-slate-50 border border-slate-200 text-sm rounded outline-none focus:border-brand-gold transition" placeholder="N° Parcela / Lote">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="tel" name="telefono" required class="w-full px-4 py-4 bg-slate-50 border border-slate-200 text-sm rounded outline-none focus:border-brand-gold transition" placeholder="WhatsApp">
+                    <input type="email" name="email" required class="w-full px-4 py-4 bg-slate-50 border border-slate-200 text-sm rounded outline-none focus:border-brand-gold transition" placeholder="Email">
+                </div>
+                
+                <button type="submit" id="botonEnviar" class="w-full bg-brand-900 text-white font-black py-5 rounded shadow-xl hover:bg-slate-800 transition uppercase tracking-[0.2em] text-xs mt-4">
+                    Registrar Cupo y Solicitar Datos de Pago
+                </button>
+                
+                <p id="mensajeEstado" class="text-[10px] text-center text-slate-500 italic mt-4 px-6">
+                    Al enviar este formulario, le indicaremos los datos de transferencia para formalizar el abono de reserva ($90.000) y a continuación nuestra secretaría le remitirá las instrucciones técnicas para el levantamiento en terreno.
+                </p>
+            </form>
+            <div class="mt-10 pt-8 border-t border-slate-100 text-center">
+                <p class="text-slate-500 text-sm font-semibold mb-4 italic text-brand-900">¿Dudas o consultas directas?</p>
+                <a href="https://wa.me/56958101807" target="_blank" class="inline-flex items-center gap-3 bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition shadow-lg text-sm uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <a href="index.html" class="inline-flex items-center gap-2 mb-6 hover:opacity-70 transition">
+                <div class="w-8 h-8 bg-brand-900 rounded flex items-center justify-center text-white font-serif font-bold text-sm italic">GF</div>
+                <span class="font-bold text-brand-900 text-sm uppercase tracking-tight">Gustavo Franco & Asociados</span>
+            </a>
+            <p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.4em] mb-4 italic">Arquitectura & Peritaje Judicial | www.gustavofranco.cl | arquitecto@gustavofranco.cl</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("miFormulario");
+        const boton = document.getElementById("botonEnviar");
+        const estado = document.getElementById("mensajeEstado");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); 
+            boton.disabled = true;
+            boton.innerText = "ENVIANDO REQUERIMIENTO...";
+            
+            const data = new FormData(event.target);
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    window.location.href = "gracias.html";
+                } else {
+                    alert("Error al enviar. Intente nuevamente.");
+                    boton.disabled = false;
+                    boton.innerText = "Registrar Cupo y Solicitar Datos de Pago";
+                }
+            } catch (error) {
+                alert("Error de conexión.");
+                boton.disabled = false;
+                boton.innerText = "Registrar Cupo y Solicitar Datos de Pago";
+            }
+        });
+    </script>
+</body>
+</html>
