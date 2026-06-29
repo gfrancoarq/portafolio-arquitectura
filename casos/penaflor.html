@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso de Estudio — 180 m² de diferencia entre el título y la realidad | Gustavo Franco</title>
+<meta name="description" content="Caso de estudio: liquidación de sociedad conyugal con discrepancia de cabida física, resuelta mediante metodología pericial trazable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0B1320;
+    --bg-base: #0F1A2B;
+    --bg-surface: #131F33;
+    --bg-surface-2: #16233A;
+    --border: #1F2D45;
+    --border-soft: #1A2640;
+    --accent: #5BA644;
+    --accent-soft: rgba(91,166,68,0.12);
+    --text-primary: #F4F5F7;
+    --text-secondary: #8995AC;
+    --text-tertiary: #5B6B85;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand img { height: 30px; width: 30px; }
+  .nav-brand span { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--text-secondary); }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-cta {
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-cta:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+  /* ---------- BREADCRUMB ---------- */
+  .breadcrumb {
+    padding: 28px 0 0;
+  }
+  .breadcrumb a { color: var(--text-tertiary); font-size: 13px; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { color: var(--text-tertiary); font-size: 13px; margin: 0 6px; }
+
+  /* ---------- ARTICLE HEADER ---------- */
+  .article-header {
+    position: relative;
+    padding: 40px 0 56px;
+    overflow: hidden;
+  }
+  .header-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(91,166,68,0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .tag-pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--accent-soft);
+    border: 1px solid rgba(91,166,68,0.3);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .meta-sep { color: var(--text-tertiary); font-size: 13px; }
+  .article-header h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .article-header .subtitle {
+    font-size: 16.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    position: relative;
+  }
+
+  /* ---------- METRICS STRIP ---------- */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 40px 0 8px;
+  }
+  .metric-cell { background: var(--bg-surface); padding: 22px 20px; }
+  .metric-cell .v { font-family: var(--font-mono); font-size: 26px; color: var(--text-primary); }
+  .metric-cell .v span { color: var(--accent); }
+  .metric-cell .l { font-size: 11.5px; color: var(--text-tertiary); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  /* ---------- ARTICLE BODY ---------- */
+  .article-body { padding: 48px 0 80px; }
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 48px 0 16px;
+    letter-spacing: -0.005em;
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body p {
+    font-size: 16px;
+    color: #C7CEDB;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+  .article-body p strong { color: var(--text-primary); font-weight: 600; }
+  .article-body p em { color: var(--accent); font-style: italic; }
+
+  .step-block {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 26px;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(91,166,68,0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-block .step-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .step-block .step-content p { margin-bottom: 0; font-size: 15px; }
+
+  .pull-quote {
+    border-left: 2px solid var(--accent);
+    padding-left: 22px;
+    margin: 36px 0;
+  }
+  .pull-quote p {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .result-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px 32px;
+    margin-top: 12px;
+  }
+  .result-box .tag-pill { margin-bottom: 14px; display: inline-block; }
+  .result-box p { font-size: 15.5px; margin-bottom: 0; }
+
+  /* ---------- DISCLAIMER ---------- */
+  .disclaimer {
+    border-top: 1px solid var(--border-soft);
+    margin-top: 56px;
+    padding-top: 24px;
+  }
+  .disclaimer p {
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    line-height: 1.7;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  /* ---------- CTA STRIP ---------- */
+  .cta-strip {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 64px 0;
+  }
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .cta-inner h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 500;
+    max-width: 440px;
+    line-height: 1.35;
+  }
+  .cta-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  .btn-primary {
+    background: var(--accent);
+    color: #0B1320;
+    font-weight: 500;
+    font-size: 14.5px;
+    padding: 13px 24px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 14.5px;
+    padding: 13px 24px;
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer { padding: 56px 0 28px; border-top: 1px solid var(--border-soft); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .f-brand { display: flex; align-items: flex-start; gap: 12px; }
+  .f-brand img { height: 28px; width: 28px; opacity: 0.85; margin-top: 2px; }
+  .f-name { font-family: var(--font-display); font-size: 15px; color: var(--text-primary); margin-bottom: 4px; }
+  .f-role { font-size: 12.5px; color: var(--text-tertiary); }
+  .f-col { display: flex; flex-direction: column; gap: 10px; }
+  .f-col-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .f-col a { font-size: 13px; color: var(--text-secondary); transition: color 0.15s; }
+  .f-col a:hover { color: var(--text-primary); }
+  .f-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 860px) {
+    .wrap, .article-wrap { padding: 0 20px; }
+    .nav-links { display: none; }
+    .article-header h1 { font-size: 30px; }
+    .metrics-strip { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .pull-quote p { font-size: 18px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .f-brand { grid-column: 1 / -1; }
+    .f-bottom { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="../assets/logo-mark.png" alt="Gustavo Franco">
+      <span>Gustavo Franco</span>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#metodologia">Metodología</a>
+      <a href="../index.html#materias">Materias</a>
+      <a href="../index.html#servicios">Servicios</a>
+      <a href="../index.html#contacto">Contacto</a>
+    </div>
+    <a href="../cotizacion.html" class="nav-cta">Solicitar cotización</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a href="../index.html">Inicio</a><span>/</span><a href="../index.html#caso">Casos de estudio</a><span>/</span><a href="#" style="color: var(--text-secondary);">Peñaflor</a>
+</div>
+
+<header class="article-header">
+  <div class="header-glow"></div>
+  <div class="article-wrap">
+    <div class="meta-row">
+      <span class="tag-pill">Caso de estudio</span>
+      <span class="meta-sep">·</span>
+      <span style="font-size: 13px; color: var(--text-tertiary);">Tribunal de Familia</span>
+      <span class="meta-sep">·</span>
+      <span style="font-size: 13px; color: var(--text-tertiary);">Liquidación de sociedad conyugal</span>
+    </div>
+    <h1>180 m² de diferencia entre el título y la realidad del terreno.</h1>
+    <p class="subtitle">Cómo una discrepancia que parecía el punto más débil del peritaje terminó siendo el argumento mejor fundamentado del informe. Caso ilustrativo, basado en una metodología real.</p>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <div class="metrics-strip">
+    <div class="metric-cell"><div class="v">8<span>+</span></div><div class="l">Testigos relevados</div></div>
+    <div class="metric-cell"><div class="v">180<span> m²</span></div><div class="l">Discrepancia de cabida</div></div>
+    <div class="metric-cell"><div class="v"><span>—</span></div><div class="l">Sin observaciones de las partes</div></div>
+  </div>
+</div>
+
+<div class="article-wrap article-body">
+
+  <h2>El encargo</h2>
+  <p>El Tribunal de Familia designó la tasación comercial de un inmueble habitacional de gran superficie como parte de un proceso de liquidación de sociedad conyugal. El bien debía servir como base para determinar la compensación económica entre las partes — lo que significaba que el valor final no era un dato más del expediente, sino la cifra sobre la cual se discutiría directamente el patrimonio de ambos cónyuges.</p>
+
+  <h2>El problema</h2>
+  <p>Desde la primera revisión documental surgió una discrepancia relevante: el Avalúo Fiscal del SII registraba una superficie de terreno significativamente mayor a la que la inspección en sitio permitía constatar. La diferencia — <strong>180 m²</strong> — no era un detalle menor: aplicada al valor de suelo del sector, representaba una variación patrimonial considerable, exactamente el tipo de discrepancia que, mal abordada, se convierte en el primer punto de ataque de la contraparte en una audiencia.</p>
+
+  <div class="pull-quote">
+    <p>"La discrepancia que parecía el punto más débil del peritaje terminó siendo el mejor fundamentado del informe."</p>
+  </div>
+
+  <h2>El desarrollo metodológico</h2>
+
+  <div class="step-block">
+    <div class="step-num">01</div>
+    <div class="step-content">
+      <h3>Comprobación de cabida física</h3>
+      <p>Se realizó un levantamiento planimétrico apoyado en herramientas SIG, georreferenciando el polígono real del predio según sus cierros y deslindes actuales, y se contrastó formalmente contra la superficie indicada en el Avalúo Fiscal Detallado.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">02</div>
+    <div class="step-content">
+      <h3>Aplicación del Principio de Realidad</h3>
+      <p>En lugar de optar por uno de los dos números sin fundamento, se dejó explícito que la determinación definitiva de cabida y deslindes es materia topográfica y registral ajena al alcance del peritaje — y se recomendó formalmente a las partes la realización de un levantamiento topográfico profesional y un estudio de títulos. Al mismo tiempo, se sostuvo que la tasación conserva plena validez técnica, en virtud del principio según el cual la condición física constatada en terreno prevalece, para efectos de valor comercial, sobre la sola enunciación documental.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">03</div>
+    <div class="step-content">
+      <h3>Catastro de mercado ampliado</h3>
+      <p>Se construyó una base de comparables que combinó transacciones reales inscritas en el Conservador de Bienes Raíces con ofertas vigentes del sector, filtrando deliberadamente por relevancia de escala — descartando comparables de tamaño incompatible con el bien tasado, e incorporando aquellos de mayor superficie como referencia adicional de contraste, con la salvedad metodológica correspondiente cuando el dato incluía construcciones no descontadas.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">04</div>
+    <div class="step-content">
+      <h3>Matriz de homologación con factores trazables</h3>
+      <p>Cada coeficiente de ajuste —tiempo, escala, ubicación, negociación— se documentó con su fórmula o su rango de mercado de respaldo. El factor de escala, en particular, se calculó mediante una fórmula de demérito por ley de potencia, verificable y reproducible por cualquier perito que quisiera revisar el informe, en lugar de quedar como un simple "criterio del perito".</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">05</div>
+    <div class="step-content">
+      <h3>Conclusión fundada en Mayor y Mejor Uso</h3>
+      <p>El análisis normativo identificó la zonificación vigente según el Plan Regulador Comunal, evaluando si las restricciones urbanísticas existentes (afectaciones de utilidad pública, líneas de edificación) inviabilizaban o no el potencial de desarrollo del predio, antes de fijar la conclusión de valor.</p>
+    </div>
+  </div>
+
+  <h2>El resultado</h2>
+  <div class="result-box">
+    <span class="tag-pill">Resultado</span>
+    <p>El informe fue acompañado al Tribunal sin observaciones de ninguna de las partes dentro del plazo de traslado, y sirvió como base directa para la liquidación. La discrepancia de superficie, que inicialmente parecía el punto más débil del peritaje, terminó siendo precisamente el punto mejor fundamentado del informe — gracias a que se abordó de frente, con metodología explícita, en lugar de omitirla o resolverla con un criterio no verificable.</p>
+  </div>
+
+  <div class="disclaimer">
+    <p>Este caso de estudio es ilustrativo. Los datos, ubicación y partes han sido modificados para preservar la confidencialidad de causas reales. La metodología descrita corresponde a la práctica habitual aplicada en los informes periciales de Gustavo Franco.</p>
+  </div>
+
+</div>
+
+<section class="cta-strip">
+  <div class="wrap cta-inner">
+    <h3>¿Su causa tiene una discrepancia similar?</h3>
+    <div class="cta-actions">
+      <button class="btn-primary" onclick="window.location.href='../cotizacion.html'">Solicitar cotización</button>
+      <a href="../index.html#contacto"><button class="btn-secondary">Conversemos</button></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="f-brand">
+      <img src="../assets/logo-mark.png" alt="">
+      <div>
+        <div class="f-name">Gustavo Franco</div>
+        <div class="f-role">Perito Judicial Tasador · Arquitecto, MBA</div>
+      </div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Peritajes</div>
+      <a href="../index.html#metodologia">Metodología</a>
+      <a href="../index.html#materias">Materias</a>
+      <a href="../index.html#servicios">Servicios</a>
+      <a href="../index.html#caso">Casos de estudio</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Otros servicios</div>
+      <a href="../arquitectura.html">Proyectos de arquitectura</a>
+      <a href="../tasaciones-comerciales.html">Tasaciones comerciales</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Contacto</div>
+      <a href="../cotizacion.html">Solicitar cotización</a>
+      <a href="mailto:arquitecto@gustavofranco.cl">arquitecto@gustavofranco.cl</a>
+      <a href="https://wa.me/56953370921">WhatsApp</a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 Gustavo Franco Arquitectos. Todos los derechos reservados.</span>
+    <span>Av. Raúl Labbé 12613 Of. 231, Lo Barnechea, Santiago.</span>
+  </div>
+</footer>
+
+</body>
+</html>

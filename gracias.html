@@ -1,101 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-Inscripción Exitosa | Gustavo Franco & Asociados</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { brand: { 950: '#020617', 900: '#0f172a', gold: '#b45309' } }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitud recibida — Gustavo Franco</title>
+<meta name="description" content="Su solicitud de cotización ha sido recibida.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0B1320;
+    --bg-base: #0F1A2B;
+    --bg-surface: #131F33;
+    --bg-surface-2: #16233A;
+    --border: #1F2D45;
+    --border-soft: #1A2640;
+    --accent: #5BA644;
+    --accent-soft: rgba(91,166,68,0.12);
+    --text-primary: #F4F5F7;
+    --text-secondary: #8995AC;
+    --text-tertiary: #5B6B85;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  nav.site-nav {
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand img { height: 30px; width: 30px; }
+  .nav-brand span { font-family: var(--font-display); font-size: 18px; font-weight: 500; }
+  .nav-back {
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  /* CONTENT */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px;
+  }
+  .confirm-card {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+  }
+  .check-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .next-steps {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+  .next-steps h2 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .step {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step:first-child { padding-top: 0; }
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .step-text strong { color: var(--text-primary); font-weight: 500; }
+  .step-text a { color: var(--accent); }
+  .step-text a:hover { text-decoration: underline; }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0B1320;
+    font-weight: 500;
+    font-size: 14.5px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 14.5px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+
+  /* FOOTER */
+  footer { padding: 32px 0; border-top: 1px solid var(--border-soft); }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    .next-steps { padding: 22px; }
+    footer .wrap { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+<body>
 
-    <main class="max-w-2xl mx-auto px-6 py-16 text-center">
-        <div class="w-20 h-20 bg-blue-50 text-brand-gold rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm border border-brand-gold/20">
-            <i class="fa-solid fa-clipboard-check text-4xl"></i>
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="assets/logo-mark.png" alt="Gustavo Franco">
+      <span>Gustavo Franco</span>
+    </div>
+    <a href="/index.html" class="nav-back">Volver al inicio</a>
+  </div>
+</nav>
+
+<main>
+  <div class="confirm-card">
+    <div class="check-circle">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <span class="eyebrow">Solicitud recibida</span>
+    <h1>Gracias por su solicitud.</h1>
+    <p class="lead">He recibido los antecedentes y los revisaré dentro de las próximas 24 horas hábiles. Le responderé directamente al correo que indicó en el formulario, con la cotización o con las consultas que necesite resolver antes de cotizar.</p>
+
+    <div class="next-steps">
+      <h2>Para acelerar el proceso</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Envíeme los antecedentes que marcó como disponibles.</strong> Puede hacerlo respondiendo al correo de confirmación que llegará a su bandeja, o directamente a <a href="mailto:arquitecto@gustavofranco.cl">arquitecto@gustavofranco.cl</a>. Asunto sugerido: <em>"Cotización peritaje — [su nombre]"</em>.
         </div>
-
-        <h1 class="text-3xl font-serif font-bold text-brand-900 mb-4 italic">Interés Registrado con Éxito</h1>
-        
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-10 text-left">
-            <p class="text-slate-600 leading-relaxed mb-4">
-                Estimado propietario, hemos recibido sus datos correctamente y ya forma parte de la lista de interesados para el proyecto de regularización en <strong>Huellahue</strong>.
-            </p>
-            <p class="text-slate-600 leading-relaxed font-bold">
-                ¿Qué sigue ahora?
-            </p>
-            <ul class="text-sm text-slate-500 mt-3 space-y-3">
-                <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-bullhorn text-brand-gold mt-1"></i>
-                    <span><strong>Monitoreo de Quórum:</strong> Le informaremos oportunamente en cuanto el grupo alcance las 10 viviendas necesarias.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-calendar-check text-brand-gold mt-1"></i>
-                    <span><strong>Fecha de Corte:</strong> Al conformarse el quórum, notificaremos la fecha límite de cierre para que quienes falten realicen su abono con urgencia y no queden fuera de la visita programada.</span>
-                </li>
-            </ul>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Si prefiere WhatsApp,</strong> puede enviarme los documentos a <a href="https://wa.me/56953370921">+56 9 5337 0921</a>. Es el canal más ágil para PDF y fotos del inmueble.
         </div>
-
-        <div class="bg-white border-t-8 border-brand-gold shadow-2xl rounded-lg p-8 mb-8 text-left relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-brand-gold text-white text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Opcional</div>
-            <h2 class="text-brand-900 font-bold uppercase tracking-widest text-xs mb-4">Asegurar Cupo Inmediatamente</h2>
-            <p class="text-xs text-slate-500 mb-6 italic">
-                Si desea garantizar su lugar desde ya y agilizar la conformación del grupo, puede realizar el abono de reserva a la siguiente cuenta:
-            </p>
-            
-            <div class="space-y-4 text-sm border-b border-slate-100 pb-6 mb-6">
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">Monto Reserva:</span> <span class="font-bold text-brand-900">$90.000</span></div>
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">Banco:</span> <span class="font-bold">BANCO SANTANDER</span></div>
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">Tipo de Cuenta:</span> <span class="font-bold">CUENTA CORRIENTE</span></div>
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">Número:</span> <span class="font-bold">84108162</span></div>
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">Nombre:</span> <span class="font-bold uppercase">GUSTAVO FRANCO ESPINOZA</span></div>
-                <div class="flex justify-between border-b border-slate-50 pb-2"><span class="text-slate-400">RUT:</span> <span class="font-bold">15.987.049-9</span></div>
-                <div class="flex justify-between"><span class="text-slate-400">Email:</span> <span class="font-bold">secretaria@gustavofranco.cl</span></div>
-            </div>
-
-            <p class="text-[10px] text-slate-400 leading-tight italic">
-                * Tras transferir, envíe el comprobante por WhatsApp o correo para validar su cupo prioritario.
-            </p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Archivos muy grandes</strong> (planos en alta resolución, expedientes extensos) puede compartirlos por Google Drive o WeTransfer, enviándome el link al correo o WhatsApp.
         </div>
+      </div>
+    </div>
 
-        <div class="bg-brand-900 text-white p-6 rounded-lg text-xs leading-relaxed text-left border-l-4 border-brand-gold shadow-lg mb-10">
-            <h3 class="font-bold uppercase mb-3 text-brand-gold tracking-widest text-[10px]">Garantía de Devolución del Abono</h3>
-            <ul class="space-y-3 opacity-90">
-                <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-circle-check mt-1 text-brand-gold"></i>
-                    <span>Si el quórum mínimo no se alcanza en los plazos definidos por la comunidad.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-circle-check mt-1 text-brand-gold"></i>
-                    <span>Si en la visita técnica se determina que la propiedad es legalmente imposible de regularizar.</span>
-                </li>
-            </ul>
-        </div>
+    <div class="actions">
+      <a href="/index.html"><button class="btn-secondary">Volver al inicio</button></a>
+      <a href="https://wa.me/56953370921"><button class="btn-primary">Escribir por WhatsApp</button></a>
+    </div>
+  </div>
+</main>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="huellahue.html" class="text-slate-400 hover:text-brand-900 transition text-[10px] font-bold uppercase tracking-widest">
-                <i class="fa-solid fa-house mr-1"></i> Regresar a la propuesta
-            </a>
-            <span class="hidden sm:inline text-slate-300">|</span>
-            <a href="https://wa.me/56958101807" target="_blank" class="bg-green-600 text-white px-6 py-2 rounded-full text-xs font-bold hover:bg-green-700 transition flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp"></i> Notificar Transferencia
-            </a>
-        </div>
-    </main>
-
-    <footer class="py-8 text-center text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-        Gustavo Franco & Asociados | Oficina Técnica de Arquitectura
-    </footer>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Gustavo Franco Arquitectos.</span>
+    <span>Av. Raúl Labbé 12613 Of. 231, Lo Barnechea</span>
+  </div>
+</footer>
 
 </body>
 </html>

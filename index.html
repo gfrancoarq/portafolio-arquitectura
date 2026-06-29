@@ -1,222 +1,1349 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Franco & Asociados | Consultoría Técnica y Peritaje Judicial</title>
-    <meta name="description" content="Oficina de Arquitectura especializada en Tasaciones Judiciales, Regularizaciones Normativas y Gestión de Activos Inmobiliarios con cobertura nacional.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustavo Franco — Perito Judicial Tasador de Inmuebles</title>
+<meta name="description" content="Perito judicial tasador de inmuebles. Metodología verificable y factores de homologación trazables, para causas civiles, de familia, penales, laborales y tributarias.">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            950: '#020617',
-                            900: '#0f172a', 
-                            800: '#1e293b',
-                            700: '#1e40af', 
-                            gold: '#b45309', 
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-pattern {
-            background-color: #020617;
-            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 1)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gustavofranco.cl/">
+<meta property="og:title" content="Gustavo Franco — Perito Judicial Tasador de Inmuebles">
+<meta property="og:description" content="Tasaciones periciales que resisten el examen de la contraparte. Metodología verificable. Factores trazables.">
+<meta property="og:image" content="https://gustavofranco.cl/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0B1320;
+    --bg-base: #0F1A2B;
+    --bg-surface: #131F33;
+    --bg-surface-2: #16233A;
+    --border: #1F2D45;
+    --border-soft: #1A2640;
+    --accent: #5BA644;
+    --accent-soft: rgba(91,166,68,0.12);
+    --gold: #C9A961;
+    --gold-soft: rgba(201,169,97,0.10);
+    --text-primary: #F4F5F7;
+    --text-secondary: #8995AC;
+    --text-tertiary: #5B6B85;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- REVEAL ON SCROLL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- NAV ---------- */
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand img { height: 30px; width: 30px; border-radius: 6px; }
+  .nav-brand span { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--text-secondary); }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a.active { color: var(--text-primary); }
+  .nav-cta {
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-cta:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 88px 0 100px;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -200px;
+    left: 30%;
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(91,166,68,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1.08;
+    margin-bottom: 28px;
+    letter-spacing: -0.015em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero p.lead {
+    font-size: 17.5px;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+  .hero-actions { display: flex; gap: 14px; margin-bottom: 44px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #0B1320;
+    font-weight: 500;
+    font-size: 14.5px;
+    padding: 14px 26px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.25s;
+    font-family: var(--font-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px -10px rgba(91,166,68,0.5);
+  }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 14.5px;
+    padding: 14px 26px;
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-family: var(--font-body);
+  }
+  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .hero-credentials {
+    display: flex;
+    gap: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .credential {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .credential .label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+  }
+  .credential .value {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  /* Hero portrait */
+  .hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bg-surface);
+  }
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(11,19,32,0.55) 100%);
+    pointer-events: none;
+  }
+  .portrait-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-soft);
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+  .portrait-tag strong {
+    color: var(--text-primary);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  /* ---------- STATS BAR ---------- */
+  .stats {
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-surface);
+  }
+  .stats .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 44px 32px;
+  }
+  .stat { text-align: center; border-right: 1px solid var(--border-soft); padding: 0 16px; }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .stat .num span { color: var(--accent); }
+  .stat .label {
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section { padding: 110px 0; }
+  .section-head {
+    max-width: 680px;
+    margin-bottom: 64px;
+  }
+  .section-head.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.015em;
+  }
+  .section-head p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ---------- SOBRE EL PERITO ---------- */
+  .about {
+    background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-deep) 100%);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-card {
+    background: linear-gradient(160deg, var(--bg-surface) 0%, var(--bg-surface-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(91,166,68,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .card-mark {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-mark img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+  }
+  .card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .card-quote { flex: 1; display: flex; gap: 4px; }
+  .card-quote-mark {
+    font-family: var(--font-display);
+    font-size: 64px;
+    color: var(--accent);
+    line-height: 0.6;
+    margin-right: 4px;
+    opacity: 0.5;
+  }
+  .card-quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+  .card-footer {
+    border-top: 1px solid var(--border-soft);
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .card-footer-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+  }
+  .card-footer-value {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    font-weight: 500;
+    text-align: right;
+  }
+  .about-content h2 {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.015em;
+  }
+  .about-content p {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+  .about-content p strong { color: var(--text-primary); font-weight: 500; }
+  .about-timeline {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .about-milestone .year {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .about-milestone .desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ---------- FRAGMENTOS DEL TRABAJO ---------- */
+  .work-fragments {
+    background: var(--bg-base);
+  }
+  .fragments-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .fragment {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .fragment:hover {
+    transform: translateY(-4px);
+    border-color: var(--border);
+  }
+  .fragment-image {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+  .fragment.tall .fragment-image { aspect-ratio: 3/4; }
+  .fragment.wide .fragment-image { aspect-ratio: 21/9; }
+  .fragment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .fragment:hover .fragment-image img { transform: scale(1.04); }
+  .fragment-caption {
+    padding: 24px 28px 28px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .fragment-caption .tag {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .fragment-caption h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+  .fragment-caption p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .fragment.wide { grid-column: span 2; }
+
+  /* ---------- RECONOCIMIENTO ---------- */
+  .recognition {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .recognition-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
+    padding: 72px 0;
+  }
+  .recog-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: var(--gold-soft);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .recog-text { }
+  .recog-text .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .recog-text h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+  .recog-text p {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .recog-link {
+    color: var(--gold);
+    font-size: 13.5px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .recog-link:hover { background: var(--gold-soft); }
+
+  /* ---------- METHODOLOGY ---------- */
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-soft);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+  }
+  .method-card {
+    background: var(--bg-surface);
+    padding: 36px;
+    transition: background 0.3s;
+  }
+  .method-card:hover { background: var(--bg-surface-2); }
+  .method-card .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .method-card h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .method-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  /* ---------- MATTERS ---------- */
+  .matters-list { display: flex; flex-direction: column; }
+  .matter-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-soft);
+    transition: padding-left 0.3s ease;
+  }
+  .matter-row:hover { padding-left: 8px; }
+  .matter-row .idx {
+    font-family: var(--font-mono);
+    color: var(--text-tertiary);
+    font-size: 13px;
+    width: 32px;
+  }
+  .matter-row h4 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    width: 160px;
+    flex-shrink: 0;
+  }
+  .matter-row p {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 40px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .service-card.featured { border-color: rgba(91,166,68,0.35); }
+  .service-badge {
+    position: absolute;
+    top: -12px;
+    right: 28px;
+    background: var(--accent);
+    color: #0B1320;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .service-card .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .service-card p {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+  .service-list { display: flex; flex-direction: column; gap: 10px; }
+  .service-list li {
+    list-style: none;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .service-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials {
+    background: var(--bg-deep);
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .testimonial {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .testimonial .quote-mark {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--accent);
+    line-height: 0.5;
+    margin-bottom: -10px;
+    opacity: 0.5;
+  }
+  .testimonial p.body {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    flex: 1;
+  }
+  .testimonial .author {
+    padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .testimonial .name {
+    font-size: 14.5px;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  .testimonial .role {
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- CASE PREVIEW ---------- */
+  .case-preview {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 44px;
+    align-items: center;
+  }
+  .case-preview .tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .case-preview h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    margin: 14px 0 14px;
+    line-height: 1.3;
+  }
+  .case-preview p { color: var(--text-secondary); font-size: 14.5px; line-height: 1.75; margin-bottom: 22px; }
+  .case-metrics { display: flex; flex-direction: column; gap: 14px; }
+  .case-metric {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .case-metric .v { font-family: var(--font-display); font-size: 24px; color: var(--text-primary); letter-spacing: -0.02em; }
+  .case-metric .l { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
+  .link-arrow {
+    color: var(--accent);
+    font-size: 14.5px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .link-arrow:hover { gap: 10px; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .contact-info h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; margin-bottom: 16px; letter-spacing: -0.015em; }
+  .contact-info p { color: var(--text-secondary); font-size: 15px; line-height: 1.75; margin-bottom: 28px; }
+  .contact-detail { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--text-secondary); margin-bottom: 14px; }
+  .contact-detail svg { color: var(--accent); flex-shrink: 0; }
+  .contact-cta-side {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contact-cta-side h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .contact-cta-side p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer { border-top: 1px solid var(--border-soft); padding: 64px 0 32px; background: var(--bg-deep); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .f-brand { display: flex; align-items: flex-start; gap: 14px; }
+  .f-brand img { height: 32px; width: 32px; opacity: 0.9; margin-top: 2px; border-radius: 6px; }
+  .f-name { font-family: var(--font-display); font-size: 16px; color: var(--text-primary); margin-bottom: 4px; }
+  .f-role { font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
+  .f-col { display: flex; flex-direction: column; gap: 12px; }
+  .f-col-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .f-col a { font-size: 13.5px; color: var(--text-secondary); transition: color 0.15s; }
+  .f-col a:hover { color: var(--text-primary); }
+  .f-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 28px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 960px) {
+    .wrap { padding: 0 22px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero h1 { font-size: 40px; }
+    .hero-portrait { max-width: 380px; margin: 0 auto; }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 32px; padding: 32px 22px; }
+    .stat { border-right: none; }
+    .stat:nth-child(odd) { border-right: 1px solid var(--border-soft); }
+    section { padding: 76px 0; }
+    .section-head h2 { font-size: 30px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-img { max-width: 380px; margin: 0 auto; }
+    .about-content h2 { font-size: 28px; }
+    .about-timeline { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
+    .fragments-grid { grid-template-columns: 1fr; }
+    .fragment.wide { grid-column: span 1; aspect-ratio: 4/3; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .recognition-inner { grid-template-columns: 1fr; text-align: center; padding: 48px 0; }
+    .recog-icon { margin: 0 auto; }
+    .services-grid { grid-template-columns: 1fr; }
+    .case-preview { grid-template-columns: 1fr; padding: 32px; }
+    .contact-box { grid-template-columns: 1fr; padding: 32px; }
+    .matter-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .matter-row h4 { width: auto; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .f-brand { grid-column: 1 / -1; }
+    .f-bottom { flex-direction: column; gap: 6px; }
+  }
+</style>
 </head>
-<body class="font-sans text-slate-300 antialiased bg-brand-950">
+<body>
 
-    <nav class="fixed w-full z-50 bg-brand-950/90 backdrop-blur-md border-b border-slate-800 shadow-2xl transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-11 h-11 bg-gradient-to-br from-brand-700 to-brand-900 rounded shadow-inner flex items-center justify-center text-white font-serif font-bold text-xl border border-white/10">GF</div>
-                    <div class="leading-tight">
-                        <span class="block font-extrabold text-white text-xl tracking-tight">Gustavo Franco <span class="text-brand-gold">&</span> Asociados</span>
-                        <span class="block text-[10px] text-slate-400 font-bold tracking-[0.2em] uppercase">Consultoría Técnica Inmobiliaria</span>
-                    </div>
-                </div>
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="assets/logo-mark.png" alt="Gustavo Franco">
+      <span>Gustavo Franco</span>
+    </div>
+    <div class="nav-links">
+      <a href="/index.html" class="active">Peritajes</a>
+      <a href="/arquitectura.html">Arquitectura</a>
+      <a href="/tasaciones-comerciales.html">Tasaciones</a>
+    </div>
+    <a href="/cotizacion.html" class="nav-cta">Solicitar cotización</a>
+  </div>
+</nav>
 
-                <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="#peritajes" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">Tasaciones Judiciales</a>
-                    <a href="#regularizaciones" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">Regularizaciones</a>
-                    <a href="#sobre-mi" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">La Firma</a>
-                    <a href="#contacto" class="px-6 py-2 bg-brand-gold text-white text-sm font-bold rounded-sm hover:bg-amber-700 transition shadow-lg uppercase tracking-widest">
-                        Contacto
-                    </a>
-                </div>
-
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Perito Judicial · Arquitecto · MBA</span>
+        <h1>Tasaciones periciales que resisten <em>el examen de la contraparte.</em></h1>
+        <p class="lead">Metodología verificable y factores de homologación trazables, para causas civiles, de familia, penales, laborales y tributarias.</p>
+        <div class="hero-actions">
+          <a href="/cotizacion.html"><button class="btn-primary">Solicitar cotización <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></a>
+          <a href="#metodologia"><button class="btn-secondary">Ver metodología</button></a>
         </div>
-    </nav>
-
-    <header class="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden hero-pattern">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-            <div class="max-w-4xl">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                    Cobertura Nacional | Oficina Central Santiago
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] text-white mb-8 font-sans">
-                    Certeza Técnica y Legal en <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-500">Activos Inmobiliarios.</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl leading-relaxed font-light">
-                    Como firma liderada por un <strong>Perito Judicial</strong>, brindamos respaldo inexpugnable en tasaciones complejas y regularizaciones normativas para empresas, loteos y copropiedades.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#contacto" class="px-10 py-5 bg-white text-brand-950 font-black rounded-sm text-center hover:bg-slate-200 transition-all uppercase tracking-wider text-sm shadow-2xl">
-                        Iniciar Consultoría
-                    </a>
-                    <a href="#regularizaciones" class="px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-sm text-center hover:bg-white/5 transition-all uppercase tracking-wider text-sm">
-                        Ver Regularizaciones
-                    </a>
-                </div>
-            </div>
+        <div class="hero-credentials">
+          <div class="credential">
+            <span class="label">Habilitado en</span>
+            <span class="value">5 Cortes</span>
+          </div>
+          <div class="credential">
+            <span class="label">Trayectoria</span>
+            <span class="value">15 años</span>
+          </div>
+          <div class="credential">
+            <span class="label">Reconocimiento</span>
+            <span class="value">Premio CChC</span>
+          </div>
         </div>
-    </header>
-
-    <section class="py-12 bg-brand-900 border-y border-white/5 text-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-80">
-            <div><span class="block text-3xl font-bold text-white">14 Años</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Trayectoria</span></div>
-            <div><span class="block text-3xl font-bold text-white">5 Cortes</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Habilitación</span></div>
-            <div><span class="block text-3xl font-bold text-white">+1.000</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Informes</span></div>
-            <div><span class="block text-3xl font-bold text-white">24/7</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Gestión</span></div>
+      </div>
+      <div class="hero-portrait">
+        <img src="assets/retrato-hero-bw.jpg" alt="Gustavo Franco — Perito Judicial Tasador, Arquitecto, MBA">
+        <div class="portrait-tag">
+          <strong>Gustavo Franco Espinoza</strong>
+          Arquitecto · MBA · Perito Judicial
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section id="peritajes" class="py-24 bg-brand-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">División Judicial</h2>
-                <h3 class="text-4xl font-bold text-white mb-8 font-serif">Tasaciones Periciales y Defensa de Valor</h3>
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed">Oficina técnica especializada en informes periciales con estándar de Corte de Apelaciones. Entrega de respaldo técnico riguroso para litigios y expropiaciones.</p>
-                <div class="glass-card p-6 rounded-lg">
-                    <h4 class="text-white font-bold mb-2 flex items-center gap-3"><i class="fa-solid fa-gavel text-brand-gold"></i> Peritajes Judiciales</h4>
-                    <p class="text-sm text-slate-500">MOP/SERVIU, herencias y particiones. Cotización según cuantía y complejidad.</p>
-                </div>
-            </div>
-            <div class="grid gap-6">
-                <div class="bg-white p-8 rounded-sm shadow-2xl">
-                    <h4 class="text-brand-900 font-extrabold text-xl uppercase tracking-tighter">Tasación Profesional</h4>
-                    <p class="text-slate-500 text-xs font-bold uppercase mb-4 tracking-widest">Con Visita Técnica</p>
-                    <div class="mb-6"><span class="text-sm text-slate-400 font-bold uppercase">Desde</span> <span class="text-5xl font-black text-brand-900 tracking-tighter">3,0 UF</span></div>
-                    <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t pt-6">
-                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Levantamiento métrico</li>
-                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Análisis Normativo</li>
-                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Firma Perito Judicial</li>
-                    </ul>
-                    <a href="#contacto" class="block w-full py-4 bg-brand-900 text-white text-center font-bold text-sm tracking-widest uppercase">Solicitar</a>
-                </div>
-                <div class="glass-card p-6 rounded-sm border-white/5 flex justify-between items-center">
-                    <div><h4 class="text-white font-bold text-sm">Valoración Escritorio</h4><p class="text-xs text-slate-500">Sin visita - 24h</p></div>
-                    <span class="text-2xl font-bold text-white">2,0 UF</span>
-                </div>
-            </div>
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="num"><span>5</span></div><div class="label">Cortes de Apelaciones<br>habilitado como perito</div></div>
+    <div class="stat"><div class="num"><span>900+</span></div><div class="label">Inmuebles tasados<br>en Fundación Integra</div></div>
+    <div class="stat"><div class="num"><span>15</span></div><div class="label">Años de trayectoria<br>profesional</div></div>
+    <div class="stat"><div class="num"><span>III–X</span></div><div class="label">Cobertura nacional<br>en informes de parte</div></div>
+  </div>
+</div>
+
+<!-- ============ SOBRE EL PERITO ============ -->
+<section id="sobre" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="card-mark">
+          <img src="assets/logo-mark.png" alt="">
         </div>
-    </section>
-
-    <section id="regularizaciones" class="py-24 bg-slate-900/50 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Gestión Normativa</h2>
-                <h3 class="text-4xl font-bold text-white mb-6 font-serif">Saneamiento y Regularización Integral</h3>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
-                    <i class="fa-solid fa-building-circle-check text-4xl text-brand-gold mb-6 block"></i>
-                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Empresas</h4>
-                    <p class="text-sm text-slate-400">Patentes comerciales e industriales. Permisos DOM y Recepción Final.</p>
-                </div>
-                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
-                    <i class="fa-solid fa-map-location-dot text-4xl text-brand-gold mb-6 block"></i>
-                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Loteos</h4>
-                    <p class="text-sm text-slate-400">Subdivisiones, parcelaciones y saneamiento de títulos a nivel nacional.</p>
-                </div>
-                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
-                    <i class="fa-solid fa-house-lock text-4xl text-brand-gold mb-6 block"></i>
-                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Vivienda</h4>
-                    <p class="text-sm text-slate-400">Ley 20.898 y Ley de Copropiedad. Saneamiento de edificaciones residenciales.</p>
-                </div>
-            </div>
-            <div class="mt-16 text-center">
-                <a href="#contacto" class="inline-block px-12 py-4 border-2 border-brand-gold text-brand-gold font-black text-sm tracking-widest hover:bg-brand-gold hover:text-white transition uppercase">Consultar Factibilidad</a>
-            </div>
+        <div class="card-eyebrow">Trayectoria · 2011 → 2026</div>
+        <div class="card-quote">
+          <span class="card-quote-mark">“</span>
+          <p>Entender, medir y defender el valor del suelo —desde la tesis universitaria hasta el tribunal.</p>
         </div>
-    </section>
-
-    <section id="sobre-mi" class="py-24 bg-brand-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-2/5 relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-gold opacity-50"></div>
-                <img src="images/perfilcopy.png" alt="Gustavo Franco" class="relative z-10 w-full grayscale rounded-sm shadow-2xl">
-                <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-gold opacity-50"></div>
-            </div>
-            <div class="md:w-3/5">
-                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Director General</h2>
-                <h3 class="text-4xl font-bold text-white mb-6 font-serif">Gustavo Franco Espinoza</h3>
-                <p class="text-slate-400 text-lg mb-6 leading-relaxed">Arquitecto MBA con 14 años de experiencia liderando equipos técnicos. Como Perito Judicial, entrego certeza jurídica y financiera en cada proyecto.</p>
-                <div class="flex gap-6 items-center">
-                    <a href="https://linkedin.com/in/gustavfranco" target="_blank" class="text-white hover:text-brand-gold transition text-2xl"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://wa.me/56953370921" class="text-white hover:text-brand-gold transition text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
-                    <span class="text-xs text-slate-600 uppercase tracking-widest font-bold">Santiago - Chile</span>
-                </div>
-            </div>
+        <div class="card-footer">
+          <div class="card-footer-row">
+            <span class="card-footer-label">Premio</span>
+            <span class="card-footer-value">CChC 2011</span>
+          </div>
+          <div class="card-footer-row">
+            <span class="card-footer-label">Habilitación</span>
+            <span class="card-footer-value">5 Cortes de Apelaciones</span>
+          </div>
+          <div class="card-footer-row">
+            <span class="card-footer-label">Estándar</span>
+            <span class="card-footer-value">NCh 3658/1 · IVSC</span>
+          </div>
         </div>
-    </section>
-
-    <footer id="contacto" class="bg-brand-950 pt-24 pb-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-20 mb-20">
-            <div>
-                <h3 class="text-3xl font-bold text-white mb-8 font-serif">Área de Clientes</h3>
-                <div class="space-y-6">
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-location-dot text-brand-gold"></i><span class="text-slate-300">Santiago, Chile</span></div>
-                    <div class="flex items-center gap-4"><i class="fa-solid fa-envelope text-brand-gold"></i><span class="text-slate-300">arquitecto@gustavofranco.cl</span></div>
-                    <div class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-brand-gold"></i><span class="text-slate-300">+56 9 5337 0921</span></div>
-                </div>
-            </div>
-            <div class="bg-brand-900 p-10 border border-white/10 rounded-sm">
-                <form action="https://formspree.io/f/mnqrjapq" method="POST" class="space-y-5">
-                    <input type="text" name="nombre" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Nombre / Empresa">
-                    <input type="email" name="email" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Email corporativo">
-                    <textarea name="mensaje" rows="4" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Requerimiento técnico..."></textarea>
-                    <button type="submit" class="w-full bg-brand-gold text-white font-black py-4 rounded-sm hover:bg-amber-700 transition uppercase tracking-widest text-xs">Enviar Solicitud</button>
-                </form>
-            </div>
+      </div>
+      <div class="about-content reveal">
+        <span class="eyebrow">Sobre el perito</span>
+        <h2>Una sola trayectoria: <em style="font-style: italic; color: var(--accent);">entender el valor del suelo.</em></h2>
+        <p>Mi vínculo con el valor de los bienes raíces empezó antes de titularme. En 2011, mi tesis sobre el <strong>Mercado de Suelo Urbano de Temuco</strong> recibió el Premio al Mejor Proyecto de Investigación de la Cámara Chilena de la Construcción, compitiendo con tesis de UFRO, INACAP, Mayor y Santo Tomás.</p>
+        <p>Esa investigación fue el punto de partida de quince años dedicados a entender, medir y defender el valor de los inmuebles: tasaciones para banca de primera línea, desarrollo de un Modelo Automatizado de Valoración (AVM) para los más de <strong>900 jardines infantiles de Fundación Integra</strong> —cuyos resultados fueron validados e incorporados por Deloitte en su auditoría externa de patrimonio institucional—, proyectos de arquitectura, y hoy, peritajes judiciales bajo estándar NCh 3658/1.</p>
+        <p>Mi trabajo pericial combina la rigurosidad metodológica de la tasación bancaria con la claridad expositiva que necesita un informe para sostenerse ante el examen técnico de la contraparte.</p>
+        <div class="about-timeline">
+          <div class="about-milestone">
+            <div class="year">2011</div>
+            <div class="desc">Premio CChC — Mejor Proyecto de Investigación. Tesis sobre mercado de suelo urbano.</div>
+          </div>
+          <div class="about-milestone">
+            <div class="year">2016–2017</div>
+            <div class="desc">AVM nacional para 900+ inmuebles de Fundación Integra. Validado por Deloitte.</div>
+          </div>
+          <div class="about-milestone">
+            <div class="year">2019</div>
+            <div class="desc">MBA Executive, Universidad Andrés Bello.</div>
+          </div>
+          <div class="about-milestone">
+            <div class="year">2026–2027</div>
+            <div class="desc">Habilitado como perito judicial en 5 Cortes de Apelaciones.</div>
+          </div>
         </div>
-        <p class="text-[10px] text-slate-600 text-center uppercase tracking-widest font-bold">&copy; 2026 Gustavo Franco & Asociados.</p>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            window.scrollY > 50 ? nav.classList.add('bg-brand-950') : nav.classList.remove('bg-brand-950');
-        });
-    </script>
+<!-- ============ FRAGMENTOS DEL TRABAJO ============ -->
+<section id="trabajo" class="work-fragments">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fragmentos del trabajo</span>
+      <h2>Quince años de oficio, en cuatro piezas.</h2>
+      <p>Tasación pericial, arquitectura, proyectos comerciales y diseño residencial. No es portafolio: es evidencia de que el perito que firma sus informes también conoce la construcción desde adentro.</p>
+    </div>
+    <div class="fragments-grid">
+      <div class="fragment tall reveal">
+        <div class="fragment-image"><img src="assets/fragmento-tabla-homologacion.jpg" alt="Tabla de homologación pericial"></div>
+        <div class="fragment-caption">
+          <div class="tag">Informe pericial</div>
+          <h3>Matriz de homologación trazable</h3>
+          <p>Factores de ajuste documentados fórmula a fórmula, según Norma Chilena NCh 3658/1.</p>
+        </div>
+      </div>
+      <div class="fragment tall reveal">
+        <div class="fragment-image"><img src="assets/planimetria-casa-bd.jpg" alt="Planimetría de arquitectura, Casa Berkhoff Dossow, Villarrica"></div>
+        <div class="fragment-caption">
+          <div class="tag">Arquitectura residencial</div>
+          <h3>Casa Berkhoff Dossow · Villarrica</h3>
+          <p>Diseño y planimetría residencial. Pasaje Felis, Villarrica, Región de la Araucanía.</p>
+        </div>
+      </div>
+      <div class="fragment wide reveal">
+        <div class="fragment-image"><img src="assets/conjunto-araucania.jpg" alt="Conjunto habitacional de 500 viviendas, Araucanía"></div>
+        <div class="fragment-caption">
+          <div class="tag">Urbanismo · Loteo</div>
+          <h3>Conjunto habitacional de 500 viviendas · Araucanía</h3>
+          <p>Diseño urbano y arquitectura de un loteo residencial de escala media en el sur de Chile.</p>
+        </div>
+      </div>
+      <div class="fragment wide reveal">
+        <div class="fragment-image"><img src="assets/centro-comercial-imperial.jpg" alt="Centro comercial Galería de la Esquina, Imperial"></div>
+        <div class="fragment-caption">
+          <div class="tag">Arquitectura comercial</div>
+          <h3>Galería de la Esquina · Nueva Imperial</h3>
+          <p>Pequeño centro comercial en esquina urbana consolidada, Región de la Araucanía.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECONOCIMIENTO ============ -->
+<section class="recognition" style="padding: 0;">
+  <div class="wrap">
+    <div class="recognition-inner reveal">
+      <div class="recog-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <div class="recog-text">
+        <div class="label">Reconocimiento · 2011</div>
+        <h3>Premio Cámara Chilena de la Construcción al Mejor Proyecto de Investigación.</h3>
+        <p>Tesis <em>"El Mercado de Suelo Urbano de Temuco 2010"</em>. Publicada en la Revista de la CChC. Simposio de la Construcción SYMCO, compitiendo con tesis de UFRO, INACAP, Mayor y Santo Tomás.</p>
+      </div>
+      <a href="https://araucanianoticias.cl/2011/estudiante-de-la-autnoma-recibe-premio-a-mejor-proyecto-de-investigacin-2011/12279158" target="_blank" rel="noopener" class="recog-link">Ver nota de prensa →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METODOLOGÍA ============ -->
+<section id="metodologia">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Metodología</span>
+      <h2>Cada cifra del informe, trazable hasta su origen.</h2>
+      <p>Un informe pericial no se defiende por la firma al final, se defiende por lo que hay antes de ella. Estos son los principios que rigen cada tasación que entrego.</p>
+    </div>
+    <div class="method-grid reveal">
+      <div class="method-card">
+        <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Comprobación de cabida física</h3>
+        <p>Levantamiento planimétrico apoyado en herramientas SIG, contrastado formalmente contra el avalúo fiscal antes de adoptar una superficie de cálculo.</p>
+      </div>
+      <div class="method-card">
+        <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6Zm14 0l-3 6a3 3 0 0 0 6 0l-3-6ZM5 7h14M8 21h8"/></svg></div>
+        <h3>Principio de realidad</h3>
+        <p>La condición física constatada en terreno prevalece, para efectos de valor comercial, sobre la sola enunciación documental o registral.</p>
+      </div>
+      <div class="method-card">
+        <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg></div>
+        <h3>Catastro de mercado ampliado</h3>
+        <p>Transacciones reales del Conservador de Bienes Raíces y ofertas vigentes, filtradas por relevancia de escala antes de homologar.</p>
+      </div>
+      <div class="method-card">
+        <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 4h-4a2 2 0 0 0-2 2v5M11 11H7M11 11v9M7 15h4"/></svg></div>
+        <h3>Factores de homologación trazables</h3>
+        <p>Cada coeficiente de ajuste documentado con su fórmula o su rango de mercado de respaldo. Nunca un criterio sin sustento verificable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIAS ============ -->
+<section id="materias" style="background: var(--bg-deep);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Materias</span>
+      <h2>Un solo perito, cinco tipos de causa.</h2>
+      <p>Tasación de terrenos y construcciones de cualquier naturaleza, donde se requiera valor comercial con fines judiciales.</p>
+    </div>
+    <div class="matters-list reveal">
+      <div class="matter-row">
+        <span class="idx">01</span>
+        <h4>Civil</h4>
+        <p>Particiones de comunidad de bienes, juicios de partición hereditaria, remates judiciales y adjudicaciones.</p>
+      </div>
+      <div class="matter-row">
+        <span class="idx">02</span>
+        <h4>Familia</h4>
+        <p>Liquidación de sociedad conyugal, compensación económica, divorcios con bienes raíces involucrados.</p>
+      </div>
+      <div class="matter-row">
+        <span class="idx">03</span>
+        <h4>Penal</h4>
+        <p>Avalúos para determinación de perjuicio patrimonial, restitución de bienes y procedimientos de comiso.</p>
+      </div>
+      <div class="matter-row">
+        <span class="idx">04</span>
+        <h4>Laboral</h4>
+        <p>Tasación de bienes inmuebles vinculados a procedimientos de cobranza laboral y previsional.</p>
+      </div>
+      <div class="matter-row">
+        <span class="idx">05</span>
+        <h4>Tributario</h4>
+        <p>Informes de respaldo para procedimientos ante el Servicio de Impuestos Internos y reclamaciones tributarias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Dos formas de aportar certeza a una causa.</h2>
+      <p>Ya sea que necesite un valor comercial fundamentado, o que necesite poner a prueba el peritaje de la contraparte.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h3>Tasación Pericial</h3>
+        <p>Determinación del valor comercial de un inmueble, con metodología documentada de inicio a fin, lista para resistir el escrutinio de la contraparte.</p>
+        <ul class="service-list">
+          <li>Comparación de mercado y costo de reposición</li>
+          <li>Catastro de testigos con criterios trazables</li>
+          <li>Informe formateado para presentación judicial</li>
+        </ul>
+      </div>
+      <div class="service-card featured">
+        <span class="service-badge">Servicio especializado</span>
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M3 12a9 9 0 1 0 9-9"/></svg></div>
+        <h3>Metaperitaje y Refutación</h3>
+        <p>Revisión técnica de un informe pericial ya presentado por la contraparte, identificando inconsistencias metodológicas, factores sin respaldo y errores de cálculo.</p>
+        <ul class="service-list">
+          <li>Auditoría de la matriz de homologación ajena</li>
+          <li>Detección de criterios sin sustento verificable</li>
+          <li>Informe de refutación fundado, para traslado u observaciones</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section id="testimonios" class="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2>Lo que dicen quienes han trabajado conmigo.</h2>
+      <p>Referencias de abogados, ejecutivos y clientes con quienes he colaborado en peritajes, tasaciones y proyectos de arquitectura.</p>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">Es mi arquitecto de cabecera. Su precisión como tasador y su impecable gestión en trámites brindan la seguridad y rapidez que necesito. Un respaldo indispensable, totalmente recomendado.</p>
+        <div class="author">
+          <div class="name">Patricio Espinoza</div>
+          <div class="role">Abogado</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">En un lapso inferior a 2 años se desempeñó en diversos cargos regionales y nacionales producto del buen desempeño demostrado, imprimiendo un sello de diferencia y calidad en sus productos y propuestas.</p>
+        <div class="author">
+          <div class="name">Joliette Otárola</div>
+          <div class="role">Directora de Planificación y Gestión, Fundación Integra</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">El diseño de mi casa en Villarrica superó todas mis expectativas. Entendió a la perfección lo que buscábamos, logrando un equilibrio ideal entre estética y funcionalidad. Un arquitecto sumamente dedicado y profesional.</p>
+        <div class="author">
+          <div class="name">Herman Berkhoff</div>
+          <div class="role">Cliente — Casa Berkhoff Dossow, Villarrica</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">Persona metódica, comprometida, perseverante, con gran capacidad de trabajo y foco. Hemos mantenido una relación de colaboración profesional desde 2015.</p>
+        <div class="author">
+          <div class="name">Enrique Pérez</div>
+          <div class="role">Gerente y Propietario, Andes Broker Propiedades</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASO ============ -->
+<section id="caso">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Caso de estudio</span>
+      <h2>Cuando la discrepancia se convierte en el argumento más fuerte.</h2>
+    </div>
+    <div class="case-preview reveal">
+      <div>
+        <span class="tag">Tribunal de familia · Caso ilustrativo</span>
+        <h3>180 m² de diferencia entre el título y la realidad del terreno.</h3>
+        <p>Liquidación de sociedad conyugal sobre un bien raíz en Peñaflor. La discrepancia de superficie, que inicialmente parecía el punto más débil del peritaje, terminó siendo el mejor fundamentado del informe.</p>
+        <a href="/casos/penaflor.html" class="link-arrow">Leer el desarrollo completo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="v">8+</div><div class="l">Testigos relevados</div></div>
+        <div class="case-metric"><div class="v">180 m²</div><div class="l">Discrepancia de cabida</div></div>
+        <div class="case-metric"><div class="v">—</div><div class="l">Sin observaciones</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" style="background: var(--bg-deep);">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div class="contact-info">
+        <h2>Conversemos de su causa.</h2>
+        <p>Respondo consultas dentro de 24 horas hábiles. Para acelerar la cotización, complete el formulario estructurado con los antecedentes del encargo: con esa información, la propuesta suele estar lista el mismo día.</p>
+        <div class="contact-detail"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="M3 7l9 6 9-6"/></svg> arquitecto@gustavofranco.cl</div>
+        <div class="contact-detail"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> +56 9 5337 0921</div>
+        <div class="contact-detail"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Av. Raúl Labbé 12613 Of. 231, Lo Barnechea</div>
+      </div>
+      <div class="contact-cta-side">
+        <h3>Solicitar cotización</h3>
+        <p>Formulario estructurado con los datos mínimos que necesito para preparar una propuesta acotada: rol procesal, materia, antecedentes disponibles y plazos.</p>
+        <a href="/cotizacion.html"><button class="btn-primary" style="margin-top: 14px;">Ir al formulario <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></a>
+        <p style="margin-top: 22px; font-size: 13px; color: var(--text-tertiary);">¿Prefiere conversar primero? Escríbame a <a href="mailto:arquitecto@gustavofranco.cl" style="color: var(--accent);">arquitecto@gustavofranco.cl</a> o por <a href="https://wa.me/56953370921" style="color: var(--accent);">WhatsApp</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="f-brand">
+      <img src="assets/logo-mark.png" alt="">
+      <div>
+        <div class="f-name">Gustavo Franco</div>
+        <div class="f-role">Perito Judicial Tasador<br>Arquitecto · MBA</div>
+      </div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Peritajes</div>
+      <a href="#sobre">Sobre el perito</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#servicios">Servicios</a>
+      <a href="/casos/penaflor.html">Casos de estudio</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Otros servicios</div>
+      <a href="/arquitectura.html">Proyectos de arquitectura</a>
+      <a href="/tasaciones-comerciales.html">Tasaciones comerciales</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Contacto</div>
+      <a href="/cotizacion.html">Solicitar cotización</a>
+      <a href="mailto:arquitecto@gustavofranco.cl">arquitecto@gustavofranco.cl</a>
+      <a href="https://wa.me/56953370921">WhatsApp</a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 Gustavo Franco Arquitectos. Todos los derechos reservados.</span>
+    <span>Av. Raúl Labbé 12613 Of. 231, Lo Barnechea, Santiago.</span>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

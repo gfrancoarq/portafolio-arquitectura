@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Franco & Asociados | Consultoría Técnica y Peritaje Judicial</title>
+    <meta name="description" content="Oficina de Arquitectura especializada en Tasaciones Judiciales, Regularizaciones Normativas y Gestión de Activos Inmobiliarios con cobertura nacional.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            950: '#020617',
+                            900: '#0f172a', 
+                            800: '#1e293b',
+                            700: '#1e40af', 
+                            gold: '#b45309', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #020617;
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 1)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 antialiased bg-brand-950">
+
+    <nav class="fixed w-full z-50 bg-brand-950/90 backdrop-blur-md border-b border-slate-800 shadow-2xl transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-11 h-11 bg-gradient-to-br from-brand-700 to-brand-900 rounded shadow-inner flex items-center justify-center text-white font-serif font-bold text-xl border border-white/10">GF</div>
+                    <div class="leading-tight">
+                        <span class="block font-extrabold text-white text-xl tracking-tight">Gustavo Franco <span class="text-brand-gold">&</span> Asociados</span>
+                        <span class="block text-[10px] text-slate-400 font-bold tracking-[0.2em] uppercase">Consultoría Técnica Inmobiliaria</span>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#peritajes" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">Tasaciones Judiciales</a>
+                    <a href="#regularizaciones" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">Regularizaciones</a>
+                    <a href="#sobre-mi" class="text-sm font-semibold text-slate-300 hover:text-white transition uppercase tracking-wider">La Firma</a>
+                    <a href="#contacto" class="px-6 py-2 bg-brand-gold text-white text-sm font-bold rounded-sm hover:bg-amber-700 transition shadow-lg uppercase tracking-widest">
+                        Contacto
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden hero-pattern">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-gold text-xs font-bold uppercase tracking-[0.2em] mb-8">
+                    Cobertura Nacional | Oficina Central Santiago
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] text-white mb-8 font-sans">
+                    Certeza Técnica y Legal en <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-500">Activos Inmobiliarios.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl leading-relaxed font-light">
+                    Como firma liderada por un <strong>Perito Judicial</strong>, brindamos respaldo inexpugnable en tasaciones complejas y regularizaciones normativas para empresas, loteos y copropiedades.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#contacto" class="px-10 py-5 bg-white text-brand-950 font-black rounded-sm text-center hover:bg-slate-200 transition-all uppercase tracking-wider text-sm shadow-2xl">
+                        Iniciar Consultoría
+                    </a>
+                    <a href="#regularizaciones" class="px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-sm text-center hover:bg-white/5 transition-all uppercase tracking-wider text-sm">
+                        Ver Regularizaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-brand-900 border-y border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-80">
+            <div><span class="block text-3xl font-bold text-white">14 Años</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Trayectoria</span></div>
+            <div><span class="block text-3xl font-bold text-white">5 Cortes</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Habilitación</span></div>
+            <div><span class="block text-3xl font-bold text-white">+1.000</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Informes</span></div>
+            <div><span class="block text-3xl font-bold text-white">24/7</span><span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Gestión</span></div>
+        </div>
+    </section>
+
+    <section id="peritajes" class="py-24 bg-brand-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">División Judicial</h2>
+                <h3 class="text-4xl font-bold text-white mb-8 font-serif">Tasaciones Periciales y Defensa de Valor</h3>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed">Oficina técnica especializada en informes periciales con estándar de Corte de Apelaciones. Entrega de respaldo técnico riguroso para litigios y expropiaciones.</p>
+                <div class="glass-card p-6 rounded-lg">
+                    <h4 class="text-white font-bold mb-2 flex items-center gap-3"><i class="fa-solid fa-gavel text-brand-gold"></i> Peritajes Judiciales</h4>
+                    <p class="text-sm text-slate-500">MOP/SERVIU, herencias y particiones. Cotización según cuantía y complejidad.</p>
+                </div>
+            </div>
+            <div class="grid gap-6">
+                <div class="bg-white p-8 rounded-sm shadow-2xl">
+                    <h4 class="text-brand-900 font-extrabold text-xl uppercase tracking-tighter">Tasación Profesional</h4>
+                    <p class="text-slate-500 text-xs font-bold uppercase mb-4 tracking-widest">Con Visita Técnica</p>
+                    <div class="mb-6"><span class="text-sm text-slate-400 font-bold uppercase">Desde</span> <span class="text-5xl font-black text-brand-900 tracking-tighter">3,0 UF</span></div>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8 border-t pt-6">
+                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Levantamiento métrico</li>
+                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Análisis Normativo</li>
+                        <li><i class="fa-solid fa-check text-brand-gold mr-2"></i> Firma Perito Judicial</li>
+                    </ul>
+                    <a href="#contacto" class="block w-full py-4 bg-brand-900 text-white text-center font-bold text-sm tracking-widest uppercase">Solicitar</a>
+                </div>
+                <div class="glass-card p-6 rounded-sm border-white/5 flex justify-between items-center">
+                    <div><h4 class="text-white font-bold text-sm">Valoración Escritorio</h4><p class="text-xs text-slate-500">Sin visita - 24h</p></div>
+                    <span class="text-2xl font-bold text-white">2,0 UF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="regularizaciones" class="py-24 bg-slate-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Gestión Normativa</h2>
+                <h3 class="text-4xl font-bold text-white mb-6 font-serif">Saneamiento y Regularización Integral</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-building-circle-check text-4xl text-brand-gold mb-6 block"></i>
+                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Empresas</h4>
+                    <p class="text-sm text-slate-400">Patentes comerciales e industriales. Permisos DOM y Recepción Final.</p>
+                </div>
+                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-map-location-dot text-4xl text-brand-gold mb-6 block"></i>
+                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Loteos</h4>
+                    <p class="text-sm text-slate-400">Subdivisiones, parcelaciones y saneamiento de títulos a nivel nacional.</p>
+                </div>
+                <div class="glass-card p-10 hover:bg-white/5 transition border-b-2 border-transparent hover:border-brand-gold">
+                    <i class="fa-solid fa-house-lock text-4xl text-brand-gold mb-6 block"></i>
+                    <h4 class="text-xl font-bold text-white mb-4 uppercase tracking-tighter">Vivienda</h4>
+                    <p class="text-sm text-slate-400">Ley 20.898 y Ley de Copropiedad. Saneamiento de edificaciones residenciales.</p>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <a href="#contacto" class="inline-block px-12 py-4 border-2 border-brand-gold text-brand-gold font-black text-sm tracking-widest hover:bg-brand-gold hover:text-white transition uppercase">Consultar Factibilidad</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-24 bg-brand-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-2/5 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-gold opacity-50"></div>
+                <img src="images/perfilcopy.png" alt="Gustavo Franco" class="relative z-10 w-full grayscale rounded-sm shadow-2xl">
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-gold opacity-50"></div>
+            </div>
+            <div class="md:w-3/5">
+                <h2 class="text-brand-gold text-sm font-bold uppercase tracking-[0.3em] mb-4">Director General</h2>
+                <h3 class="text-4xl font-bold text-white mb-6 font-serif">Gustavo Franco Espinoza</h3>
+                <p class="text-slate-400 text-lg mb-6 leading-relaxed">Arquitecto MBA con 14 años de experiencia liderando equipos técnicos. Como Perito Judicial, entrego certeza jurídica y financiera en cada proyecto.</p>
+                <div class="flex gap-6 items-center">
+                    <a href="https://linkedin.com/in/gustavfranco" target="_blank" class="text-white hover:text-brand-gold transition text-2xl"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/56953370921" class="text-white hover:text-brand-gold transition text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    <span class="text-xs text-slate-600 uppercase tracking-widest font-bold">Santiago - Chile</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-brand-950 pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-20 mb-20">
+            <div>
+                <h3 class="text-3xl font-bold text-white mb-8 font-serif">Área de Clientes</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-location-dot text-brand-gold"></i><span class="text-slate-300">Santiago, Chile</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-solid fa-envelope text-brand-gold"></i><span class="text-slate-300">arquitecto@gustavofranco.cl</span></div>
+                    <div class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-brand-gold"></i><span class="text-slate-300">+56 9 5337 0921</span></div>
+                </div>
+            </div>
+            <div class="bg-brand-900 p-10 border border-white/10 rounded-sm">
+                <form action="https://formspree.io/f/mnqrjapq" method="POST" class="space-y-5">
+                    <input type="text" name="nombre" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Nombre / Empresa">
+                    <input type="email" name="email" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Email corporativo">
+                    <textarea name="mensaje" rows="4" required class="w-full px-5 py-4 bg-brand-950 border border-white/10 rounded-sm text-white focus:border-brand-gold outline-none" placeholder="Requerimiento técnico..."></textarea>
+                    <button type="submit" class="w-full bg-brand-gold text-white font-black py-4 rounded-sm hover:bg-amber-700 transition uppercase tracking-widest text-xs">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+        <p class="text-[10px] text-slate-600 text-center uppercase tracking-widest font-bold">&copy; 2026 Gustavo Franco & Asociados.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            window.scrollY > 50 ? nav.classList.add('bg-brand-950') : nav.classList.remove('bg-brand-950');
+        });
+    </script>
+</body>
+</html>

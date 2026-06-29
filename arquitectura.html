@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos de Arquitectura — Gustavo Franco</title>
+<meta name="description" content="Proyectos de arquitectura, regularizaciones y recepciones municipales. Quince años diseñando casas, conjuntos habitacionales y edificaciones comerciales en Chile.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gustavofranco.cl/arquitectura.html">
+<meta property="og:title" content="Proyectos de Arquitectura — Gustavo Franco">
+<meta property="og:description" content="Diseño, regularizaciones y recepciones municipales. Servicio integral hasta la entrega.">
+<meta property="og:image" content="https://gustavofranco.cl/assets/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0B1320;
+    --bg-base: #0F1A2B;
+    --bg-surface: #131F33;
+    --bg-surface-2: #16233A;
+    --border: #1F2D45;
+    --border-soft: #1A2640;
+    --accent: #5BA644;
+    --accent-soft: rgba(91,166,68,0.12);
+    --gold: #C9A961;
+    --gold-soft: rgba(201,169,97,0.10);
+    --text-primary: #F4F5F7;
+    --text-secondary: #8995AC;
+    --text-tertiary: #5B6B85;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- NAV ---------- */
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .site-nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand img { height: 30px; width: 30px; }
+  .nav-brand span { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--text-secondary); }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav-links a.active { color: var(--text-primary); }
+  .nav-cta {
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-cta:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+  /* ---------- BREADCRUMB ---------- */
+  .breadcrumb {
+    padding: 24px 32px 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
+  }
+  .breadcrumb a { color: var(--text-tertiary); transition: color 0.15s; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 10px; opacity: 0.5; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 64px 0 90px;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -150px;
+    right: -10%;
+    width: 700px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(91,166,68,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 26px;
+    letter-spacing: -0.015em;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p.lead {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+  .hero-actions { display: flex; gap: 14px; margin-bottom: 40px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #0B1320;
+    font-weight: 500;
+    font-size: 14.5px;
+    padding: 14px 26px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.25s;
+    font-family: var(--font-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(91,166,68,0.5); }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 14.5px;
+    padding: 14px 26px;
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-family: var(--font-body);
+  }
+  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bg-surface);
+  }
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(11,19,32,0.7) 100%);
+    pointer-events: none;
+  }
+  .visual-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    background: rgba(11,19,32,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-soft);
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+  .visual-tag strong {
+    color: var(--text-primary);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 100px 0; }
+  .section-head {
+    max-width: 700px;
+    margin-bottom: 56px;
+  }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.015em;
+  }
+  .section-head h2 em { font-style: italic; color: var(--accent); }
+  .section-head p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ---------- SERVICIOS QUE OFREZCO ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .service-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .service-card .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .service-card ul {
+    margin-top: 14px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .service-card ul li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 6px 0 6px 16px;
+    position: relative;
+  }
+  .service-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* ---------- PROCESO ---------- */
+  .process {
+    background: var(--bg-deep);
+  }
+  .process-flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    position: relative;
+  }
+  .process-step {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 26px 22px;
+    position: relative;
+  }
+  .process-step .num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .process-step h4 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .process-step p {
+    font-size: 12.5px;
+    color: var(--text-tertiary);
+    line-height: 1.55;
+  }
+  .process-step .time {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--gold);
+    margin-top: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- PROYECTOS ---------- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .project {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .project:hover { transform: translateY(-4px); border-color: var(--border); }
+  .project-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+  .project.tall .project-image { aspect-ratio: 3/4; }
+  .project.wide .project-image { aspect-ratio: 16/9; }
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .project:hover .project-image img { transform: scale(1.04); }
+  .project-info {
+    padding: 24px 28px 28px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .project-info .tag {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .project-info h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .project-info p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .project.wide { grid-column: span 2; }
+
+  /* ---------- POR QUÉ CONMIGO ---------- */
+  .differentiators {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-soft);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+  }
+  .diff-card {
+    background: var(--bg-base);
+    padding: 36px 32px;
+    transition: background 0.3s;
+  }
+  .diff-card:hover { background: var(--bg-surface-2); }
+  .diff-card .num {
+    font-family: var(--font-display);
+    font-size: 38px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .diff-card h3 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .diff-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .testimonial {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .testimonial .quote-mark {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--accent);
+    line-height: 0.5;
+    margin-bottom: -10px;
+    opacity: 0.5;
+  }
+  .testimonial p.body {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    flex: 1;
+  }
+  .testimonial .author { padding-top: 18px; border-top: 1px solid var(--border-soft); }
+  .testimonial .name { font-size: 14.5px; color: var(--text-primary); font-weight: 500; margin-bottom: 3px; }
+  .testimonial .role { font-size: 12.5px; color: var(--text-tertiary); font-family: var(--font-mono); letter-spacing: 0.03em; }
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final {
+    background: var(--bg-deep);
+  }
+  .cta-box {
+    background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 56px;
+    text-align: center;
+  }
+  .cta-box h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    letter-spacing: -0.015em;
+  }
+  .cta-box h2 em { font-style: italic; color: var(--accent); }
+  .cta-box p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 30px;
+  }
+  .cta-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+  /* ---------- FOOTER ---------- */
+  footer { border-top: 1px solid var(--border-soft); padding: 64px 0 32px; background: var(--bg-deep); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .f-brand { display: flex; align-items: flex-start; gap: 14px; }
+  .f-brand img { height: 32px; width: 32px; opacity: 0.9; margin-top: 2px; }
+  .f-name { font-family: var(--font-display); font-size: 16px; color: var(--text-primary); margin-bottom: 4px; }
+  .f-role { font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
+  .f-col { display: flex; flex-direction: column; gap: 12px; }
+  .f-col-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .f-col a { font-size: 13.5px; color: var(--text-secondary); transition: color 0.15s; }
+  .f-col a:hover { color: var(--text-primary); }
+  .f-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 28px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 960px) {
+    .wrap { padding: 0 22px; }
+    .nav-links { display: none; }
+    .hero { padding: 40px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero h1 { font-size: 36px; }
+    .hero-visual { max-width: 380px; margin: 0 auto; }
+    section { padding: 72px 0; }
+    .section-head h2 { font-size: 28px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-flow { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project.wide { grid-column: span 1; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-box { padding: 36px 24px; }
+    .cta-box h2 { font-size: 28px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .f-brand { grid-column: 1 / -1; }
+    .f-bottom { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <img src="assets/logo-mark.png" alt="Gustavo Franco">
+      <span>Gustavo Franco</span>
+    </div>
+    <div class="nav-links">
+      <a href="/index.html">Peritajes</a>
+      <a href="/arquitectura.html" class="active">Arquitectura</a>
+      <a href="/tasaciones-comerciales.html">Tasaciones</a>
+    </div>
+    <a href="/cotizacion.html" class="nav-cta">Solicitar cotización</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a href="/index.html">Inicio</a><span>/</span><span style="color: var(--text-secondary);">Arquitectura</span>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Arquitectura · Regularización · Gestión municipal</span>
+        <h1>Casas, locales y proyectos que <em>resuelven, antes que figurar.</em></h1>
+        <p class="lead">Diseño residencial y comercial, regularizaciones y recepciones municipales. Quince años acompañando a propietarios desde la primera idea hasta la firma de la Recepción Final.</p>
+        <div class="hero-actions">
+          <a href="/cotizacion.html"><button class="btn-primary">Solicitar cotización <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></a>
+          <a href="#proyectos"><button class="btn-secondary">Ver proyectos</button></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/arq-cabana-araucania-1.jpg" alt="Cabaña diseñada por Gustavo Franco en la Araucanía, entre araucarias">
+        <div class="visual-tag">
+          <strong>Cabañas Parque Nacional Conguillio</strong>
+          Región de la Araucanía
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Qué hago</span>
+      <h2>Tres líneas de trabajo, una sola oficina <em>de cabecera.</em></h2>
+      <p>Desde el diseño de una casa nueva hasta la regularización de una propiedad construida hace décadas, todo coordinado desde una sola mano.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h3>Proyectos de Arquitectura</h3>
+        <p>Diseño completo de obra nueva: casas, ampliaciones, edificaciones comerciales y proyectos mixtos.</p>
+        <ul>
+          <li>Anteproyecto y proyecto definitivo</li>
+          <li>Coordinación de especialidades</li>
+          <li>Permiso de Edificación ante DOM</li>
+          <li>Tramitación hasta Recepción Final</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M3 12a9 9 0 1 0 9-9"/></svg></div>
+        <h3>Regularizaciones</h3>
+        <p>Inmuebles construidos sin permiso, ampliaciones no declaradas, propiedades sin recepción. Vía Ley 20.898 o procedimiento ordinario, según convenga.</p>
+        <ul>
+          <li>Levantamiento de lo existente</li>
+          <li>Expediente municipal completo</li>
+          <li>Especialidades sanitarias y eléctricas</li>
+          <li>Resolución de observaciones</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3>Recepciones Municipales</h3>
+        <p>Trámite de Recepción Final cuando la obra está construida pero el expediente quedó sin cerrar. Incluye respuesta a observaciones de la DOM.</p>
+        <ul>
+          <li>Auditoría del estado documental</li>
+          <li>Subsanación de pendientes</li>
+          <li>Coordinación con DOM, SEC y Seremi</li>
+          <li>Entrega del Certificado de Recepción</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section id="proceso" class="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cómo trabajo</span>
+      <h2>De la primera idea a la <em>Recepción Final,</em> sin intermediarios.</h2>
+      <p>Un solo arquitecto responsable durante todo el proceso. Usted habla siempre con la misma persona, no con un equipo rotativo.</p>
+    </div>
+    <div class="process-flow reveal">
+      <div class="process-step">
+        <div class="num">01</div>
+        <h4>Conversación inicial</h4>
+        <p>Entender el encargo, el sitio, el presupuesto disponible y los plazos reales.</p>
+        <div class="time">Sin costo</div>
+      </div>
+      <div class="process-step">
+        <div class="num">02</div>
+        <h4>Cotización</h4>
+        <p>Valor fijo, alcance claro, honorarios separados de costos de terceros.</p>
+        <div class="time">3 a 5 días</div>
+      </div>
+      <div class="process-step">
+        <div class="num">03</div>
+        <h4>Visita a terreno</h4>
+        <p>Levantamiento físico, registro fotográfico, verificación normativa.</p>
+        <div class="time">1 jornada</div>
+      </div>
+      <div class="process-step">
+        <div class="num">04</div>
+        <h4>Proyecto y especialidades</h4>
+        <p>Arquitectura, sanitario, eléctrico y cálculo coordinados desde la oficina.</p>
+        <div class="time">3 a 8 semanas</div>
+      </div>
+      <div class="process-step">
+        <div class="num">05</div>
+        <h4>Tramitación y Recepción</h4>
+        <p>Ingreso DOM, respuesta a observaciones, hasta el certificado en mano.</p>
+        <div class="time">Variable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Proyectos</span>
+      <h2>Quince años, distintas escalas, <em>una sola forma de trabajar.</em></h2>
+      <p>Desde una casa en medio del bosque hasta un conjunto habitacional de 500 viviendas. La rigurosidad no cambia con el tamaño.</p>
+    </div>
+    <div class="projects-grid reveal">
+      <div class="project tall">
+        <div class="project-image"><img src="assets/arq-arriaven-emplazamiento.jpg" alt="Emplazamiento Casa Arriagada Venegas, Curacaví"></div>
+        <div class="project-info">
+          <div class="tag">Casa unifamiliar</div>
+          <h3>Casa Arriagada Venegas</h3>
+          <p>Diseño residencial en parcela de 5.200 m². Curacaví, Región Metropolitana.</p>
+        </div>
+      </div>
+      <div class="project tall">
+        <div class="project-image"><img src="assets/planimetria-casa-bd.jpg" alt="Planimetría Casa Berkhoff Dossow, Villarrica"></div>
+        <div class="project-info">
+          <div class="tag">Casa unifamiliar</div>
+          <h3>Casa Berkhoff Dossow</h3>
+          <p>Diseño y planimetría residencial. Pasaje Felis, Villarrica, Región de la Araucanía.</p>
+        </div>
+      </div>
+      <div class="project wide">
+        <div class="project-image"><img src="assets/conjunto-araucania.jpg" alt="Conjunto habitacional de 500 viviendas, Araucanía"></div>
+        <div class="project-info">
+          <div class="tag">Urbanismo · Loteo</div>
+          <h3>Conjunto habitacional de 500 viviendas · Araucanía</h3>
+          <p>Diseño urbano y arquitectura de un loteo residencial de escala media en el sur de Chile.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-image"><img src="assets/centro-comercial-imperial.jpg" alt="Galería de la Esquina, Imperial"></div>
+        <div class="project-info">
+          <div class="tag">Arquitectura comercial</div>
+          <h3>Galería de la Esquina · Nueva Imperial</h3>
+          <p>Centro comercial en esquina urbana consolidada, Región de la Araucanía.</p>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-image"><img src="assets/arq-cabana-araucania-2.jpg" alt="Cabaña en la Araucanía"></div>
+        <div class="project-info">
+          <div class="tag">Vivienda turística</div>
+          <h3>Cabañas Parque Nacional Conguillio</h3>
+          <p>Conjunto de cabañas A-frame entre araucarias milenarias. Araucanía.</p>
+        </div>
+      </div>
+      <div class="project wide">
+        <div class="project-image"><img src="assets/arq-cabanas-araucania-conjunto.jpg" alt="Cabañas Araucanía, vista del conjunto"></div>
+        <div class="project-info">
+          <div class="tag">Arquitectura residencial · Sur</div>
+          <h3>Vista del conjunto, Parque Nacional Conguillio</h3>
+          <p>Diseño contextualizado en paisaje cordillerano, integrando araucarias preexistentes en cada emplazamiento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIALES ============ -->
+<section class="differentiators">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Por qué conmigo</span>
+      <h2>Cuatro decisiones que cambian <em>la experiencia de contratar arquitectura.</em></h2>
+    </div>
+    <div class="diff-grid reveal">
+      <div class="diff-card">
+        <div class="num">01</div>
+        <h3>Cotizo por alcance, no por arancel</h3>
+        <p>No uso aranceles del Colegio de Arquitectos ni UF por metro cuadrado. Cotizo según el trabajo real, con un valor fijo justificado y pensado en lo que el cliente puede pagar.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">02</div>
+        <h3>Transparencia entre honorario y terceros</h3>
+        <p>Separo siempre mi honorario de los costos de cálculo estructural, mecánica de suelos, eléctrico y derechos municipales. Usted sabe exactamente qué me paga a mí y qué paga al Estado o a otros profesionales.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">03</div>
+        <h3>Pago en cuotas cuando ayuda</h3>
+        <p>Los proyectos largos pueden pagarse en cuotas mensuales predecibles. La modalidad se acomoda al cliente, no al revés.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">04</div>
+        <h3>El trámite cierra conmigo</h3>
+        <p>Mi servicio no termina con la entrega de planos. Acompaño la tramitación ante la DOM hasta la Recepción Final, respondo todas las observaciones, y entrego el certificado en mano.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2>Lo que dicen quienes <em>vivieron el proceso.</em></h2>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">El diseño de mi casa en Villarrica superó todas mis expectativas. Entendió a la perfección lo que buscábamos, logrando un equilibrio ideal entre estética y funcionalidad. Un arquitecto sumamente dedicado y profesional.</p>
+        <div class="author">
+          <div class="name">Herman Berkhoff</div>
+          <div class="role">Cliente — Casa Berkhoff Dossow, Villarrica</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <p class="body">Es mi arquitecto de cabecera. Su precisión como tasador y su impecable gestión en trámites brindan la seguridad y rapidez que necesito. Un respaldo indispensable, totalmente recomendado.</p>
+        <div class="author">
+          <div class="name">Patricio Espinoza</div>
+          <div class="role">Abogado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>¿Tiene un proyecto en mente, o un trámite <em>pendiente?</em></h2>
+      <p>Cuénteme qué necesita. Si me envía los antecedentes básicos del inmueble, le devuelvo una cotización clara dentro de las 48 horas siguientes.</p>
+      <div class="cta-actions">
+        <a href="/cotizacion.html"><button class="btn-primary">Solicitar cotización <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></a>
+        <a href="https://wa.me/56953370921"><button class="btn-secondary">Escribir por WhatsApp</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="f-brand">
+      <img src="assets/logo-mark.png" alt="">
+      <div>
+        <div class="f-name">Gustavo Franco</div>
+        <div class="f-role">Perito Judicial Tasador<br>Arquitecto · MBA</div>
+      </div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Servicios</div>
+      <a href="/index.html">Peritajes judiciales</a>
+      <a href="/arquitectura.html">Arquitectura</a>
+      <a href="/tasaciones-comerciales.html">Tasaciones comerciales</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Trabajo</div>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="/casos/penaflor.html">Caso pericial</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Contacto</div>
+      <a href="/cotizacion.html">Solicitar cotización</a>
+      <a href="mailto:arquitecto@gustavofranco.cl">arquitecto@gustavofranco.cl</a>
+      <a href="https://wa.me/56953370921">WhatsApp</a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 Gustavo Franco Arquitectos. Todos los derechos reservados.</span>
+    <span>Av. Raúl Labbé 12613 Of. 231, Lo Barnechea, Santiago.</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
